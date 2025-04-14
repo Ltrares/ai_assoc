@@ -1,0 +1,32 @@
+{
+  "name": "ai-association",
+  "version": "1.0.0",
+  "description": "Word association game using Claude AI",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "client-install": "cd client && npm install",
+    "server-install": "cd server && npm install",
+    "install-all": "npm install && npm run client-install && npm run server-install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run client-install && npm run build"
+  },
+  "keywords": [
+    "word",
+    "association",
+    "game",
+    "claude",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

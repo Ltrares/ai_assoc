@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const axios = require('axios');
 const Anthropic = require('@anthropic-ai/sdk');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 5050;
@@ -148,13 +149,17 @@ async function generateDailyGame() {
   }
 };
 
-// Configure CORS properly
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// Configure CORS properly for development
+if (process.env.NODE_ENV === 'development') {
+  app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
+} else {
+  app.use(cors());
+}
 
 // Other middleware
 app.use(express.json());
@@ -547,6 +552,19 @@ if (process.env.NODE_ENV !== 'test') {
   }, 3600000); // Generate a new game every hour (3,600,000 ms)
 }
 
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static(path.join(__dirname, '../client/build')));
+
+  // Any route that's not an API route should be handled by React
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api')) {
+      res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    }
+  });
+}
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode`);
 });
