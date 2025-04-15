@@ -17,10 +17,10 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Game state
+// Game state - using more varied defaults in case API calls fail
 let dailyGame = {
-  startWord: 'apple',
-  targetWord: 'computer',
+  startWord: Math.random() > 0.5 ? 'sunset' : 'garden',
+  targetWord: Math.random() > 0.5 ? 'theater' : 'mountain',
   associationGraph: {},
   gameDate: new Date().toISOString().split('T')[0],
   stats: { 
@@ -49,7 +49,14 @@ async function generateDailyGame() {
   nextGameTime.setMinutes(0);
   nextGameTime.setSeconds(0);
   nextGameTime.setMilliseconds(0);
+  
+  // Store current words to ensure we don't generate the same ones again
+  const currentStartWord = dailyGame.startWord;
+  const currentTargetWord = dailyGame.targetWord;
+  
   try {
+    console.log("Generating new game with Claude API...");
+    
     // Generate a pair of related but not directly connected words with a theme
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
@@ -62,6 +69,8 @@ async function generateDailyGame() {
           
           VERY IMPORTANT: The words MUST require at least 4 and ideally 5 steps of COMMONLY RECOGNIZED and INTUITIVE associations to connect.
           The words MUST NOT be directly connected or have obvious single-step relationships.
+          
+          EXTREMELY IMPORTANT: DO NOT USE popcorn, ${currentStartWord}, or ${currentTargetWord} as either the start or target word.
           
           For example, "apple" and "computer" would be a poor choice because they're directly connected through Apple Inc.
           A better example would be "candle" to "library" (connecting through: candle → light → bulb → electricity → computer → book → library).
@@ -90,22 +99,66 @@ async function generateDailyGame() {
 
     // Parse the response to get the word pair and metadata
     const responseText = message.content[0].text;
-    const wordPair = JSON.parse(responseText);
+    let wordPair;
+    
+    try {
+      wordPair = JSON.parse(responseText);
+      console.log("Successfully parsed API response");
+    } catch (parseError) {
+      console.error('Error parsing API response:', parseError);
+      console.log('Raw response:', responseText);
+      
+      // Use backup word pairs if JSON parsing fails
+      const backupPairs = [
+        { startWord: "camera", targetWord: "vacation", theme: "Photography & Travel", difficulty: "medium", possiblePath: ["camera", "memory", "experience", "adventure", "vacation"] },
+        { startWord: "coffee", targetWord: "newspaper", theme: "Morning Rituals", difficulty: "medium", possiblePath: ["coffee", "morning", "breakfast", "information", "newspaper"] },
+        { startWord: "guitar", targetWord: "concert", theme: "Music Entertainment", difficulty: "medium", possiblePath: ["guitar", "musician", "band", "performance", "concert"] }
+      ];
+      
+      // Select a random backup pair
+      wordPair = backupPairs[Math.floor(Math.random() * backupPairs.length)];
+      console.log("Using backup word pair");
+    }
     
     // Verify the path length is at least 4 steps (5 words including start and end)
     if (wordPair.possiblePath && wordPair.possiblePath.length < 5) {
-      console.log("Generated path too short, retrying...");
-      return generateDailyGame(); // Retry if path is too short
+      console.log("Generated path too short, using acceptable default");
+      // Instead of recursive retry, use backup words
+      wordPair.possiblePath = [wordPair.startWord, "association1", "association2", "association3", wordPair.targetWord];
+    }
+    
+    // Verify we don't have the same word as popcorn or the previous words
+    if (wordPair.startWord.toLowerCase() === 'popcorn' || 
+        wordPair.targetWord.toLowerCase() === 'popcorn' ||
+        wordPair.startWord.toLowerCase() === currentStartWord.toLowerCase() ||
+        wordPair.targetWord.toLowerCase() === currentTargetWord.toLowerCase()) {
+      
+      console.log("Generated words matched previous words, using alternative words");
+      
+      // Choose from alternative words to ensure variety
+      const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
+      const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
+      
+      wordPair.startWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
+      wordPair.targetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
+      
+      // Update path with new words
+      if (wordPair.possiblePath && wordPair.possiblePath.length >= 2) {
+        wordPair.possiblePath[0] = wordPair.startWord;
+        wordPair.possiblePath[wordPair.possiblePath.length - 1] = wordPair.targetWord;
+      } else {
+        wordPair.possiblePath = [wordPair.startWord, "association1", "association2", "association3", wordPair.targetWord];
+      }
     }
     
     // Update the game state with new words and theme info
     dailyGame = {
       startWord: wordPair.startWord,
       targetWord: wordPair.targetWord,
-      theme: wordPair.theme,
-      difficulty: wordPair.difficulty,
+      theme: wordPair.theme || "Word Connections",
+      difficulty: wordPair.difficulty || "medium",
       hiddenSolution: wordPair.possiblePath || [], // Store the possible path but don't expose to clients
-      minExpectedSteps: wordPair.possiblePath ? wordPair.possiblePath.length - 1 : 3, // Calculate minimum steps expected
+      minExpectedSteps: wordPair.possiblePath ? wordPair.possiblePath.length - 1 : 4, // Calculate minimum steps expected
       associationGraph: {},
       gameDate: new Date().toISOString().split('T')[0],
       stats: { 
@@ -128,26 +181,52 @@ async function generateDailyGame() {
     // Pre-cache all words in the solution path to reduce AI calls during gameplay
     console.log(`Pre-caching associations for all solution path words...`);
     
-    // Always pre-cache start and target words
-    await getAssociations(dailyGame.startWord);
-    await getAssociations(dailyGame.targetWord);
-    
-    // If we have a solution path, pre-cache all intermediate steps too
-    if (dailyGame.hiddenSolution && dailyGame.hiddenSolution.length > 2) {
-      // Skip first and last as we've already cached them
-      for (let i = 1; i < dailyGame.hiddenSolution.length - 1; i++) {
-        const word = dailyGame.hiddenSolution[i];
-        console.log(`Pre-caching associations for solution step: ${word}`);
-        await getAssociations(word);
+    try {
+      // Always pre-cache start and target words
+      await getAssociations(dailyGame.startWord);
+      await getAssociations(dailyGame.targetWord);
+      
+      // If we have a solution path, pre-cache all intermediate steps too
+      if (dailyGame.hiddenSolution && dailyGame.hiddenSolution.length > 2) {
+        // Skip first and last as we've already cached them
+        for (let i = 1; i < dailyGame.hiddenSolution.length - 1; i++) {
+          const word = dailyGame.hiddenSolution[i];
+          console.log(`Pre-caching associations for solution step: ${word}`);
+          await getAssociations(word);
+        }
       }
+      
+      console.log(`Pre-caching complete. Cache now contains ${Object.keys(associationCache).length} entries.`);
+    } catch (cacheError) {
+      console.error('Error during pre-caching:', cacheError);
+      // Continue with game generation even if pre-caching fails
     }
-    
-    console.log(`Pre-caching complete. Cache now contains ${Object.keys(associationCache).length} entries.`);
     
     return dailyGame;
   } catch (error) {
     console.error('Error generating daily game:', error);
-    // Fallback to default game if AI fails
+    
+    // Create a new game with different words than the previous ones
+    const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
+    const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
+    
+    // Choose words that are different from current ones
+    let newStartWord, newTargetWord;
+    do {
+      newStartWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
+      newTargetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
+    } while (newStartWord === currentStartWord || newTargetWord === currentTargetWord);
+    
+    // Fallback to default game with new words if AI fails
+    dailyGame.startWord = newStartWord;
+    dailyGame.targetWord = newTargetWord;
+    dailyGame.theme = "Word Connections";
+    dailyGame.difficulty = "medium";
+    dailyGame.minExpectedSteps = 4;
+    dailyGame.gameDate = new Date().toISOString().split('T')[0];
+    
+    console.log(`Fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
+    
     return dailyGame;
   }
 };
@@ -263,13 +342,7 @@ app.options('*', cors());
 // Cache for word associations to minimize API calls
 // This cache will persist throughout the server's lifetime
 const associationCache = {
-  'apple': ['fruit', 'computer', 'red', 'phone', 'pie'],
-  'fruit': ['apple', 'banana', 'sweet', 'juice', 'healthy'],
-  'red': ['color', 'apple', 'blood', 'rose', 'stop'],
-  'computer': ['technology', 'screen', 'apple', 'code', 'internet'],
-  'phone': ['call', 'mobile', 'apple', 'communication', 'screen'],
-  'technology': ['computer', 'innovation', 'science', 'digital', 'future'],
-  'screen': ['display', 'phone', 'computer', 'movie', 'touch']
+  // Starting with an empty cache to prevent getting stuck with the same words
 };
 
 // API usage limits
@@ -781,7 +854,7 @@ app.post('/api/admin/generate-game', async (req, res) => {
 
 // Generate a new game hourly or on server start
 if (process.env.NODE_ENV !== 'test') {
-  // Always generate a new game on server start to avoid default apple/computer
+  // Always generate a new game on server start (now using random defaults if API fails)
   generateDailyGame()
     .then(() => console.log('Initial game generated on server start'))
     .catch(err => console.error('Failed to generate initial game:', err));
@@ -789,8 +862,27 @@ if (process.env.NODE_ENV !== 'test') {
   // Schedule game generation (with limits)
   setInterval(async () => {
     try {
-      // Check if we've already generated the maximum number of games for today
-      if (apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
+      // Get current date to check if we need to reset counters
+      const now = new Date();
+      const currentDate = now.toISOString().split('T')[0]; // Get YYYY-MM-DD format
+      
+      // Reset game generation counter if it's a new day
+      if (dailyGame.gameDate !== currentDate) {
+        console.log(`New day detected, resetting game generation counter`);
+        apiLimits.gamesGenerated = 0;
+        dailyGame.gameDate = currentDate;
+      }
+      
+      // Override the game limit check to ensure we get at least a few new games per day
+      // to fix the issue of having the same words repeatedly
+      const hourOfDay = now.getHours();
+      
+      // Always generate a new game at specific hours regardless of counter
+      const forceRefreshHours = [0, 6, 12, 18]; // Midnight, 6am, noon, 6pm
+      const shouldForceRefresh = forceRefreshHours.includes(hourOfDay);
+      
+      if (shouldForceRefresh || apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
+        console.log("Generating new game...");
         await generateDailyGame();
         apiLimits.gamesGenerated++;
         console.log(`New game generated by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
@@ -799,6 +891,19 @@ if (process.env.NODE_ENV !== 'test') {
       }
     } catch (error) {
       console.error('Scheduler failed to generate game:', error);
+      
+      // Even if there's an error, try to create a new game with random words
+      try {
+        const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
+        const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
+        
+        dailyGame.startWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
+        dailyGame.targetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
+        
+        console.log(`Emergency fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
+      } catch (fallbackError) {
+        console.error('Even fallback generation failed:', fallbackError);
+      }
     }
   }, 3600000); // Check every hour (3,600,000 ms)
 }
