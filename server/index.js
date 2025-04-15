@@ -426,8 +426,16 @@ app.get('/api/admin/cache-stats', (req, res) => {
   try {
     // Check for admin auth in production
     if (process.env.NODE_ENV === 'production') {
+      // First check query param for browser access
+      const tokenParam = req.query.token;
       const authHeader = req.headers.authorization;
-      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+      
+      // Allow either header auth or query param auth
+      const isAuthorized = 
+        (tokenParam && tokenParam === process.env.ADMIN_SECRET) ||
+        (authHeader && authHeader === `Bearer ${process.env.ADMIN_SECRET}`);
+        
+      if (!isAuthorized) {
         return res.status(401).json({ error: 'Unauthorized' });
       }
     }
@@ -476,8 +484,16 @@ app.get('/api/admin/api-stats', (req, res) => {
   try {
     // Check for admin auth in production
     if (process.env.NODE_ENV === 'production') {
+      // First check query param for browser access
+      const tokenParam = req.query.token;
       const authHeader = req.headers.authorization;
-      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+      
+      // Allow either header auth or query param auth
+      const isAuthorized = 
+        (tokenParam && tokenParam === process.env.ADMIN_SECRET) ||
+        (authHeader && authHeader === `Bearer ${process.env.ADMIN_SECRET}`);
+        
+      if (!isAuthorized) {
         return res.status(401).json({ error: 'Unauthorized' });
       }
     }
@@ -702,8 +718,16 @@ app.get('/api/admin/solution', (req, res) => {
   try {
     // Check for admin auth (in a real app, use proper auth)
     if (process.env.NODE_ENV === 'production') {
+      // First check query param for browser access
+      const tokenParam = req.query.token;
       const authHeader = req.headers.authorization;
-      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+      
+      // Allow either header auth or query param auth
+      const isAuthorized = 
+        (tokenParam && tokenParam === process.env.ADMIN_SECRET) ||
+        (authHeader && authHeader === `Bearer ${process.env.ADMIN_SECRET}`);
+        
+      if (!isAuthorized) {
         return res.status(401).json({ error: 'Unauthorized' });
       }
     }
@@ -771,6 +795,11 @@ if (process.env.NODE_ENV !== 'test') {
   }, 3600000); // Check every hour (3,600,000 ms)
 }
 
+// Admin dashboard route
+app.get('/admin', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'admin.html'));
+});
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -778,7 +807,7 @@ if (process.env.NODE_ENV === 'production') {
 
   // Any route that's not an API route should be handled by React
   app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api')) {
+    if (!req.path.startsWith('/api') && !req.path.startsWith('/admin')) {
       res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     }
   });
