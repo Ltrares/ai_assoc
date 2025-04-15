@@ -53,7 +53,7 @@ async function generateDailyGame() {
     // Generate a pair of related but not directly connected words with a theme
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 1000,
+      max_tokens: 300, // Reduced token limit for cost optimization
       messages: [
         {
           role: "user",
@@ -292,7 +292,7 @@ async function getAssociationsFromAI(word) {
   try {
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 1000,
+      max_tokens: 250, // Reduced token limit for cost optimization
       messages: [
         {
           role: "user",
@@ -656,7 +656,7 @@ app.get('/api/game/hint', async (req, res) => {
     
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 1000,
+      max_tokens: 150, // Reduced token limit for cost optimization - hints are short
       messages: [
         {
           role: "user",
