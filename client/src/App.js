@@ -50,9 +50,15 @@ function App() {
     return () => clearInterval(timerId);
   }, [nextRefreshTime]);
 
+  // Get base API URL based on environment
+  const getApiUrl = () => {
+    // In production, use relative URLs
+    return '/api';
+  };
+
   // Fetch game data on component mount
   useEffect(() => {
-    fetch('http://localhost:5050/api/game')
+    fetch(`${getApiUrl()}/game`)
       .then(response => response.json())
       .then(data => {
         setGame(data);
@@ -68,7 +74,7 @@ function App() {
         }
         
         // Also fetch initial associations with detailed info
-        return fetch(`http://localhost:5050/api/associations/${data.startWord}?detailed=true`);
+        return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
       })
       .then(response => response.json())
       .then(data => {
@@ -107,7 +113,7 @@ function App() {
       setLoadingAssociations(false); // Reset loading state
       
       // Submit result to server with total steps (including back steps)
-      fetch('http://localhost:5050/api/game/complete', {
+      fetch(`${getApiUrl()}/game/complete`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -127,7 +133,7 @@ function App() {
         });
     } else {
       // Get new associations with detailed info
-      fetch(`http://localhost:5050/api/associations/${word}?detailed=true`)
+      fetch(`${getApiUrl()}/associations/${word}?detailed=true`)
         .then(response => response.json())
         .then(data => {
           setAssociations(data.associations);
@@ -156,7 +162,7 @@ function App() {
     // Convert path to JSON string for the query parameter
     const pathJson = JSON.stringify(path);
     
-    fetch(`http://localhost:5050/api/game/hint?progress=${encodeURIComponent(pathJson)}`)
+    fetch(`${getApiUrl()}/game/hint?progress=${encodeURIComponent(pathJson)}`)
       .then(response => response.json())
       .then(data => {
         setHint(data.hint);
@@ -198,7 +204,7 @@ function App() {
     setTotalSteps(totalSteps + 1);
     
     // Get associations for the previous word with detailed info
-    fetch(`http://localhost:5050/api/associations/${previousWord}?detailed=true`)
+    fetch(`${getApiUrl()}/associations/${previousWord}?detailed=true`)
       .then(response => response.json())
       .then(data => {
         setAssociations(data.associations);
