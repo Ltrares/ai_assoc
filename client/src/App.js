@@ -14,101 +14,7 @@ function App() {
   const [error, setError] = useState('');
   const [hint, setHint] = useState('');
   const [showHints, setShowHints] = useState(false);
-  const [regenerating, setRegenerating] = useState(false);
   const [loadingAssociations, setLoadingAssociations] = useState(false);
-  const [nextRefreshTime, setNextRefreshTime] = useState(null);
-  const [timeUntilRefresh, setTimeUntilRefresh] = useState('');
-
-  // Update the countdown timer
-  useEffect(() => {
-    if (!nextRefreshTime) return;
-    
-    const updateTimer = () => {
-      const now = new Date();
-      const refreshDate = new Date(nextRefreshTime);
-      const timeDiff = refreshDate - now;
-      
-      if (timeDiff <= 0) {
-        // Set a flag to prevent multiple refresh attempts
-        if (sessionStorage.getItem('refreshing') === 'true') {
-          return;
-        }
-        
-        // Mark as refreshing in session storage
-        sessionStorage.setItem('refreshing', 'true');
-        
-        // Show refreshing message
-        setTimeUntilRefresh('Refreshing in a moment...');
-        
-        // Add a random delay between 3-15 seconds to stagger client requests
-        const randomDelay = 3000 + Math.floor(Math.random() * 12000);
-        console.log(`Scheduling refresh in ${randomDelay/1000} seconds`);
-        
-        setTimeout(() => {
-          // Update message just before reload
-          setTimeUntilRefresh('Loading new puzzle...');
-          
-          // Use a gentle approach to refresh game data instead of reloading the page
-          fetch(`${getApiUrl()}/game?refresh=true`)
-            .then(response => response.json())
-            .then(data => {
-              setGame(data);
-              setCurrentWord(data.startWord);
-              setPath([data.startWord]);
-              setBackSteps(0);
-              setTotalSteps(0);
-              setGameComplete(false);
-              setHint('');
-              
-              // Store the next refresh time
-              if (data.nextRefreshTime) {
-                setNextRefreshTime(data.nextRefreshTime);
-              }
-              
-              // Clear the refreshing flag
-              sessionStorage.removeItem('refreshing');
-              
-              // Also fetch initial associations with detailed info
-              return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
-            })
-            .then(response => response.json())
-            .then(data => {
-              setAssociations(data.associations);
-              if (data.detailed) {
-                setDetailedAssociations(data.detailed);
-              }
-              setTimeUntilRefresh('New puzzle loaded!');
-              
-              // Reset to timer display after 2 seconds
-              setTimeout(() => {
-                setTimeUntilRefresh('59m 59s');
-              }, 2000);
-            })
-            .catch(err => {
-              console.error('Error refreshing game:', err);
-              // If refresh fails, allow trying again
-              sessionStorage.removeItem('refreshing');
-              setTimeUntilRefresh('Refresh failed. Try again later.');
-            });
-        }, randomDelay);
-        
-        return;
-      }
-      
-      const minutes = Math.floor(timeDiff / 60000);
-      const seconds = Math.floor((timeDiff % 60000) / 1000);
-      setTimeUntilRefresh(`${minutes}m ${seconds}s`);
-    };
-    
-    // Update immediately
-    updateTimer();
-    
-    // Then update every second
-    const timerId = setInterval(updateTimer, 1000);
-    
-    // Clean up on unmount
-    return () => clearInterval(timerId);
-  }, [nextRefreshTime]);
 
   // Get base API URL based on environment
   const getApiUrl = () => {
@@ -127,11 +33,6 @@ function App() {
         setBackSteps(0);
         setTotalSteps(0);
         setLoading(false);
-        
-        // Store the next refresh time
-        if (data.nextRefreshTime) {
-          setNextRefreshTime(data.nextRefreshTime);
-        }
         
         // Also fetch initial associations with detailed info
         return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
@@ -319,11 +220,9 @@ function App() {
               {game.minExpectedSteps && <span className="min-steps">Par: {game.minExpectedSteps}</span>}
             </div>
           )}
-          {timeUntilRefresh && (
-            <div className="refresh-timer">
-              Next puzzle in: <span className="countdown">{timeUntilRefresh}</span>
-            </div>
-          )}
+          <div className="refresh-timer">
+            New puzzle available every hour
+          </div>
         </div>
         
         {gameComplete ? (
@@ -383,7 +282,7 @@ function App() {
                 Play Again
               </button>
               <div className="next-puzzle-timer">
-                Next puzzle in: <span className="countdown">{timeUntilRefresh}</span>
+                New puzzle available every hour
               </div>
             </div>
           </div>
@@ -430,7 +329,7 @@ function App() {
                 {showHints ? 'Hide Details' : 'Show Details'}
               </button>
               <div className="next-puzzle-timer">
-                Next puzzle in: <span className="countdown">{timeUntilRefresh}</span>
+                New puzzle available every hour
               </div>
             </div>
             
