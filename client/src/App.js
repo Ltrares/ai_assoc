@@ -418,6 +418,11 @@ function App() {
             </div>
           </>
         )}
+        <div className="footer">
+          <a href="/about">About</a>
+          <span>|</span>
+          <a href="https://github.com/Ltrares/ai_assoc" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
       </header>
     </div>
   );

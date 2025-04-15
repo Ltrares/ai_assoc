@@ -800,6 +800,11 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'admin.html'));
 });
 
+// About page route
+app.get('/about', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'about.html'));
+});
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -807,7 +812,7 @@ if (process.env.NODE_ENV === 'production') {
 
   // Any route that's not an API route should be handled by React
   app.get('*', (req, res) => {
-    if (!req.path.startsWith('/api') && !req.path.startsWith('/admin')) {
+    if (!req.path.startsWith('/api') && !req.path.startsWith('/admin') && !req.path.startsWith('/about')) {
       res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     }
   });
