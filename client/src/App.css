@@ -238,9 +238,22 @@ button:disabled, button.used {
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   font-size: 0.9rem;
   width: fit-content;
+}
+
+.theme-description {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.5rem;
 }
 
 .refresh-timer {

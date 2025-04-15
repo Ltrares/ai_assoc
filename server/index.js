@@ -41,7 +41,7 @@ nextGameTime.setMinutes(0);
 nextGameTime.setSeconds(0);
 nextGameTime.setMilliseconds(0);
 
-// Function to generate a new game
+// Function to generate a new game using organic path traversal
 async function generateDailyGame() {
   // Set next game time to the next hour
   nextGameTime = new Date();
@@ -55,110 +55,191 @@ async function generateDailyGame() {
   const currentTargetWord = dailyGame.targetWord;
   
   try {
-    console.log("Generating new game with Claude API...");
+    console.log("Generating new game using organic path traversal...");
     
-    // Generate a pair of related but not directly connected words with a theme
-    const message = await anthropic.messages.create({
+    // First, generate a theme to give the puzzle context
+    // This will provide a conceptual framework for selecting start/end words
+    const themeMessage = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 300, // Reduced token limit for cost optimization
+      max_tokens: 100,
       messages: [
         {
           role: "user",
-          content: `Generate a pair of words for a challenging but solvable word association puzzle game.
-          Choose words from one of these categories: pop culture, movies, music, video games, sports, internet culture, food, fashion, modern technology, social media, travel, geography, or science concepts.
+          content: `Generate ONE interesting theme for a word association puzzle from these categories: 
+          pop culture, movies, music, video games, sports, nature, food, travel, technology, science, art, literature.
           
-          VERY IMPORTANT: The words MUST require at least 4 and ideally 5 steps of COMMONLY RECOGNIZED and INTUITIVE associations to connect.
-          The words MUST NOT be directly connected or have obvious single-step relationships.
-          
-          EXTREMELY IMPORTANT: DO NOT USE popcorn, ${currentStartWord}, or ${currentTargetWord} as either the start or target word.
-          
-          For example, "apple" and "computer" would be a poor choice because they're directly connected through Apple Inc.
-          A better example would be "candle" to "library" (connecting through: candle → light → bulb → electricity → computer → book → library).
-          
-          KEY REQUIREMENTS:
-          1. Each step in the path must be a COMMON and INTUITIVE association that most people would recognize
-          2. No obscure, technical, or highly specialized knowledge should be needed
-          3. Each word must have clear, unambiguous associations to the next word
-          4. Avoid associations that only make sense in specific cultural contexts
-          5. The path should feel satisfying and logical when discovered
-          
-          Return ONLY a JSON object with format: 
+          Return ONLY a JSON object with this format:
           {
-            "startWord": "word1", 
-            "targetWord": "word2",
-            "theme": "brief theme description",
-            "difficulty": "medium|hard|expert",
-            "possiblePath": ["word1", "intermediate1", "intermediate2", "intermediate3", "word2"]
+            "theme": "Short theme name, 2-4 words maximum",
+            "description": "Brief description of the theme (10-15 words max)",
+            "difficulty": "medium|hard|expert"
           }
           
-          Include a possible path between words to verify the difficulty, but this will not be shown to users.
-          Both words should be recognizable to most adults.`
+          Examples:
+          { "theme": "Ocean to Sky", "description": "Words connecting underwater life to aerial phenomena", "difficulty": "hard" }
+          { "theme": "Farm to Table", "description": "Words linking agriculture to prepared meals", "difficulty": "medium" }
+          
+          Keep the theme concise and broadly recognizable.`
         }
       ]
     });
 
-    // Parse the response to get the word pair and metadata
-    const responseText = message.content[0].text;
-    let wordPair;
+    const themeText = themeMessage.content[0].text;
+    let themeData;
     
     try {
-      wordPair = JSON.parse(responseText);
-      console.log("Successfully parsed API response");
+      themeData = JSON.parse(themeText);
+      console.log(`Generated theme: ${themeData.theme} (${themeData.difficulty})`);
     } catch (parseError) {
-      console.error('Error parsing API response:', parseError);
-      console.log('Raw response:', responseText);
+      console.error('Error parsing theme response:', parseError);
+      console.log('Raw theme response:', themeText);
       
-      // Use backup word pairs if JSON parsing fails
-      const backupPairs = [
-        { startWord: "camera", targetWord: "vacation", theme: "Photography & Travel", difficulty: "medium", possiblePath: ["camera", "memory", "experience", "adventure", "vacation"] },
-        { startWord: "coffee", targetWord: "newspaper", theme: "Morning Rituals", difficulty: "medium", possiblePath: ["coffee", "morning", "breakfast", "information", "newspaper"] },
-        { startWord: "guitar", targetWord: "concert", theme: "Music Entertainment", difficulty: "medium", possiblePath: ["guitar", "musician", "band", "performance", "concert"] }
-      ];
-      
-      // Select a random backup pair
-      wordPair = backupPairs[Math.floor(Math.random() * backupPairs.length)];
-      console.log("Using backup word pair");
+      // Use fallback theme if parsing fails
+      themeData = {
+        theme: "Word Connections",
+        description: "A journey through related concepts and ideas",
+        difficulty: "medium"
+      };
+      console.log("Using fallback theme");
     }
     
-    // Verify the path length is at least 4 steps (5 words including start and end)
-    if (wordPair.possiblePath && wordPair.possiblePath.length < 5) {
-      console.log("Generated path too short, using acceptable default");
-      // Instead of recursive retry, use backup words
-      wordPair.possiblePath = [wordPair.startWord, "association1", "association2", "association3", wordPair.targetWord];
+    // Get potential starting words based on the theme
+    const startWordMessage = await anthropic.messages.create({
+      model: "claude-3-5-sonnet-20240620",
+      max_tokens: 150,
+      messages: [
+        {
+          role: "user",
+          content: `Generate 5 good starting words for a word association puzzle with the theme "${themeData.theme}".
+          
+          The words should:
+          1. Be simple, common, recognizable nouns or verbs
+          2. Be clearly connected to the theme
+          3. Have multiple potential word associations
+          4. NOT include ${currentStartWord} or ${currentTargetWord} (previous game words)
+          5. Be single words (not phrases)
+          
+          Return ONLY a JSON array of 5 words:
+          ["word1", "word2", "word3", "word4", "word5"]`
+        }
+      ]
+    });
+
+    const startWordsText = startWordMessage.content[0].text;
+    let startWords;
+    
+    try {
+      startWords = JSON.parse(startWordsText);
+      console.log(`Generated starting word options: ${startWords.join(', ')}`);
+    } catch (parseError) {
+      console.error('Error parsing start words:', parseError);
+      console.log('Raw start words response:', startWordsText);
+      
+      // Use fallback starting words
+      const fallbackStarts = ["ocean", "mountain", "camera", "flower", "guitar", "book", "coffee"];
+      startWords = fallbackStarts.filter(w => 
+        w !== currentStartWord.toLowerCase() && 
+        w !== currentTargetWord.toLowerCase()
+      ).slice(0, 5);
+      
+      if (startWords.length < 5) {
+        startWords = [...startWords, "sunset", "river", "pencil"].slice(0, 5);
+      }
+      console.log("Using fallback starting words");
     }
     
-    // Verify we don't have the same word as popcorn or the previous words
-    if (wordPair.startWord.toLowerCase() === 'popcorn' || 
-        wordPair.targetWord.toLowerCase() === 'popcorn' ||
-        wordPair.startWord.toLowerCase() === currentStartWord.toLowerCase() ||
-        wordPair.targetWord.toLowerCase() === currentTargetWord.toLowerCase()) {
+    // Select a random starting word from the options
+    const startWord = startWords[Math.floor(Math.random() * startWords.length)];
+    console.log(`Selected starting word: ${startWord}`);
+    
+    // Now build an association path organically, using actual word associations
+    // This ensures the path is solvable using the game's own association generation
+    
+    // This will hold our path as we build it
+    const path = [startWord];
+    
+    // Get associations for the starting word
+    const startAssociations = await getAssociations(startWord);
+    console.log(`Associations for ${startWord}: ${startAssociations.join(', ')}`);
+    
+    // Build a path of 3-5 steps
+    const targetPathLength = Math.floor(Math.random() * 3) + 4; // 4-6 words total (3-5 steps)
+    
+    let currentWord = startWord;
+    let attempts = 0;
+    
+    while (path.length < targetPathLength && attempts < 10) {
+      attempts++;
       
-      console.log("Generated words matched previous words, using alternative words");
+      // Get associations for the current word
+      const associations = await getAssociations(currentWord);
       
-      // Choose from alternative words to ensure variety
-      const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
-      const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
+      // Filter out associations that are already in our path to avoid loops
+      const validAssociations = associations.filter(word => 
+        !path.includes(word) && 
+        word !== currentStartWord.toLowerCase() && 
+        word !== currentTargetWord.toLowerCase()
+      );
       
-      wordPair.startWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
-      wordPair.targetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
+      if (validAssociations.length === 0) {
+        console.log(`No valid associations for ${currentWord}, will try a different approach`);
+        break;
+      }
       
-      // Update path with new words
-      if (wordPair.possiblePath && wordPair.possiblePath.length >= 2) {
-        wordPair.possiblePath[0] = wordPair.startWord;
-        wordPair.possiblePath[wordPair.possiblePath.length - 1] = wordPair.targetWord;
-      } else {
-        wordPair.possiblePath = [wordPair.startWord, "association1", "association2", "association3", wordPair.targetWord];
+      // Select a random association that's not already in the path
+      const nextWord = validAssociations[Math.floor(Math.random() * validAssociations.length)];
+      path.push(nextWord);
+      console.log(`Added ${nextWord} to path. Path so far: ${path.join(' → ')}`);
+      
+      // Update current word for next iteration
+      currentWord = nextWord;
+    }
+    
+    // If we couldn't build a long enough path, use a backup approach
+    if (path.length < 3) {
+      console.log("Path too short, using alternative approach");
+      
+      // Request a longer path directly
+      const backupPathMessage = await anthropic.messages.create({
+        model: "claude-3-5-sonnet-20240620",
+        max_tokens: 150,
+        messages: [
+          {
+            role: "user",
+            content: `Create a 5-step word association path starting with "${startWord}" that fits the theme "${themeData.theme}".
+            
+            Each step should be a clear, intuitive association from the previous word.
+            Return only a JSON array with the complete path: ["${startWord}", "word2", "word3", "word4", "word5", "word6"]`
+          }
+        ]
+      });
+      
+      try {
+        const backupPath = JSON.parse(backupPathMessage.content[0].text);
+        if (backupPath.length >= 3 && backupPath[0] === startWord) {
+          path.length = 0; // Clear the current path
+          backupPath.forEach(word => path.push(word)); // Use the backup path
+          console.log(`Using backup path: ${path.join(' → ')}`);
+        }
+      } catch (backupError) {
+        console.error("Error parsing backup path:", backupError);
       }
     }
     
-    // Update the game state with new words and theme info
+    // The target word is the last word in our path
+    const targetWord = path[path.length - 1];
+    console.log(`Organic path complete: ${path.join(' → ')}`);
+    console.log(`Start: ${startWord}, Target: ${targetWord}`);
+    
+    // Update the game state with the generated data
     dailyGame = {
-      startWord: wordPair.startWord,
-      targetWord: wordPair.targetWord,
-      theme: wordPair.theme || "Word Connections",
-      difficulty: wordPair.difficulty || "medium",
-      hiddenSolution: wordPair.possiblePath || [], // Store the possible path but don't expose to clients
-      minExpectedSteps: wordPair.possiblePath ? wordPair.possiblePath.length - 1 : 4, // Calculate minimum steps expected
+      startWord: startWord,
+      targetWord: targetWord,
+      theme: themeData.theme,
+      description: themeData.description || "",
+      difficulty: themeData.difficulty || "medium",
+      hiddenSolution: path, // Store the actual path we've built
+      minExpectedSteps: path.length - 1, // Actual number of steps in our path
       associationGraph: {},
       gameDate: new Date().toISOString().split('T')[0],
       stats: { 
@@ -174,24 +255,18 @@ async function generateDailyGame() {
     
     console.log(`New daily game generated: ${dailyGame.startWord} → ${dailyGame.targetWord} (${dailyGame.theme}, ${dailyGame.difficulty})`);
     console.log(`Minimum expected steps: ${dailyGame.minExpectedSteps}`);
-    if (dailyGame.hiddenSolution && dailyGame.hiddenSolution.length > 0) {
-      console.log(`Possible solution path: ${dailyGame.hiddenSolution.join(' → ')}`);
-    }
+    console.log(`Verified solution path: ${dailyGame.hiddenSolution.join(' → ')}`);
     
-    // Pre-cache all words in the solution path to reduce AI calls during gameplay
+    // Pre-cache all words in the solution path to ensure quick gameplay
     console.log(`Pre-caching associations for all solution path words...`);
     
     try {
-      // Always pre-cache start and target words
-      await getAssociations(dailyGame.startWord);
-      await getAssociations(dailyGame.targetWord);
-      
-      // If we have a solution path, pre-cache all intermediate steps too
-      if (dailyGame.hiddenSolution && dailyGame.hiddenSolution.length > 2) {
-        // Skip first and last as we've already cached them
-        for (let i = 1; i < dailyGame.hiddenSolution.length - 1; i++) {
-          const word = dailyGame.hiddenSolution[i];
-          console.log(`Pre-caching associations for solution step: ${word}`);
+      // We've already cached the words in the path during path building
+      // But we'll double-check to make sure
+      for (const word of path) {
+        // Only get associations if not already in cache
+        if (!associationCache[word.toLowerCase()]) {
+          console.log(`Pre-caching associations for: ${word}`);
           await getAssociations(word);
         }
       }
@@ -224,6 +299,7 @@ async function generateDailyGame() {
     dailyGame.difficulty = "medium";
     dailyGame.minExpectedSteps = 4;
     dailyGame.gameDate = new Date().toISOString().split('T')[0];
+    dailyGame.hiddenSolution = [newStartWord, "association1", "association2", "association3", newTargetWord];
     
     console.log(`Fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
     
@@ -623,12 +699,13 @@ app.get('/api/admin/api-stats', (req, res) => {
 // Get current game
 app.get('/api/game', (req, res) => {
   // Include minExpectedSteps to give players a clue about puzzle complexity
-  // Also include next refresh time
+  // Also include next refresh time and theme description
   res.json({
     gameDate: dailyGame.gameDate,
     startWord: dailyGame.startWord,
     targetWord: dailyGame.targetWord,
     theme: dailyGame.theme,
+    themeDescription: dailyGame.description || "", // Add the theme description field
     difficulty: dailyGame.difficulty,
     minExpectedSteps: dailyGame.minExpectedSteps,
     stats: dailyGame.stats,

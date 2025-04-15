@@ -218,6 +218,7 @@ function App() {
             <div className="game-theme">
               <span>Theme: {game.theme}</span>
               {game.minExpectedSteps && <span className="min-steps">Par: {game.minExpectedSteps}</span>}
+              {game.themeDescription && <div className="theme-description">{game.themeDescription}</div>}
             </div>
           )}
           <div className="refresh-timer">
