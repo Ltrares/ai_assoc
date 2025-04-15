@@ -162,8 +162,8 @@ async function generateDailyGame() {
     const startAssociations = await getAssociations(startWord);
     console.log(`Associations for ${startWord}: ${startAssociations.join(', ')}`);
     
-    // Build a path of 3-5 steps
-    const targetPathLength = Math.floor(Math.random() * 3) + 4; // 4-6 words total (3-5 steps)
+    // Build a path of 5-7 steps (making sure we have at least 4 steps)
+    const targetPathLength = Math.floor(Math.random() * 3) + 6; // 6-8 words total (5-7 steps)
     
     let currentWord = startWord;
     let attempts = 0;
@@ -196,7 +196,7 @@ async function generateDailyGame() {
     }
     
     // If we couldn't build a long enough path, use a backup approach
-    if (path.length < 3) {
+    if (path.length < 5) {
       console.log("Path too short, using alternative approach");
       
       // Request a longer path directly
@@ -206,17 +206,19 @@ async function generateDailyGame() {
         messages: [
           {
             role: "user",
-            content: `Create a 5-step word association path starting with "${startWord}" that fits the theme "${themeData.theme}".
+            content: `Create a 6-step word association path starting with "${startWord}".
             
-            Each step should be a clear, intuitive association from the previous word.
-            Return only a JSON array with the complete path: ["${startWord}", "word2", "word3", "word4", "word5", "word6"]`
+            IMPORTANT: Each step must be a CLEAR, INTUITIVE association from the previous word.
+            The path should require at least 5 steps between the start and end words.
+            
+            Return only a JSON array with the complete path: ["${startWord}", "word2", "word3", "word4", "word5", "word6", "word7"]`
           }
         ]
       });
       
       try {
         const backupPath = JSON.parse(backupPathMessage.content[0].text);
-        if (backupPath.length >= 3 && backupPath[0] === startWord) {
+        if (backupPath.length >= 6 && backupPath[0] === startWord) {
           path.length = 0; // Clear the current path
           backupPath.forEach(word => path.push(word)); // Use the backup path
           console.log(`Using backup path: ${path.join(' → ')}`);
@@ -297,9 +299,9 @@ async function generateDailyGame() {
     dailyGame.targetWord = newTargetWord;
     dailyGame.theme = "Word Connections";
     dailyGame.difficulty = "medium";
-    dailyGame.minExpectedSteps = 4;
+    dailyGame.minExpectedSteps = 5; // Minimum 5 steps now
     dailyGame.gameDate = new Date().toISOString().split('T')[0];
-    dailyGame.hiddenSolution = [newStartWord, "association1", "association2", "association3", newTargetWord];
+    dailyGame.hiddenSolution = [newStartWord, "association1", "association2", "association3", "association4", "association5", newTargetWord];
     
     console.log(`Fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
     

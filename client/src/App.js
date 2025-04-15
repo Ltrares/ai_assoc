@@ -214,13 +214,9 @@ function App() {
         <h1>Word Association Game</h1>
         <p>Find your way from <strong>{game.startWord}</strong> to <strong>{game.targetWord}</strong> using word associations!</p>
         <div className="game-info">
-          {game.theme && (
-            <div className="game-theme">
-              <span>Theme: {game.theme}</span>
-              {game.minExpectedSteps && <span className="min-steps">Par: {game.minExpectedSteps}</span>}
-              {game.themeDescription && <div className="theme-description">{game.themeDescription}</div>}
-            </div>
-          )}
+          <div className="game-theme">
+            {game.minExpectedSteps && <span className="min-steps">Par: {game.minExpectedSteps}</span>}
+          </div>
           <div className="refresh-timer">
             New puzzle available every hour
           </div>
