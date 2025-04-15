@@ -164,6 +164,66 @@ if (process.env.NODE_ENV === 'development') {
 // Other middleware
 app.use(express.json());
 
+// Middleware to track and limit API usage
+app.use((req, res, next) => {
+  // Reset daily counters if it's a new day
+  const now = new Date();
+  if (now.getDate() !== apiLimits.lastReset.getDate() || 
+      now.getMonth() !== apiLimits.lastReset.getMonth() || 
+      now.getFullYear() !== apiLimits.lastReset.getFullYear()) {
+    apiLimits.dailyCount = 0;
+    apiLimits.gamesGenerated = 0;
+    apiLimits.lastReset = now;
+    apiLimits.userRateLimit = {}; // Reset user rate limits
+    console.log('Daily API limits reset');
+  }
+  
+  // Get client IP
+  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  
+  // Initialize rate limit tracking for this IP if needed
+  if (!apiLimits.userRateLimit[clientIp]) {
+    apiLimits.userRateLimit[clientIp] = {
+      count: 0,
+      lastRequest: new Date(),
+      hourlyReset: new Date()
+    };
+  }
+  
+  // Reset hourly count if it's been more than an hour
+  if ((now - apiLimits.userRateLimit[clientIp].hourlyReset) > 3600000) { // 1 hour in ms
+    apiLimits.userRateLimit[clientIp].count = 0;
+    apiLimits.userRateLimit[clientIp].hourlyReset = now;
+  }
+  
+  // Increment counters for this request
+  apiLimits.userRateLimit[clientIp].count++;
+  apiLimits.userRateLimit[clientIp].lastRequest = now;
+  
+  // Check if we're over the per-IP rate limit
+  if (apiLimits.userRateLimit[clientIp].count > apiLimits.ipThrottling) {
+    return res.status(429).json({ 
+      error: 'Rate limit exceeded', 
+      message: 'Too many requests from your IP address. Please try again later.'
+    });
+  }
+  
+  // Check if we're over the daily API limit
+  if (req.path.includes('/api/') && apiLimits.dailyCount >= apiLimits.dailyLimit) {
+    return res.status(429).json({ 
+      error: 'API daily limit reached', 
+      message: 'The game has reached its daily usage limit. Please try again tomorrow.'
+    });
+  }
+  
+  // For metrics: increment the API call counter if this is an API call
+  if (req.path.includes('/api/')) {
+    apiLimits.dailyCount++;
+  }
+  
+  next();
+});
+
 // Add CORS pre-flight
 app.options('*', cors());
 
@@ -199,6 +259,17 @@ const associationCache = {
   'phone': ['call', 'mobile', 'apple', 'communication', 'screen'],
   'technology': ['computer', 'innovation', 'science', 'digital', 'future'],
   'screen': ['display', 'phone', 'computer', 'movie', 'touch']
+};
+
+// API usage limits
+const apiLimits = {
+  dailyLimit: parseInt(process.env.DAILY_API_LIMIT || 1000),
+  dailyCount: 0,
+  lastReset: new Date(),
+  userRateLimit: {}, // Track per IP for rate limiting
+  ipThrottling: parseInt(process.env.IP_RATE_LIMIT || 30), // Requests per IP per hour
+  gameGenerationPerDay: parseInt(process.env.GAMES_PER_DAY || 24), // How many new games to generate per day
+  gamesGenerated: 0
 };
 
 // Track cache hits and misses for monitoring
@@ -265,7 +336,7 @@ async function getAssociationsFromAI(word) {
   }
 }
 
-// Get associations with cache fallback
+// Get associations with cache fallback and API limiting
 async function getAssociations(word) {
   // Normalize the word (lowercase and trim)
   const normalizedWord = word.toLowerCase().trim();
@@ -280,6 +351,30 @@ async function getAssociations(word) {
     cacheStats.hits++;
     console.log(`Cache HIT for '${normalizedWord}' (${cacheStats.hits} hits, ${cacheStats.misses} misses)`);
     return associationCache[cacheKey];
+  }
+  
+  // API limit check - fallback to simple response if over daily limit
+  if (apiLimits.dailyCount >= apiLimits.dailyLimit) {
+    console.warn(`API daily limit reached (${apiLimits.dailyCount}/${apiLimits.dailyLimit}) - using fallback response`);
+    
+    // For common words, provide basic associations without API call
+    const commonWords = {
+      'cat': ['pet', 'animal', 'dog', 'fur', 'meow'],
+      'dog': ['pet', 'animal', 'cat', 'bark', 'loyal'],
+      'book': ['read', 'page', 'story', 'author', 'library'],
+      'tree': ['plant', 'forest', 'leaf', 'nature', 'wood'],
+      'car': ['vehicle', 'drive', 'road', 'wheel', 'transportation']
+      // Add more common words as needed
+    };
+    
+    if (commonWords[normalizedWord]) {
+      // Cache this result too
+      associationCache[normalizedWord] = commonWords[normalizedWord];
+      return commonWords[normalizedWord];
+    }
+    
+    // For words we don't have pre-defined, return a generic set
+    return ['common', 'related', 'similar', 'connected', 'associated'];
   }
   
   // Otherwise, get from AI and cache the result
@@ -300,6 +395,10 @@ async function getAssociations(word) {
         console.log(`Adding bidirectional association from '${normalizedWord}' to '${dailyGame.targetWord}'`);
       }
     }
+    
+    // Increment API usage count
+    apiLimits.dailyCount++;
+    console.log(`API call made for '${normalizedWord}' (${apiLimits.dailyCount}/${apiLimits.dailyLimit} today)`);
     
     return await getAssociationsFromAI(normalizedWord);
   } catch (error) {
@@ -340,6 +439,58 @@ app.get('/api/admin/cache-stats', (req, res) => {
   } catch (error) {
     console.error('Error in cache-stats endpoint:', error);
     res.status(500).json({ error: 'Failed to get cache stats', message: error.message });
+  }
+});
+
+// Get API usage stats (for monitoring)
+app.get('/api/admin/api-stats', (req, res) => {
+  try {
+    // Check for admin auth in production
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+    }
+    
+    // Calculate usage percentage
+    const usagePercentage = (apiLimits.dailyCount / apiLimits.dailyLimit * 100).toFixed(2);
+    
+    // Count active unique IPs
+    const uniqueIPs = Object.keys(apiLimits.userRateLimit).length;
+    
+    // Find most active IP
+    let mostActiveIP = null;
+    let highestCount = 0;
+    
+    Object.entries(apiLimits.userRateLimit).forEach(([ip, data]) => {
+      if (data.count > highestCount) {
+        highestCount = data.count;
+        mostActiveIP = ip;
+      }
+    });
+    
+    res.json({
+      dailyApiCalls: apiLimits.dailyCount,
+      dailyLimit: apiLimits.dailyLimit,
+      usagePercentage: `${usagePercentage}%`,
+      resetTime: apiLimits.lastReset,
+      nextResetTime: (() => {
+        const nextReset = new Date(apiLimits.lastReset);
+        nextReset.setDate(nextReset.getDate() + 1);
+        return nextReset;
+      })(),
+      uniqueIPs,
+      topUser: mostActiveIP ? {
+        ip: mostActiveIP.replace(/\d+$/, 'xxx'), // Redact last part of IP for privacy
+        requests: highestCount
+      } : null,
+      gamesGenerated: apiLimits.gamesGenerated,
+      gameGenerationLimit: apiLimits.gameGenerationPerDay
+    });
+  } catch (error) {
+    console.error('Error in api-stats endpoint:', error);
+    res.status(500).json({ error: 'Failed to get API stats', message: error.message });
   }
 });
 
@@ -429,6 +580,15 @@ app.get('/api/game/hint', async (req, res) => {
     const currentPath = progress ? JSON.parse(progress) : [dailyGame.startWord];
     const currentWord = currentPath[currentPath.length - 1];
     
+    // Check API usage limits before proceeding
+    if (apiLimits.dailyCount >= apiLimits.dailyLimit) {
+      console.warn(`Hint request denied due to API limit (${apiLimits.dailyCount}/${apiLimits.dailyLimit})`);
+      return res.json({ 
+        hint: "Look for common associations between words. Try a different path if you're stuck.",
+        limited: true
+      });
+    }
+    
     // Determine how far the player is along the path
     const isStartingOut = currentPath.length === 1;
     const isClose = dailyGame.hiddenSolution && dailyGame.hiddenSolution.includes(currentWord) && 
@@ -444,6 +604,10 @@ app.get('/api/game/hint', async (req, res) => {
         solutionContext = `One possible next step from here could be "${nextStepInSolution}", but don't reveal this directly.`;
       }
     }
+    
+    // Increment API usage count
+    apiLimits.dailyCount++;
+    console.log(`API call for hint (${apiLimits.dailyCount}/${apiLimits.dailyLimit} today)`);
     
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
@@ -541,15 +705,21 @@ if (process.env.NODE_ENV !== 'test') {
     .then(() => console.log('Initial game generated on server start'))
     .catch(err => console.error('Failed to generate initial game:', err));
   
-  // Schedule hourly game generation
+  // Schedule game generation (with limits)
   setInterval(async () => {
     try {
-      await generateDailyGame();
-      console.log('New game generated by hourly scheduler');
+      // Check if we've already generated the maximum number of games for today
+      if (apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
+        await generateDailyGame();
+        apiLimits.gamesGenerated++;
+        console.log(`New game generated by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
+      } else {
+        console.log(`Game generation skipped - daily limit of ${apiLimits.gameGenerationPerDay} reached`);
+      }
     } catch (error) {
       console.error('Scheduler failed to generate game:', error);
     }
-  }, 3600000); // Generate a new game every hour (3,600,000 ms)
+  }, 3600000); // Check every hour (3,600,000 ms)
 }
 
 // Serve static assets in production
