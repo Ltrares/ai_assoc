@@ -416,7 +416,8 @@ async function getAssociations(word) {
 }
 
 // Routes
-app.get('/', (req, res) => {
+// API health check endpoint
+app.get('/api/health', (req, res) => {
   res.send('Word Association Game API is running');
 });
 
