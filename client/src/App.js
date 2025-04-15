@@ -29,9 +29,69 @@ function App() {
       const timeDiff = refreshDate - now;
       
       if (timeDiff <= 0) {
-        setTimeUntilRefresh('Refreshing...');
-        // Optional: auto-refresh the page when time is up
-        window.location.reload();
+        // Set a flag to prevent multiple refresh attempts
+        if (sessionStorage.getItem('refreshing') === 'true') {
+          return;
+        }
+        
+        // Mark as refreshing in session storage
+        sessionStorage.setItem('refreshing', 'true');
+        
+        // Show refreshing message
+        setTimeUntilRefresh('Refreshing in a moment...');
+        
+        // Add a random delay between 3-15 seconds to stagger client requests
+        const randomDelay = 3000 + Math.floor(Math.random() * 12000);
+        console.log(`Scheduling refresh in ${randomDelay/1000} seconds`);
+        
+        setTimeout(() => {
+          // Update message just before reload
+          setTimeUntilRefresh('Loading new puzzle...');
+          
+          // Use a gentle approach to refresh game data instead of reloading the page
+          fetch(`${getApiUrl()}/game?refresh=true`)
+            .then(response => response.json())
+            .then(data => {
+              setGame(data);
+              setCurrentWord(data.startWord);
+              setPath([data.startWord]);
+              setBackSteps(0);
+              setTotalSteps(0);
+              setGameComplete(false);
+              setHint('');
+              
+              // Store the next refresh time
+              if (data.nextRefreshTime) {
+                setNextRefreshTime(data.nextRefreshTime);
+              }
+              
+              // Clear the refreshing flag
+              sessionStorage.removeItem('refreshing');
+              
+              // Also fetch initial associations with detailed info
+              return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
+            })
+            .then(response => response.json())
+            .then(data => {
+              setAssociations(data.associations);
+              if (data.detailed) {
+                setDetailedAssociations(data.detailed);
+              }
+              setTimeUntilRefresh('New puzzle loaded!');
+              
+              // Reset to timer display after 2 seconds
+              setTimeout(() => {
+                setTimeUntilRefresh('59m 59s');
+              }, 2000);
+            })
+            .catch(err => {
+              console.error('Error refreshing game:', err);
+              // If refresh fails, allow trying again
+              sessionStorage.removeItem('refreshing');
+              setTimeUntilRefresh('Refresh failed. Try again later.');
+            });
+        }, randomDelay);
+        
         return;
       }
       

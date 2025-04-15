@@ -203,8 +203,16 @@ app.use((req, res, next) => {
   apiLimits.userRateLimit[clientIp].count++;
   apiLimits.userRateLimit[clientIp].lastRequest = now;
   
-  // Check if we're over the per-IP rate limit
-  if (apiLimits.userRateLimit[clientIp].count > apiLimits.ipThrottling) {
+  // Check if this is a game refresh (special handling)
+  const isGameRefresh = req.query.refresh === 'true';
+  
+  // Check if we're over the per-IP rate limit (more lenient for game refreshes)
+  const rateLimit = isGameRefresh 
+    ? apiLimits.ipThrottling * 2  // Double the limit for game refreshes
+    : apiLimits.ipThrottling;
+    
+  if (apiLimits.userRateLimit[clientIp].count > rateLimit) {
+    console.log(`Rate limit exceeded for IP ${clientIp}: ${apiLimits.userRateLimit[clientIp].count} requests`);
     return res.status(429).json({ 
       error: 'Rate limit exceeded', 
       message: 'Too many requests from your IP address. Please try again later.'
@@ -270,7 +278,7 @@ const apiLimits = {
   dailyCount: 0,
   lastReset: new Date(),
   userRateLimit: {}, // Track per IP for rate limiting
-  ipThrottling: parseInt(process.env.IP_RATE_LIMIT || 30), // Requests per IP per hour
+  ipThrottling: parseInt(process.env.IP_RATE_LIMIT || 50), // Requests per IP per hour
   gameGenerationPerDay: parseInt(process.env.GAMES_PER_DAY || 24), // How many new games to generate per day
   gamesGenerated: 0
 };
