@@ -276,8 +276,13 @@ const apiLimits = {
 const cacheStats = {
   hits: 0,
   misses: 0,
-  lastCleared: new Date()
+  lastCleared: new Date(),
+  hintHits: 0,
+  hintMisses: 0
 };
+
+// Cache for hint responses to avoid repeated API calls
+const hintCache = {}; // Format: 'startWord-targetWord-currentWord': 'hint'
 
 // Generate word associations using Claude
 async function getAssociationsFromAI(word) {
@@ -364,7 +369,7 @@ async function getAssociations(word) {
       'book': ['read', 'page', 'story', 'author', 'library'],
       'tree': ['plant', 'forest', 'leaf', 'nature', 'wood'],
       'car': ['vehicle', 'drive', 'road', 'wheel', 'transportation']
-      // Add more common words as needed
+  
     };
     
     if (commonWords[normalizedWord]) {
@@ -424,17 +429,37 @@ app.get('/api/admin/cache-stats', (req, res) => {
     }
     
     const cacheSize = Object.keys(associationCache).length;
-    const hitRate = cacheStats.hits + cacheStats.misses > 0 
+    const hintCacheSize = Object.keys(hintCache).length;
+    
+    const wordHitRate = cacheStats.hits + cacheStats.misses > 0 
       ? (cacheStats.hits / (cacheStats.hits + cacheStats.misses) * 100).toFixed(2) 
       : 0;
+      
+    const hintHitRate = cacheStats.hintHits + cacheStats.hintMisses > 0 
+      ? (cacheStats.hintHits / (cacheStats.hintHits + cacheStats.hintMisses) * 100).toFixed(2) 
+      : 0;
+    
+    // Calculate API calls saved by caching
+    const totalCacheSavings = cacheStats.hits + cacheStats.hintHits;
     
     res.json({
-      cacheSize,
-      hits: cacheStats.hits,
-      misses: cacheStats.misses,
-      hitRate: `${hitRate}%`,
-      lastCleared: cacheStats.lastCleared,
-      activeWords: Object.keys(associationCache).filter(key => !key.includes('_detailed'))
+      wordAssociations: {
+        cacheSize,
+        hits: cacheStats.hits,
+        misses: cacheStats.misses,
+        hitRate: `${wordHitRate}%`,
+        activeWords: Object.keys(associationCache).filter(key => !key.includes('_detailed'))
+      },
+      hints: {
+        cacheSize: hintCacheSize,
+        hits: cacheStats.hintHits,
+        misses: cacheStats.hintMisses,
+        hitRate: `${hintHitRate}%`,
+      },
+      overall: {
+        totalCacheSavings,
+        lastCleared: cacheStats.lastCleared
+      }
     });
   } catch (error) {
     console.error('Error in cache-stats endpoint:', error);
@@ -589,6 +614,22 @@ app.get('/api/game/hint', async (req, res) => {
       });
     }
     
+    // Create a cache key based on the game and current position
+    const cacheKey = `${dailyGame.startWord}-${dailyGame.targetWord}-${currentWord}`;
+    
+    // Check if we have this hint cached
+    if (hintCache[cacheKey]) {
+      cacheStats.hintHits++;
+      console.log(`Hint cache HIT for ${cacheKey} (${cacheStats.hintHits} hits, ${cacheStats.hintMisses} misses)`);
+      return res.json({ 
+        hint: hintCache[cacheKey],
+        cached: true
+      });
+    }
+    
+    cacheStats.hintMisses++;
+    console.log(`Hint cache MISS for ${cacheKey} (${cacheStats.hintHits} hits, ${cacheStats.hintMisses} misses)`);
+    
     // Determine how far the player is along the path
     const isStartingOut = currentPath.length === 1;
     const isClose = dailyGame.hiddenSolution && dailyGame.hiddenSolution.includes(currentWord) && 
@@ -641,6 +682,10 @@ app.get('/api/game/hint', async (req, res) => {
     });
 
     const hint = message.content[0].text.trim();
+    
+    // Cache the hint for future requests
+    hintCache[cacheKey] = hint;
+    
     res.json({ hint });
   } catch (error) {
     console.error('Error generating hint:', error);
