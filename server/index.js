@@ -17,12 +17,12 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
-// Game state - using more varied defaults in case API calls fail
+// Game state - initially empty until generated
 let dailyGame = {
-  startWord: Math.random() > 0.5 ? 'sunset' : 'garden',
-  targetWord: Math.random() > 0.5 ? 'theater' : 'mountain',
+  startWord: null,
+  targetWord: null,
   associationGraph: {},
-  gameDate: new Date().toISOString().split('T')[0],
+  gameDate: null,
   stats: { 
     totalPlays: 0, 
     completions: [], 
@@ -41,7 +41,7 @@ nextGameTime.setMinutes(0);
 nextGameTime.setSeconds(0);
 nextGameTime.setMilliseconds(0);
 
-// Function to generate a new game using organic path traversal
+// Function to generate a new game using an iterative approach with AI
 async function generateDailyGame() {
   // Set next game time to the next hour
   nextGameTime = new Date();
@@ -55,18 +55,143 @@ async function generateDailyGame() {
   const currentTargetWord = dailyGame.targetWord;
   
   try {
-    console.log("Generating new game using organic path traversal...");
+    console.log("Generating new game using iterative AI approach...");
     
-    // First, generate a theme to give the puzzle context
-    // This will provide a conceptual framework for selecting start/end words
-    const themeMessage = await anthropic.messages.create({
+    // Step 1: Generate a random seed word
+    const seedWordMessage = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
       max_tokens: 100,
       messages: [
         {
           role: "user",
-          content: `Generate ONE interesting theme for a word association puzzle from these categories: 
-          pop culture, movies, music, video games, sports, nature, food, travel, technology, science, art, literature.
+          content: `Generate ONE random, interesting seed word for a word association puzzle.
+          
+          The word should:
+          1. Be a simple, common, recognizable noun or verb
+          2. Have multiple potential word associations
+          3. NOT include ${currentStartWord || 'null'} or ${currentTargetWord || 'null'} (previous game words)
+          4. Be a single word (not a phrase)
+          
+          Return ONLY the word as plain text, nothing else.`
+        }
+      ]
+    });
+
+    // Get the seed word and trim any whitespace
+    const seedWord = seedWordMessage.content[0].text.trim();
+    console.log(`Generated seed word: ${seedWord}`);
+    
+    // Create a pool of examined words, starting with our seed
+    const examinedWords = [seedWord];
+    // This will become our final path
+    const path = [seedWord];
+    
+    // Step 2: Get the initial associations and cache them
+    console.log(`Getting associations for seed word: ${seedWord}`);
+    const seedAssociations = await getAssociations(seedWord);
+    console.log(`Cached ${seedAssociations.length} associations for ${seedWord}`);
+    
+    // Step 3: Iteratively build a path by exploring associations
+    // We want to create a path of at least 5 steps (6 words)
+    const pathLength = Math.floor(Math.random() * 3) + 6; // 6-8 words total
+    
+    // We'll track the words we've examined and their associations
+    const wordNetwork = {};
+    wordNetwork[seedWord] = seedAssociations;
+    
+    // Choose some number of iterations (3-5) to build out our network
+    const iterations = Math.floor(Math.random() * 3) + 3; // 3-5 iterations
+    let currentWords = [seedWord];
+    
+    console.log(`Building word network through ${iterations} iterations...`);
+    
+    // Iteratively build the word network
+    for (let i = 0; i < iterations; i++) {
+      console.log(`Iteration ${i+1}/${iterations}`);
+      const nextWords = [];
+      
+      // For each current word, explore its associations
+      for (const word of currentWords) {
+        // Get associations if not already cached
+        if (!wordNetwork[word]) {
+          console.log(`Getting associations for ${word}`);
+          const associations = await getAssociations(word);
+          wordNetwork[word] = associations;
+          console.log(`Cached ${associations.length} associations for ${word}`);
+        }
+        
+        // Add a random selection of associations to explore next
+        const associations = wordNetwork[word];
+        const samplesToAdd = Math.min(2, associations.length);
+        
+        if (samplesToAdd > 0) {
+          // Shuffle the associations and take a couple
+          const shuffled = [...associations].sort(() => 0.5 - Math.random());
+          for (let j = 0; j < samplesToAdd; j++) {
+            if (!examinedWords.includes(shuffled[j])) {
+              nextWords.push(shuffled[j]);
+              examinedWords.push(shuffled[j]);
+            }
+          }
+        }
+      }
+      
+      // Update our current words for the next iteration
+      currentWords = nextWords;
+      console.log(`Next iteration will explore: ${currentWords.join(', ')}`);
+    }
+    
+    console.log(`Word network built with ${Object.keys(wordNetwork).length} words and their associations`);
+    
+    // Step 4: Select a target word that requires multiple steps from the seed
+    // We want to find a word that's "far" from our seed in the association network
+    console.log("Selecting a target word that requires multiple steps...");
+    
+    // Collect all the words we've seen
+    const allWordOptions = Object.keys(wordNetwork).concat(
+      ...Object.values(wordNetwork).flat()
+    ).filter(word => word !== seedWord);
+    
+    // Remove duplicates
+    const uniqueWords = [...new Set(allWordOptions)];
+    console.log(`${uniqueWords.length} unique words in our network`);
+    
+    // Request Claude to choose a good target word
+    const targetWordMessage = await anthropic.messages.create({
+      model: "claude-3-5-sonnet-20240620",
+      max_tokens: 150,
+      messages: [
+        {
+          role: "user",
+          content: `I'm creating a word association puzzle starting with the word "${seedWord}".
+          
+          Based on our word associations, I need you to select a good target word from this list:
+          ${uniqueWords.slice(0, 50).join(", ")}${uniqueWords.length > 50 ? '...' : ''}
+          
+          The target word should:
+          1. Be challenging but solvable through word associations
+          2. Require at least 4-6 steps of associations to reach from "${seedWord}"
+          3. Not be too obviously connected to "${seedWord}"
+          
+          Return ONLY the selected target word as plain text, nothing else.`
+        }
+      ]
+    });
+    
+    const targetWord = targetWordMessage.content[0].text.trim();
+    console.log(`Selected target word: ${targetWord}`);
+    
+    // Step 5: Generate a theme based on the start and target words
+    console.log("Generating theme based on start and target words...");
+    const themeMessage = await anthropic.messages.create({
+      model: "claude-3-5-sonnet-20240620",
+      max_tokens: 150,
+      messages: [
+        {
+          role: "user",
+          content: `I'm creating a word association puzzle starting with "${seedWord}" and ending with "${targetWord}".
+          
+          Create an interesting theme that connects these words and provides context for the puzzle.
           
           Return ONLY a JSON object with this format:
           {
@@ -75,11 +200,7 @@ async function generateDailyGame() {
             "difficulty": "medium|hard|expert"
           }
           
-          Examples:
-          { "theme": "Ocean to Sky", "description": "Words connecting underwater life to aerial phenomena", "difficulty": "hard" }
-          { "theme": "Farm to Table", "description": "Words linking agriculture to prepared meals", "difficulty": "medium" }
-          
-          Keep the theme concise and broadly recognizable.`
+          Themes should be conceptual frameworks that give players a hint about the connection between "${seedWord}" and "${targetWord}".`
         }
       ]
     });
@@ -93,155 +214,74 @@ async function generateDailyGame() {
     } catch (parseError) {
       console.error('Error parsing theme response:', parseError);
       console.log('Raw theme response:', themeText);
-      
-      // Use fallback theme if parsing fails
-      themeData = {
-        theme: "Word Connections",
-        description: "A journey through related concepts and ideas",
-        difficulty: "medium"
-      };
-      console.log("Using fallback theme");
+      throw new Error('Failed to parse theme response from API');
     }
     
-    // Get potential starting words based on the theme
-    const startWordMessage = await anthropic.messages.create({
+    // Step 6: Have Claude suggest a possible solution path
+    console.log("Generating a suggested solution path...");
+    const pathMessage = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 150,
+      max_tokens: 200,
       messages: [
         {
           role: "user",
-          content: `Generate 5 good starting words for a word association puzzle with the theme "${themeData.theme}".
+          content: `Create a word association path from "${seedWord}" to "${targetWord}" for our puzzle.
           
-          The words should:
-          1. Be simple, common, recognizable nouns or verbs
-          2. Be clearly connected to the theme
-          3. Have multiple potential word associations
-          4. NOT include ${currentStartWord} or ${currentTargetWord} (previous game words)
-          5. Be single words (not phrases)
+          The path should be a sequence of words where each word has a clear, intuitive association with the previous word.
+          The path should take 5-7 steps (6-8 words total including start and target).
           
-          Return ONLY a JSON array of 5 words:
-          ["word1", "word2", "word3", "word4", "word5"]`
+          Return ONLY a JSON array with the complete path:
+          ["${seedWord}", "word2", "word3", "word4", "word5", "word6", "${targetWord}"]
+          
+          Make sure the first word is "${seedWord}" and the last word is "${targetWord}".`
         }
       ]
     });
-
-    const startWordsText = startWordMessage.content[0].text;
-    let startWords;
     
+    let suggestedPath;
     try {
-      startWords = JSON.parse(startWordsText);
-      console.log(`Generated starting word options: ${startWords.join(', ')}`);
-    } catch (parseError) {
-      console.error('Error parsing start words:', parseError);
-      console.log('Raw start words response:', startWordsText);
+      suggestedPath = JSON.parse(pathMessage.content[0].text);
+      console.log(`Suggested solution path: ${suggestedPath.join(' → ')}`);
       
-      // Use fallback starting words
-      const fallbackStarts = ["ocean", "mountain", "camera", "flower", "guitar", "book", "coffee"];
-      startWords = fallbackStarts.filter(w => 
-        w !== currentStartWord.toLowerCase() && 
-        w !== currentTargetWord.toLowerCase()
-      ).slice(0, 5);
-      
-      if (startWords.length < 5) {
-        startWords = [...startWords, "sunset", "river", "pencil"].slice(0, 5);
-      }
-      console.log("Using fallback starting words");
-    }
-    
-    // Select a random starting word from the options
-    const startWord = startWords[Math.floor(Math.random() * startWords.length)];
-    console.log(`Selected starting word: ${startWord}`);
-    
-    // Now build an association path organically, using actual word associations
-    // This ensures the path is solvable using the game's own association generation
-    
-    // This will hold our path as we build it
-    const path = [startWord];
-    
-    // Get associations for the starting word
-    const startAssociations = await getAssociations(startWord);
-    console.log(`Associations for ${startWord}: ${startAssociations.join(', ')}`);
-    
-    // Build a path of 5-7 steps (making sure we have at least 4 steps)
-    const targetPathLength = Math.floor(Math.random() * 3) + 6; // 6-8 words total (5-7 steps)
-    
-    let currentWord = startWord;
-    let attempts = 0;
-    
-    while (path.length < targetPathLength && attempts < 10) {
-      attempts++;
-      
-      // Get associations for the current word
-      const associations = await getAssociations(currentWord);
-      
-      // Filter out associations that are already in our path to avoid loops
-      const validAssociations = associations.filter(word => 
-        !path.includes(word) && 
-        word !== currentStartWord.toLowerCase() && 
-        word !== currentTargetWord.toLowerCase()
-      );
-      
-      if (validAssociations.length === 0) {
-        console.log(`No valid associations for ${currentWord}, will try a different approach`);
-        break;
+      // Verify the path has the right start and end
+      if (suggestedPath[0] !== seedWord || suggestedPath[suggestedPath.length - 1] !== targetWord) {
+        console.warn("Suggested path doesn't have the correct start or end words, fixing...");
+        if (suggestedPath[0] !== seedWord) suggestedPath[0] = seedWord;
+        if (suggestedPath[suggestedPath.length - 1] !== targetWord) suggestedPath[suggestedPath.length - 1] = targetWord;
       }
       
-      // Select a random association that's not already in the path
-      const nextWord = validAssociations[Math.floor(Math.random() * validAssociations.length)];
-      path.push(nextWord);
-      console.log(`Added ${nextWord} to path. Path so far: ${path.join(' → ')}`);
-      
-      // Update current word for next iteration
-      currentWord = nextWord;
+      // Ensure the path is long enough
+      if (suggestedPath.length < 6) {
+        console.warn("Suggested path is too short, may need to be regenerated");
+        throw new Error("Suggested path is too short");
+      }
+    } catch (pathError) {
+      console.error('Error with suggested path:', pathError);
+      // Create a basic path with just start and end
+      suggestedPath = [seedWord, targetWord];
+      throw new Error("Failed to generate a valid solution path");
     }
     
-    // If we couldn't build a long enough path, use a backup approach
-    if (path.length < 5) {
-      console.log("Path too short, using alternative approach");
-      
-      // Request a longer path directly
-      const backupPathMessage = await anthropic.messages.create({
-        model: "claude-3-5-sonnet-20240620",
-        max_tokens: 150,
-        messages: [
-          {
-            role: "user",
-            content: `Create a 6-step word association path starting with "${startWord}".
-            
-            IMPORTANT: Each step must be a CLEAR, INTUITIVE association from the previous word.
-            The path should require at least 5 steps between the start and end words.
-            
-            Return only a JSON array with the complete path: ["${startWord}", "word2", "word3", "word4", "word5", "word6", "word7"]`
-          }
-        ]
-      });
-      
-      try {
-        const backupPath = JSON.parse(backupPathMessage.content[0].text);
-        if (backupPath.length >= 6 && backupPath[0] === startWord) {
-          path.length = 0; // Clear the current path
-          backupPath.forEach(word => path.push(word)); // Use the backup path
-          console.log(`Using backup path: ${path.join(' → ')}`);
-        }
-      } catch (backupError) {
-        console.error("Error parsing backup path:", backupError);
+    // Step 7: Pre-cache all associations for words in the path
+    console.log("Pre-caching associations for all path words...");
+    for (const word of suggestedPath) {
+      if (!associationCache[word.toLowerCase()]) {
+        console.log(`Pre-caching associations for: ${word}`);
+        await getAssociations(word);
       }
     }
     
-    // The target word is the last word in our path
-    const targetWord = path[path.length - 1];
-    console.log(`Organic path complete: ${path.join(' → ')}`);
-    console.log(`Start: ${startWord}, Target: ${targetWord}`);
+    console.log(`Pre-caching complete. Cache now contains ${Object.keys(associationCache).length} entries.`);
     
     // Update the game state with the generated data
     dailyGame = {
-      startWord: startWord,
+      startWord: seedWord,
       targetWord: targetWord,
       theme: themeData.theme,
       description: themeData.description || "",
-      difficulty: themeData.difficulty || "medium",
-      hiddenSolution: path, // Store the actual path we've built
-      minExpectedSteps: path.length - 1, // Actual number of steps in our path
+      difficulty: themeData.difficulty || "hard",
+      hiddenSolution: suggestedPath,
+      minExpectedSteps: suggestedPath.length - 1,
       associationGraph: {},
       gameDate: new Date().toISOString().split('T')[0],
       stats: { 
@@ -259,53 +299,11 @@ async function generateDailyGame() {
     console.log(`Minimum expected steps: ${dailyGame.minExpectedSteps}`);
     console.log(`Verified solution path: ${dailyGame.hiddenSolution.join(' → ')}`);
     
-    // Pre-cache all words in the solution path to ensure quick gameplay
-    console.log(`Pre-caching associations for all solution path words...`);
-    
-    try {
-      // We've already cached the words in the path during path building
-      // But we'll double-check to make sure
-      for (const word of path) {
-        // Only get associations if not already in cache
-        if (!associationCache[word.toLowerCase()]) {
-          console.log(`Pre-caching associations for: ${word}`);
-          await getAssociations(word);
-        }
-      }
-      
-      console.log(`Pre-caching complete. Cache now contains ${Object.keys(associationCache).length} entries.`);
-    } catch (cacheError) {
-      console.error('Error during pre-caching:', cacheError);
-      // Continue with game generation even if pre-caching fails
-    }
-    
     return dailyGame;
   } catch (error) {
     console.error('Error generating daily game:', error);
-    
-    // Create a new game with different words than the previous ones
-    const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
-    const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
-    
-    // Choose words that are different from current ones
-    let newStartWord, newTargetWord;
-    do {
-      newStartWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
-      newTargetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
-    } while (newStartWord === currentStartWord || newTargetWord === currentTargetWord);
-    
-    // Fallback to default game with new words if AI fails
-    dailyGame.startWord = newStartWord;
-    dailyGame.targetWord = newTargetWord;
-    dailyGame.theme = "Word Connections";
-    dailyGame.difficulty = "medium";
-    dailyGame.minExpectedSteps = 5; // Minimum 5 steps now
-    dailyGame.gameDate = new Date().toISOString().split('T')[0];
-    dailyGame.hiddenSolution = [newStartWord, "association1", "association2", "association3", "association4", "association5", newTargetWord];
-    
-    console.log(`Fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
-    
-    return dailyGame;
+    // No fallback - propagate the error upward
+    throw error;
   }
 };
 
@@ -499,7 +497,7 @@ async function getAssociationsFromAI(word) {
     return wordOnlyArray;
   } catch (error) {
     console.error('Error getting AI associations:', error);
-    return associationCache[word.toLowerCase().trim()] || ['error'];
+    throw error;
   }
 }
 
@@ -520,28 +518,10 @@ async function getAssociations(word) {
     return associationCache[cacheKey];
   }
   
-  // API limit check - fallback to simple response if over daily limit
+  // API limit check - no fallback, just throw an error if over limit
   if (apiLimits.dailyCount >= apiLimits.dailyLimit) {
-    console.warn(`API daily limit reached (${apiLimits.dailyCount}/${apiLimits.dailyLimit}) - using fallback response`);
-    
-    // For common words, provide basic associations without API call
-    const commonWords = {
-      'cat': ['pet', 'animal', 'dog', 'fur', 'meow'],
-      'dog': ['pet', 'animal', 'cat', 'bark', 'loyal'],
-      'book': ['read', 'page', 'story', 'author', 'library'],
-      'tree': ['plant', 'forest', 'leaf', 'nature', 'wood'],
-      'car': ['vehicle', 'drive', 'road', 'wheel', 'transportation']
-  
-    };
-    
-    if (commonWords[normalizedWord]) {
-      // Cache this result too
-      associationCache[normalizedWord] = commonWords[normalizedWord];
-      return commonWords[normalizedWord];
-    }
-    
-    // For words we don't have pre-defined, return a generic set
-    return ['common', 'related', 'similar', 'connected', 'associated'];
+    console.warn(`API daily limit reached (${apiLimits.dailyCount}/${apiLimits.dailyLimit})`);
+    throw new Error('API daily limit reached - unable to get associations');
   }
   
   // Otherwise, get from AI and cache the result
@@ -700,6 +680,15 @@ app.get('/api/admin/api-stats', (req, res) => {
 
 // Get current game
 app.get('/api/game', (req, res) => {
+  // Check if a game has been generated yet
+  if (!dailyGame.startWord || !dailyGame.targetWord) {
+    return res.status(503).json({
+      error: 'No game available',
+      message: 'No game has been generated yet. Please try again later.',
+      nextRefreshTime: nextGameTime.toISOString()
+    });
+  }
+  
   // Include minExpectedSteps to give players a clue about puzzle complexity
   // Also include next refresh time and theme description
   res.json({
@@ -718,6 +707,14 @@ app.get('/api/game', (req, res) => {
 // Get word associations
 app.get('/api/associations/:word', async (req, res) => {
   try {
+    // Check if a game has been generated yet
+    if (!dailyGame.startWord || !dailyGame.targetWord) {
+      return res.status(503).json({
+        error: 'No game available',
+        message: 'No game has been generated yet. Please try again later.'
+      });
+    }
+    
     const word = req.params.word.toLowerCase().trim();
     const detailed = req.query.detailed === 'true';
     
@@ -749,6 +746,14 @@ app.get('/api/associations/:word', async (req, res) => {
 
 // Submit a completed game
 app.post('/api/game/complete', (req, res) => {
+  // Check if a game has been generated yet
+  if (!dailyGame.startWord || !dailyGame.targetWord) {
+    return res.status(503).json({
+      error: 'No game available',
+      message: 'No game has been generated yet. Please try again later.'
+    });
+  }
+  
   const { steps, backSteps = 0, totalSteps = steps } = req.body;
   
   if (!steps || typeof steps !== 'number') {
@@ -781,6 +786,14 @@ app.post('/api/game/complete', (req, res) => {
 // Get a hint for the current game
 app.get('/api/game/hint', async (req, res) => {
   try {
+    // Check if a game has been generated yet
+    if (!dailyGame.startWord || !dailyGame.targetWord) {
+      return res.status(503).json({
+        error: 'No game available',
+        message: 'No game has been generated yet. Please try again later.'
+      });
+    }
+    
     const { progress } = req.query;
     const currentPath = progress ? JSON.parse(progress) : [dailyGame.startWord];
     const currentWord = currentPath[currentPath.length - 1];
@@ -788,9 +801,9 @@ app.get('/api/game/hint', async (req, res) => {
     // Check API usage limits before proceeding
     if (apiLimits.dailyCount >= apiLimits.dailyLimit) {
       console.warn(`Hint request denied due to API limit (${apiLimits.dailyCount}/${apiLimits.dailyLimit})`);
-      return res.json({ 
-        hint: "Look for common associations between words. Try a different path if you're stuck.",
-        limited: true
+      return res.status(429).json({ 
+        error: 'API limit reached',
+        message: 'Daily API usage limit reached. No hint available until limit resets.'
       });
     }
     
@@ -970,19 +983,8 @@ if (process.env.NODE_ENV !== 'test') {
       }
     } catch (error) {
       console.error('Scheduler failed to generate game:', error);
-      
-      // Even if there's an error, try to create a new game with random words
-      try {
-        const alternativeStarts = ["sunset", "guitar", "river", "camera", "bicycle"];
-        const alternativeTargets = ["theater", "mountain", "festival", "museum", "carnival"];
-        
-        dailyGame.startWord = alternativeStarts[Math.floor(Math.random() * alternativeStarts.length)];
-        dailyGame.targetWord = alternativeTargets[Math.floor(Math.random() * alternativeTargets.length)];
-        
-        console.log(`Emergency fallback game created: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
-      } catch (fallbackError) {
-        console.error('Even fallback generation failed:', fallbackError);
-      }
+      // No fallback - if game generation fails, we won't have a game
+      console.log('No game available until next successful generation attempt');
     }
   }, 3600000); // Check every hour (3,600,000 ms)
 }
