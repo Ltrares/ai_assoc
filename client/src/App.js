@@ -15,11 +15,46 @@ function App() {
   const [hint, setHint] = useState('');
   const [showHints, setShowHints] = useState(false);
   const [loadingAssociations, setLoadingAssociations] = useState(false);
+  const [isRestoringProgress, setIsRestoringProgress] = useState(false); // Flag for restoring progress
+  const [notification, setNotification] = useState(null); // For showing temporary notifications
 
   // Get base API URL based on environment
   const getApiUrl = () => {
     // In production, use relative URLs
     return '/api';
+  };
+
+  // Function to save progress to localStorage
+  const saveProgress = (gameData, currentPath, currBackSteps, currTotalSteps) => {
+    if (!gameData || currentPath.length <= 1) return; // Don't save if we're just at the start
+
+    const progressData = {
+      gameDate: gameData.gameDate,
+      path: currentPath,
+      backSteps: currBackSteps,
+      totalSteps: currTotalSteps,
+      timestamp: new Date().toISOString()
+    };
+    
+    localStorage.setItem('wordGameProgress', JSON.stringify(progressData));
+    
+    // Show a subtle notification that progress is saved
+    if (!isRestoringProgress) {
+      showNotification('Progress saved', 2000);
+    }
+  };
+  
+  // Function to clear saved progress
+  const clearSavedProgress = () => {
+    localStorage.removeItem('wordGameProgress');
+  };
+  
+  // Function to show a temporary notification
+  const showNotification = (message, duration = 3000) => {
+    setNotification(message);
+    setTimeout(() => {
+      setNotification(null);
+    }, duration);
   };
 
   // Fetch game data on component mount
@@ -28,14 +63,66 @@ function App() {
       .then(response => response.json())
       .then(data => {
         setGame(data);
-        setCurrentWord(data.startWord);
-        setPath([data.startWord]);
-        setBackSteps(0);
-        setTotalSteps(0);
-        setLoading(false);
         
-        // Also fetch initial associations with detailed info
-        return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
+        // Check if there's saved progress for this game
+        const savedProgress = localStorage.getItem('wordGameProgress');
+        
+        if (savedProgress) {
+          try {
+            const progressData = JSON.parse(savedProgress);
+            
+            // Only restore if it's for the current day's puzzle
+            if (progressData.gameDate === data.gameDate && progressData.path.length > 1) {
+              console.log('Restoring saved progress');
+              // Show notification that progress was restored
+              showNotification('Progress restored', 3000);
+              setIsRestoringProgress(true);
+              setPath(progressData.path);
+              setCurrentWord(progressData.path[progressData.path.length - 1]);
+              setBackSteps(progressData.backSteps || 0);
+              setTotalSteps(progressData.totalSteps || 0);
+              
+              // Fetch associations for the last word in the restored path
+              const lastWord = progressData.path[progressData.path.length - 1];
+              setLoading(false);
+              
+              // Get associations for the current word
+              return fetch(`${getApiUrl()}/associations/${lastWord}?detailed=true`);
+            } else {
+              // If the saved progress is for a different game or just the start, clear it
+              clearSavedProgress();
+              setCurrentWord(data.startWord);
+              setPath([data.startWord]);
+              setBackSteps(0);
+              setTotalSteps(0);
+              setLoading(false);
+              
+              // Fetch associations for the starting word
+              return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
+            }
+          } catch (e) {
+            console.error('Error parsing saved progress:', e);
+            clearSavedProgress();
+            setCurrentWord(data.startWord);
+            setPath([data.startWord]);
+            setBackSteps(0);
+            setTotalSteps(0);
+            setLoading(false);
+            
+            // Fetch associations for the starting word
+            return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
+          }
+        } else {
+          // No saved progress, start fresh
+          setCurrentWord(data.startWord);
+          setPath([data.startWord]);
+          setBackSteps(0);
+          setTotalSteps(0);
+          setLoading(false);
+          
+          // Fetch associations for the starting word
+          return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
+        }
       })
       .then(response => response.json())
       .then(data => {
@@ -43,11 +130,13 @@ function App() {
         if (data.detailed) {
           setDetailedAssociations(data.detailed);
         }
+        setIsRestoringProgress(false);
       })
       .catch(err => {
         console.error('Error fetching data:', err);
         setError('Failed to load game data. Please try again later.');
         setLoading(false);
+        setIsRestoringProgress(false);
       });
   }, []);
 
@@ -72,6 +161,9 @@ function App() {
     if (word.toLowerCase().trim() === game.targetWord.toLowerCase().trim()) {
       setGameComplete(true);
       setLoadingAssociations(false); // Reset loading state
+      
+      // Clear saved progress when the game is completed
+      clearSavedProgress();
       
       // Submit result to server with total steps (including back steps)
       fetch(`${getApiUrl()}/game/complete`, {
@@ -103,6 +195,9 @@ function App() {
           }
           setHint(''); // Clear any existing hint
           setLoadingAssociations(false); // Reset loading state
+          
+          // Save progress to localStorage
+          saveProgress(game, newPath, backSteps, newTotalSteps);
         })
         .catch(err => {
           console.error('Error fetching associations:', err);
@@ -174,6 +269,9 @@ function App() {
         }
         setHint(''); // Clear any existing hint
         setLoadingAssociations(false); // Reset loading state
+        
+        // Save updated progress to localStorage
+        saveProgress(game, newPath, backSteps + 1, totalSteps + 1);
       })
       .catch(err => {
         console.error('Error fetching associations:', err);
@@ -211,6 +309,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {notification && (
+          <div className="notification">
+            {notification}
+          </div>
+        )}
         <h1>Word Association Game</h1>
         <p>Find your way from <strong>{game.startWord}</strong> to <strong>{game.targetWord}</strong> using word associations!</p>
         <div className="game-info">
