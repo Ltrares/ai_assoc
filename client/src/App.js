@@ -282,6 +282,11 @@ function App() {
                 New puzzle available every hour
               </div>
             </div>
+            <div className="win-footer">
+              <a href="/about">About</a>
+              <span>|</span>
+              <a href="https://github.com/Ltrares/ai_assoc" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
           </div>
         ) : (
           <>
@@ -325,9 +330,6 @@ function App() {
               >
                 {showHints ? 'Hide Details' : 'Show Details'}
               </button>
-              <div className="next-puzzle-timer">
-                New puzzle available every hour
-              </div>
             </div>
             
             {hint && (

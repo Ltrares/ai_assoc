@@ -495,7 +495,7 @@ button:disabled, button.used {
 }
 
 /* Footer styles */
-.footer {
+.footer, .win-footer {
   margin-top: 2rem;
   padding: 1rem 0;
   font-size: 0.8rem;
@@ -505,7 +505,13 @@ button:disabled, button.used {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer a {
+.win-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.footer a, .win-footer a {
   color: #61dafb;
   text-decoration: none;
   margin: 0 0.5rem;
@@ -514,7 +520,7 @@ button:disabled, button.used {
   transition: background-color 0.2s;
 }
 
-.footer a:hover {
+.footer a:hover, .win-footer a:hover {
   text-decoration: underline;
   background-color: rgba(97, 218, 251, 0.1);
 }
