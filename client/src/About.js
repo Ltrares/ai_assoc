@@ -46,6 +46,7 @@ function About() {
             <p>
               This game is powered by Claude AI from Anthropic, which generates the word associations and hints.
               The frontend is built with React, while the backend uses Node.js and Express.
+              The entire codebase was generated interactively with Claude Code.
             </p>
           </section>
           
