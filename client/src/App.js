@@ -253,10 +253,15 @@ function App() {
       }
     }, "8n");
     
-    // Start the transport
+    // Start the transport - but only if music is enabled
     if (musicEnabled) {
+      // Need to initialize the audio context with a user gesture, so we'll start it
+      // conditionally in toggleMusic() instead of here for first-time users
       Tone.Transport.start();
       sequenceRef.current.start(0);
+    } else {
+      // Make sure transport is stopped when music is disabled
+      Tone.Transport.stop();
     }
     
     // Cleanup function
@@ -288,13 +293,22 @@ function App() {
     localStorage.setItem('musicEnabled', newState);
     
     if (newState) {
-      // Start music
-      Tone.start();
-      Tone.Transport.start();
-      sequenceRef.current.start(0);
+      // Start music - this first Tone.start() call is critical
+      // as it starts the audio context with a user gesture
+      Tone.start().then(() => {
+        Tone.Transport.start();
+        if (sequenceRef.current) {
+          // Ensure sequence is started only if it exists
+          sequenceRef.current.start(0);
+        }
+      }).catch(err => {
+        console.error("Error starting audio:", err);
+      });
     } else {
-      // Stop music
-      sequenceRef.current.stop();
+      // Stop music safely with checks
+      if (sequenceRef.current) {
+        sequenceRef.current.stop();
+      }
       Tone.Transport.stop();
     }
   };
