@@ -78,49 +78,79 @@ function App() {
     }).toDestination();
     synthRef.current.volume.value = -20; // Lower volume
     
-    // Multiple chord progressions for variety
-    const chordProgressions = [
-      // C major → A minor → F major → G major (I-vi-IV-V)
+    // Separate synth for melody
+    const melodySynthRef = new Tone.Synth({
+      oscillator: {
+        type: "sine"
+      },
+      envelope: {
+        attack: 0.1,
+        decay: 0.2,
+        sustain: 0.4,
+        release: 1.5
+      }
+    }).toDestination();
+    melodySynthRef.volume.value = -25; // Even softer melody
+    
+    // G minor → Eb major → Bb major → F major progression (more emotional/contemplative)
+    const chordPattern = [
+      // G minor (i)
       [
-        [
-          { note: "C3", duration: "8n" },
-          { note: "E3", duration: "8n" },
-          { note: "G3", duration: "8n" },
-          { note: "C4", duration: "8n" },
-          { note: "G3", duration: "8n" },
-          { note: "E3", duration: "8n" }
-        ],
-        [
-          { note: "A2", duration: "8n" },
-          { note: "C3", duration: "8n" },
-          { note: "E3", duration: "8n" },
-          { note: "A3", duration: "8n" },
-          { note: "E3", duration: "8n" },
-          { note: "C3", duration: "8n" }
-        ],
-        [
-          { note: "F2", duration: "8n" },
-          { note: "A2", duration: "8n" },
-          { note: "C3", duration: "8n" },
-          { note: "F3", duration: "8n" },
-          { note: "C3", duration: "8n" },
-          { note: "A2", duration: "8n" }
-        ],
-        [
-          { note: "G2", duration: "8n" },
-          { note: "B2", duration: "8n" },
-          { note: "D3", duration: "8n" },
-          { note: "G3", duration: "8n" },
-          { note: "D3", duration: "8n" },
-          { note: "B2", duration: "8n" }
-        ]
+        { note: "G2", duration: "8n" },
+        { note: "Bb2", duration: "8n" },
+        { note: "D3", duration: "8n" },
+        { note: "G3", duration: "8n" },
+        { note: "D3", duration: "8n" },
+        { note: "Bb2", duration: "8n" }
+      ],
+      // Eb major (VI)
+      [
+        { note: "Eb2", duration: "8n" },
+        { note: "G2", duration: "8n" },
+        { note: "Bb2", duration: "8n" },
+        { note: "Eb3", duration: "8n" },
+        { note: "Bb2", duration: "8n" },
+        { note: "G2", duration: "8n" }
+      ],
+      // Bb major (III)
+      [
+        { note: "Bb2", duration: "8n" },
+        { note: "D3", duration: "8n" },
+        { note: "F3", duration: "8n" },
+        { note: "Bb3", duration: "8n" },
+        { note: "F3", duration: "8n" },
+        { note: "D3", duration: "8n" }
+      ],
+      // F major (VII)
+      [
+        { note: "F2", duration: "8n" },
+        { note: "A2", duration: "8n" },
+        { note: "C3", duration: "8n" },
+        { note: "F3", duration: "8n" },
+        { note: "C3", duration: "8n" },
+        { note: "A2", duration: "8n" }
       ]
     ];
     
-    // Pick a random progression
-    const selectedProgression = chordProgressions[0];
+    // Simple pentatonic-based melody that works with the chord progression
+    const melodyPattern = [
+      { note: "G4", time: 0, duration: "4n" },
+      { note: "Bb4", time: 2, duration: "4n" },
+      { note: "C5", time: 4, duration: "4n" },
+      { note: "D5", time: 6, duration: "8n" },
+      { note: "Bb4", time: 7, duration: "4n" },
+      { note: "G4", time: 10, duration: "2n" },
+      { note: "F4", time: 14, duration: "4n" },
+      { note: "Bb4", time: 16, duration: "4n" },
+      { note: "C5", time: 20, duration: "4n" },
+      { note: "D5", time: 24, duration: "2n" },
+      { note: null, time: 28, duration: "2n" } // Rest
+    ];
+    
     let currentChordIndex = 0;
     let noteIndex = 0;
+    let melodyIndex = 0;
+    let melodyCounter = 0;
     
     // Set initial tempo
     Tone.Transport.bpm.value = 70; // Slower default tempo
@@ -129,7 +159,7 @@ function App() {
     sequenceRef.current = new Tone.Loop((time) => {
       if (musicEnabled) {
         // Get current chord's note
-        const currentChord = selectedProgression[currentChordIndex];
+        const currentChord = chordPattern[currentChordIndex];
         const note = currentChord[noteIndex];
         
         // Play the note
@@ -140,7 +170,25 @@ function App() {
         
         // If we've completed one arpeggio cycle, maybe change chords
         if (noteIndex === 0) {
-          currentChordIndex = (currentChordIndex + 1) % selectedProgression.length;
+          currentChordIndex = (currentChordIndex + 1) % chordPattern.length;
+        }
+        
+        // Handle melody playback - separate from chord timing
+        melodyCounter++;
+        
+        // Check if we need to play a melody note
+        for (let i = 0; i < melodyPattern.length; i++) {
+          const melodyNote = melodyPattern[i];
+          if (melodyNote.time === melodyCounter % 32) { // 32-beat pattern
+            if (melodyNote.note) { // Only play if not a rest
+              melodySynthRef.triggerAttackRelease(
+                melodyNote.note, 
+                melodyNote.duration, 
+                time
+              );
+            }
+            break;
+          }
         }
       }
     }, "8n");
@@ -160,6 +208,9 @@ function App() {
       Tone.Transport.stop();
       if (synthRef.current) {
         synthRef.current.dispose();
+      }
+      if (melodySynthRef) {
+        melodySynthRef.dispose();
       }
     };
   }, [musicEnabled]);
