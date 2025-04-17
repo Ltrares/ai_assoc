@@ -203,8 +203,46 @@ async function generatePuzzle() {
       }
     }
     
-    // The last word in the path is our target word
-    const targetWord = path[path.length - 1];
+    // Get the last word in the path as our target word candidate
+    let targetWord = path[path.length - 1];
+    console.log(`Initial target word candidate: ${targetWord}`);
+    
+    // Check if the target word appears as an association in any previous steps
+    // This is a key improvement to prevent confusing puzzles
+    const allPreviousAssociations = [];
+    for (let i = 0; i < path.length - 1; i++) {
+      const word = path[i];
+      if (associationCache[word.toLowerCase().trim()]) {
+        allPreviousAssociations.push(...associationCache[word.toLowerCase().trim()]);
+      }
+    }
+    
+    // If target word appears in previous associations, remove it from those lists
+    if (allPreviousAssociations.some(word => word.toLowerCase().trim() === targetWord.toLowerCase().trim())) {
+      console.log(`⚠️ Target word "${targetWord}" appears in previous associations. Removing it from association lists.`);
+      
+      // Remove the target word from all association lists to prevent confusion
+      for (let i = 0; i < path.length - 1; i++) {
+        const word = path[i];
+        const key = word.toLowerCase().trim();
+        
+        if (associationCache[key]) {
+          associationCache[key] = associationCache[key].filter(
+            assoc => assoc.toLowerCase().trim() !== targetWord.toLowerCase().trim()
+          );
+          console.log(`Removed "${targetWord}" from associations of "${word}"`);
+        }
+        
+        // Also remove from detailed cache
+        const detailedKey = `${key}_detailed`;
+        if (associationCache[detailedKey]) {
+          associationCache[detailedKey] = associationCache[detailedKey].filter(
+            item => item.word.toLowerCase().trim() !== targetWord.toLowerCase().trim()
+          );
+        }
+      }
+    }
+    
     console.log(`Final path: ${path.join(' → ')}`);
     console.log(`Target word: ${targetWord}`);
     
@@ -439,7 +477,7 @@ async function getAssociationsFromAI(word) {
       messages: [
         {
           role: "user",
-          content: `Give me 6-8 common word associations for "${word}" that most people would naturally think of.
+          content: `Give me 8-10 common word associations for "${word}" that most people would naturally think of.
           
           Return a JSON array with EXACTLY this format:
           [
