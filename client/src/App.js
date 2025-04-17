@@ -92,6 +92,35 @@ function App() {
     }).toDestination();
     melodySynthRef.volume.value = -25; // Even softer melody
     
+    // Simple percussion using noise and filters for gentle beats
+    const percSynthHigh = new Tone.NoiseSynth({
+      noise: {
+        type: "pink",
+        playbackRate: 3
+      },
+      envelope: {
+        attack: 0.001,
+        decay: 0.1,
+        sustain: 0.01,
+        release: 0.2
+      }
+    }).toDestination();
+    percSynthHigh.volume.value = -30; // Very quiet hi-hat sound
+    
+    const percSynthLow = new Tone.NoiseSynth({
+      noise: {
+        type: "brown",
+        playbackRate: 0.8
+      },
+      envelope: {
+        attack: 0.005,
+        decay: 0.1,
+        sustain: 0.01,
+        release: 0.4
+      }
+    }).toDestination();
+    percSynthLow.volume.value = -28; // Soft kick drum sound
+    
     // G minor → Eb major → Bb major → F major progression (more emotional/contemplative)
     const chordPattern = [
       // G minor (i)
@@ -147,10 +176,22 @@ function App() {
       { note: null, time: 28, duration: "2n" } // Rest
     ];
     
+    // Percussion pattern - simple 4/4 pattern with variations
+    const percussionPattern = [
+      // Beat positions (0-15 for a full bar at 16th notes)
+      // Format: [position, type] where type is 'high' or 'low'
+      [0, 'low'],   // Kick on the 1
+      [4, 'high'],  // Hi-hat on the & of 2
+      [8, 'low'],   // Kick on the 3
+      [12, 'high'], // Hi-hat on the & of 4
+      [14, 'high']  // Additional hi-hat for variation
+    ];
+    
     let currentChordIndex = 0;
     let noteIndex = 0;
     let melodyIndex = 0;
     let melodyCounter = 0;
+    let percCounter = 0;
     
     // Set initial tempo
     Tone.Transport.bpm.value = 70; // Slower default tempo
@@ -190,6 +231,20 @@ function App() {
             break;
           }
         }
+        
+        // Handle percussion playback
+        percCounter = (percCounter + 1) % 16; // 16 steps per bar (16th notes)
+        
+        // Check if we have a percussion hit on this step
+        percussionPattern.forEach(([position, type]) => {
+          if (percCounter === position) {
+            if (type === 'high') {
+              percSynthHigh.triggerAttackRelease('16n', time);
+            } else if (type === 'low') {
+              percSynthLow.triggerAttackRelease('8n', time);
+            }
+          }
+        });
       }
     }, "8n");
     
@@ -211,6 +266,12 @@ function App() {
       }
       if (melodySynthRef) {
         melodySynthRef.dispose();
+      }
+      if (percSynthHigh) {
+        percSynthHigh.dispose();
+      }
+      if (percSynthLow) {
+        percSynthLow.dispose();
       }
     };
   }, [musicEnabled]);
