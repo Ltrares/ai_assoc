@@ -64,26 +64,83 @@ function App() {
   // Fetch game data on component mount
   // Initialize synth and sequences
   useEffect(() => {
-    // Create a simple polyphonic synth
-    synthRef.current = new Tone.PolySynth(Tone.Synth).toDestination();
-    synthRef.current.volume.value = -15; // Set default volume 
+    // Create a simple polyphonic synth with square wave for retro sound
+    synthRef.current = new Tone.PolySynth(Tone.Synth, {
+      oscillator: {
+        type: "square"
+      },
+      envelope: {
+        attack: 0.02,
+        decay: 0.1,
+        sustain: 0.3,
+        release: 0.8
+      }
+    }).toDestination();
+    synthRef.current.volume.value = -15; // Set default volume
     
-    // Set up background sequence pattern (low-fi style)
-    const backgroundSequence = [
-      { note: "C3", duration: "8n" },
-      { note: "E3", duration: "8n" },
-      { note: "G3", duration: "8n" },
-      { note: "B3", duration: "8n" },
-      { note: "G3", duration: "8n" },
-      { note: "E3", duration: "8n" }
+    // Multiple chord progressions for variety
+    const chordProgressions = [
+      // C major → A minor → F major → G major (I-vi-IV-V)
+      [
+        [
+          { note: "C3", duration: "8n" },
+          { note: "E3", duration: "8n" },
+          { note: "G3", duration: "8n" },
+          { note: "C4", duration: "8n" },
+          { note: "G3", duration: "8n" },
+          { note: "E3", duration: "8n" }
+        ],
+        [
+          { note: "A2", duration: "8n" },
+          { note: "C3", duration: "8n" },
+          { note: "E3", duration: "8n" },
+          { note: "A3", duration: "8n" },
+          { note: "E3", duration: "8n" },
+          { note: "C3", duration: "8n" }
+        ],
+        [
+          { note: "F2", duration: "8n" },
+          { note: "A2", duration: "8n" },
+          { note: "C3", duration: "8n" },
+          { note: "F3", duration: "8n" },
+          { note: "C3", duration: "8n" },
+          { note: "A2", duration: "8n" }
+        ],
+        [
+          { note: "G2", duration: "8n" },
+          { note: "B2", duration: "8n" },
+          { note: "D3", duration: "8n" },
+          { note: "G3", duration: "8n" },
+          { note: "D3", duration: "8n" },
+          { note: "B2", duration: "8n" }
+        ]
+      ]
     ];
     
-    // Create a sequence
-    sequenceRef.current = new Tone.Sequence((time, note) => {
+    // Pick a random progression
+    const selectedProgression = chordProgressions[0];
+    let currentChordIndex = 0;
+    let noteIndex = 0;
+    
+    // Create a sequence that changes chords
+    sequenceRef.current = new Tone.Loop((time) => {
       if (musicEnabled) {
+        // Get current chord's note
+        const currentChord = selectedProgression[currentChordIndex];
+        const note = currentChord[noteIndex];
+        
+        // Play the note
         synthRef.current.triggerAttackRelease(note.note, note.duration, time);
+        
+        // Move to next note in the arpeggio
+        noteIndex = (noteIndex + 1) % currentChord.length;
+        
+        // If we've completed one arpeggio cycle, maybe change chords
+        if (noteIndex === 0) {
+          currentChordIndex = (currentChordIndex + 1) % selectedProgression.length;
+        }
       }
-    }, backgroundSequence, "4n");
+    }, "8n");
     
     // Start the transport
     if (musicEnabled) {
@@ -122,14 +179,36 @@ function App() {
     }
   };
   
+  // Adjust tempo based on game progress
+  useEffect(() => {
+    if (musicEnabled && path.length > 2 && !gameComplete) {
+      // Gradually increase tempo as player makes progress
+      const maxSteps = game?.minExpectedSteps || 10;
+      const currentProgress = path.length - 1; // Subtract start word
+      const progressRatio = Math.min(currentProgress / maxSteps, 1);
+      
+      // Start at 90 BPM, increase to 110 BPM
+      const newTempo = 90 + (progressRatio * 20);
+      Tone.Transport.bpm.value = newTempo;
+    }
+  }, [path.length, musicEnabled, gameComplete, game]);
+  
   // Play success jingle when game is completed
   useEffect(() => {
     if (gameComplete && musicEnabled) {
-      // Success jingle
-      const successNotes = ["C4", "E4", "G4", "C5"];
+      // Success jingle - more elaborate with delay
+      const successNotes = [
+        { note: "C4", time: 0 },
+        { note: "E4", time: 0.2 },
+        { note: "G4", time: 0.4 },
+        { note: "C5", time: 0.6 },
+        { note: "G4", time: 0.8 },
+        { note: "C5", time: 1.0 },
+        { note: "E5", time: 1.2 }
+      ];
       
-      successNotes.forEach((note, index) => {
-        synthRef.current.triggerAttackRelease(note, "8n", Tone.now() + index * 0.2);
+      successNotes.forEach(({ note, time }) => {
+        synthRef.current.triggerAttackRelease(note, "8n", Tone.now() + time);
       });
     }
   }, [gameComplete, musicEnabled]);
@@ -137,7 +216,11 @@ function App() {
   // Play note when selecting a word
   const playSelectNote = () => {
     if (musicEnabled) {
+      // Play two-note "selection" sound
       synthRef.current.triggerAttackRelease("G4", "16n");
+      setTimeout(() => {
+        synthRef.current.triggerAttackRelease("C5", "16n");
+      }, 100);
     }
   };
   
@@ -299,6 +382,14 @@ function App() {
     // Don't allow hint request if already loading
     if (loadingAssociations) return;
     
+    // Play "hint" sound effect
+    if (musicEnabled) {
+      synthRef.current.triggerAttackRelease("E5", "16n");
+      setTimeout(() => {
+        synthRef.current.triggerAttackRelease("G5", "16n");
+      }, 150);
+    }
+    
     // Set loading state
     setLoadingAssociations(true);
     
@@ -329,6 +420,14 @@ function App() {
   const handleGoBack = () => {
     // Check if we can go back (at least 2 items in path) and not loading
     if (path.length < 2 || gameComplete || loadingAssociations) return;
+    
+    // Play "back" sound effect
+    if (musicEnabled) {
+      synthRef.current.triggerAttackRelease("D4", "16n");
+      setTimeout(() => {
+        synthRef.current.triggerAttackRelease("A3", "16n");
+      }, 100);
+    }
     
     // Set loading state
     setLoadingAssociations(true);
