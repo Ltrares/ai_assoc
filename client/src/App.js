@@ -64,19 +64,19 @@ function App() {
   // Fetch game data on component mount
   // Initialize synth and sequences
   useEffect(() => {
-    // Create a simple polyphonic synth with square wave for retro sound
+    // Create a simple polyphonic synth with triangle wave for softer sound
     synthRef.current = new Tone.PolySynth(Tone.Synth, {
       oscillator: {
-        type: "square"
+        type: "triangle"
       },
       envelope: {
-        attack: 0.02,
+        attack: 0.05,
         decay: 0.1,
-        sustain: 0.3,
-        release: 0.8
+        sustain: 0.4,
+        release: 1.2
       }
     }).toDestination();
-    synthRef.current.volume.value = -15; // Set default volume
+    synthRef.current.volume.value = -20; // Lower volume
     
     // Multiple chord progressions for variety
     const chordProgressions = [
@@ -121,6 +121,9 @@ function App() {
     const selectedProgression = chordProgressions[0];
     let currentChordIndex = 0;
     let noteIndex = 0;
+    
+    // Set initial tempo
+    Tone.Transport.bpm.value = 70; // Slower default tempo
     
     // Create a sequence that changes chords
     sequenceRef.current = new Tone.Loop((time) => {
@@ -187,8 +190,8 @@ function App() {
       const currentProgress = path.length - 1; // Subtract start word
       const progressRatio = Math.min(currentProgress / maxSteps, 1);
       
-      // Start at 90 BPM, increase to 110 BPM
-      const newTempo = 90 + (progressRatio * 20);
+      // Start at 70 BPM, increase to 85 BPM (slower overall)
+      const newTempo = 70 + (progressRatio * 15);
       Tone.Transport.bpm.value = newTempo;
     }
   }, [path.length, musicEnabled, gameComplete, game]);
