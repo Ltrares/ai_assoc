@@ -78,8 +78,8 @@ function App() {
     }).toDestination();
     synthRef.current.volume.value = -20; // Lower volume
     
-    // Separate synth for melody
-    const melodySynthRef = new Tone.Synth({
+    // Separate synth for melody - store as ref to avoid recreation issues
+    const melodySynth = new Tone.Synth({
       oscillator: {
         type: "sine"
       },
@@ -90,10 +90,13 @@ function App() {
         release: 1.5
       }
     }).toDestination();
-    melodySynthRef.volume.value = -25; // Even softer melody
+    melodySynth.volume.value = -25; // Even softer melody
+    // Store in a ref for proper cleanup
+    const melodySynthRef = melodySynth;
     
-    // Simple percussion using noise and filters for gentle beats
-    const percSynthHigh = new Tone.NoiseSynth({
+    // Simple percussion using noise and filters for gentle beats - store in local variables
+    // for clear scoping and memory management
+    const highPerc = new Tone.NoiseSynth({
       noise: {
         type: "pink",
         playbackRate: 3
@@ -105,9 +108,10 @@ function App() {
         release: 0.2
       }
     }).toDestination();
-    percSynthHigh.volume.value = -30; // Very quiet hi-hat sound
+    highPerc.volume.value = -30; // Very quiet hi-hat sound
+    const percSynthHigh = highPerc; // Reference for cleanup
     
-    const percSynthLow = new Tone.NoiseSynth({
+    const lowPerc = new Tone.NoiseSynth({
       noise: {
         type: "brown",
         playbackRate: 0.8
@@ -119,7 +123,8 @@ function App() {
         release: 0.4
       }
     }).toDestination();
-    percSynthLow.volume.value = -28; // Soft kick drum sound
+    lowPerc.volume.value = -28; // Soft kick drum sound
+    const percSynthLow = lowPerc; // Reference for cleanup
     
     // G minor → Eb major → Bb major → F major progression (more emotional/contemplative)
     const chordPattern = [
@@ -760,16 +765,18 @@ function App() {
                 </div>
               ) : (
                 <div className={`word-buttons ${showHints ? 'with-details' : ''}`}>
-                  {associations.map((word, index) => {
+                  {associations && associations.length > 0 ? associations.map((word, index) => {
                     // Find the detailed association if available
-                    const details = detailedAssociations.find(d => d.word === word);
+                    const details = detailedAssociations && detailedAssociations.length > 0 
+                      ? detailedAssociations.find(d => d.word === word)
+                      : null;
                     
                     return (
                       <div key={index} className="word-option">
                         <button 
                           onClick={() => handleWordSelect(word)}
-                          disabled={path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim()) || loadingAssociations}
-                          className={path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim()) ? 'used' : ''}
+                          disabled={(path && path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim())) || loadingAssociations}
+                          className={(path && path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim())) ? 'used' : ''}
                         >
                           {word}
                         </button>
@@ -781,7 +788,9 @@ function App() {
                         )}
                       </div>
                     );
-                  })}
+                  }) : (
+                    <div className="no-associations">No associations available</div>
+                  )}
                 </div>
               )}
             </div>
