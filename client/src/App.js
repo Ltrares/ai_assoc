@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import * as Tone from 'tone';
 import './App.css';
 
@@ -375,11 +375,53 @@ function App() {
   };
   
   // Fetch game data on component mount
-  useEffect(() => {
+  // Function to reset all game state
+  const resetGameState = () => {
+    setGame(null);
+    setCurrentWord('');
+    setAssociations([]);
+    setDetailedAssociations([]);
+    setPath([]);
+    setBackSteps(0);
+    setTotalSteps(0);
+    setGameComplete(false);
+    setError('');
+    setHint('');
+    setShowHints(false);
+    setLoadingAssociations(false);
+    setIsRestoringProgress(false);
+    clearSavedProgress();
+  };
+  
+  // Load or reload game data (wrapped in useCallback to avoid recreating on every render)
+  const loadGameData = useCallback(() => {
+    // Reset loading state first
+    setLoading(true);
+    setError('');
+    
     fetch(`${getApiUrl()}/game`)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          // If the response indicates an error (like 503 when puzzle is generating)
+          return response.json().then(errorData => {
+            throw new Error(errorData.message || 'Failed to load game data');
+          });
+        }
+        return response.json();
+      })
       .then(data => {
+        // Check if we received a new game (different from current game)
+        const isNewGame = !game || data.gameDate !== game.gameDate;
+        
+        // Always set the game data
         setGame(data);
+        
+        // If it's a new game, clear any saved progress
+        if (isNewGame) {
+          console.log('New game detected - resetting progress');
+          clearSavedProgress();
+          setGameComplete(false);
+        }
         
         // Check if there's saved progress for this game
         const savedProgress = localStorage.getItem('wordGameProgress');
@@ -441,8 +483,12 @@ function App() {
           return fetch(`${getApiUrl()}/associations/${data.startWord}?detailed=true`);
         }
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response || !response.json) return null; // If no response (due to early return above)
+        return response.json();
+      })
       .then(data => {
+        if (!data) return; // Skip if no data (from early return above)
         setAssociations(data.associations);
         if (data.detailed) {
           setDetailedAssociations(data.detailed);
@@ -451,10 +497,20 @@ function App() {
       })
       .catch(err => {
         console.error('Error fetching data:', err);
-        setError('Failed to load game data. Please try again later.');
+        if (err.message && err.message.includes('No game has been generated yet')) {
+          setError('Please wait - new puzzle coming soon...');
+        } else {
+          setError('Failed to load game data. Please try again later.');
+        }
         setLoading(false);
         setIsRestoringProgress(false);
       });
+  }, [getApiUrl, game]);
+  
+  // Initial game load on component mount
+  useEffect(() => {
+    resetGameState();
+    loadGameData();
   }, []);
 
   // Handle word selection
@@ -616,6 +672,23 @@ function App() {
       });
   };
 
+  // Add auto-refresh effect when puzzle is generating
+  useEffect(() => {
+    let refreshTimer;
+    if (error && error.includes('new puzzle coming soon')) {
+      // Auto-refresh every 10 seconds to check if puzzle is ready
+      refreshTimer = setInterval(() => {
+        console.log('Auto-checking for puzzle availability...');
+        // Use our loadGameData function instead of full page reload
+        loadGameData();
+      }, 10000); // Check every 10 seconds
+    }
+    
+    return () => {
+      if (refreshTimer) clearInterval(refreshTimer);
+    };
+  }, [error, loadGameData]);
+  
   if (loading) {
     return (
       <div className="App">
@@ -631,12 +704,26 @@ function App() {
   }
 
   if (error) {
+    const isPuzzleGenerating = error.includes('new puzzle coming soon');
     return (
       <div className="App">
         <header className="App-header">
           <h1>Word Association Game</h1>
-          <p className="error">{error}</p>
-          <button onClick={() => window.location.reload()}>Try Again</button>
+          <div className={isPuzzleGenerating ? "loading-container" : ""}>
+            {isPuzzleGenerating && <div className="loading-spinner"></div>}
+            <p className={isPuzzleGenerating ? "" : "error"}>{error}</p>
+            {isPuzzleGenerating && (
+              <p className="auto-refresh-notice">
+                <small>Checking for new puzzle every 10 seconds...</small>
+              </p>
+            )}
+          </div>
+          <button 
+            onClick={() => isPuzzleGenerating ? loadGameData() : window.location.reload()}
+            className={isPuzzleGenerating ? "primary-button" : ""}
+          >
+            {isPuzzleGenerating ? "Check Now" : "Try Again"}
+          </button>
         </header>
       </div>
     );

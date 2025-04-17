@@ -54,9 +54,31 @@ async function generatePuzzle() {
   nextGameTime.setSeconds(0);
   nextGameTime.setMilliseconds(0);
   
-  // Store current words to ensure we don't generate the same ones again
+  // Track previously used words to ensure variety
+  // We'll maintain a "memory" of recent start words to avoid repetition
+  if (!global.previousStartWords) {
+    global.previousStartWords = [];
+  }
+  
+  // Keep the last 10 start words to avoid repetition
+  const MAX_PREVIOUS_WORDS = 10;
+  
+  // Add current words to our tracking list
+  if (dailyGame.startWord) {
+    if (!global.previousStartWords.includes(dailyGame.startWord.toLowerCase())) {
+      global.previousStartWords.push(dailyGame.startWord.toLowerCase());
+      // Trim list if it exceeds our limit
+      if (global.previousStartWords.length > MAX_PREVIOUS_WORDS) {
+        global.previousStartWords.shift(); // Remove oldest word
+      }
+    }
+  }
+  
+  // Get current game words
   const currentStartWord = dailyGame.startWord;
   const currentTargetWord = dailyGame.targetWord;
+  
+  console.log(`Previously used start words (avoiding): ${global.previousStartWords.join(', ')}`);
   
   try {
     console.log("Generating new puzzle using linear path approach...");
@@ -73,8 +95,10 @@ async function generatePuzzle() {
           The word should:
           1. Be a simple, common, recognizable noun or verb
           2. Have multiple potential word associations
-          3. NOT include ${currentStartWord || 'null'} or ${currentTargetWord || 'null'} (previous game words)
+          3. NOT include any of these previous words: ${[currentStartWord, currentTargetWord, ...global.previousStartWords].filter(w => w && w !== 'null').join(', ')}
           4. Be a single word (not a phrase)
+          5. NOT be related to "balloon" or "balloons" which has been overused
+          6. Be varied and distinct from recent themes, choose something creative
           
           Return ONLY the word as plain text, nothing else.`
         }

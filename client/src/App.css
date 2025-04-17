@@ -156,6 +156,13 @@ button:disabled, button.used {
   margin: 2rem 0;
 }
 
+.auto-refresh-notice {
+  font-size: 0.8rem;
+  color: #61dafb;
+  margin-top: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
 .loading-spinner {
   width: 50px;
   height: 50px;
@@ -206,8 +213,13 @@ button:disabled, button.used {
   margin-top: 1rem;
 }
 
-.play-again-button {
+.play-again-button, .primary-button {
   background-color: #ffcc00;
+  font-weight: bold;
+}
+
+.primary-button:hover {
+  background-color: #e6b800;
 }
 
 .next-puzzle-timer {
@@ -383,6 +395,14 @@ button:disabled, button.used {
   margin: 0;
   text-align: left;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.no-associations {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .stats-divider {
