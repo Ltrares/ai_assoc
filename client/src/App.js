@@ -18,7 +18,7 @@ function App() {
   const [loadingAssociations, setLoadingAssociations] = useState(false);
   const [isRestoringProgress, setIsRestoringProgress] = useState(false); // Flag for restoring progress
   const [notification, setNotification] = useState(null); // For showing temporary notifications
-  const [musicEnabled, setMusicEnabled] = useState(localStorage.getItem('musicEnabled') === 'true'); // Music toggle state - default to muted
+  const [musicEnabled, setMusicEnabled] = useState(false); // Always start muted, regardless of localStorage
   const synthRef = useRef(null); // Reference to synth object
   const sequenceRef = useRef(null); // Reference to sequence
 
@@ -289,20 +289,25 @@ function App() {
   // Toggle music on/off
   const toggleMusic = () => {
     const newState = !musicEnabled;
-    setMusicEnabled(newState);
-    localStorage.setItem('musicEnabled', newState);
     
+    // Handle audio state change
     if (newState) {
       // Start music - this first Tone.start() call is critical
       // as it starts the audio context with a user gesture
       Tone.start().then(() => {
+        console.log("Audio started successfully");
         Tone.Transport.start();
         if (sequenceRef.current) {
           // Ensure sequence is started only if it exists
           sequenceRef.current.start(0);
         }
+        
+        // Only set state after successful audio start
+        setMusicEnabled(true);
+        localStorage.setItem('musicEnabled', 'true');
       }).catch(err => {
         console.error("Error starting audio:", err);
+        // Don't update state if audio fails to start
       });
     } else {
       // Stop music safely with checks
@@ -310,6 +315,10 @@ function App() {
         sequenceRef.current.stop();
       }
       Tone.Transport.stop();
+      
+      // Update state
+      setMusicEnabled(false);
+      localStorage.setItem('musicEnabled', 'false');
     }
   };
   
@@ -349,12 +358,19 @@ function App() {
   
   // Play note when selecting a word
   const playSelectNote = () => {
-    if (musicEnabled) {
+    if (musicEnabled && synthRef.current) {
+      // Only play if music is enabled and synth is initialized
       // Play two-note "selection" sound
-      synthRef.current.triggerAttackRelease("G4", "16n");
-      setTimeout(() => {
-        synthRef.current.triggerAttackRelease("C5", "16n");
-      }, 100);
+      try {
+        synthRef.current.triggerAttackRelease("G4", "16n");
+        setTimeout(() => {
+          if (synthRef.current) { // Double-check it still exists
+            synthRef.current.triggerAttackRelease("C5", "16n");
+          }
+        }, 100);
+      } catch (err) {
+        console.error("Error playing selection sound:", err);
+      }
     }
   };
   
