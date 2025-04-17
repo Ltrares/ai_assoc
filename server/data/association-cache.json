@@ -1,0 +1,8416 @@
+{
+  "umbrella": [
+    "rain",
+    "shade",
+    "parasol",
+    "handle",
+    "canopy",
+    "fold",
+    "storm",
+    "Mary Poppins"
+  ],
+  "umbrella_detailed": [
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "protection from precipitation"
+    },
+    {
+      "word": "shade",
+      "type": "common association",
+      "hint": "provides cover from sun"
+    },
+    {
+      "word": "parasol",
+      "type": "common association",
+      "hint": "similar sun-blocking device"
+    },
+    {
+      "word": "handle",
+      "type": "common association",
+      "hint": "part used to hold the umbrella"
+    },
+    {
+      "word": "canopy",
+      "type": "common association",
+      "hint": "the fabric covering of an umbrella"
+    },
+    {
+      "word": "fold",
+      "type": "common association",
+      "hint": "action to close the umbrella"
+    },
+    {
+      "word": "storm",
+      "type": "common association",
+      "hint": "weather condition often requiring an umbrella"
+    },
+    {
+      "word": "Mary Poppins",
+      "type": "common association",
+      "hint": "fictional character known for her umbrella"
+    }
+  ],
+  "rain": [
+    "umbrella",
+    "clouds",
+    "puddles",
+    "wet",
+    "storm",
+    "raincoat",
+    "thunder",
+    "rainbow"
+  ],
+  "rain_detailed": [
+    {
+      "word": "umbrella",
+      "type": "common association",
+      "hint": "used for protection from rain"
+    },
+    {
+      "word": "clouds",
+      "type": "common association",
+      "hint": "source of rain in the sky"
+    },
+    {
+      "word": "puddles",
+      "type": "common association",
+      "hint": "formed on the ground after rain"
+    },
+    {
+      "word": "wet",
+      "type": "common association",
+      "hint": "state of being damp from rain"
+    },
+    {
+      "word": "storm",
+      "type": "common association",
+      "hint": "often accompanies heavy rain"
+    },
+    {
+      "word": "raincoat",
+      "type": "common association",
+      "hint": "clothing worn during rainy weather"
+    },
+    {
+      "word": "thunder",
+      "type": "common association",
+      "hint": "sound often heard during rainstorms"
+    },
+    {
+      "word": "rainbow",
+      "type": "common association",
+      "hint": "colorful arc sometimes seen after rain"
+    }
+  ],
+  "shade": [
+    "shadow",
+    "tree",
+    "sunglasses",
+    "umbrella",
+    "color",
+    "cool",
+    "awning"
+  ],
+  "shade_detailed": [
+    {
+      "word": "shadow",
+      "type": "common association",
+      "hint": "dark area created by blocking light"
+    },
+    {
+      "word": "tree",
+      "type": "common association",
+      "hint": "provides natural shade outdoors"
+    },
+    {
+      "word": "sunglasses",
+      "type": "common association",
+      "hint": "worn to shield eyes from bright light"
+    },
+    {
+      "word": "umbrella",
+      "type": "common association",
+      "hint": "used for portable shade"
+    },
+    {
+      "word": "color",
+      "type": "common association",
+      "hint": "variations in hue or tone"
+    },
+    {
+      "word": "cool",
+      "type": "common association",
+      "hint": "temperature feeling in shaded areas"
+    },
+    {
+      "word": "awning",
+      "type": "common association",
+      "hint": "covering that provides shade"
+    }
+  ],
+  "parasol": [
+    "umbrella",
+    "sun",
+    "shade",
+    "beach",
+    "Victorian",
+    "lady",
+    "lace",
+    "handle"
+  ],
+  "parasol_detailed": [
+    {
+      "word": "umbrella",
+      "type": "common association",
+      "hint": "similar sun-blocking device"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "what a parasol protects against"
+    },
+    {
+      "word": "shade",
+      "type": "common association",
+      "hint": "what a parasol provides"
+    },
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "common place to use a parasol"
+    },
+    {
+      "word": "Victorian",
+      "type": "common association",
+      "hint": "era when parasols were fashionable"
+    },
+    {
+      "word": "lady",
+      "type": "common association",
+      "hint": "stereotypical user of a parasol"
+    },
+    {
+      "word": "lace",
+      "type": "common association",
+      "hint": "decorative material often used on parasols"
+    },
+    {
+      "word": "handle",
+      "type": "common association",
+      "hint": "part of the parasol you hold"
+    }
+  ],
+  "balloon": [
+    "party",
+    "helium",
+    "pop",
+    "round",
+    "inflate",
+    "colorful",
+    "float"
+  ],
+  "balloon_detailed": [
+    {
+      "word": "party",
+      "type": "common association",
+      "hint": "balloons are often used for celebrations"
+    },
+    {
+      "word": "helium",
+      "type": "common association",
+      "hint": "gas used to make balloons float"
+    },
+    {
+      "word": "pop",
+      "type": "common association",
+      "hint": "sound a balloon makes when it bursts"
+    },
+    {
+      "word": "round",
+      "type": "common association",
+      "hint": "typical shape of a balloon"
+    },
+    {
+      "word": "inflate",
+      "type": "common association",
+      "hint": "action of filling a balloon with air"
+    },
+    {
+      "word": "colorful",
+      "type": "common association",
+      "hint": "balloons often come in bright colors"
+    },
+    {
+      "word": "float",
+      "type": "common association",
+      "hint": "action of a balloon rising in the air"
+    }
+  ],
+  "party": [
+    "birthday",
+    "balloons",
+    "cake",
+    "music",
+    "dancing",
+    "drinks",
+    "friends"
+  ],
+  "party_detailed": [
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "celebration of one's birth date"
+    },
+    {
+      "word": "balloons",
+      "type": "common association",
+      "hint": "decorative inflatable objects"
+    },
+    {
+      "word": "cake",
+      "type": "common association",
+      "hint": "sweet dessert often served at celebrations"
+    },
+    {
+      "word": "music",
+      "type": "common association",
+      "hint": "audio entertainment at gatherings"
+    },
+    {
+      "word": "dancing",
+      "type": "common association",
+      "hint": "moving to music at social events"
+    },
+    {
+      "word": "drinks",
+      "type": "common association",
+      "hint": "beverages served at social gatherings"
+    },
+    {
+      "word": "friends",
+      "type": "common association",
+      "hint": "people invited to social events"
+    }
+  ],
+  "helium": [
+    "balloon",
+    "light",
+    "squeaky voice",
+    "party",
+    "noble gas",
+    "blimp",
+    "floating"
+  ],
+  "helium_detailed": [
+    {
+      "word": "balloon",
+      "type": "common association",
+      "hint": "helium is used to inflate balloons"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "helium is lighter than air"
+    },
+    {
+      "word": "squeaky voice",
+      "type": "common association",
+      "hint": "inhaling helium causes a high-pitched voice"
+    },
+    {
+      "word": "party",
+      "type": "common association",
+      "hint": "helium balloons are common at celebrations"
+    },
+    {
+      "word": "noble gas",
+      "type": "common association",
+      "hint": "helium is an element in the noble gas group"
+    },
+    {
+      "word": "blimp",
+      "type": "common association",
+      "hint": "helium is used to fill airships"
+    },
+    {
+      "word": "floating",
+      "type": "common association",
+      "hint": "helium-filled objects tend to float in air"
+    }
+  ],
+  "pop": [
+    "soda",
+    "music",
+    "balloon",
+    "bubble",
+    "corn",
+    "quiz",
+    "culture",
+    "star"
+  ],
+  "pop_detailed": [
+    {
+      "word": "soda",
+      "type": "common association",
+      "hint": "carbonated soft drink"
+    },
+    {
+      "word": "music",
+      "type": "common association",
+      "hint": "popular genre of music"
+    },
+    {
+      "word": "balloon",
+      "type": "common association",
+      "hint": "sound when it bursts"
+    },
+    {
+      "word": "bubble",
+      "type": "common association",
+      "hint": "popping sound when it breaks"
+    },
+    {
+      "word": "corn",
+      "type": "common association",
+      "hint": "popcorn snack"
+    },
+    {
+      "word": "quiz",
+      "type": "common association",
+      "hint": "surprise test"
+    },
+    {
+      "word": "culture",
+      "type": "common association",
+      "hint": "popular trends and media"
+    },
+    {
+      "word": "star",
+      "type": "common association",
+      "hint": "famous celebrity"
+    }
+  ],
+  "birthday": [
+    "cake",
+    "presents",
+    "candles",
+    "party",
+    "balloons",
+    "cards",
+    "aging"
+  ],
+  "birthday_detailed": [
+    {
+      "word": "cake",
+      "type": "common association",
+      "hint": "traditional dessert served at birthday celebrations"
+    },
+    {
+      "word": "presents",
+      "type": "common association",
+      "hint": "gifts given to the person celebrating their birthday"
+    },
+    {
+      "word": "candles",
+      "type": "common association",
+      "hint": "placed on birthday cakes and blown out while making a wish"
+    },
+    {
+      "word": "party",
+      "type": "common association",
+      "hint": "social gathering to celebrate someone's birthday"
+    },
+    {
+      "word": "balloons",
+      "type": "common association",
+      "hint": "decorative inflatable items often used at birthday parties"
+    },
+    {
+      "word": "cards",
+      "type": "common association",
+      "hint": "greeting cards given to express birthday wishes"
+    },
+    {
+      "word": "aging",
+      "type": "common association",
+      "hint": "process of growing older marked by birthdays"
+    }
+  ],
+  "balloons": [
+    "party",
+    "helium",
+    "birthday",
+    "pop",
+    "colorful",
+    "round",
+    "float",
+    "latex"
+  ],
+  "balloons_detailed": [
+    {
+      "word": "party",
+      "type": "common association",
+      "hint": "balloons are often used for celebrations"
+    },
+    {
+      "word": "helium",
+      "type": "common association",
+      "hint": "gas used to make balloons float"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "balloons are common birthday decorations"
+    },
+    {
+      "word": "pop",
+      "type": "common association",
+      "hint": "the sound a balloon makes when it bursts"
+    },
+    {
+      "word": "colorful",
+      "type": "common association",
+      "hint": "balloons often come in bright colors"
+    },
+    {
+      "word": "round",
+      "type": "common association",
+      "hint": "typical shape of inflated balloons"
+    },
+    {
+      "word": "float",
+      "type": "common association",
+      "hint": "helium-filled balloons rise in the air"
+    },
+    {
+      "word": "latex",
+      "type": "common association",
+      "hint": "common material for making balloons"
+    }
+  ],
+  "cake": [
+    "birthday",
+    "frosting",
+    "candles",
+    "chocolate",
+    "slice",
+    "bake",
+    "wedding"
+  ],
+  "cake_detailed": [
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "often served at birthday celebrations"
+    },
+    {
+      "word": "frosting",
+      "type": "common association",
+      "hint": "sweet topping for cakes"
+    },
+    {
+      "word": "candles",
+      "type": "common association",
+      "hint": "placed on cakes for wishing"
+    },
+    {
+      "word": "chocolate",
+      "type": "common association",
+      "hint": "popular cake flavor"
+    },
+    {
+      "word": "slice",
+      "type": "common association",
+      "hint": "how cake is usually served"
+    },
+    {
+      "word": "bake",
+      "type": "common association",
+      "hint": "method of preparing cake"
+    },
+    {
+      "word": "wedding",
+      "type": "common association",
+      "hint": "special multi-tiered cake for marriage ceremonies"
+    }
+  ],
+  "light": [
+    "sun",
+    "bright",
+    "lamp",
+    "dark",
+    "bulb",
+    "day",
+    "shadow",
+    "flashlight"
+  ],
+  "light_detailed": [
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "primary natural source of light"
+    },
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "describes intense light"
+    },
+    {
+      "word": "lamp",
+      "type": "common association",
+      "hint": "common artificial light source"
+    },
+    {
+      "word": "dark",
+      "type": "common association",
+      "hint": "opposite of light"
+    },
+    {
+      "word": "bulb",
+      "type": "common association",
+      "hint": "electric light source"
+    },
+    {
+      "word": "day",
+      "type": "common association",
+      "hint": "period of natural light"
+    },
+    {
+      "word": "shadow",
+      "type": "common association",
+      "hint": "absence of light caused by an object"
+    },
+    {
+      "word": "flashlight",
+      "type": "common association",
+      "hint": "portable light source"
+    }
+  ],
+  "squeaky voice": [
+    "mouse",
+    "helium",
+    "puberty",
+    "cartoon",
+    "nervous",
+    "chipmunk",
+    "door"
+  ],
+  "squeaky voice_detailed": [
+    {
+      "word": "mouse",
+      "type": "common association",
+      "hint": "small rodents often depicted with high-pitched voices"
+    },
+    {
+      "word": "helium",
+      "type": "common association",
+      "hint": "inhaling this gas causes a temporary high-pitched voice"
+    },
+    {
+      "word": "puberty",
+      "type": "common association",
+      "hint": "voice changes during this time can result in squeaky tones"
+    },
+    {
+      "word": "cartoon",
+      "type": "common association",
+      "hint": "animated characters often have exaggerated squeaky voices"
+    },
+    {
+      "word": "nervous",
+      "type": "common association",
+      "hint": "anxiety can cause one's voice to become higher-pitched"
+    },
+    {
+      "word": "chipmunk",
+      "type": "common association",
+      "hint": "small animals often portrayed with high-pitched voices"
+    },
+    {
+      "word": "door",
+      "type": "common association",
+      "hint": "unoiled hinges can produce a squeaky sound"
+    }
+  ],
+  "noble gas": [
+    "helium",
+    "inert",
+    "periodic table",
+    "neon",
+    "argon",
+    "balloons",
+    "neon signs",
+    "unreactive"
+  ],
+  "noble gas_detailed": [
+    {
+      "word": "helium",
+      "type": "common association",
+      "hint": "a well-known noble gas"
+    },
+    {
+      "word": "inert",
+      "type": "common association",
+      "hint": "noble gases are chemically inactive"
+    },
+    {
+      "word": "periodic table",
+      "type": "common association",
+      "hint": "where noble gases are found"
+    },
+    {
+      "word": "neon",
+      "type": "common association",
+      "hint": "another familiar noble gas"
+    },
+    {
+      "word": "argon",
+      "type": "common association",
+      "hint": "commonly used noble gas"
+    },
+    {
+      "word": "balloons",
+      "type": "common association",
+      "hint": "often filled with helium"
+    },
+    {
+      "word": "neon signs",
+      "type": "common association",
+      "hint": "use noble gases for lighting"
+    },
+    {
+      "word": "unreactive",
+      "type": "common association",
+      "hint": "noble gases don't easily form compounds"
+    }
+  ],
+  "soda": [
+    "bubbles",
+    "sugar",
+    "caffeine",
+    "can",
+    "cola",
+    "fizzy",
+    "bottle",
+    "pop"
+  ],
+  "soda_detailed": [
+    {
+      "word": "bubbles",
+      "type": "common association",
+      "hint": "carbonation in soda"
+    },
+    {
+      "word": "sugar",
+      "type": "common association",
+      "hint": "sweet ingredient in most sodas"
+    },
+    {
+      "word": "caffeine",
+      "type": "common association",
+      "hint": "stimulant found in many sodas"
+    },
+    {
+      "word": "can",
+      "type": "common association",
+      "hint": "common container for soda"
+    },
+    {
+      "word": "cola",
+      "type": "common association",
+      "hint": "popular type of soda"
+    },
+    {
+      "word": "fizzy",
+      "type": "common association",
+      "hint": "describes the effervescent nature of soda"
+    },
+    {
+      "word": "bottle",
+      "type": "common association",
+      "hint": "another common container for soda"
+    },
+    {
+      "word": "pop",
+      "type": "common association",
+      "hint": "alternative name for soda in some regions"
+    }
+  ],
+  "music": [
+    "instrument",
+    "melody",
+    "rhythm",
+    "concert",
+    "singer",
+    "band",
+    "radio"
+  ],
+  "music_detailed": [
+    {
+      "word": "instrument",
+      "type": "common association",
+      "hint": "tools used to create music"
+    },
+    {
+      "word": "melody",
+      "type": "common association",
+      "hint": "main sequence of notes in a song"
+    },
+    {
+      "word": "rhythm",
+      "type": "common association",
+      "hint": "regular pattern of beats in music"
+    },
+    {
+      "word": "concert",
+      "type": "common association",
+      "hint": "live musical performance"
+    },
+    {
+      "word": "singer",
+      "type": "common association",
+      "hint": "person who performs vocals in music"
+    },
+    {
+      "word": "band",
+      "type": "common association",
+      "hint": "group of musicians performing together"
+    },
+    {
+      "word": "radio",
+      "type": "common association",
+      "hint": "device often used to listen to music"
+    }
+  ],
+  "bubble": [
+    "soap",
+    "bath",
+    "gum",
+    "pop",
+    "round",
+    "float",
+    "fragile",
+    "iridescent"
+  ],
+  "bubble_detailed": [
+    {
+      "word": "soap",
+      "type": "common association",
+      "hint": "used to create bubbles"
+    },
+    {
+      "word": "bath",
+      "type": "common association",
+      "hint": "bubbles often found in baths"
+    },
+    {
+      "word": "gum",
+      "type": "common association",
+      "hint": "blowing bubbles with chewing gum"
+    },
+    {
+      "word": "pop",
+      "type": "common association",
+      "hint": "the sound a bubble makes when it bursts"
+    },
+    {
+      "word": "round",
+      "type": "common association",
+      "hint": "the typical shape of a bubble"
+    },
+    {
+      "word": "float",
+      "type": "common association",
+      "hint": "bubbles tend to float in air or liquid"
+    },
+    {
+      "word": "fragile",
+      "type": "common association",
+      "hint": "bubbles are easily broken"
+    },
+    {
+      "word": "iridescent",
+      "type": "common association",
+      "hint": "the colorful appearance of soap bubbles"
+    }
+  ],
+  "presents": [
+    "birthday",
+    "Christmas",
+    "wrapping paper",
+    "bow",
+    "surprise",
+    "gift",
+    "Santa Claus",
+    "celebration"
+  ],
+  "presents_detailed": [
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "occasion for giving gifts"
+    },
+    {
+      "word": "Christmas",
+      "type": "common association",
+      "hint": "holiday associated with gift-giving"
+    },
+    {
+      "word": "wrapping paper",
+      "type": "common association",
+      "hint": "material used to cover gifts"
+    },
+    {
+      "word": "bow",
+      "type": "common association",
+      "hint": "decorative topping for presents"
+    },
+    {
+      "word": "surprise",
+      "type": "common association",
+      "hint": "element of unexpected joy with gifts"
+    },
+    {
+      "word": "gift",
+      "type": "common association",
+      "hint": "synonym for present"
+    },
+    {
+      "word": "Santa Claus",
+      "type": "common association",
+      "hint": "mythical gift-giver"
+    },
+    {
+      "word": "celebration",
+      "type": "common association",
+      "hint": "festive occasion often involving presents"
+    }
+  ],
+  "candles": [
+    "flame",
+    "wax",
+    "light",
+    "romantic",
+    "birthday",
+    "scented",
+    "relaxation"
+  ],
+  "candles_detailed": [
+    {
+      "word": "flame",
+      "type": "common association",
+      "hint": "burning wick of a candle"
+    },
+    {
+      "word": "wax",
+      "type": "common association",
+      "hint": "main material candles are made from"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "illumination provided by candles"
+    },
+    {
+      "word": "romantic",
+      "type": "common association",
+      "hint": "mood often created by candlelight"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "candles on birthday cakes"
+    },
+    {
+      "word": "scented",
+      "type": "common association",
+      "hint": "fragrant candles for ambiance"
+    },
+    {
+      "word": "relaxation",
+      "type": "common association",
+      "hint": "calming atmosphere created by candles"
+    }
+  ],
+  "cards": [
+    "playing",
+    "birthday",
+    "credit",
+    "business",
+    "gift",
+    "poker",
+    "tarot",
+    "holiday"
+  ],
+  "cards_detailed": [
+    {
+      "word": "playing",
+      "type": "common association",
+      "hint": "deck of cards for games"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "greeting cards for celebrations"
+    },
+    {
+      "word": "credit",
+      "type": "common association",
+      "hint": "plastic cards for purchases"
+    },
+    {
+      "word": "business",
+      "type": "common association",
+      "hint": "small cards with contact information"
+    },
+    {
+      "word": "gift",
+      "type": "common association",
+      "hint": "prepaid cards for presents"
+    },
+    {
+      "word": "poker",
+      "type": "common association",
+      "hint": "popular card game"
+    },
+    {
+      "word": "tarot",
+      "type": "common association",
+      "hint": "cards used for fortune-telling"
+    },
+    {
+      "word": "holiday",
+      "type": "common association",
+      "hint": "seasonal greeting cards"
+    }
+  ],
+  "colorful": [
+    "rainbow",
+    "vibrant",
+    "painting",
+    "flowers",
+    "crayons",
+    "autumn",
+    "festival"
+  ],
+  "colorful_detailed": [
+    {
+      "word": "rainbow",
+      "type": "common association",
+      "hint": "natural phenomenon with multiple colors"
+    },
+    {
+      "word": "vibrant",
+      "type": "common association",
+      "hint": "bright and vivid appearance"
+    },
+    {
+      "word": "painting",
+      "type": "common association",
+      "hint": "artistic creation often using various colors"
+    },
+    {
+      "word": "flowers",
+      "type": "common association",
+      "hint": "plants with colorful petals"
+    },
+    {
+      "word": "crayons",
+      "type": "common association",
+      "hint": "colored wax sticks for drawing"
+    },
+    {
+      "word": "autumn",
+      "type": "common association",
+      "hint": "season known for colorful leaves"
+    },
+    {
+      "word": "festival",
+      "type": "common association",
+      "hint": "celebration often featuring bright colors"
+    }
+  ],
+  "round": [
+    "circle",
+    "ball",
+    "wheel",
+    "planet",
+    "coin",
+    "clock",
+    "pizza"
+  ],
+  "round_detailed": [
+    {
+      "word": "circle",
+      "type": "common association",
+      "hint": "a perfectly round shape"
+    },
+    {
+      "word": "ball",
+      "type": "common association",
+      "hint": "a spherical object"
+    },
+    {
+      "word": "wheel",
+      "type": "common association",
+      "hint": "circular object that rotates"
+    },
+    {
+      "word": "planet",
+      "type": "common association",
+      "hint": "spherical celestial body"
+    },
+    {
+      "word": "coin",
+      "type": "common association",
+      "hint": "circular piece of currency"
+    },
+    {
+      "word": "clock",
+      "type": "common association",
+      "hint": "often has a circular face"
+    },
+    {
+      "word": "pizza",
+      "type": "common association",
+      "hint": "typically served in a circular shape"
+    }
+  ],
+  "float": [
+    "boat",
+    "balloon",
+    "parade",
+    "ice cream",
+    "buoy",
+    "raft",
+    "cork",
+    "swim"
+  ],
+  "float_detailed": [
+    {
+      "word": "boat",
+      "type": "common association",
+      "hint": "floats on water"
+    },
+    {
+      "word": "balloon",
+      "type": "common association",
+      "hint": "floats in air"
+    },
+    {
+      "word": "parade",
+      "type": "common association",
+      "hint": "decorative platforms that float down streets"
+    },
+    {
+      "word": "ice cream",
+      "type": "common association",
+      "hint": "root beer float dessert"
+    },
+    {
+      "word": "buoy",
+      "type": "common association",
+      "hint": "floating marker in water"
+    },
+    {
+      "word": "raft",
+      "type": "common association",
+      "hint": "floating platform for water"
+    },
+    {
+      "word": "cork",
+      "type": "common association",
+      "hint": "material that floats easily"
+    },
+    {
+      "word": "swim",
+      "type": "common association",
+      "hint": "floating in water while swimming"
+    }
+  ],
+  "frosting": [
+    "cake",
+    "sweet",
+    "sugar",
+    "birthday",
+    "icing",
+    "buttercream",
+    "decorative",
+    "cupcake"
+  ],
+  "frosting_detailed": [
+    {
+      "word": "cake",
+      "type": "common association",
+      "hint": "often covered with frosting"
+    },
+    {
+      "word": "sweet",
+      "type": "common association",
+      "hint": "describes the taste of frosting"
+    },
+    {
+      "word": "sugar",
+      "type": "common association",
+      "hint": "main ingredient in frosting"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "occasion for frosted cakes"
+    },
+    {
+      "word": "icing",
+      "type": "common association",
+      "hint": "synonym for frosting"
+    },
+    {
+      "word": "buttercream",
+      "type": "common association",
+      "hint": "popular type of frosting"
+    },
+    {
+      "word": "decorative",
+      "type": "common association",
+      "hint": "frosting used to embellish desserts"
+    },
+    {
+      "word": "cupcake",
+      "type": "common association",
+      "hint": "small cake often topped with frosting"
+    }
+  ],
+  "chocolate": [
+    "sweet",
+    "brown",
+    "dessert",
+    "cocoa",
+    "candy",
+    "dark",
+    "milk",
+    "bar"
+  ],
+  "chocolate_detailed": [
+    {
+      "word": "sweet",
+      "type": "common association",
+      "hint": "chocolate's characteristic taste"
+    },
+    {
+      "word": "brown",
+      "type": "common association",
+      "hint": "typical color of chocolate"
+    },
+    {
+      "word": "dessert",
+      "type": "common association",
+      "hint": "common use in sweets and treats"
+    },
+    {
+      "word": "cocoa",
+      "type": "common association",
+      "hint": "primary ingredient in chocolate"
+    },
+    {
+      "word": "candy",
+      "type": "common association",
+      "hint": "popular form of chocolate confection"
+    },
+    {
+      "word": "dark",
+      "type": "common association",
+      "hint": "refers to a type of chocolate with high cocoa content"
+    },
+    {
+      "word": "milk",
+      "type": "common association",
+      "hint": "ingredient in milk chocolate and common pairing"
+    },
+    {
+      "word": "bar",
+      "type": "common association",
+      "hint": "typical shape for solid chocolate"
+    }
+  ],
+  "slice": [
+    "pizza",
+    "knife",
+    "cake",
+    "bread",
+    "cheese",
+    "pie",
+    "thin",
+    "cut"
+  ],
+  "slice_detailed": [
+    {
+      "word": "pizza",
+      "type": "common association",
+      "hint": "often served in slices"
+    },
+    {
+      "word": "knife",
+      "type": "common association",
+      "hint": "tool used for slicing"
+    },
+    {
+      "word": "cake",
+      "type": "common association",
+      "hint": "dessert often cut into slices"
+    },
+    {
+      "word": "bread",
+      "type": "common association",
+      "hint": "loaf cut into slices"
+    },
+    {
+      "word": "cheese",
+      "type": "common association",
+      "hint": "often sold or served in slices"
+    },
+    {
+      "word": "pie",
+      "type": "common association",
+      "hint": "dessert cut into wedge-shaped slices"
+    },
+    {
+      "word": "thin",
+      "type": "common association",
+      "hint": "describes a small slice or cut"
+    },
+    {
+      "word": "cut",
+      "type": "common association",
+      "hint": "action of making a slice"
+    }
+  ],
+  "sun": [
+    "hot",
+    "yellow",
+    "bright",
+    "summer",
+    "beach",
+    "sunglasses",
+    "sunburn",
+    "solar"
+  ],
+  "sun_detailed": [
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "sun's high temperature"
+    },
+    {
+      "word": "yellow",
+      "type": "common association",
+      "hint": "perceived color of the sun"
+    },
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "intense light emitted"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "season with most sunlight"
+    },
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "popular sunny destination"
+    },
+    {
+      "word": "sunglasses",
+      "type": "common association",
+      "hint": "eyewear for sun protection"
+    },
+    {
+      "word": "sunburn",
+      "type": "common association",
+      "hint": "skin damage from sun exposure"
+    },
+    {
+      "word": "solar",
+      "type": "common association",
+      "hint": "relating to the sun's energy"
+    }
+  ],
+  "bright": [
+    "sun",
+    "light",
+    "smart",
+    "colorful",
+    "shiny",
+    "cheerful",
+    "star"
+  ],
+  "bright_detailed": [
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "brightest object in the sky"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "emits brightness"
+    },
+    {
+      "word": "smart",
+      "type": "common association",
+      "hint": "intelligent or clever"
+    },
+    {
+      "word": "colorful",
+      "type": "common association",
+      "hint": "vivid and eye-catching"
+    },
+    {
+      "word": "shiny",
+      "type": "common association",
+      "hint": "reflects light strongly"
+    },
+    {
+      "word": "cheerful",
+      "type": "common association",
+      "hint": "happy and optimistic"
+    },
+    {
+      "word": "star",
+      "type": "common association",
+      "hint": "luminous celestial object"
+    }
+  ],
+  "lamp": [
+    "light",
+    "shade",
+    "bulb",
+    "switch",
+    "table",
+    "electricity",
+    "genie"
+  ],
+  "lamp_detailed": [
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "primary function of a lamp"
+    },
+    {
+      "word": "shade",
+      "type": "common association",
+      "hint": "covers the bulb and diffuses light"
+    },
+    {
+      "word": "bulb",
+      "type": "common association",
+      "hint": "source of illumination in a lamp"
+    },
+    {
+      "word": "switch",
+      "type": "common association",
+      "hint": "turns the lamp on and off"
+    },
+    {
+      "word": "table",
+      "type": "common association",
+      "hint": "common location for a lamp"
+    },
+    {
+      "word": "electricity",
+      "type": "common association",
+      "hint": "power source for most lamps"
+    },
+    {
+      "word": "genie",
+      "type": "common association",
+      "hint": "mythical creature associated with magic lamps"
+    }
+  ],
+  "mouse": [
+    "cheese",
+    "trap",
+    "computer",
+    "cat",
+    "small",
+    "rodent",
+    "Mickey",
+    "quiet"
+  ],
+  "mouse_detailed": [
+    {
+      "word": "cheese",
+      "type": "common association",
+      "hint": "popular food associated with mice"
+    },
+    {
+      "word": "trap",
+      "type": "common association",
+      "hint": "device used to catch mice"
+    },
+    {
+      "word": "computer",
+      "type": "common association",
+      "hint": "input device for computers"
+    },
+    {
+      "word": "cat",
+      "type": "common association",
+      "hint": "natural predator of mice"
+    },
+    {
+      "word": "small",
+      "type": "common association",
+      "hint": "describing the size of a mouse"
+    },
+    {
+      "word": "rodent",
+      "type": "common association",
+      "hint": "scientific classification of mice"
+    },
+    {
+      "word": "Mickey",
+      "type": "common association",
+      "hint": "famous Disney character"
+    },
+    {
+      "word": "quiet",
+      "type": "common association",
+      "hint": "describing the nature of mice"
+    }
+  ],
+  "puberty": [
+    "hormones",
+    "growth",
+    "acne",
+    "voice change",
+    "menstruation",
+    "body hair",
+    "mood swings",
+    "awkwardness"
+  ],
+  "puberty_detailed": [
+    {
+      "word": "hormones",
+      "type": "common association",
+      "hint": "chemical changes in the body"
+    },
+    {
+      "word": "growth",
+      "type": "common association",
+      "hint": "physical development and increase in height"
+    },
+    {
+      "word": "acne",
+      "type": "common association",
+      "hint": "skin condition common during puberty"
+    },
+    {
+      "word": "voice change",
+      "type": "common association",
+      "hint": "deepening of voice, especially in males"
+    },
+    {
+      "word": "menstruation",
+      "type": "common association",
+      "hint": "beginning of monthly periods in females"
+    },
+    {
+      "word": "body hair",
+      "type": "common association",
+      "hint": "growth of hair in new areas of the body"
+    },
+    {
+      "word": "mood swings",
+      "type": "common association",
+      "hint": "emotional changes and instability"
+    },
+    {
+      "word": "awkwardness",
+      "type": "common association",
+      "hint": "feeling uncomfortable with bodily changes"
+    }
+  ],
+  "cartoon": [
+    "animated",
+    "colorful",
+    "funny",
+    "children",
+    "characters",
+    "Disney",
+    "Saturday morning",
+    "exaggerated"
+  ],
+  "cartoon_detailed": [
+    {
+      "word": "animated",
+      "type": "common association",
+      "hint": "cartoons are typically animated"
+    },
+    {
+      "word": "colorful",
+      "type": "common association",
+      "hint": "cartoons are often bright and vibrant"
+    },
+    {
+      "word": "funny",
+      "type": "common association",
+      "hint": "many cartoons are comedic"
+    },
+    {
+      "word": "children",
+      "type": "common association",
+      "hint": "cartoons are often associated with kids"
+    },
+    {
+      "word": "characters",
+      "type": "common association",
+      "hint": "cartoons feature memorable characters"
+    },
+    {
+      "word": "Disney",
+      "type": "common association",
+      "hint": "popular producer of cartoons"
+    },
+    {
+      "word": "Saturday morning",
+      "type": "common association",
+      "hint": "traditional time for watching cartoons"
+    },
+    {
+      "word": "exaggerated",
+      "type": "common association",
+      "hint": "cartoons often use exaggerated features or actions"
+    }
+  ],
+  "inert": [
+    "inactive",
+    "gas",
+    "passive",
+    "motionless",
+    "neutral",
+    "static",
+    "dormant",
+    "chemical"
+  ],
+  "inert_detailed": [
+    {
+      "word": "inactive",
+      "type": "common association",
+      "hint": "not active or reactive"
+    },
+    {
+      "word": "gas",
+      "type": "common association",
+      "hint": "noble gases are inert"
+    },
+    {
+      "word": "passive",
+      "type": "common association",
+      "hint": "not participating or acting"
+    },
+    {
+      "word": "motionless",
+      "type": "common association",
+      "hint": "not moving"
+    },
+    {
+      "word": "neutral",
+      "type": "common association",
+      "hint": "not reactive or changing"
+    },
+    {
+      "word": "static",
+      "type": "common association",
+      "hint": "lacking movement or change"
+    },
+    {
+      "word": "dormant",
+      "type": "common association",
+      "hint": "inactive, as if asleep"
+    },
+    {
+      "word": "chemical",
+      "type": "common association",
+      "hint": "inert substances in chemistry"
+    }
+  ],
+  "periodic table": [
+    "elements",
+    "chemistry",
+    "atomic number",
+    "metals",
+    "symbols",
+    "rows",
+    "columns"
+  ],
+  "periodic table_detailed": [
+    {
+      "word": "elements",
+      "type": "common association",
+      "hint": "chemical substances listed in the table"
+    },
+    {
+      "word": "chemistry",
+      "type": "common association",
+      "hint": "science field that heavily uses the table"
+    },
+    {
+      "word": "atomic number",
+      "type": "common association",
+      "hint": "number assigned to each element in the table"
+    },
+    {
+      "word": "metals",
+      "type": "common association",
+      "hint": "category of elements on the left side of the table"
+    },
+    {
+      "word": "symbols",
+      "type": "common association",
+      "hint": "abbreviations used to represent elements"
+    },
+    {
+      "word": "rows",
+      "type": "common association",
+      "hint": "horizontal lines of elements called periods"
+    },
+    {
+      "word": "columns",
+      "type": "common association",
+      "hint": "vertical lines of elements called groups"
+    }
+  ],
+  "neon": [
+    "lights",
+    "signs",
+    "bright",
+    "colors",
+    "gas",
+    "Vegas",
+    "80s",
+    "glow"
+  ],
+  "neon_detailed": [
+    {
+      "word": "lights",
+      "type": "common association",
+      "hint": "bright illumination often used in signs"
+    },
+    {
+      "word": "signs",
+      "type": "common association",
+      "hint": "advertising displays using neon gas"
+    },
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "vivid and intense appearance"
+    },
+    {
+      "word": "colors",
+      "type": "common association",
+      "hint": "vibrant hues produced by neon lights"
+    },
+    {
+      "word": "gas",
+      "type": "common association",
+      "hint": "element used to create neon lighting"
+    },
+    {
+      "word": "Vegas",
+      "type": "common association",
+      "hint": "city known for its neon-lit streets and signs"
+    },
+    {
+      "word": "80s",
+      "type": "common association",
+      "hint": "decade associated with neon fashion and aesthetics"
+    },
+    {
+      "word": "glow",
+      "type": "common association",
+      "hint": "radiant illumination emitted by neon"
+    }
+  ],
+  "bubbles": [
+    "soap",
+    "bath",
+    "champagne",
+    "gum",
+    "floating",
+    "pop",
+    "round",
+    "transparent"
+  ],
+  "bubbles_detailed": [
+    {
+      "word": "soap",
+      "type": "common association",
+      "hint": "used to create bubbles when washing"
+    },
+    {
+      "word": "bath",
+      "type": "common association",
+      "hint": "bubbles are often added to bathwater"
+    },
+    {
+      "word": "champagne",
+      "type": "common association",
+      "hint": "carbonated drink with bubbles"
+    },
+    {
+      "word": "gum",
+      "type": "common association",
+      "hint": "can be blown into bubbles"
+    },
+    {
+      "word": "floating",
+      "type": "common association",
+      "hint": "bubbles rise and float in liquids"
+    },
+    {
+      "word": "pop",
+      "type": "common association",
+      "hint": "the sound bubbles make when they burst"
+    },
+    {
+      "word": "round",
+      "type": "common association",
+      "hint": "the typical shape of bubbles"
+    },
+    {
+      "word": "transparent",
+      "type": "common association",
+      "hint": "bubbles are usually see-through"
+    }
+  ],
+  "sugar": [
+    "sweet",
+    "candy",
+    "diabetes",
+    "calories",
+    "baking",
+    "cane",
+    "white",
+    "energy"
+  ],
+  "sugar_detailed": [
+    {
+      "word": "sweet",
+      "type": "common association",
+      "hint": "primary taste of sugar"
+    },
+    {
+      "word": "candy",
+      "type": "common association",
+      "hint": "popular sugary treat"
+    },
+    {
+      "word": "diabetes",
+      "type": "common association",
+      "hint": "health condition linked to high sugar intake"
+    },
+    {
+      "word": "calories",
+      "type": "common association",
+      "hint": "sugar is calorie-dense"
+    },
+    {
+      "word": "baking",
+      "type": "common association",
+      "hint": "sugar is a common baking ingredient"
+    },
+    {
+      "word": "cane",
+      "type": "common association",
+      "hint": "source of sugar"
+    },
+    {
+      "word": "white",
+      "type": "common association",
+      "hint": "common color of refined sugar"
+    },
+    {
+      "word": "energy",
+      "type": "common association",
+      "hint": "sugar provides quick energy"
+    }
+  ],
+  "caffeine": [
+    "coffee",
+    "energy",
+    "alert",
+    "jitters",
+    "addiction",
+    "soda",
+    "tea",
+    "headache"
+  ],
+  "caffeine_detailed": [
+    {
+      "word": "coffee",
+      "type": "common association",
+      "hint": "popular caffeinated beverage"
+    },
+    {
+      "word": "energy",
+      "type": "common association",
+      "hint": "stimulating effect of caffeine"
+    },
+    {
+      "word": "alert",
+      "type": "common association",
+      "hint": "feeling of wakefulness from caffeine"
+    },
+    {
+      "word": "jitters",
+      "type": "common association",
+      "hint": "side effect of excessive caffeine consumption"
+    },
+    {
+      "word": "addiction",
+      "type": "common association",
+      "hint": "dependency some people develop on caffeine"
+    },
+    {
+      "word": "soda",
+      "type": "common association",
+      "hint": "caffeinated soft drinks"
+    },
+    {
+      "word": "tea",
+      "type": "common association",
+      "hint": "another common source of caffeine"
+    },
+    {
+      "word": "headache",
+      "type": "common association",
+      "hint": "withdrawal symptom when reducing caffeine intake"
+    }
+  ],
+  "instrument": [
+    "music",
+    "piano",
+    "guitar",
+    "orchestra",
+    "band",
+    "violin",
+    "drum",
+    "flute"
+  ],
+  "instrument_detailed": [
+    {
+      "word": "music",
+      "type": "common association",
+      "hint": "instruments are used to create music"
+    },
+    {
+      "word": "piano",
+      "type": "common association",
+      "hint": "a popular musical instrument"
+    },
+    {
+      "word": "guitar",
+      "type": "common association",
+      "hint": "a widely recognized stringed instrument"
+    },
+    {
+      "word": "orchestra",
+      "type": "common association",
+      "hint": "a group of musicians playing various instruments"
+    },
+    {
+      "word": "band",
+      "type": "common association",
+      "hint": "a group of people who play instruments together"
+    },
+    {
+      "word": "violin",
+      "type": "common association",
+      "hint": "a common classical string instrument"
+    },
+    {
+      "word": "drum",
+      "type": "common association",
+      "hint": "a percussion instrument found in many genres"
+    },
+    {
+      "word": "flute",
+      "type": "common association",
+      "hint": "a woodwind instrument often used in orchestras"
+    }
+  ],
+  "melody": [
+    "song",
+    "tune",
+    "harmony",
+    "rhythm",
+    "singer",
+    "instrument",
+    "notes",
+    "catchy"
+  ],
+  "melody_detailed": [
+    {
+      "word": "song",
+      "type": "common association",
+      "hint": "a musical composition with lyrics"
+    },
+    {
+      "word": "tune",
+      "type": "common association",
+      "hint": "a series of musical notes"
+    },
+    {
+      "word": "harmony",
+      "type": "common association",
+      "hint": "pleasing combination of musical notes"
+    },
+    {
+      "word": "rhythm",
+      "type": "common association",
+      "hint": "regular pattern of sounds in music"
+    },
+    {
+      "word": "singer",
+      "type": "common association",
+      "hint": "person who performs melodies vocally"
+    },
+    {
+      "word": "instrument",
+      "type": "common association",
+      "hint": "device used to create musical sounds"
+    },
+    {
+      "word": "notes",
+      "type": "common association",
+      "hint": "individual sounds that make up a melody"
+    },
+    {
+      "word": "catchy",
+      "type": "common association",
+      "hint": "easily remembered or appealing melody"
+    }
+  ],
+  "rhythm": [
+    "music",
+    "dance",
+    "beat",
+    "drum",
+    "tempo",
+    "pattern",
+    "pulse",
+    "groove"
+  ],
+  "rhythm_detailed": [
+    {
+      "word": "music",
+      "type": "common association",
+      "hint": "rhythms are fundamental to musical compositions"
+    },
+    {
+      "word": "dance",
+      "type": "common association",
+      "hint": "movements synchronized to rhythmic patterns"
+    },
+    {
+      "word": "beat",
+      "type": "common association",
+      "hint": "regular, repeated pattern of sound"
+    },
+    {
+      "word": "drum",
+      "type": "common association",
+      "hint": "percussion instrument used to create rhythms"
+    },
+    {
+      "word": "tempo",
+      "type": "common association",
+      "hint": "speed or pace of a rhythm"
+    },
+    {
+      "word": "pattern",
+      "type": "common association",
+      "hint": "recurring sequence in rhythm"
+    },
+    {
+      "word": "pulse",
+      "type": "common association",
+      "hint": "steady, underlying beat in music"
+    },
+    {
+      "word": "groove",
+      "type": "common association",
+      "hint": "pleasing or exciting rhythm in music"
+    }
+  ],
+  "soap": [
+    "clean",
+    "bubbles",
+    "shower",
+    "lather",
+    "bar",
+    "scent",
+    "wash",
+    "hygiene"
+  ],
+  "soap_detailed": [
+    {
+      "word": "clean",
+      "type": "common association",
+      "hint": "soap's primary purpose"
+    },
+    {
+      "word": "bubbles",
+      "type": "common association",
+      "hint": "often produced when using soap"
+    },
+    {
+      "word": "shower",
+      "type": "common association",
+      "hint": "common place to use soap"
+    },
+    {
+      "word": "lather",
+      "type": "common association",
+      "hint": "foam created when soap is mixed with water"
+    },
+    {
+      "word": "bar",
+      "type": "common association",
+      "hint": "common shape of solid soap"
+    },
+    {
+      "word": "scent",
+      "type": "common association",
+      "hint": "many soaps have a fragrance"
+    },
+    {
+      "word": "wash",
+      "type": "common association",
+      "hint": "action performed with soap"
+    },
+    {
+      "word": "hygiene",
+      "type": "common association",
+      "hint": "soap is essential for personal cleanliness"
+    }
+  ],
+  "bath": [
+    "bubbles",
+    "soap",
+    "towel",
+    "water",
+    "tub",
+    "rubber duck",
+    "relax"
+  ],
+  "bath_detailed": [
+    {
+      "word": "bubbles",
+      "type": "common association",
+      "hint": "often added to baths for fun or relaxation"
+    },
+    {
+      "word": "soap",
+      "type": "common association",
+      "hint": "used for cleaning in a bath"
+    },
+    {
+      "word": "towel",
+      "type": "common association",
+      "hint": "used for drying off after a bath"
+    },
+    {
+      "word": "water",
+      "type": "common association",
+      "hint": "the main element of a bath"
+    },
+    {
+      "word": "tub",
+      "type": "common association",
+      "hint": "container that holds bath water"
+    },
+    {
+      "word": "rubber duck",
+      "type": "common association",
+      "hint": "popular bath toy"
+    },
+    {
+      "word": "relax",
+      "type": "common association",
+      "hint": "common feeling associated with taking a bath"
+    }
+  ],
+  "clouds": [
+    "rain",
+    "sky",
+    "fluffy",
+    "white",
+    "storm",
+    "cotton",
+    "weather"
+  ],
+  "clouds_detailed": [
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "clouds often produce precipitation"
+    },
+    {
+      "word": "sky",
+      "type": "common association",
+      "hint": "clouds are visible in the sky"
+    },
+    {
+      "word": "fluffy",
+      "type": "common association",
+      "hint": "describes the appearance of many clouds"
+    },
+    {
+      "word": "white",
+      "type": "common association",
+      "hint": "the most common color of clouds"
+    },
+    {
+      "word": "storm",
+      "type": "common association",
+      "hint": "dark clouds often indicate an approaching storm"
+    },
+    {
+      "word": "cotton",
+      "type": "common association",
+      "hint": "clouds are often compared to cotton balls"
+    },
+    {
+      "word": "weather",
+      "type": "common association",
+      "hint": "clouds are a key element of weather patterns"
+    }
+  ],
+  "puddles": [
+    "rain",
+    "splash",
+    "reflection",
+    "muddy",
+    "boots",
+    "children",
+    "wet"
+  ],
+  "puddles_detailed": [
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "source of puddles"
+    },
+    {
+      "word": "splash",
+      "type": "common association",
+      "hint": "action often done in puddles"
+    },
+    {
+      "word": "reflection",
+      "type": "common association",
+      "hint": "seen on puddle surfaces"
+    },
+    {
+      "word": "muddy",
+      "type": "common association",
+      "hint": "describes puddles on dirt"
+    },
+    {
+      "word": "boots",
+      "type": "common association",
+      "hint": "footwear for puddles"
+    },
+    {
+      "word": "children",
+      "type": "common association",
+      "hint": "often play in puddles"
+    },
+    {
+      "word": "wet",
+      "type": "common association",
+      "hint": "state of puddles"
+    }
+  ],
+  "wet": [
+    "water",
+    "rain",
+    "damp",
+    "soggy",
+    "slippery",
+    "umbrella",
+    "puddle"
+  ],
+  "wet_detailed": [
+    {
+      "word": "water",
+      "type": "common association",
+      "hint": "primary substance that makes things wet"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "natural phenomenon that causes wetness"
+    },
+    {
+      "word": "damp",
+      "type": "common association",
+      "hint": "slightly moist condition"
+    },
+    {
+      "word": "soggy",
+      "type": "common association",
+      "hint": "saturated with moisture"
+    },
+    {
+      "word": "slippery",
+      "type": "common association",
+      "hint": "condition often caused by wetness"
+    },
+    {
+      "word": "umbrella",
+      "type": "common association",
+      "hint": "item used to stay dry in wet conditions"
+    },
+    {
+      "word": "puddle",
+      "type": "common association",
+      "hint": "small pool of water often found after rain"
+    }
+  ],
+  "shadow": [
+    "dark",
+    "silhouette",
+    "shade",
+    "mysterious",
+    "lurking",
+    "night",
+    "fear",
+    "reflection"
+  ],
+  "shadow_detailed": [
+    {
+      "word": "dark",
+      "type": "common association",
+      "hint": "shadows are darker than surrounding areas"
+    },
+    {
+      "word": "silhouette",
+      "type": "common association",
+      "hint": "a dark shape or outline against a lighter background"
+    },
+    {
+      "word": "shade",
+      "type": "common association",
+      "hint": "area protected from direct light"
+    },
+    {
+      "word": "mysterious",
+      "type": "common association",
+      "hint": "shadows can create an air of mystery"
+    },
+    {
+      "word": "lurking",
+      "type": "common association",
+      "hint": "hiding or waiting in shadows"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "shadows are more prominent at night"
+    },
+    {
+      "word": "fear",
+      "type": "common association",
+      "hint": "shadows can evoke fear of the unknown"
+    },
+    {
+      "word": "reflection",
+      "type": "common association",
+      "hint": "shadows are like reflections, but darker"
+    }
+  ],
+  "tree": [
+    "leaves",
+    "branches",
+    "roots",
+    "bark",
+    "forest",
+    "wood",
+    "shade"
+  ],
+  "tree_detailed": [
+    {
+      "word": "leaves",
+      "type": "common association",
+      "hint": "green parts that grow on branches"
+    },
+    {
+      "word": "branches",
+      "type": "common association",
+      "hint": "parts that extend from the trunk"
+    },
+    {
+      "word": "roots",
+      "type": "common association",
+      "hint": "underground parts that anchor the tree"
+    },
+    {
+      "word": "bark",
+      "type": "common association",
+      "hint": "outer protective layer of the trunk"
+    },
+    {
+      "word": "forest",
+      "type": "common association",
+      "hint": "a large area with many trees"
+    },
+    {
+      "word": "wood",
+      "type": "common association",
+      "hint": "material that comes from trees"
+    },
+    {
+      "word": "shade",
+      "type": "common association",
+      "hint": "coolness provided by tree canopy"
+    }
+  ],
+  "sunglasses": [
+    "sun",
+    "beach",
+    "cool",
+    "summer",
+    "shades",
+    "UV protection",
+    "fashion",
+    "celebrity"
+  ],
+  "sunglasses_detailed": [
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "protection from bright sunlight"
+    },
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "often worn at the beach"
+    },
+    {
+      "word": "cool",
+      "type": "common association",
+      "hint": "associated with a stylish appearance"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "frequently used during summer months"
+    },
+    {
+      "word": "shades",
+      "type": "common association",
+      "hint": "common slang term for sunglasses"
+    },
+    {
+      "word": "UV protection",
+      "type": "common association",
+      "hint": "blocks harmful ultraviolet rays"
+    },
+    {
+      "word": "fashion",
+      "type": "common association",
+      "hint": "considered a fashion accessory"
+    },
+    {
+      "word": "celebrity",
+      "type": "common association",
+      "hint": "often worn by celebrities for privacy"
+    }
+  ],
+  "beach": [
+    "sand",
+    "ocean",
+    "sunscreen",
+    "waves",
+    "seashells",
+    "swimsuit",
+    "umbrella"
+  ],
+  "beach_detailed": [
+    {
+      "word": "sand",
+      "type": "common association",
+      "hint": "grainy material covering most beaches"
+    },
+    {
+      "word": "ocean",
+      "type": "common association",
+      "hint": "large body of water at the beach"
+    },
+    {
+      "word": "sunscreen",
+      "type": "common association",
+      "hint": "protective lotion used at the beach"
+    },
+    {
+      "word": "waves",
+      "type": "common association",
+      "hint": "water movement common at beaches"
+    },
+    {
+      "word": "seashells",
+      "type": "common association",
+      "hint": "marine objects often found on beaches"
+    },
+    {
+      "word": "swimsuit",
+      "type": "common association",
+      "hint": "clothing worn for swimming at the beach"
+    },
+    {
+      "word": "umbrella",
+      "type": "common association",
+      "hint": "provides shade on sunny beaches"
+    }
+  ],
+  "victorian": [
+    "era",
+    "architecture",
+    "fashion",
+    "morality",
+    "industrial",
+    "literature",
+    "corset"
+  ],
+  "victorian_detailed": [
+    {
+      "word": "era",
+      "type": "common association",
+      "hint": "period of British history under Queen Victoria's reign"
+    },
+    {
+      "word": "architecture",
+      "type": "common association",
+      "hint": "ornate building style popular in the 19th century"
+    },
+    {
+      "word": "fashion",
+      "type": "common association",
+      "hint": "elaborate clothing styles from the 1800s"
+    },
+    {
+      "word": "morality",
+      "type": "common association",
+      "hint": "strict social codes and values of the time"
+    },
+    {
+      "word": "industrial",
+      "type": "common association",
+      "hint": "rapid technological progress during this period"
+    },
+    {
+      "word": "literature",
+      "type": "common association",
+      "hint": "works by authors like Dickens and the Brontës"
+    },
+    {
+      "word": "corset",
+      "type": "common association",
+      "hint": "restrictive undergarment worn by women"
+    }
+  ],
+  "sky": [
+    "blue",
+    "clouds",
+    "sun",
+    "stars",
+    "moon",
+    "birds",
+    "airplane"
+  ],
+  "sky_detailed": [
+    {
+      "word": "blue",
+      "type": "common association",
+      "hint": "typical color of clear daytime sky"
+    },
+    {
+      "word": "clouds",
+      "type": "common association",
+      "hint": "visible masses of water droplets in the sky"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "bright star visible in Earth's sky during day"
+    },
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "distant luminous points visible in night sky"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "Earth's natural satellite visible in night sky"
+    },
+    {
+      "word": "birds",
+      "type": "common association",
+      "hint": "flying animals often seen in the sky"
+    },
+    {
+      "word": "airplane",
+      "type": "common association",
+      "hint": "flying vehicle that travels through the sky"
+    }
+  ],
+  "fluffy": [
+    "clouds",
+    "cotton candy",
+    "kitten",
+    "pillow",
+    "rabbit",
+    "marshmallow",
+    "teddy bear"
+  ],
+  "fluffy_detailed": [
+    {
+      "word": "clouds",
+      "type": "common association",
+      "hint": "soft and puffy appearance"
+    },
+    {
+      "word": "cotton candy",
+      "type": "common association",
+      "hint": "light and airy texture"
+    },
+    {
+      "word": "kitten",
+      "type": "common association",
+      "hint": "soft fur of young cats"
+    },
+    {
+      "word": "pillow",
+      "type": "common association",
+      "hint": "soft cushion for sleeping"
+    },
+    {
+      "word": "rabbit",
+      "type": "common association",
+      "hint": "soft fur of bunnies"
+    },
+    {
+      "word": "marshmallow",
+      "type": "common association",
+      "hint": "light and spongy texture"
+    },
+    {
+      "word": "teddy bear",
+      "type": "common association",
+      "hint": "soft plush toy"
+    }
+  ],
+  "white": [
+    "snow",
+    "clouds",
+    "paper",
+    "milk",
+    "wedding dress",
+    "polar bear",
+    "ivory"
+  ],
+  "white_detailed": [
+    {
+      "word": "snow",
+      "type": "common association",
+      "hint": "frozen precipitation that is white in color"
+    },
+    {
+      "word": "clouds",
+      "type": "common association",
+      "hint": "visible mass of water droplets in the sky"
+    },
+    {
+      "word": "paper",
+      "type": "common association",
+      "hint": "common writing material"
+    },
+    {
+      "word": "milk",
+      "type": "common association",
+      "hint": "dairy product with a white appearance"
+    },
+    {
+      "word": "wedding dress",
+      "type": "common association",
+      "hint": "traditional bridal attire"
+    },
+    {
+      "word": "polar bear",
+      "type": "common association",
+      "hint": "large Arctic mammal with white fur"
+    },
+    {
+      "word": "ivory",
+      "type": "common association",
+      "hint": "hard white material from animal tusks"
+    }
+  ],
+  "splash": [
+    "water",
+    "pool",
+    "rain",
+    "puddle",
+    "waves",
+    "paint",
+    "colorful",
+    "dive"
+  ],
+  "splash_detailed": [
+    {
+      "word": "water",
+      "type": "common association",
+      "hint": "splashing often involves water"
+    },
+    {
+      "word": "pool",
+      "type": "common association",
+      "hint": "people often splash in swimming pools"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "raindrops splash when they hit surfaces"
+    },
+    {
+      "word": "puddle",
+      "type": "common association",
+      "hint": "stepping in puddles creates splashes"
+    },
+    {
+      "word": "waves",
+      "type": "common association",
+      "hint": "ocean waves splash against the shore"
+    },
+    {
+      "word": "paint",
+      "type": "common association",
+      "hint": "paint can splash when spilled or applied"
+    },
+    {
+      "word": "colorful",
+      "type": "common association",
+      "hint": "splashes are often associated with bright colors"
+    },
+    {
+      "word": "dive",
+      "type": "common association",
+      "hint": "diving into water creates a splash"
+    }
+  ],
+  "reflection": [
+    "mirror",
+    "pond",
+    "thinking",
+    "image",
+    "light",
+    "introspection",
+    "echo",
+    "symmetry"
+  ],
+  "reflection_detailed": [
+    {
+      "word": "mirror",
+      "type": "common association",
+      "hint": "reflective surface"
+    },
+    {
+      "word": "pond",
+      "type": "common association",
+      "hint": "calm water reflects surroundings"
+    },
+    {
+      "word": "thinking",
+      "type": "common association",
+      "hint": "contemplating or pondering"
+    },
+    {
+      "word": "image",
+      "type": "common association",
+      "hint": "visual representation"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "bounces off reflective surfaces"
+    },
+    {
+      "word": "introspection",
+      "type": "common association",
+      "hint": "examining one's own thoughts"
+    },
+    {
+      "word": "echo",
+      "type": "common association",
+      "hint": "sound reflection"
+    },
+    {
+      "word": "symmetry",
+      "type": "common association",
+      "hint": "mirrored appearance"
+    }
+  ],
+  "muddy": [
+    "dirty",
+    "wet",
+    "boots",
+    "puddle",
+    "rain",
+    "slippery",
+    "brown"
+  ],
+  "muddy_detailed": [
+    {
+      "word": "dirty",
+      "type": "common association",
+      "hint": "muddy things are usually dirty or soiled"
+    },
+    {
+      "word": "wet",
+      "type": "common association",
+      "hint": "mud is formed when soil mixes with water"
+    },
+    {
+      "word": "boots",
+      "type": "common association",
+      "hint": "footwear often used in muddy conditions"
+    },
+    {
+      "word": "puddle",
+      "type": "common association",
+      "hint": "small pools of water often associated with mud"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "rainfall often creates muddy conditions"
+    },
+    {
+      "word": "slippery",
+      "type": "common association",
+      "hint": "muddy surfaces are often slick and hard to walk on"
+    },
+    {
+      "word": "brown",
+      "type": "common association",
+      "hint": "the typical color of mud"
+    }
+  ],
+  "water": [
+    "ocean",
+    "rain",
+    "thirst",
+    "swimming",
+    "fish",
+    "river",
+    "drink",
+    "ice"
+  ],
+  "water_detailed": [
+    {
+      "word": "ocean",
+      "type": "common association",
+      "hint": "large body of water"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "water falling from the sky"
+    },
+    {
+      "word": "thirst",
+      "type": "common association",
+      "hint": "feeling of needing to drink"
+    },
+    {
+      "word": "swimming",
+      "type": "common association",
+      "hint": "activity done in water"
+    },
+    {
+      "word": "fish",
+      "type": "common association",
+      "hint": "animals that live in water"
+    },
+    {
+      "word": "river",
+      "type": "common association",
+      "hint": "flowing body of water"
+    },
+    {
+      "word": "drink",
+      "type": "common association",
+      "hint": "consuming water"
+    },
+    {
+      "word": "ice",
+      "type": "common association",
+      "hint": "frozen water"
+    }
+  ],
+  "damp": [
+    "wet",
+    "moist",
+    "humid",
+    "rain",
+    "basement",
+    "towel",
+    "mold",
+    "sponge"
+  ],
+  "damp_detailed": [
+    {
+      "word": "wet",
+      "type": "common association",
+      "hint": "similar to damp but more saturated"
+    },
+    {
+      "word": "moist",
+      "type": "common association",
+      "hint": "slightly wet, often used for food or soil"
+    },
+    {
+      "word": "humid",
+      "type": "common association",
+      "hint": "air containing water vapor"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "precipitation that causes dampness"
+    },
+    {
+      "word": "basement",
+      "type": "common association",
+      "hint": "often damp due to poor ventilation"
+    },
+    {
+      "word": "towel",
+      "type": "common association",
+      "hint": "used to dry damp things"
+    },
+    {
+      "word": "mold",
+      "type": "common association",
+      "hint": "grows in damp conditions"
+    },
+    {
+      "word": "sponge",
+      "type": "common association",
+      "hint": "absorbent material often damp when in use"
+    }
+  ],
+  "soggy": [
+    "wet",
+    "cereal",
+    "bread",
+    "rain",
+    "sponge",
+    "mushy",
+    "newspaper",
+    "grass"
+  ],
+  "soggy_detailed": [
+    {
+      "word": "wet",
+      "type": "common association",
+      "hint": "saturated with water"
+    },
+    {
+      "word": "cereal",
+      "type": "common association",
+      "hint": "breakfast food that becomes soggy in milk"
+    },
+    {
+      "word": "bread",
+      "type": "common association",
+      "hint": "becomes soggy when left in liquid"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "cause of outdoor items becoming soggy"
+    },
+    {
+      "word": "sponge",
+      "type": "common association",
+      "hint": "absorbs water and becomes soggy"
+    },
+    {
+      "word": "mushy",
+      "type": "common association",
+      "hint": "similar texture to soggy items"
+    },
+    {
+      "word": "newspaper",
+      "type": "common association",
+      "hint": "becomes soggy when wet"
+    },
+    {
+      "word": "grass",
+      "type": "common association",
+      "hint": "can be soggy after rain or watering"
+    }
+  ],
+  "dark": [
+    "night",
+    "black",
+    "shadow",
+    "evil",
+    "scary",
+    "mysterious",
+    "gloomy"
+  ],
+  "dark_detailed": [
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "absence of daylight"
+    },
+    {
+      "word": "black",
+      "type": "common association",
+      "hint": "darkest color"
+    },
+    {
+      "word": "shadow",
+      "type": "common association",
+      "hint": "area of darkness caused by blocked light"
+    },
+    {
+      "word": "evil",
+      "type": "common association",
+      "hint": "moral darkness or wickedness"
+    },
+    {
+      "word": "scary",
+      "type": "common association",
+      "hint": "frightening due to lack of light"
+    },
+    {
+      "word": "mysterious",
+      "type": "common association",
+      "hint": "unknown or difficult to understand"
+    },
+    {
+      "word": "gloomy",
+      "type": "common association",
+      "hint": "depressing or dismal atmosphere"
+    }
+  ],
+  "silhouette": [
+    "shadow",
+    "profile",
+    "sunset",
+    "outline",
+    "black",
+    "figure",
+    "contrast",
+    "photography"
+  ],
+  "silhouette_detailed": [
+    {
+      "word": "shadow",
+      "type": "common association",
+      "hint": "dark shape or outline"
+    },
+    {
+      "word": "profile",
+      "type": "common association",
+      "hint": "outline of a face from the side"
+    },
+    {
+      "word": "sunset",
+      "type": "common association",
+      "hint": "silhouettes often seen against setting sun"
+    },
+    {
+      "word": "outline",
+      "type": "common association",
+      "hint": "shape or contour of an object"
+    },
+    {
+      "word": "black",
+      "type": "common association",
+      "hint": "color typically associated with silhouettes"
+    },
+    {
+      "word": "figure",
+      "type": "common association",
+      "hint": "shape or form of a person"
+    },
+    {
+      "word": "contrast",
+      "type": "common association",
+      "hint": "difference between silhouette and background"
+    },
+    {
+      "word": "photography",
+      "type": "common association",
+      "hint": "technique used in image capture"
+    }
+  ],
+  "mysterious": [
+    "dark",
+    "secret",
+    "unknown",
+    "enigma",
+    "shadow",
+    "clue",
+    "detective",
+    "puzzle"
+  ],
+  "mysterious_detailed": [
+    {
+      "word": "dark",
+      "type": "common association",
+      "hint": "lack of light often creates mystery"
+    },
+    {
+      "word": "secret",
+      "type": "common association",
+      "hint": "hidden information is mysterious"
+    },
+    {
+      "word": "unknown",
+      "type": "common association",
+      "hint": "lack of knowledge creates mystery"
+    },
+    {
+      "word": "enigma",
+      "type": "common association",
+      "hint": "puzzling or inexplicable situation"
+    },
+    {
+      "word": "shadow",
+      "type": "common association",
+      "hint": "obscured or hidden from view"
+    },
+    {
+      "word": "clue",
+      "type": "common association",
+      "hint": "piece of evidence in solving a mystery"
+    },
+    {
+      "word": "detective",
+      "type": "common association",
+      "hint": "person who investigates mysteries"
+    },
+    {
+      "word": "puzzle",
+      "type": "common association",
+      "hint": "something that requires solving"
+    }
+  ],
+  "leaves": [
+    "trees",
+    "fall",
+    "green",
+    "rake",
+    "photosynthesis",
+    "veins",
+    "maple",
+    "tea"
+  ],
+  "leaves_detailed": [
+    {
+      "word": "trees",
+      "type": "common association",
+      "hint": "leaves grow on trees"
+    },
+    {
+      "word": "fall",
+      "type": "common association",
+      "hint": "leaves change color and fall in autumn"
+    },
+    {
+      "word": "green",
+      "type": "common association",
+      "hint": "common color of leaves"
+    },
+    {
+      "word": "rake",
+      "type": "common association",
+      "hint": "tool used to gather fallen leaves"
+    },
+    {
+      "word": "photosynthesis",
+      "type": "common association",
+      "hint": "process leaves use to make food for plants"
+    },
+    {
+      "word": "veins",
+      "type": "common association",
+      "hint": "visible lines in leaf structure"
+    },
+    {
+      "word": "maple",
+      "type": "common association",
+      "hint": "tree known for distinctive leaf shape"
+    },
+    {
+      "word": "tea",
+      "type": "common association",
+      "hint": "beverage made from plant leaves"
+    }
+  ],
+  "branches": [
+    "tree",
+    "leaves",
+    "bank",
+    "fork",
+    "government",
+    "river",
+    "family"
+  ],
+  "branches_detailed": [
+    {
+      "word": "tree",
+      "type": "common association",
+      "hint": "part of a tree's structure"
+    },
+    {
+      "word": "leaves",
+      "type": "common association",
+      "hint": "typically grow on branches"
+    },
+    {
+      "word": "bank",
+      "type": "common association",
+      "hint": "local office of a financial institution"
+    },
+    {
+      "word": "fork",
+      "type": "common association",
+      "hint": "division or split in a path or road"
+    },
+    {
+      "word": "government",
+      "type": "common association",
+      "hint": "divisions of government, e.g. executive branch"
+    },
+    {
+      "word": "river",
+      "type": "common association",
+      "hint": "smaller streams that split from main river"
+    },
+    {
+      "word": "family",
+      "type": "common association",
+      "hint": "different lineages in a family tree"
+    }
+  ],
+  "roots": [
+    "tree",
+    "plant",
+    "hair",
+    "family",
+    "math",
+    "origin",
+    "vegetables",
+    "etymology"
+  ],
+  "roots_detailed": [
+    {
+      "word": "tree",
+      "type": "common association",
+      "hint": "roots anchor trees in the ground"
+    },
+    {
+      "word": "plant",
+      "type": "common association",
+      "hint": "roots absorb water and nutrients for plants"
+    },
+    {
+      "word": "hair",
+      "type": "common association",
+      "hint": "the base of hair strands in the scalp"
+    },
+    {
+      "word": "family",
+      "type": "common association",
+      "hint": "ancestral or cultural origins"
+    },
+    {
+      "word": "math",
+      "type": "common association",
+      "hint": "square root or cube root in mathematics"
+    },
+    {
+      "word": "origin",
+      "type": "common association",
+      "hint": "the source or starting point of something"
+    },
+    {
+      "word": "vegetables",
+      "type": "common association",
+      "hint": "edible roots like carrots or potatoes"
+    },
+    {
+      "word": "etymology",
+      "type": "common association",
+      "hint": "the origin of words and their historical development"
+    }
+  ],
+  "cool": [
+    "cold",
+    "awesome",
+    "hip",
+    "chill",
+    "sunglasses",
+    "ice",
+    "calm",
+    "refreshing"
+  ],
+  "cool_detailed": [
+    {
+      "word": "cold",
+      "type": "common association",
+      "hint": "opposite of warm"
+    },
+    {
+      "word": "awesome",
+      "type": "common association",
+      "hint": "slang for impressive or great"
+    },
+    {
+      "word": "hip",
+      "type": "common association",
+      "hint": "trendy or fashionable"
+    },
+    {
+      "word": "chill",
+      "type": "common association",
+      "hint": "relaxed or easygoing"
+    },
+    {
+      "word": "sunglasses",
+      "type": "common association",
+      "hint": "accessory associated with coolness"
+    },
+    {
+      "word": "ice",
+      "type": "common association",
+      "hint": "frozen water, very cold"
+    },
+    {
+      "word": "calm",
+      "type": "common association",
+      "hint": "composed or unflappable"
+    },
+    {
+      "word": "refreshing",
+      "type": "common association",
+      "hint": "pleasantly cool or invigorating"
+    }
+  ],
+  "summer": [
+    "beach",
+    "sunshine",
+    "vacation",
+    "ice cream",
+    "swimming",
+    "barbecue",
+    "shorts"
+  ],
+  "summer_detailed": [
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "popular summer destination"
+    },
+    {
+      "word": "sunshine",
+      "type": "common association",
+      "hint": "abundant during summer months"
+    },
+    {
+      "word": "vacation",
+      "type": "common association",
+      "hint": "many people take time off in summer"
+    },
+    {
+      "word": "ice cream",
+      "type": "common association",
+      "hint": "cold treat enjoyed in warm weather"
+    },
+    {
+      "word": "swimming",
+      "type": "common association",
+      "hint": "common summer activity to cool off"
+    },
+    {
+      "word": "barbecue",
+      "type": "common association",
+      "hint": "outdoor cooking popular in summer"
+    },
+    {
+      "word": "shorts",
+      "type": "common association",
+      "hint": "clothing worn in warm weather"
+    }
+  ],
+  "shades": [
+    "sunglasses",
+    "window",
+    "colors",
+    "shadows",
+    "blinds",
+    "lamp",
+    "gray"
+  ],
+  "shades_detailed": [
+    {
+      "word": "sunglasses",
+      "type": "common association",
+      "hint": "eyewear to block sunlight"
+    },
+    {
+      "word": "window",
+      "type": "common association",
+      "hint": "coverings to block light"
+    },
+    {
+      "word": "colors",
+      "type": "common association",
+      "hint": "variations in hue or tone"
+    },
+    {
+      "word": "shadows",
+      "type": "common association",
+      "hint": "dark areas created by blocked light"
+    },
+    {
+      "word": "blinds",
+      "type": "common association",
+      "hint": "adjustable window coverings"
+    },
+    {
+      "word": "lamp",
+      "type": "common association",
+      "hint": "cover for a light source"
+    },
+    {
+      "word": "gray",
+      "type": "common association",
+      "hint": "neutral color with many shades"
+    }
+  ],
+  "hot": [
+    "spicy",
+    "summer",
+    "fire",
+    "desert",
+    "temperature",
+    "sweating",
+    "sexy"
+  ],
+  "hot_detailed": [
+    {
+      "word": "spicy",
+      "type": "common association",
+      "hint": "foods with strong, pungent flavors"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "warm season of the year"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "flames and burning"
+    },
+    {
+      "word": "desert",
+      "type": "common association",
+      "hint": "arid, sun-baked environment"
+    },
+    {
+      "word": "temperature",
+      "type": "common association",
+      "hint": "measure of thermal energy"
+    },
+    {
+      "word": "sweating",
+      "type": "common association",
+      "hint": "body's response to heat"
+    },
+    {
+      "word": "sexy",
+      "type": "common association",
+      "hint": "slang for attractive or appealing"
+    }
+  ],
+  "yellow": [
+    "sun",
+    "banana",
+    "lemon",
+    "sunflower",
+    "taxi",
+    "caution",
+    "highlighter",
+    "daffodil"
+  ],
+  "yellow_detailed": [
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "bright yellow celestial body"
+    },
+    {
+      "word": "banana",
+      "type": "common association",
+      "hint": "popular yellow fruit"
+    },
+    {
+      "word": "lemon",
+      "type": "common association",
+      "hint": "sour yellow citrus fruit"
+    },
+    {
+      "word": "sunflower",
+      "type": "common association",
+      "hint": "flower with yellow petals"
+    },
+    {
+      "word": "taxi",
+      "type": "common association",
+      "hint": "yellow vehicles in many cities"
+    },
+    {
+      "word": "caution",
+      "type": "common association",
+      "hint": "yellow often used for warning signs"
+    },
+    {
+      "word": "highlighter",
+      "type": "common association",
+      "hint": "yellow marker pen"
+    },
+    {
+      "word": "daffodil",
+      "type": "common association",
+      "hint": "spring flower often yellow in color"
+    }
+  ],
+  "sand": [
+    "beach",
+    "desert",
+    "castle",
+    "hourglass",
+    "grit",
+    "sandpaper",
+    "dune"
+  ],
+  "sand_detailed": [
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "sandy shore by the ocean"
+    },
+    {
+      "word": "desert",
+      "type": "common association",
+      "hint": "vast sandy landscape"
+    },
+    {
+      "word": "castle",
+      "type": "common association",
+      "hint": "structure built with sand"
+    },
+    {
+      "word": "hourglass",
+      "type": "common association",
+      "hint": "time-measuring device using sand"
+    },
+    {
+      "word": "grit",
+      "type": "common association",
+      "hint": "small particles similar to sand"
+    },
+    {
+      "word": "sandpaper",
+      "type": "common association",
+      "hint": "abrasive paper made with sand"
+    },
+    {
+      "word": "dune",
+      "type": "common association",
+      "hint": "hill of wind-blown sand"
+    }
+  ],
+  "ocean": [
+    "beach",
+    "waves",
+    "fish",
+    "salt",
+    "blue",
+    "ship",
+    "seashell"
+  ],
+  "ocean_detailed": [
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "sandy shore next to the ocean"
+    },
+    {
+      "word": "waves",
+      "type": "common association",
+      "hint": "moving water in the ocean"
+    },
+    {
+      "word": "fish",
+      "type": "common association",
+      "hint": "aquatic animals living in the ocean"
+    },
+    {
+      "word": "salt",
+      "type": "common association",
+      "hint": "dissolved mineral in ocean water"
+    },
+    {
+      "word": "blue",
+      "type": "common association",
+      "hint": "common color associated with the ocean"
+    },
+    {
+      "word": "ship",
+      "type": "common association",
+      "hint": "large vessel that travels on the ocean"
+    },
+    {
+      "word": "seashell",
+      "type": "common association",
+      "hint": "hard protective covering of marine mollusks"
+    }
+  ],
+  "sunscreen": [
+    "beach",
+    "sun",
+    "lotion",
+    "SPF",
+    "summer",
+    "protection",
+    "skin",
+    "UV rays"
+  ],
+  "sunscreen_detailed": [
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "place where sunscreen is often used"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "the reason for using sunscreen"
+    },
+    {
+      "word": "lotion",
+      "type": "common association",
+      "hint": "common form of sunscreen"
+    },
+    {
+      "word": "SPF",
+      "type": "common association",
+      "hint": "abbreviation for Sun Protection Factor"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "season when sunscreen use increases"
+    },
+    {
+      "word": "protection",
+      "type": "common association",
+      "hint": "main purpose of sunscreen"
+    },
+    {
+      "word": "skin",
+      "type": "common association",
+      "hint": "where sunscreen is applied"
+    },
+    {
+      "word": "UV rays",
+      "type": "common association",
+      "hint": "what sunscreen protects against"
+    }
+  ],
+  "era": [
+    "time",
+    "period",
+    "age",
+    "epoch",
+    "historical",
+    "generation",
+    "decade",
+    "century"
+  ],
+  "era_detailed": [
+    {
+      "word": "time",
+      "type": "common association",
+      "hint": "a period of history"
+    },
+    {
+      "word": "period",
+      "type": "common association",
+      "hint": "a distinct phase or stage"
+    },
+    {
+      "word": "age",
+      "type": "common association",
+      "hint": "a particular epoch or time span"
+    },
+    {
+      "word": "epoch",
+      "type": "common association",
+      "hint": "a significant period in history"
+    },
+    {
+      "word": "historical",
+      "type": "common association",
+      "hint": "relating to past events"
+    },
+    {
+      "word": "generation",
+      "type": "common association",
+      "hint": "group of people born and living at the same time"
+    },
+    {
+      "word": "decade",
+      "type": "common association",
+      "hint": "a period of ten years"
+    },
+    {
+      "word": "century",
+      "type": "common association",
+      "hint": "a period of one hundred years"
+    }
+  ],
+  "architecture": [
+    "building",
+    "design",
+    "blueprint",
+    "skyscraper",
+    "construction",
+    "engineer",
+    "structure",
+    "skyline"
+  ],
+  "architecture_detailed": [
+    {
+      "word": "building",
+      "type": "common association",
+      "hint": "structures created by architects"
+    },
+    {
+      "word": "design",
+      "type": "common association",
+      "hint": "planning and creating structures"
+    },
+    {
+      "word": "blueprint",
+      "type": "common association",
+      "hint": "technical drawings of buildings"
+    },
+    {
+      "word": "skyscraper",
+      "type": "common association",
+      "hint": "tall urban buildings"
+    },
+    {
+      "word": "construction",
+      "type": "common association",
+      "hint": "process of creating buildings"
+    },
+    {
+      "word": "engineer",
+      "type": "common association",
+      "hint": "professional working with architects"
+    },
+    {
+      "word": "structure",
+      "type": "common association",
+      "hint": "physical form of buildings"
+    },
+    {
+      "word": "skyline",
+      "type": "common association",
+      "hint": "outline of buildings against the sky"
+    }
+  ],
+  "fashion": [
+    "style",
+    "runway",
+    "designer",
+    "trendy",
+    "model",
+    "brand",
+    "couture"
+  ],
+  "fashion_detailed": [
+    {
+      "word": "style",
+      "type": "common association",
+      "hint": "personal expression through clothing"
+    },
+    {
+      "word": "runway",
+      "type": "common association",
+      "hint": "where new fashion designs are showcased"
+    },
+    {
+      "word": "designer",
+      "type": "common association",
+      "hint": "creator of fashion items"
+    },
+    {
+      "word": "trendy",
+      "type": "common association",
+      "hint": "currently popular in fashion"
+    },
+    {
+      "word": "model",
+      "type": "common association",
+      "hint": "person who wears and displays fashion"
+    },
+    {
+      "word": "brand",
+      "type": "common association",
+      "hint": "company that produces fashion items"
+    },
+    {
+      "word": "couture",
+      "type": "common association",
+      "hint": "high-end custom-fitted clothing"
+    }
+  ],
+  "blue": [
+    "sky",
+    "ocean",
+    "sad",
+    "cold",
+    "jeans",
+    "police",
+    "blueberry"
+  ],
+  "blue_detailed": [
+    {
+      "word": "sky",
+      "type": "common association",
+      "hint": "the color of a clear daytime sky"
+    },
+    {
+      "word": "ocean",
+      "type": "common association",
+      "hint": "the color of large bodies of water"
+    },
+    {
+      "word": "sad",
+      "type": "common association",
+      "hint": "feeling down or depressed"
+    },
+    {
+      "word": "cold",
+      "type": "common association",
+      "hint": "associated with cool temperatures"
+    },
+    {
+      "word": "jeans",
+      "type": "common association",
+      "hint": "popular clothing item often blue in color"
+    },
+    {
+      "word": "police",
+      "type": "common association",
+      "hint": "color often associated with law enforcement"
+    },
+    {
+      "word": "blueberry",
+      "type": "common association",
+      "hint": "a fruit known for its blue color"
+    }
+  ],
+  "stars": [
+    "sky",
+    "night",
+    "space",
+    "twinkle",
+    "constellation",
+    "galaxy",
+    "sun",
+    "astronomy"
+  ],
+  "stars_detailed": [
+    {
+      "word": "sky",
+      "type": "common association",
+      "hint": "where stars are visible"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "when stars are typically seen"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "where stars exist"
+    },
+    {
+      "word": "twinkle",
+      "type": "common association",
+      "hint": "how stars appear to shine"
+    },
+    {
+      "word": "constellation",
+      "type": "common association",
+      "hint": "patterns formed by stars"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "collection of stars"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "closest star to Earth"
+    },
+    {
+      "word": "astronomy",
+      "type": "common association",
+      "hint": "study of stars and space"
+    }
+  ],
+  "moon": [
+    "night",
+    "stars",
+    "cheese",
+    "crater",
+    "lunar",
+    "astronaut",
+    "phases"
+  ],
+  "moon_detailed": [
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "moon is visible at night"
+    },
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "often seen together in the sky"
+    },
+    {
+      "word": "cheese",
+      "type": "common association",
+      "hint": "popular myth that the moon is made of cheese"
+    },
+    {
+      "word": "crater",
+      "type": "common association",
+      "hint": "visible features on the moon's surface"
+    },
+    {
+      "word": "lunar",
+      "type": "common association",
+      "hint": "adjective relating to the moon"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "people who have traveled to the moon"
+    },
+    {
+      "word": "phases",
+      "type": "common association",
+      "hint": "changing appearance of the moon over time"
+    }
+  ],
+  "cotton candy": [
+    "pink",
+    "fluffy",
+    "sweet",
+    "carnival",
+    "sticky",
+    "sugar",
+    "fairground",
+    "spun"
+  ],
+  "cotton candy_detailed": [
+    {
+      "word": "pink",
+      "type": "common association",
+      "hint": "typical color of cotton candy"
+    },
+    {
+      "word": "fluffy",
+      "type": "common association",
+      "hint": "describes the texture"
+    },
+    {
+      "word": "sweet",
+      "type": "common association",
+      "hint": "describes the taste"
+    },
+    {
+      "word": "carnival",
+      "type": "common association",
+      "hint": "common place to find cotton candy"
+    },
+    {
+      "word": "sticky",
+      "type": "common association",
+      "hint": "describes how it feels when eating"
+    },
+    {
+      "word": "sugar",
+      "type": "common association",
+      "hint": "main ingredient"
+    },
+    {
+      "word": "fairground",
+      "type": "common association",
+      "hint": "another place to find cotton candy"
+    },
+    {
+      "word": "spun",
+      "type": "common association",
+      "hint": "describes how it's made"
+    }
+  ],
+  "kitten": [
+    "cute",
+    "fluffy",
+    "playful",
+    "meow",
+    "whiskers",
+    "paw",
+    "milk"
+  ],
+  "kitten_detailed": [
+    {
+      "word": "cute",
+      "type": "common association",
+      "hint": "kittens are widely considered adorable"
+    },
+    {
+      "word": "fluffy",
+      "type": "common association",
+      "hint": "kittens often have soft, fuzzy fur"
+    },
+    {
+      "word": "playful",
+      "type": "common association",
+      "hint": "kittens are known for their energetic behavior"
+    },
+    {
+      "word": "meow",
+      "type": "common association",
+      "hint": "the sound kittens make"
+    },
+    {
+      "word": "whiskers",
+      "type": "common association",
+      "hint": "prominent facial feature of kittens"
+    },
+    {
+      "word": "paw",
+      "type": "common association",
+      "hint": "kittens have small, soft paws"
+    },
+    {
+      "word": "milk",
+      "type": "common association",
+      "hint": "kittens drink milk when young"
+    }
+  ],
+  "pillow": [
+    "soft",
+    "sleep",
+    "bed",
+    "comfort",
+    "feather",
+    "fluffy",
+    "cushion",
+    "nap"
+  ],
+  "pillow_detailed": [
+    {
+      "word": "soft",
+      "type": "common association",
+      "hint": "pillows are typically soft to touch"
+    },
+    {
+      "word": "sleep",
+      "type": "common association",
+      "hint": "pillows are used when sleeping"
+    },
+    {
+      "word": "bed",
+      "type": "common association",
+      "hint": "pillows are commonly found on beds"
+    },
+    {
+      "word": "comfort",
+      "type": "common association",
+      "hint": "pillows provide comfort"
+    },
+    {
+      "word": "feather",
+      "type": "common association",
+      "hint": "many pillows are filled with feathers"
+    },
+    {
+      "word": "fluffy",
+      "type": "common association",
+      "hint": "pillows are often described as fluffy"
+    },
+    {
+      "word": "cushion",
+      "type": "common association",
+      "hint": "pillows act as cushions for the head"
+    },
+    {
+      "word": "nap",
+      "type": "common association",
+      "hint": "people often use pillows when taking naps"
+    }
+  ],
+  "snow": [
+    "cold",
+    "winter",
+    "white",
+    "skiing",
+    "snowman",
+    "blizzard",
+    "snowflake"
+  ],
+  "snow_detailed": [
+    {
+      "word": "cold",
+      "type": "common association",
+      "hint": "snow is typically associated with low temperatures"
+    },
+    {
+      "word": "winter",
+      "type": "common association",
+      "hint": "snow is a characteristic of the winter season"
+    },
+    {
+      "word": "white",
+      "type": "common association",
+      "hint": "the color of snow"
+    },
+    {
+      "word": "skiing",
+      "type": "common association",
+      "hint": "popular winter sport that requires snow"
+    },
+    {
+      "word": "snowman",
+      "type": "common association",
+      "hint": "a figure often built using snow"
+    },
+    {
+      "word": "blizzard",
+      "type": "common association",
+      "hint": "a severe snowstorm with strong winds"
+    },
+    {
+      "word": "snowflake",
+      "type": "common association",
+      "hint": "individual ice crystal that makes up snow"
+    }
+  ],
+  "paper": [
+    "pen",
+    "write",
+    "notebook",
+    "printer",
+    "origami",
+    "newspaper",
+    "document"
+  ],
+  "paper_detailed": [
+    {
+      "word": "pen",
+      "type": "common association",
+      "hint": "often used together for writing"
+    },
+    {
+      "word": "write",
+      "type": "common association",
+      "hint": "primary action done on paper"
+    },
+    {
+      "word": "notebook",
+      "type": "common association",
+      "hint": "bound collection of paper pages"
+    },
+    {
+      "word": "printer",
+      "type": "common association",
+      "hint": "device that produces printed paper"
+    },
+    {
+      "word": "origami",
+      "type": "common association",
+      "hint": "Japanese art of paper folding"
+    },
+    {
+      "word": "newspaper",
+      "type": "common association",
+      "hint": "printed publication on paper"
+    },
+    {
+      "word": "document",
+      "type": "common association",
+      "hint": "important information written on paper"
+    }
+  ],
+  "milk": [
+    "cow",
+    "white",
+    "calcium",
+    "cereal",
+    "dairy",
+    "cookies",
+    "lactose"
+  ],
+  "milk_detailed": [
+    {
+      "word": "cow",
+      "type": "common association",
+      "hint": "primary source of milk"
+    },
+    {
+      "word": "white",
+      "type": "common association",
+      "hint": "color of milk"
+    },
+    {
+      "word": "calcium",
+      "type": "common association",
+      "hint": "nutrient found in milk"
+    },
+    {
+      "word": "cereal",
+      "type": "common association",
+      "hint": "often eaten with milk"
+    },
+    {
+      "word": "dairy",
+      "type": "common association",
+      "hint": "category of food products including milk"
+    },
+    {
+      "word": "cookies",
+      "type": "common association",
+      "hint": "often paired with milk"
+    },
+    {
+      "word": "lactose",
+      "type": "common association",
+      "hint": "sugar found in milk"
+    }
+  ],
+  "pool": [
+    "swimming",
+    "water",
+    "chlorine",
+    "diving",
+    "lifeguard",
+    "summer",
+    "billiards",
+    "deep end"
+  ],
+  "pool_detailed": [
+    {
+      "word": "swimming",
+      "type": "common association",
+      "hint": "activity done in a pool"
+    },
+    {
+      "word": "water",
+      "type": "common association",
+      "hint": "main component of a pool"
+    },
+    {
+      "word": "chlorine",
+      "type": "common association",
+      "hint": "chemical used to clean pools"
+    },
+    {
+      "word": "diving",
+      "type": "common association",
+      "hint": "action of jumping into a pool"
+    },
+    {
+      "word": "lifeguard",
+      "type": "common association",
+      "hint": "person who watches over swimmers"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "season when pools are most used"
+    },
+    {
+      "word": "billiards",
+      "type": "common association",
+      "hint": "game played on a pool table"
+    },
+    {
+      "word": "deep end",
+      "type": "common association",
+      "hint": "deeper section of a swimming pool"
+    }
+  ],
+  "candle": [
+    "flame",
+    "wax",
+    "light",
+    "romantic",
+    "birthday",
+    "scent",
+    "wick",
+    "melt"
+  ],
+  "candle_detailed": [
+    {
+      "word": "flame",
+      "type": "common association",
+      "hint": "burning wick of a candle"
+    },
+    {
+      "word": "wax",
+      "type": "common association",
+      "hint": "main material candles are made from"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "illumination produced by a candle"
+    },
+    {
+      "word": "romantic",
+      "type": "common association",
+      "hint": "mood often associated with candlelight"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "candles on a birthday cake"
+    },
+    {
+      "word": "scent",
+      "type": "common association",
+      "hint": "aromatic fragrances of many candles"
+    },
+    {
+      "word": "wick",
+      "type": "common association",
+      "hint": "string or cord that burns in a candle"
+    },
+    {
+      "word": "melt",
+      "type": "common association",
+      "hint": "what happens to candle wax when heated"
+    }
+  ],
+  "flame": [
+    "fire",
+    "hot",
+    "candle",
+    "burn",
+    "match",
+    "campfire",
+    "torch",
+    "passion"
+  ],
+  "flame_detailed": [
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "flames are part of fire"
+    },
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "flames produce heat"
+    },
+    {
+      "word": "candle",
+      "type": "common association",
+      "hint": "candles produce a small flame"
+    },
+    {
+      "word": "burn",
+      "type": "common association",
+      "hint": "flames can burn objects"
+    },
+    {
+      "word": "match",
+      "type": "common association",
+      "hint": "matches create a small flame when struck"
+    },
+    {
+      "word": "campfire",
+      "type": "common association",
+      "hint": "outdoor fire with visible flames"
+    },
+    {
+      "word": "torch",
+      "type": "common association",
+      "hint": "handheld device with a flame"
+    },
+    {
+      "word": "passion",
+      "type": "common association",
+      "hint": "metaphorical use for intense emotion"
+    }
+  ],
+  "wax": [
+    "candle",
+    "polish",
+    "bees",
+    "hair removal",
+    "ear",
+    "surfboard",
+    "crayons"
+  ],
+  "wax_detailed": [
+    {
+      "word": "candle",
+      "type": "common association",
+      "hint": "wax is a main component of candles"
+    },
+    {
+      "word": "polish",
+      "type": "common association",
+      "hint": "wax is used to polish furniture and cars"
+    },
+    {
+      "word": "bees",
+      "type": "common association",
+      "hint": "bees produce beeswax"
+    },
+    {
+      "word": "hair removal",
+      "type": "common association",
+      "hint": "waxing is a method of hair removal"
+    },
+    {
+      "word": "ear",
+      "type": "common association",
+      "hint": "earwax is produced in the ear canal"
+    },
+    {
+      "word": "surfboard",
+      "type": "common association",
+      "hint": "surfers apply wax to their boards for grip"
+    },
+    {
+      "word": "crayons",
+      "type": "common association",
+      "hint": "wax is a main ingredient in crayons"
+    }
+  ],
+  "fire": [
+    "hot",
+    "smoke",
+    "flame",
+    "burn",
+    "red",
+    "fireman",
+    "campfire",
+    "ash"
+  ],
+  "fire_detailed": [
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "fire produces heat"
+    },
+    {
+      "word": "smoke",
+      "type": "common association",
+      "hint": "byproduct of fire"
+    },
+    {
+      "word": "flame",
+      "type": "common association",
+      "hint": "visible part of fire"
+    },
+    {
+      "word": "burn",
+      "type": "common association",
+      "hint": "effect of fire on objects"
+    },
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "common color associated with fire"
+    },
+    {
+      "word": "fireman",
+      "type": "common association",
+      "hint": "person who fights fires"
+    },
+    {
+      "word": "campfire",
+      "type": "common association",
+      "hint": "common recreational use of fire"
+    },
+    {
+      "word": "ash",
+      "type": "common association",
+      "hint": "residue left after burning"
+    }
+  ],
+  "burn": [
+    "fire",
+    "hot",
+    "pain",
+    "smoke",
+    "ashes",
+    "sunburn",
+    "candle",
+    "injury"
+  ],
+  "burn_detailed": [
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "flames that cause burning"
+    },
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "high temperature associated with burns"
+    },
+    {
+      "word": "pain",
+      "type": "common association",
+      "hint": "sensation caused by a burn"
+    },
+    {
+      "word": "smoke",
+      "type": "common association",
+      "hint": "byproduct of burning"
+    },
+    {
+      "word": "ashes",
+      "type": "common association",
+      "hint": "residue left after burning"
+    },
+    {
+      "word": "sunburn",
+      "type": "common association",
+      "hint": "skin damage from sun exposure"
+    },
+    {
+      "word": "candle",
+      "type": "common association",
+      "hint": "object that burns to produce light"
+    },
+    {
+      "word": "injury",
+      "type": "common association",
+      "hint": "harm caused by burning"
+    }
+  ],
+  "polish": [
+    "shine",
+    "nail",
+    "shoes",
+    "furniture",
+    "refine",
+    "language",
+    "sausage"
+  ],
+  "polish_detailed": [
+    {
+      "word": "shine",
+      "type": "common association",
+      "hint": "making something glossy or lustrous"
+    },
+    {
+      "word": "nail",
+      "type": "common association",
+      "hint": "cosmetic product for fingernails"
+    },
+    {
+      "word": "shoes",
+      "type": "common association",
+      "hint": "cleaning and shining footwear"
+    },
+    {
+      "word": "furniture",
+      "type": "common association",
+      "hint": "enhancing wood surfaces"
+    },
+    {
+      "word": "refine",
+      "type": "common association",
+      "hint": "improving or perfecting something"
+    },
+    {
+      "word": "language",
+      "type": "common association",
+      "hint": "refers to the Polish nationality and tongue"
+    },
+    {
+      "word": "sausage",
+      "type": "common association",
+      "hint": "a type of meat product associated with Poland"
+    }
+  ],
+  "bees": [
+    "honey",
+    "hive",
+    "sting",
+    "pollination",
+    "yellow",
+    "buzz",
+    "queen",
+    "flowers"
+  ],
+  "bees_detailed": [
+    {
+      "word": "honey",
+      "type": "common association",
+      "hint": "sweet substance produced by bees"
+    },
+    {
+      "word": "hive",
+      "type": "common association",
+      "hint": "structure where bees live"
+    },
+    {
+      "word": "sting",
+      "type": "common association",
+      "hint": "painful defense mechanism of bees"
+    },
+    {
+      "word": "pollination",
+      "type": "common association",
+      "hint": "process bees assist with in nature"
+    },
+    {
+      "word": "yellow",
+      "type": "common association",
+      "hint": "common color associated with bees"
+    },
+    {
+      "word": "buzz",
+      "type": "common association",
+      "hint": "sound made by bees"
+    },
+    {
+      "word": "queen",
+      "type": "common association",
+      "hint": "leader of a bee colony"
+    },
+    {
+      "word": "flowers",
+      "type": "common association",
+      "hint": "where bees collect nectar"
+    }
+  ],
+  "hair removal": [
+    "waxing",
+    "shaving",
+    "laser",
+    "smooth",
+    "epilator",
+    "tweezers",
+    "salon",
+    "cream"
+  ],
+  "hair removal_detailed": [
+    {
+      "word": "waxing",
+      "type": "common association",
+      "hint": "method of hair removal using hot wax"
+    },
+    {
+      "word": "shaving",
+      "type": "common association",
+      "hint": "using a razor to remove hair"
+    },
+    {
+      "word": "laser",
+      "type": "common association",
+      "hint": "technology used for permanent hair reduction"
+    },
+    {
+      "word": "smooth",
+      "type": "common association",
+      "hint": "desired result of hair removal"
+    },
+    {
+      "word": "epilator",
+      "type": "common association",
+      "hint": "electronic device that pulls out hair"
+    },
+    {
+      "word": "tweezers",
+      "type": "common association",
+      "hint": "tool for plucking individual hairs"
+    },
+    {
+      "word": "salon",
+      "type": "common association",
+      "hint": "place where professional hair removal is often done"
+    },
+    {
+      "word": "cream",
+      "type": "common association",
+      "hint": "depilatory product that dissolves hair"
+    }
+  ],
+  "smoke": [
+    "fire",
+    "cigarette",
+    "chimney",
+    "alarm",
+    "barbecue",
+    "fog",
+    "pollution"
+  ],
+  "smoke_detailed": [
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "smoke is often produced by fire"
+    },
+    {
+      "word": "cigarette",
+      "type": "common association",
+      "hint": "smoking cigarettes produces smoke"
+    },
+    {
+      "word": "chimney",
+      "type": "common association",
+      "hint": "chimneys emit smoke from fireplaces"
+    },
+    {
+      "word": "alarm",
+      "type": "common association",
+      "hint": "smoke alarms detect smoke"
+    },
+    {
+      "word": "barbecue",
+      "type": "common association",
+      "hint": "grilling food often produces smoke"
+    },
+    {
+      "word": "fog",
+      "type": "common association",
+      "hint": "smoke can appear similar to fog"
+    },
+    {
+      "word": "pollution",
+      "type": "common association",
+      "hint": "smoke is a form of air pollution"
+    }
+  ],
+  "red": [
+    "apple",
+    "blood",
+    "fire",
+    "rose",
+    "stop",
+    "heart",
+    "tomato",
+    "anger"
+  ],
+  "red_detailed": [
+    {
+      "word": "apple",
+      "type": "common association",
+      "hint": "red fruit"
+    },
+    {
+      "word": "blood",
+      "type": "common association",
+      "hint": "red bodily fluid"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "red flames"
+    },
+    {
+      "word": "rose",
+      "type": "common association",
+      "hint": "red flower"
+    },
+    {
+      "word": "stop",
+      "type": "common association",
+      "hint": "red traffic signal"
+    },
+    {
+      "word": "heart",
+      "type": "common association",
+      "hint": "red symbol of love"
+    },
+    {
+      "word": "tomato",
+      "type": "common association",
+      "hint": "red vegetable/fruit"
+    },
+    {
+      "word": "anger",
+      "type": "common association",
+      "hint": "red associated with emotion"
+    }
+  ],
+  "fireman": [
+    "hose",
+    "ladder",
+    "helmet",
+    "truck",
+    "hydrant",
+    "ax",
+    "dalmatian"
+  ],
+  "fireman_detailed": [
+    {
+      "word": "hose",
+      "type": "common association",
+      "hint": "used to spray water on fires"
+    },
+    {
+      "word": "ladder",
+      "type": "common association",
+      "hint": "used to reach high places during rescues"
+    },
+    {
+      "word": "helmet",
+      "type": "common association",
+      "hint": "protective headgear worn by firefighters"
+    },
+    {
+      "word": "truck",
+      "type": "common association",
+      "hint": "vehicle used to transport firefighters and equipment"
+    },
+    {
+      "word": "hydrant",
+      "type": "common association",
+      "hint": "source of water for fighting fires"
+    },
+    {
+      "word": "ax",
+      "type": "common association",
+      "hint": "tool used to break down doors or walls"
+    },
+    {
+      "word": "dalmatian",
+      "type": "common association",
+      "hint": "breed of dog traditionally associated with firehouses"
+    }
+  ],
+  "spicy": [
+    "hot",
+    "pepper",
+    "chili",
+    "curry",
+    "jalapeno",
+    "sriracha",
+    "burning",
+    "Mexican"
+  ],
+  "spicy_detailed": [
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "refers to the sensation of heat from spicy food"
+    },
+    {
+      "word": "pepper",
+      "type": "common association",
+      "hint": "a common spicy ingredient"
+    },
+    {
+      "word": "chili",
+      "type": "common association",
+      "hint": "a spicy dish or pepper"
+    },
+    {
+      "word": "curry",
+      "type": "common association",
+      "hint": "a spicy dish or blend of spices"
+    },
+    {
+      "word": "jalapeno",
+      "type": "common association",
+      "hint": "a popular spicy pepper"
+    },
+    {
+      "word": "sriracha",
+      "type": "common association",
+      "hint": "a well-known spicy sauce"
+    },
+    {
+      "word": "burning",
+      "type": "common association",
+      "hint": "the sensation felt when eating very spicy food"
+    },
+    {
+      "word": "Mexican",
+      "type": "common association",
+      "hint": "cuisine known for spicy dishes"
+    }
+  ],
+  "desert": [
+    "sand",
+    "cactus",
+    "hot",
+    "dry",
+    "camel",
+    "oasis",
+    "mirage"
+  ],
+  "desert_detailed": [
+    {
+      "word": "sand",
+      "type": "common association",
+      "hint": "vast expanses of loose granular material"
+    },
+    {
+      "word": "cactus",
+      "type": "common association",
+      "hint": "drought-resistant plant common in arid regions"
+    },
+    {
+      "word": "hot",
+      "type": "common association",
+      "hint": "high temperatures typical of desert climates"
+    },
+    {
+      "word": "dry",
+      "type": "common association",
+      "hint": "lack of moisture and rainfall"
+    },
+    {
+      "word": "camel",
+      "type": "common association",
+      "hint": "animal well-adapted to desert environments"
+    },
+    {
+      "word": "oasis",
+      "type": "common association",
+      "hint": "water source in an otherwise arid area"
+    },
+    {
+      "word": "mirage",
+      "type": "common association",
+      "hint": "optical illusion often seen in hot deserts"
+    }
+  ],
+  "pain": [
+    "hurt",
+    "injury",
+    "ache",
+    "doctor",
+    "medication",
+    "suffering",
+    "headache",
+    "relief"
+  ],
+  "pain_detailed": [
+    {
+      "word": "hurt",
+      "type": "common association",
+      "hint": "synonym for pain"
+    },
+    {
+      "word": "injury",
+      "type": "common association",
+      "hint": "physical damage that causes pain"
+    },
+    {
+      "word": "ache",
+      "type": "common association",
+      "hint": "a dull persistent pain"
+    },
+    {
+      "word": "doctor",
+      "type": "common association",
+      "hint": "medical professional who treats pain"
+    },
+    {
+      "word": "medication",
+      "type": "common association",
+      "hint": "drugs used to alleviate pain"
+    },
+    {
+      "word": "suffering",
+      "type": "common association",
+      "hint": "experiencing pain or distress"
+    },
+    {
+      "word": "headache",
+      "type": "common association",
+      "hint": "common type of pain in the head"
+    },
+    {
+      "word": "relief",
+      "type": "common association",
+      "hint": "alleviation or end of pain"
+    }
+  ],
+  "ashes": [
+    "fire",
+    "cremation",
+    "cigarette",
+    "fireplace",
+    "volcano",
+    "phoenix",
+    "gray",
+    "dust"
+  ],
+  "ashes_detailed": [
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "ashes are the result of burning"
+    },
+    {
+      "word": "cremation",
+      "type": "common association",
+      "hint": "ashes of deceased after cremation"
+    },
+    {
+      "word": "cigarette",
+      "type": "common association",
+      "hint": "ashes from smoking"
+    },
+    {
+      "word": "fireplace",
+      "type": "common association",
+      "hint": "where ashes collect after burning wood"
+    },
+    {
+      "word": "volcano",
+      "type": "common association",
+      "hint": "volcanic eruptions produce ash"
+    },
+    {
+      "word": "phoenix",
+      "type": "common association",
+      "hint": "mythical bird that rises from ashes"
+    },
+    {
+      "word": "gray",
+      "type": "common association",
+      "hint": "typical color of ashes"
+    },
+    {
+      "word": "dust",
+      "type": "common association",
+      "hint": "similar fine particulate matter"
+    }
+  ],
+  "sunburn": [
+    "red",
+    "pain",
+    "peeling",
+    "aloe vera",
+    "beach",
+    "summer",
+    "lotion",
+    "blisters"
+  ],
+  "sunburn_detailed": [
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "color of sunburned skin"
+    },
+    {
+      "word": "pain",
+      "type": "common association",
+      "hint": "discomfort caused by sunburn"
+    },
+    {
+      "word": "peeling",
+      "type": "common association",
+      "hint": "skin shedding after sunburn"
+    },
+    {
+      "word": "aloe vera",
+      "type": "common association",
+      "hint": "common treatment for sunburn"
+    },
+    {
+      "word": "beach",
+      "type": "common association",
+      "hint": "common location for getting sunburned"
+    },
+    {
+      "word": "summer",
+      "type": "common association",
+      "hint": "season when sunburns are most common"
+    },
+    {
+      "word": "lotion",
+      "type": "common association",
+      "hint": "sunscreen to prevent sunburn"
+    },
+    {
+      "word": "blisters",
+      "type": "common association",
+      "hint": "severe symptom of sunburn"
+    }
+  ],
+  "shine": [
+    "bright",
+    "polish",
+    "sun",
+    "star",
+    "glitter",
+    "gold",
+    "mirror"
+  ],
+  "shine_detailed": [
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "emitting a lot of light"
+    },
+    {
+      "word": "polish",
+      "type": "common association",
+      "hint": "to make something shiny through rubbing"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "celestial body that shines brightly"
+    },
+    {
+      "word": "star",
+      "type": "common association",
+      "hint": "twinkling light in the night sky"
+    },
+    {
+      "word": "glitter",
+      "type": "common association",
+      "hint": "sparkling, shiny decoration"
+    },
+    {
+      "word": "gold",
+      "type": "common association",
+      "hint": "precious metal known for its luster"
+    },
+    {
+      "word": "mirror",
+      "type": "common association",
+      "hint": "reflective surface that shines"
+    }
+  ],
+  "nail": [
+    "hammer",
+    "finger",
+    "polish",
+    "wood",
+    "salon",
+    "hardware",
+    "sharp"
+  ],
+  "nail_detailed": [
+    {
+      "word": "hammer",
+      "type": "common association",
+      "hint": "tool used to drive nails"
+    },
+    {
+      "word": "finger",
+      "type": "common association",
+      "hint": "body part with nails"
+    },
+    {
+      "word": "polish",
+      "type": "common association",
+      "hint": "used to color and shine fingernails"
+    },
+    {
+      "word": "wood",
+      "type": "common association",
+      "hint": "material often joined using nails"
+    },
+    {
+      "word": "salon",
+      "type": "common association",
+      "hint": "place for nail care and treatments"
+    },
+    {
+      "word": "hardware",
+      "type": "common association",
+      "hint": "category of store selling nails"
+    },
+    {
+      "word": "sharp",
+      "type": "common association",
+      "hint": "describes the pointed end of a nail"
+    }
+  ],
+  "shoes": [
+    "feet",
+    "laces",
+    "comfort",
+    "leather",
+    "sneakers",
+    "socks",
+    "walking"
+  ],
+  "shoes_detailed": [
+    {
+      "word": "feet",
+      "type": "common association",
+      "hint": "shoes are worn on feet"
+    },
+    {
+      "word": "laces",
+      "type": "common association",
+      "hint": "many shoes have laces for tying"
+    },
+    {
+      "word": "comfort",
+      "type": "common association",
+      "hint": "shoes provide comfort for walking"
+    },
+    {
+      "word": "leather",
+      "type": "common association",
+      "hint": "common material for shoes"
+    },
+    {
+      "word": "sneakers",
+      "type": "common association",
+      "hint": "a popular type of casual shoe"
+    },
+    {
+      "word": "socks",
+      "type": "common association",
+      "hint": "often worn with shoes"
+    },
+    {
+      "word": "walking",
+      "type": "common association",
+      "hint": "primary activity done while wearing shoes"
+    }
+  ],
+  "honey": [
+    "bee",
+    "sweet",
+    "sticky",
+    "golden",
+    "comb",
+    "bear",
+    "jar",
+    "tea"
+  ],
+  "honey_detailed": [
+    {
+      "word": "bee",
+      "type": "common association",
+      "hint": "insect that produces honey"
+    },
+    {
+      "word": "sweet",
+      "type": "common association",
+      "hint": "primary taste characteristic of honey"
+    },
+    {
+      "word": "sticky",
+      "type": "common association",
+      "hint": "texture of honey"
+    },
+    {
+      "word": "golden",
+      "type": "common association",
+      "hint": "typical color of honey"
+    },
+    {
+      "word": "comb",
+      "type": "common association",
+      "hint": "structure where bees store honey"
+    },
+    {
+      "word": "bear",
+      "type": "common association",
+      "hint": "animal known to love eating honey"
+    },
+    {
+      "word": "jar",
+      "type": "common association",
+      "hint": "common container for honey"
+    },
+    {
+      "word": "tea",
+      "type": "common association",
+      "hint": "beverage often sweetened with honey"
+    }
+  ],
+  "hive": [
+    "bees",
+    "honey",
+    "queen",
+    "swarm",
+    "buzzing",
+    "hexagon",
+    "colony",
+    "wax"
+  ],
+  "hive_detailed": [
+    {
+      "word": "bees",
+      "type": "common association",
+      "hint": "insects that live in hives"
+    },
+    {
+      "word": "honey",
+      "type": "common association",
+      "hint": "sweet substance produced by bees"
+    },
+    {
+      "word": "queen",
+      "type": "common association",
+      "hint": "leader of a bee colony"
+    },
+    {
+      "word": "swarm",
+      "type": "common association",
+      "hint": "large group of bees moving together"
+    },
+    {
+      "word": "buzzing",
+      "type": "common association",
+      "hint": "sound made by bees"
+    },
+    {
+      "word": "hexagon",
+      "type": "common association",
+      "hint": "shape of honeycomb cells"
+    },
+    {
+      "word": "colony",
+      "type": "common association",
+      "hint": "community of bees living together"
+    },
+    {
+      "word": "wax",
+      "type": "common association",
+      "hint": "material used by bees to build hives"
+    }
+  ],
+  "sting": [
+    "bee",
+    "pain",
+    "jellyfish",
+    "nettle",
+    "scorpion",
+    "wasp",
+    "police"
+  ],
+  "sting_detailed": [
+    {
+      "word": "bee",
+      "type": "common association",
+      "hint": "insect known for stinging"
+    },
+    {
+      "word": "pain",
+      "type": "common association",
+      "hint": "sensation caused by a sting"
+    },
+    {
+      "word": "jellyfish",
+      "type": "common association",
+      "hint": "sea creature with stinging tentacles"
+    },
+    {
+      "word": "nettle",
+      "type": "common association",
+      "hint": "plant that causes stinging sensation"
+    },
+    {
+      "word": "scorpion",
+      "type": "common association",
+      "hint": "arachnid with a venomous sting"
+    },
+    {
+      "word": "wasp",
+      "type": "common association",
+      "hint": "flying insect that can sting"
+    },
+    {
+      "word": "police",
+      "type": "common association",
+      "hint": "law enforcement operation to catch criminals"
+    }
+  ],
+  "waxing": [
+    "moon",
+    "car",
+    "hair removal",
+    "candle",
+    "surfboard",
+    "floors",
+    "poetic",
+    "skis"
+  ],
+  "waxing_detailed": [
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "phases of the moon"
+    },
+    {
+      "word": "car",
+      "type": "common association",
+      "hint": "polishing a vehicle"
+    },
+    {
+      "word": "hair removal",
+      "type": "common association",
+      "hint": "beauty treatment"
+    },
+    {
+      "word": "candle",
+      "type": "common association",
+      "hint": "material candles are made from"
+    },
+    {
+      "word": "surfboard",
+      "type": "common association",
+      "hint": "applying wax for better grip"
+    },
+    {
+      "word": "floors",
+      "type": "common association",
+      "hint": "polishing wood floors"
+    },
+    {
+      "word": "poetic",
+      "type": "common association",
+      "hint": "becoming increasingly eloquent"
+    },
+    {
+      "word": "skis",
+      "type": "common association",
+      "hint": "applying wax for better glide"
+    }
+  ],
+  "shaving": [
+    "razor",
+    "cream",
+    "beard",
+    "bathroom",
+    "smooth",
+    "mirror",
+    "cuts",
+    "stubble"
+  ],
+  "shaving_detailed": [
+    {
+      "word": "razor",
+      "type": "common association",
+      "hint": "tool used for shaving"
+    },
+    {
+      "word": "cream",
+      "type": "common association",
+      "hint": "applied to skin before shaving"
+    },
+    {
+      "word": "beard",
+      "type": "common association",
+      "hint": "facial hair often removed by shaving"
+    },
+    {
+      "word": "bathroom",
+      "type": "common association",
+      "hint": "common location for shaving"
+    },
+    {
+      "word": "smooth",
+      "type": "common association",
+      "hint": "desired result of shaving"
+    },
+    {
+      "word": "mirror",
+      "type": "common association",
+      "hint": "used to see while shaving"
+    },
+    {
+      "word": "cuts",
+      "type": "common association",
+      "hint": "minor injuries that can occur while shaving"
+    },
+    {
+      "word": "stubble",
+      "type": "common association",
+      "hint": "short hair growth after shaving"
+    }
+  ],
+  "laser": [
+    "beam",
+    "surgery",
+    "pointer",
+    "precision",
+    "cutting",
+    "sci-fi",
+    "eye",
+    "printer"
+  ],
+  "laser_detailed": [
+    {
+      "word": "beam",
+      "type": "common association",
+      "hint": "concentrated light stream"
+    },
+    {
+      "word": "surgery",
+      "type": "common association",
+      "hint": "medical procedure using lasers"
+    },
+    {
+      "word": "pointer",
+      "type": "common association",
+      "hint": "handheld device for presentations"
+    },
+    {
+      "word": "precision",
+      "type": "common association",
+      "hint": "accuracy of laser technology"
+    },
+    {
+      "word": "cutting",
+      "type": "common association",
+      "hint": "industrial use for slicing materials"
+    },
+    {
+      "word": "sci-fi",
+      "type": "common association",
+      "hint": "common weapon in science fiction"
+    },
+    {
+      "word": "eye",
+      "type": "common association",
+      "hint": "laser eye surgery for vision correction"
+    },
+    {
+      "word": "printer",
+      "type": "common association",
+      "hint": "type of computer printer technology"
+    }
+  ],
+  "smart": [
+    "intelligent",
+    "clever",
+    "genius",
+    "brainy",
+    "educated",
+    "wise",
+    "brilliant"
+  ],
+  "smart_detailed": [
+    {
+      "word": "intelligent",
+      "type": "common association",
+      "hint": "synonym for smart"
+    },
+    {
+      "word": "clever",
+      "type": "common association",
+      "hint": "quick-witted and resourceful"
+    },
+    {
+      "word": "genius",
+      "type": "common association",
+      "hint": "extremely intelligent person"
+    },
+    {
+      "word": "brainy",
+      "type": "common association",
+      "hint": "informal term for very intelligent"
+    },
+    {
+      "word": "educated",
+      "type": "common association",
+      "hint": "having acquired knowledge through study"
+    },
+    {
+      "word": "wise",
+      "type": "common association",
+      "hint": "having good judgment and experience"
+    },
+    {
+      "word": "brilliant",
+      "type": "common association",
+      "hint": "exceptionally clever or talented"
+    }
+  ],
+  "shiny": [
+    "bright",
+    "new",
+    "polished",
+    "metal",
+    "diamond",
+    "chrome",
+    "mirror",
+    "glitter"
+  ],
+  "shiny_detailed": [
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "reflects light strongly"
+    },
+    {
+      "word": "new",
+      "type": "common association",
+      "hint": "fresh and unblemished appearance"
+    },
+    {
+      "word": "polished",
+      "type": "common association",
+      "hint": "smooth and glossy surface"
+    },
+    {
+      "word": "metal",
+      "type": "common association",
+      "hint": "reflective material"
+    },
+    {
+      "word": "diamond",
+      "type": "common association",
+      "hint": "sparkling gemstone"
+    },
+    {
+      "word": "chrome",
+      "type": "common association",
+      "hint": "reflective metallic finish"
+    },
+    {
+      "word": "mirror",
+      "type": "common association",
+      "hint": "highly reflective surface"
+    },
+    {
+      "word": "glitter",
+      "type": "common association",
+      "hint": "sparkly decoration"
+    }
+  ],
+  "bulb": [
+    "light",
+    "electricity",
+    "lamp",
+    "glass",
+    "idea",
+    "flower",
+    "screw",
+    "bright"
+  ],
+  "bulb_detailed": [
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "bulbs are often used to produce light"
+    },
+    {
+      "word": "electricity",
+      "type": "common association",
+      "hint": "most bulbs require electricity to function"
+    },
+    {
+      "word": "lamp",
+      "type": "common association",
+      "hint": "bulbs are commonly used in lamps"
+    },
+    {
+      "word": "glass",
+      "type": "common association",
+      "hint": "many bulbs are made of glass"
+    },
+    {
+      "word": "idea",
+      "type": "common association",
+      "hint": "a lightbulb is often used to symbolize an idea"
+    },
+    {
+      "word": "flower",
+      "type": "common association",
+      "hint": "some plants grow from bulbs"
+    },
+    {
+      "word": "screw",
+      "type": "common association",
+      "hint": "many bulbs have a screw base for installation"
+    },
+    {
+      "word": "bright",
+      "type": "common association",
+      "hint": "bulbs often produce bright light"
+    }
+  ],
+  "switch": [
+    "light",
+    "change",
+    "electric",
+    "flip",
+    "on/off",
+    "Nintendo",
+    "toggle",
+    "button"
+  ],
+  "switch_detailed": [
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "turning on/off lights"
+    },
+    {
+      "word": "change",
+      "type": "common association",
+      "hint": "altering or exchanging something"
+    },
+    {
+      "word": "electric",
+      "type": "common association",
+      "hint": "electrical components"
+    },
+    {
+      "word": "flip",
+      "type": "common association",
+      "hint": "action of toggling a switch"
+    },
+    {
+      "word": "on/off",
+      "type": "common association",
+      "hint": "binary states of a switch"
+    },
+    {
+      "word": "Nintendo",
+      "type": "common association",
+      "hint": "popular gaming console"
+    },
+    {
+      "word": "toggle",
+      "type": "common association",
+      "hint": "alternating between options"
+    },
+    {
+      "word": "button",
+      "type": "common association",
+      "hint": "similar control mechanism"
+    }
+  ],
+  "cigarette": [
+    "smoke",
+    "nicotine",
+    "tobacco",
+    "ashtray",
+    "lighter",
+    "cancer",
+    "addiction",
+    "filter"
+  ],
+  "cigarette_detailed": [
+    {
+      "word": "smoke",
+      "type": "common association",
+      "hint": "visible emission from a lit cigarette"
+    },
+    {
+      "word": "nicotine",
+      "type": "common association",
+      "hint": "addictive chemical in cigarettes"
+    },
+    {
+      "word": "tobacco",
+      "type": "common association",
+      "hint": "primary ingredient in cigarettes"
+    },
+    {
+      "word": "ashtray",
+      "type": "common association",
+      "hint": "container for cigarette ashes"
+    },
+    {
+      "word": "lighter",
+      "type": "common association",
+      "hint": "tool used to light cigarettes"
+    },
+    {
+      "word": "cancer",
+      "type": "common association",
+      "hint": "health risk associated with smoking"
+    },
+    {
+      "word": "addiction",
+      "type": "common association",
+      "hint": "dependence often developed from smoking"
+    },
+    {
+      "word": "filter",
+      "type": "common association",
+      "hint": "part of cigarette that reduces tar intake"
+    }
+  ],
+  "chimney": [
+    "smoke",
+    "Santa Claus",
+    "fireplace",
+    "brick",
+    "sweep",
+    "soot",
+    "rooftop",
+    "factory"
+  ],
+  "chimney_detailed": [
+    {
+      "word": "smoke",
+      "type": "common association",
+      "hint": "byproduct released through chimneys"
+    },
+    {
+      "word": "Santa Claus",
+      "type": "common association",
+      "hint": "folkloric figure entering homes via chimney"
+    },
+    {
+      "word": "fireplace",
+      "type": "common association",
+      "hint": "indoor structure connected to chimney"
+    },
+    {
+      "word": "brick",
+      "type": "common association",
+      "hint": "common material for chimney construction"
+    },
+    {
+      "word": "sweep",
+      "type": "common association",
+      "hint": "person who cleans chimneys"
+    },
+    {
+      "word": "soot",
+      "type": "common association",
+      "hint": "black substance that accumulates in chimneys"
+    },
+    {
+      "word": "rooftop",
+      "type": "common association",
+      "hint": "where chimneys are typically located"
+    },
+    {
+      "word": "factory",
+      "type": "common association",
+      "hint": "industrial buildings often have large chimneys"
+    }
+  ],
+  "alarm": [
+    "clock",
+    "fire",
+    "siren",
+    "danger",
+    "wake",
+    "security",
+    "emergency"
+  ],
+  "alarm_detailed": [
+    {
+      "word": "clock",
+      "type": "common association",
+      "hint": "device that often has an alarm function"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "fire alarms are common safety devices"
+    },
+    {
+      "word": "siren",
+      "type": "common association",
+      "hint": "loud sound often associated with alarms"
+    },
+    {
+      "word": "danger",
+      "type": "common association",
+      "hint": "alarms often signal potential threats"
+    },
+    {
+      "word": "wake",
+      "type": "common association",
+      "hint": "alarms are commonly used to wake people up"
+    },
+    {
+      "word": "security",
+      "type": "common association",
+      "hint": "alarm systems protect homes and businesses"
+    },
+    {
+      "word": "emergency",
+      "type": "common association",
+      "hint": "alarms often indicate urgent situations"
+    }
+  ],
+  "apple": [
+    "red",
+    "fruit",
+    "pie",
+    "orchard",
+    "cider",
+    "computer",
+    "teacher",
+    "core"
+  ],
+  "apple_detailed": [
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "typical color of many apples"
+    },
+    {
+      "word": "fruit",
+      "type": "common association",
+      "hint": "category apples belong to"
+    },
+    {
+      "word": "pie",
+      "type": "common association",
+      "hint": "popular dessert made with apples"
+    },
+    {
+      "word": "orchard",
+      "type": "common association",
+      "hint": "where apples are grown"
+    },
+    {
+      "word": "cider",
+      "type": "common association",
+      "hint": "beverage made from apples"
+    },
+    {
+      "word": "computer",
+      "type": "common association",
+      "hint": "refers to the tech company Apple"
+    },
+    {
+      "word": "teacher",
+      "type": "common association",
+      "hint": "apples traditionally given to teachers"
+    },
+    {
+      "word": "core",
+      "type": "common association",
+      "hint": "center part of an apple containing seeds"
+    }
+  ],
+  "blood": [
+    "red",
+    "heart",
+    "veins",
+    "cut",
+    "vampire",
+    "hospital",
+    "donation",
+    "family"
+  ],
+  "blood_detailed": [
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "color of blood"
+    },
+    {
+      "word": "heart",
+      "type": "common association",
+      "hint": "organ that pumps blood"
+    },
+    {
+      "word": "veins",
+      "type": "common association",
+      "hint": "blood vessels"
+    },
+    {
+      "word": "cut",
+      "type": "common association",
+      "hint": "injury that causes bleeding"
+    },
+    {
+      "word": "vampire",
+      "type": "common association",
+      "hint": "mythical creature that drinks blood"
+    },
+    {
+      "word": "hospital",
+      "type": "common association",
+      "hint": "place for medical treatment"
+    },
+    {
+      "word": "donation",
+      "type": "common association",
+      "hint": "giving blood to help others"
+    },
+    {
+      "word": "family",
+      "type": "common association",
+      "hint": "blood relatives"
+    }
+  ],
+  "rose": [
+    "red",
+    "love",
+    "flower",
+    "thorn",
+    "valentine",
+    "bouquet",
+    "garden"
+  ],
+  "rose_detailed": [
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "most common color of roses"
+    },
+    {
+      "word": "love",
+      "type": "common association",
+      "hint": "roses often symbolize romantic love"
+    },
+    {
+      "word": "flower",
+      "type": "common association",
+      "hint": "roses are a popular type of flower"
+    },
+    {
+      "word": "thorn",
+      "type": "common association",
+      "hint": "roses have sharp thorns on their stems"
+    },
+    {
+      "word": "valentine",
+      "type": "common association",
+      "hint": "roses are popular gifts on Valentine's Day"
+    },
+    {
+      "word": "bouquet",
+      "type": "common association",
+      "hint": "roses are often arranged in bouquets"
+    },
+    {
+      "word": "garden",
+      "type": "common association",
+      "hint": "roses are commonly grown in gardens"
+    }
+  ],
+  "hose": [
+    "water",
+    "garden",
+    "fire",
+    "rubber",
+    "spray",
+    "coil",
+    "nozzle"
+  ],
+  "hose_detailed": [
+    {
+      "word": "water",
+      "type": "common association",
+      "hint": "hoses are often used to spray water"
+    },
+    {
+      "word": "garden",
+      "type": "common association",
+      "hint": "hoses are commonly used for watering gardens"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "firefighters use hoses to extinguish fires"
+    },
+    {
+      "word": "rubber",
+      "type": "common association",
+      "hint": "many hoses are made of rubber material"
+    },
+    {
+      "word": "spray",
+      "type": "common association",
+      "hint": "hoses typically spray liquids"
+    },
+    {
+      "word": "coil",
+      "type": "common association",
+      "hint": "hoses are often stored in a coiled shape"
+    },
+    {
+      "word": "nozzle",
+      "type": "common association",
+      "hint": "the end attachment used to control water flow"
+    }
+  ],
+  "ladder": [
+    "climb",
+    "rungs",
+    "height",
+    "construction",
+    "firefighter",
+    "step",
+    "fall",
+    "extension"
+  ],
+  "ladder_detailed": [
+    {
+      "word": "climb",
+      "type": "common association",
+      "hint": "action often performed on a ladder"
+    },
+    {
+      "word": "rungs",
+      "type": "common association",
+      "hint": "horizontal steps of a ladder"
+    },
+    {
+      "word": "height",
+      "type": "common association",
+      "hint": "ladders are used to reach high places"
+    },
+    {
+      "word": "construction",
+      "type": "common association",
+      "hint": "ladders are common on construction sites"
+    },
+    {
+      "word": "firefighter",
+      "type": "common association",
+      "hint": "firefighters often use ladders in their work"
+    },
+    {
+      "word": "step",
+      "type": "common association",
+      "hint": "another term for the rungs of a ladder"
+    },
+    {
+      "word": "fall",
+      "type": "common association",
+      "hint": "a safety concern when using ladders"
+    },
+    {
+      "word": "extension",
+      "type": "common association",
+      "hint": "a type of ladder that can be lengthened"
+    }
+  ],
+  "helmet": [
+    "safety",
+    "motorcycle",
+    "bicycle",
+    "football",
+    "construction",
+    "military",
+    "protection",
+    "head"
+  ],
+  "helmet_detailed": [
+    {
+      "word": "safety",
+      "type": "common association",
+      "hint": "primary purpose of helmets"
+    },
+    {
+      "word": "motorcycle",
+      "type": "common association",
+      "hint": "frequently used with this vehicle"
+    },
+    {
+      "word": "bicycle",
+      "type": "common association",
+      "hint": "often worn while riding"
+    },
+    {
+      "word": "football",
+      "type": "common association",
+      "hint": "essential gear for this sport"
+    },
+    {
+      "word": "construction",
+      "type": "common association",
+      "hint": "required on work sites"
+    },
+    {
+      "word": "military",
+      "type": "common association",
+      "hint": "part of combat gear"
+    },
+    {
+      "word": "protection",
+      "type": "common association",
+      "hint": "main function of helmets"
+    },
+    {
+      "word": "head",
+      "type": "common association",
+      "hint": "body part helmets cover"
+    }
+  ],
+  "pepper": [
+    "salt",
+    "spicy",
+    "black",
+    "grinder",
+    "bell",
+    "chili",
+    "shaker"
+  ],
+  "pepper_detailed": [
+    {
+      "word": "salt",
+      "type": "common association",
+      "hint": "often paired with pepper for seasoning"
+    },
+    {
+      "word": "spicy",
+      "type": "common association",
+      "hint": "describes the taste sensation of pepper"
+    },
+    {
+      "word": "black",
+      "type": "common association",
+      "hint": "most common color of pepper"
+    },
+    {
+      "word": "grinder",
+      "type": "common association",
+      "hint": "tool used to crush peppercorns"
+    },
+    {
+      "word": "bell",
+      "type": "common association",
+      "hint": "a type of pepper vegetable"
+    },
+    {
+      "word": "chili",
+      "type": "common association",
+      "hint": "another spicy pepper variety"
+    },
+    {
+      "word": "shaker",
+      "type": "common association",
+      "hint": "container for ground pepper"
+    }
+  ],
+  "telescope": [
+    "stars",
+    "astronomy",
+    "space",
+    "magnification",
+    "observatory",
+    "lens",
+    "Hubble",
+    "galaxy"
+  ],
+  "telescope_detailed": [
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "celestial objects viewed through telescopes"
+    },
+    {
+      "word": "astronomy",
+      "type": "common association",
+      "hint": "scientific field using telescopes"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "vast area explored with telescopes"
+    },
+    {
+      "word": "magnification",
+      "type": "common association",
+      "hint": "primary function of telescopes"
+    },
+    {
+      "word": "observatory",
+      "type": "common association",
+      "hint": "facility housing large telescopes"
+    },
+    {
+      "word": "lens",
+      "type": "common association",
+      "hint": "key component of telescopes"
+    },
+    {
+      "word": "Hubble",
+      "type": "common association",
+      "hint": "famous space telescope"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "large celestial structure viewed by telescopes"
+    }
+  ],
+  "astronomy": [
+    "stars",
+    "planets",
+    "telescope",
+    "galaxy",
+    "moon",
+    "constellation",
+    "space"
+  ],
+  "astronomy_detailed": [
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "celestial objects visible in the night sky"
+    },
+    {
+      "word": "planets",
+      "type": "common association",
+      "hint": "large bodies orbiting the sun or other stars"
+    },
+    {
+      "word": "telescope",
+      "type": "common association",
+      "hint": "instrument used to observe distant objects in space"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "vast collection of stars, such as the Milky Way"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "natural satellite orbiting Earth or other planets"
+    },
+    {
+      "word": "constellation",
+      "type": "common association",
+      "hint": "pattern of stars forming recognizable shapes"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "vast expanse beyond Earth's atmosphere"
+    }
+  ],
+  "space": [
+    "stars",
+    "planets",
+    "astronaut",
+    "rocket",
+    "galaxy",
+    "NASA",
+    "alien",
+    "satellite"
+  ],
+  "space_detailed": [
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "celestial objects visible in space"
+    },
+    {
+      "word": "planets",
+      "type": "common association",
+      "hint": "large celestial bodies orbiting stars"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "person trained to travel in space"
+    },
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "vehicle used to launch into space"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "large system of stars and cosmic matter"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "US space agency"
+    },
+    {
+      "word": "alien",
+      "type": "common association",
+      "hint": "hypothetical extraterrestrial life"
+    },
+    {
+      "word": "satellite",
+      "type": "common association",
+      "hint": "object in orbit around a planet or star"
+    }
+  ],
+  "night": [
+    "dark",
+    "moon",
+    "stars",
+    "sleep",
+    "owl",
+    "dream",
+    "quiet"
+  ],
+  "night_detailed": [
+    {
+      "word": "dark",
+      "type": "common association",
+      "hint": "absence of light during nighttime"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "celestial body visible at night"
+    },
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "points of light in the night sky"
+    },
+    {
+      "word": "sleep",
+      "type": "common association",
+      "hint": "activity typically done at night"
+    },
+    {
+      "word": "owl",
+      "type": "common association",
+      "hint": "nocturnal bird associated with night"
+    },
+    {
+      "word": "dream",
+      "type": "common association",
+      "hint": "mental images experienced while sleeping"
+    },
+    {
+      "word": "quiet",
+      "type": "common association",
+      "hint": "characteristic of nighttime atmosphere"
+    }
+  ],
+  "twinkle": [
+    "star",
+    "light",
+    "sparkle",
+    "night",
+    "shine",
+    "glitter",
+    "eye"
+  ],
+  "twinkle_detailed": [
+    {
+      "word": "star",
+      "type": "common association",
+      "hint": "as in 'Twinkle, twinkle, little star'"
+    },
+    {
+      "word": "light",
+      "type": "common association",
+      "hint": "twinkling often refers to light"
+    },
+    {
+      "word": "sparkle",
+      "type": "common association",
+      "hint": "similar visual effect to twinkling"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "stars twinkle at night"
+    },
+    {
+      "word": "shine",
+      "type": "common association",
+      "hint": "twinkling is a type of shining"
+    },
+    {
+      "word": "glitter",
+      "type": "common association",
+      "hint": "similar visual effect to twinkling"
+    },
+    {
+      "word": "eye",
+      "type": "common association",
+      "hint": "eyes can be described as twinkling"
+    }
+  ],
+  "planets": [
+    "solar system",
+    "space",
+    "gravity",
+    "astronomy",
+    "Mars",
+    "Jupiter",
+    "rings",
+    "orbit"
+  ],
+  "planets_detailed": [
+    {
+      "word": "solar system",
+      "type": "common association",
+      "hint": "collection of planets orbiting the sun"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "vast area where planets exist"
+    },
+    {
+      "word": "gravity",
+      "type": "common association",
+      "hint": "force that keeps planets in orbit"
+    },
+    {
+      "word": "astronomy",
+      "type": "common association",
+      "hint": "study of celestial objects including planets"
+    },
+    {
+      "word": "Mars",
+      "type": "common association",
+      "hint": "popular planet known as the 'Red Planet'"
+    },
+    {
+      "word": "Jupiter",
+      "type": "common association",
+      "hint": "largest planet in our solar system"
+    },
+    {
+      "word": "rings",
+      "type": "common association",
+      "hint": "circular features around some planets like Saturn"
+    },
+    {
+      "word": "orbit",
+      "type": "common association",
+      "hint": "path a planet takes around a star"
+    }
+  ],
+  "galaxy": [
+    "stars",
+    "space",
+    "Milky Way",
+    "universe",
+    "astronomy",
+    "telescope",
+    "spiral",
+    "alien"
+  ],
+  "galaxy_detailed": [
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "celestial bodies found in galaxies"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "vast expanse where galaxies exist"
+    },
+    {
+      "word": "Milky Way",
+      "type": "common association",
+      "hint": "our own galaxy"
+    },
+    {
+      "word": "universe",
+      "type": "common association",
+      "hint": "larger context containing galaxies"
+    },
+    {
+      "word": "astronomy",
+      "type": "common association",
+      "hint": "study of celestial objects including galaxies"
+    },
+    {
+      "word": "telescope",
+      "type": "common association",
+      "hint": "tool used to observe galaxies"
+    },
+    {
+      "word": "spiral",
+      "type": "common association",
+      "hint": "common shape of many galaxies"
+    },
+    {
+      "word": "alien",
+      "type": "common association",
+      "hint": "potential extraterrestrial life in other galaxies"
+    }
+  ],
+  "astronaut": [
+    "space",
+    "rocket",
+    "NASA",
+    "moonwalk",
+    "spacesuit",
+    "weightlessness",
+    "stars",
+    "exploration"
+  ],
+  "astronaut_detailed": [
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "where astronauts work"
+    },
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "vehicle used to launch astronauts"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "US space agency employing astronauts"
+    },
+    {
+      "word": "moonwalk",
+      "type": "common association",
+      "hint": "famous activity performed by astronauts"
+    },
+    {
+      "word": "spacesuit",
+      "type": "common association",
+      "hint": "protective gear worn by astronauts"
+    },
+    {
+      "word": "weightlessness",
+      "type": "common association",
+      "hint": "condition experienced by astronauts in space"
+    },
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "celestial objects visible to astronauts"
+    },
+    {
+      "word": "exploration",
+      "type": "common association",
+      "hint": "primary purpose of astronaut missions"
+    }
+  ],
+  "rocket": [
+    "space",
+    "launch",
+    "NASA",
+    "astronaut",
+    "countdown",
+    "fuel",
+    "fire",
+    "moon"
+  ],
+  "rocket_detailed": [
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "rockets are used to travel to space"
+    },
+    {
+      "word": "launch",
+      "type": "common association",
+      "hint": "the act of sending a rocket into flight"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "space agency known for rocket missions"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "person who travels in a rocket"
+    },
+    {
+      "word": "countdown",
+      "type": "common association",
+      "hint": "sequence before rocket launch"
+    },
+    {
+      "word": "fuel",
+      "type": "common association",
+      "hint": "powers the rocket's engines"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "visible flame from rocket engines"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "destination of famous rocket missions"
+    }
+  ],
+  "nasa": [
+    "space",
+    "rocket",
+    "astronaut",
+    "moon",
+    "shuttle",
+    "Mars",
+    "satellite",
+    "Houston"
+  ],
+  "nasa_detailed": [
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "NASA's primary area of focus"
+    },
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "Vehicle used for space launches"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "Person trained to travel in space"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "Site of NASA's famous Apollo landings"
+    },
+    {
+      "word": "shuttle",
+      "type": "common association",
+      "hint": "NASA's reusable spacecraft program"
+    },
+    {
+      "word": "Mars",
+      "type": "common association",
+      "hint": "Planet targeted for NASA exploration"
+    },
+    {
+      "word": "satellite",
+      "type": "common association",
+      "hint": "Orbiting device often launched by NASA"
+    },
+    {
+      "word": "Houston",
+      "type": "common association",
+      "hint": "Location of NASA's Mission Control Center"
+    }
+  ],
+  "sleep": [
+    "bed",
+    "night",
+    "dream",
+    "pillow",
+    "snore",
+    "pajamas",
+    "tired",
+    "rest"
+  ],
+  "sleep_detailed": [
+    {
+      "word": "bed",
+      "type": "common association",
+      "hint": "place where people typically sleep"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "time when most people sleep"
+    },
+    {
+      "word": "dream",
+      "type": "common association",
+      "hint": "mental experiences during sleep"
+    },
+    {
+      "word": "pillow",
+      "type": "common association",
+      "hint": "object used to support the head while sleeping"
+    },
+    {
+      "word": "snore",
+      "type": "common association",
+      "hint": "sound some people make while sleeping"
+    },
+    {
+      "word": "pajamas",
+      "type": "common association",
+      "hint": "clothing worn for sleeping"
+    },
+    {
+      "word": "tired",
+      "type": "common association",
+      "hint": "feeling that leads to sleep"
+    },
+    {
+      "word": "rest",
+      "type": "common association",
+      "hint": "purpose of sleep"
+    }
+  ],
+  "owl": [
+    "wise",
+    "night",
+    "hoot",
+    "big eyes",
+    "feathers",
+    "tree",
+    "Harry Potter"
+  ],
+  "owl_detailed": [
+    {
+      "word": "wise",
+      "type": "common association",
+      "hint": "owls are often seen as symbols of wisdom"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "owls are nocturnal creatures"
+    },
+    {
+      "word": "hoot",
+      "type": "common association",
+      "hint": "the distinctive sound owls make"
+    },
+    {
+      "word": "big eyes",
+      "type": "common association",
+      "hint": "owls have large, prominent eyes"
+    },
+    {
+      "word": "feathers",
+      "type": "common association",
+      "hint": "owls have soft, fluffy feathers"
+    },
+    {
+      "word": "tree",
+      "type": "common association",
+      "hint": "owls often perch in trees"
+    },
+    {
+      "word": "Harry Potter",
+      "type": "common association",
+      "hint": "owls deliver mail in the popular book series"
+    }
+  ],
+  "star": [
+    "sky",
+    "night",
+    "celebrity",
+    "sun",
+    "twinkle",
+    "constellation",
+    "movie",
+    "wish"
+  ],
+  "star_detailed": [
+    {
+      "word": "sky",
+      "type": "common association",
+      "hint": "where stars are seen"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "when stars are visible"
+    },
+    {
+      "word": "celebrity",
+      "type": "common association",
+      "hint": "famous person often called a star"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "the closest star to Earth"
+    },
+    {
+      "word": "twinkle",
+      "type": "common association",
+      "hint": "how stars appear to shine"
+    },
+    {
+      "word": "constellation",
+      "type": "common association",
+      "hint": "patterns formed by stars"
+    },
+    {
+      "word": "movie",
+      "type": "common association",
+      "hint": "film industry uses star rating system"
+    },
+    {
+      "word": "wish",
+      "type": "common association",
+      "hint": "people often wish upon stars"
+    }
+  ],
+  "sparkle": [
+    "glitter",
+    "shine",
+    "diamond",
+    "star",
+    "champagne",
+    "eyes",
+    "fireworks"
+  ],
+  "sparkle_detailed": [
+    {
+      "word": "glitter",
+      "type": "common association",
+      "hint": "small, shiny particles that reflect light"
+    },
+    {
+      "word": "shine",
+      "type": "common association",
+      "hint": "to emit or reflect light brightly"
+    },
+    {
+      "word": "diamond",
+      "type": "common association",
+      "hint": "precious gemstone known for its brilliance"
+    },
+    {
+      "word": "star",
+      "type": "common association",
+      "hint": "celestial body that twinkles in the night sky"
+    },
+    {
+      "word": "champagne",
+      "type": "common association",
+      "hint": "bubbly alcoholic drink with effervescence"
+    },
+    {
+      "word": "eyes",
+      "type": "common association",
+      "hint": "can be described as sparkling when bright or lively"
+    },
+    {
+      "word": "fireworks",
+      "type": "common association",
+      "hint": "explosive pyrotechnic displays in the sky"
+    }
+  ],
+  "solar system": [
+    "planets",
+    "sun",
+    "asteroid",
+    "comet",
+    "galaxy",
+    "orbit",
+    "gravity"
+  ],
+  "solar system_detailed": [
+    {
+      "word": "planets",
+      "type": "common association",
+      "hint": "celestial bodies orbiting the sun"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "central star of our solar system"
+    },
+    {
+      "word": "asteroid",
+      "type": "common association",
+      "hint": "small rocky bodies orbiting the sun"
+    },
+    {
+      "word": "comet",
+      "type": "common association",
+      "hint": "icy body that produces a tail when near the sun"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "larger system containing our solar system"
+    },
+    {
+      "word": "orbit",
+      "type": "common association",
+      "hint": "path of an object around the sun"
+    },
+    {
+      "word": "gravity",
+      "type": "common association",
+      "hint": "force keeping objects in the solar system together"
+    }
+  ],
+  "gravity": [
+    "fall",
+    "weight",
+    "Earth",
+    "Newton",
+    "apple",
+    "space",
+    "pull",
+    "heavy"
+  ],
+  "gravity_detailed": [
+    {
+      "word": "fall",
+      "type": "common association",
+      "hint": "objects fall due to gravity"
+    },
+    {
+      "word": "weight",
+      "type": "common association",
+      "hint": "gravity determines an object's weight"
+    },
+    {
+      "word": "Earth",
+      "type": "common association",
+      "hint": "planet with gravity we experience daily"
+    },
+    {
+      "word": "Newton",
+      "type": "common association",
+      "hint": "scientist who discovered gravity"
+    },
+    {
+      "word": "apple",
+      "type": "common association",
+      "hint": "fruit in famous gravity discovery story"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "environment with little to no gravity"
+    },
+    {
+      "word": "pull",
+      "type": "common association",
+      "hint": "gravity's force pulls objects downward"
+    },
+    {
+      "word": "heavy",
+      "type": "common association",
+      "hint": "objects feel heavy due to gravity"
+    }
+  ],
+  "mars": [
+    "planet",
+    "red",
+    "aliens",
+    "rover",
+    "god",
+    "candy",
+    "astronaut"
+  ],
+  "mars_detailed": [
+    {
+      "word": "planet",
+      "type": "common association",
+      "hint": "Mars is the fourth planet from the Sun"
+    },
+    {
+      "word": "red",
+      "type": "common association",
+      "hint": "Mars is known as the Red Planet"
+    },
+    {
+      "word": "aliens",
+      "type": "common association",
+      "hint": "Popular culture often associates Mars with extraterrestrial life"
+    },
+    {
+      "word": "rover",
+      "type": "common association",
+      "hint": "NASA has sent several rovers to explore Mars"
+    },
+    {
+      "word": "god",
+      "type": "common association",
+      "hint": "Mars is named after the Roman god of war"
+    },
+    {
+      "word": "candy",
+      "type": "common association",
+      "hint": "Mars is a popular brand of chocolate bar"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "Future missions aim to send humans to Mars"
+    }
+  ],
+  "milky way": [
+    "galaxy",
+    "stars",
+    "chocolate",
+    "astronomy",
+    "space",
+    "night sky",
+    "spiral",
+    "telescope"
+  ],
+  "milky way_detailed": [
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "our home galaxy in space"
+    },
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "visible celestial objects in the night sky"
+    },
+    {
+      "word": "chocolate",
+      "type": "common association",
+      "hint": "popular candy bar brand"
+    },
+    {
+      "word": "astronomy",
+      "type": "common association",
+      "hint": "scientific study of celestial objects"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "vast expanse beyond Earth's atmosphere"
+    },
+    {
+      "word": "night sky",
+      "type": "common association",
+      "hint": "view of the cosmos after dark"
+    },
+    {
+      "word": "spiral",
+      "type": "common association",
+      "hint": "shape of our galaxy"
+    },
+    {
+      "word": "telescope",
+      "type": "common association",
+      "hint": "instrument used to observe distant objects in space"
+    }
+  ],
+  "universe": [
+    "stars",
+    "galaxies",
+    "planets",
+    "space",
+    "expansion",
+    "Big Bang",
+    "cosmic",
+    "infinity"
+  ],
+  "universe_detailed": [
+    {
+      "word": "stars",
+      "type": "common association",
+      "hint": "luminous celestial objects visible in the night sky"
+    },
+    {
+      "word": "galaxies",
+      "type": "common association",
+      "hint": "vast collections of stars, gas, and dust"
+    },
+    {
+      "word": "planets",
+      "type": "common association",
+      "hint": "large celestial bodies orbiting stars"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "the vast emptiness between celestial objects"
+    },
+    {
+      "word": "expansion",
+      "type": "common association",
+      "hint": "the ongoing growth of the universe"
+    },
+    {
+      "word": "Big Bang",
+      "type": "common association",
+      "hint": "theoretical beginning of the universe"
+    },
+    {
+      "word": "cosmic",
+      "type": "common association",
+      "hint": "relating to the universe or cosmos"
+    },
+    {
+      "word": "infinity",
+      "type": "common association",
+      "hint": "the concept of endlessness or limitlessness"
+    }
+  ],
+  "spiral": [
+    "staircase",
+    "galaxy",
+    "notebook",
+    "hypnosis",
+    "snail",
+    "whirlpool",
+    "DNA"
+  ],
+  "spiral_detailed": [
+    {
+      "word": "staircase",
+      "type": "common association",
+      "hint": "a spiral staircase is a common architectural feature"
+    },
+    {
+      "word": "galaxy",
+      "type": "common association",
+      "hint": "many galaxies have a spiral shape"
+    },
+    {
+      "word": "notebook",
+      "type": "common association",
+      "hint": "spiral-bound notebooks are a common school supply"
+    },
+    {
+      "word": "hypnosis",
+      "type": "common association",
+      "hint": "spirals are often used as a visual in hypnosis"
+    },
+    {
+      "word": "snail",
+      "type": "common association",
+      "hint": "snail shells have a distinctive spiral shape"
+    },
+    {
+      "word": "whirlpool",
+      "type": "common association",
+      "hint": "water often forms a spiral shape when draining"
+    },
+    {
+      "word": "DNA",
+      "type": "common association",
+      "hint": "the double helix structure of DNA is spiral-shaped"
+    }
+  ],
+  "cheese": [
+    "mouse",
+    "cracker",
+    "pizza",
+    "dairy",
+    "yellow",
+    "Swiss",
+    "grilled",
+    "sandwich"
+  ],
+  "cheese_detailed": [
+    {
+      "word": "mouse",
+      "type": "common association",
+      "hint": "mice are known to love cheese"
+    },
+    {
+      "word": "cracker",
+      "type": "common association",
+      "hint": "cheese is often served on crackers"
+    },
+    {
+      "word": "pizza",
+      "type": "common association",
+      "hint": "cheese is a key ingredient in pizza"
+    },
+    {
+      "word": "dairy",
+      "type": "common association",
+      "hint": "cheese is a dairy product"
+    },
+    {
+      "word": "yellow",
+      "type": "common association",
+      "hint": "many cheeses are yellow in color"
+    },
+    {
+      "word": "Swiss",
+      "type": "common association",
+      "hint": "a popular type of cheese with holes"
+    },
+    {
+      "word": "grilled",
+      "type": "common association",
+      "hint": "refers to grilled cheese sandwiches"
+    },
+    {
+      "word": "sandwich",
+      "type": "common association",
+      "hint": "cheese is a common sandwich ingredient"
+    }
+  ],
+  "crater": [
+    "moon",
+    "volcano",
+    "meteor",
+    "explosion",
+    "impact",
+    "lake",
+    "asteroid",
+    "circular"
+  ],
+  "crater_detailed": [
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "lunar surface features craters"
+    },
+    {
+      "word": "volcano",
+      "type": "common association",
+      "hint": "volcanic craters form at the top"
+    },
+    {
+      "word": "meteor",
+      "type": "common association",
+      "hint": "meteors create impact craters"
+    },
+    {
+      "word": "explosion",
+      "type": "common association",
+      "hint": "explosions can leave crater-like depressions"
+    },
+    {
+      "word": "impact",
+      "type": "common association",
+      "hint": "craters often result from impacts"
+    },
+    {
+      "word": "lake",
+      "type": "common association",
+      "hint": "some lakes form in crater basins"
+    },
+    {
+      "word": "asteroid",
+      "type": "common association",
+      "hint": "asteroids can create large craters on impact"
+    },
+    {
+      "word": "circular",
+      "type": "common association",
+      "hint": "most craters have a round shape"
+    }
+  ],
+  "lunar": [
+    "moon",
+    "eclipse",
+    "phase",
+    "crater",
+    "landing",
+    "tide",
+    "calendar",
+    "night"
+  ],
+  "lunar_detailed": [
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "celestial body that orbits Earth"
+    },
+    {
+      "word": "eclipse",
+      "type": "common association",
+      "hint": "when the moon blocks the sun's light"
+    },
+    {
+      "word": "phase",
+      "type": "common association",
+      "hint": "different appearances of the moon over time"
+    },
+    {
+      "word": "crater",
+      "type": "common association",
+      "hint": "circular depression on the moon's surface"
+    },
+    {
+      "word": "landing",
+      "type": "common association",
+      "hint": "refers to Apollo missions to the moon"
+    },
+    {
+      "word": "tide",
+      "type": "common association",
+      "hint": "ocean levels affected by moon's gravity"
+    },
+    {
+      "word": "calendar",
+      "type": "common association",
+      "hint": "tracking time based on moon cycles"
+    },
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "when the moon is typically visible"
+    }
+  ],
+  "moonwalk": [
+    "Michael Jackson",
+    "dance",
+    "backwards",
+    "smooth",
+    "space",
+    "gravity",
+    "illusion",
+    "glide"
+  ],
+  "moonwalk_detailed": [
+    {
+      "word": "Michael Jackson",
+      "type": "common association",
+      "hint": "famous pop star known for this dance move"
+    },
+    {
+      "word": "dance",
+      "type": "common association",
+      "hint": "type of movement"
+    },
+    {
+      "word": "backwards",
+      "type": "common association",
+      "hint": "direction of motion"
+    },
+    {
+      "word": "smooth",
+      "type": "common association",
+      "hint": "characteristic of the movement"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "related to astronauts walking on the moon"
+    },
+    {
+      "word": "gravity",
+      "type": "common association",
+      "hint": "force defied by the illusion of the dance"
+    },
+    {
+      "word": "illusion",
+      "type": "common association",
+      "hint": "visual effect created by the dance move"
+    },
+    {
+      "word": "glide",
+      "type": "common association",
+      "hint": "sensation of the movement"
+    }
+  ],
+  "spacesuit": [
+    "astronaut",
+    "NASA",
+    "helmet",
+    "zero gravity",
+    "oxygen",
+    "bulky",
+    "white",
+    "moon"
+  ],
+  "spacesuit_detailed": [
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "person who wears a spacesuit"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "space agency known for spacesuits"
+    },
+    {
+      "word": "helmet",
+      "type": "common association",
+      "hint": "protective headgear of a spacesuit"
+    },
+    {
+      "word": "zero gravity",
+      "type": "common association",
+      "hint": "environment where spacesuits are used"
+    },
+    {
+      "word": "oxygen",
+      "type": "common association",
+      "hint": "essential for breathing in space"
+    },
+    {
+      "word": "bulky",
+      "type": "common association",
+      "hint": "describes appearance of spacesuits"
+    },
+    {
+      "word": "white",
+      "type": "common association",
+      "hint": "common color of spacesuits"
+    },
+    {
+      "word": "moon",
+      "type": "common association",
+      "hint": "celestial body where spacesuits were famously used"
+    }
+  ],
+  "weightlessness": [
+    "floating",
+    "space",
+    "astronaut",
+    "zero gravity",
+    "freefall",
+    "microgravity",
+    "buoyancy"
+  ],
+  "weightlessness_detailed": [
+    {
+      "word": "floating",
+      "type": "common association",
+      "hint": "feeling of being suspended in air"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "environment where weightlessness is experienced"
+    },
+    {
+      "word": "astronaut",
+      "type": "common association",
+      "hint": "person who experiences weightlessness in space"
+    },
+    {
+      "word": "zero gravity",
+      "type": "common association",
+      "hint": "scientific term for weightlessness"
+    },
+    {
+      "word": "freefall",
+      "type": "common association",
+      "hint": "sensation similar to weightlessness"
+    },
+    {
+      "word": "microgravity",
+      "type": "common association",
+      "hint": "technical term for near-weightlessness in space"
+    },
+    {
+      "word": "buoyancy",
+      "type": "common association",
+      "hint": "similar feeling when in water"
+    }
+  ],
+  "launch": [
+    "rocket",
+    "product",
+    "party",
+    "website",
+    "campaign",
+    "boat",
+    "startup",
+    "missile"
+  ],
+  "launch_detailed": [
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "spacecraft taking off"
+    },
+    {
+      "word": "product",
+      "type": "common association",
+      "hint": "new item release"
+    },
+    {
+      "word": "party",
+      "type": "common association",
+      "hint": "celebration for a new release"
+    },
+    {
+      "word": "website",
+      "type": "common association",
+      "hint": "making a new site go live"
+    },
+    {
+      "word": "campaign",
+      "type": "common association",
+      "hint": "start of a marketing effort"
+    },
+    {
+      "word": "boat",
+      "type": "common association",
+      "hint": "putting a vessel into water"
+    },
+    {
+      "word": "startup",
+      "type": "common association",
+      "hint": "beginning of a new business"
+    },
+    {
+      "word": "missile",
+      "type": "common association",
+      "hint": "firing of a projectile weapon"
+    }
+  ],
+  "countdown": [
+    "rocket",
+    "New Year's Eve",
+    "timer",
+    "clock",
+    "numbers",
+    "excitement",
+    "launch"
+  ],
+  "countdown_detailed": [
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "often used before space launches"
+    },
+    {
+      "word": "New Year's Eve",
+      "type": "common association",
+      "hint": "counting down to midnight on December 31st"
+    },
+    {
+      "word": "timer",
+      "type": "common association",
+      "hint": "device used for counting down time"
+    },
+    {
+      "word": "clock",
+      "type": "common association",
+      "hint": "visual representation of time passing"
+    },
+    {
+      "word": "numbers",
+      "type": "common association",
+      "hint": "sequence used in counting down"
+    },
+    {
+      "word": "excitement",
+      "type": "common association",
+      "hint": "feeling associated with anticipation during a countdown"
+    },
+    {
+      "word": "launch",
+      "type": "common association",
+      "hint": "event often preceded by a countdown"
+    }
+  ],
+  "fuel": [
+    "gasoline",
+    "energy",
+    "oil",
+    "fire",
+    "car",
+    "gas station",
+    "diesel"
+  ],
+  "fuel_detailed": [
+    {
+      "word": "gasoline",
+      "type": "common association",
+      "hint": "fuel for cars and other vehicles"
+    },
+    {
+      "word": "energy",
+      "type": "common association",
+      "hint": "fuel provides energy for various purposes"
+    },
+    {
+      "word": "oil",
+      "type": "common association",
+      "hint": "crude oil is a source of many fuels"
+    },
+    {
+      "word": "fire",
+      "type": "common association",
+      "hint": "fuel is often used to create fire"
+    },
+    {
+      "word": "car",
+      "type": "common association",
+      "hint": "cars require fuel to operate"
+    },
+    {
+      "word": "gas station",
+      "type": "common association",
+      "hint": "where people typically purchase fuel"
+    },
+    {
+      "word": "diesel",
+      "type": "common association",
+      "hint": "type of fuel used in some vehicles and machinery"
+    }
+  ],
+  "shuttle": [
+    "space",
+    "bus",
+    "airport",
+    "hotel",
+    "tennis",
+    "weaving",
+    "rocket",
+    "launch"
+  ],
+  "shuttle_detailed": [
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "NASA's space shuttle program"
+    },
+    {
+      "word": "bus",
+      "type": "common association",
+      "hint": "shuttle bus for transportation"
+    },
+    {
+      "word": "airport",
+      "type": "common association",
+      "hint": "airport shuttle service"
+    },
+    {
+      "word": "hotel",
+      "type": "common association",
+      "hint": "hotel shuttle for guests"
+    },
+    {
+      "word": "tennis",
+      "type": "common association",
+      "hint": "shuttlecock used in badminton"
+    },
+    {
+      "word": "weaving",
+      "type": "common association",
+      "hint": "shuttle used in weaving looms"
+    },
+    {
+      "word": "rocket",
+      "type": "common association",
+      "hint": "similar to space shuttle"
+    },
+    {
+      "word": "launch",
+      "type": "common association",
+      "hint": "shuttle launch into space"
+    }
+  ],
+  "satellite": [
+    "space",
+    "television",
+    "dish",
+    "GPS",
+    "communication",
+    "weather",
+    "orbit",
+    "NASA"
+  ],
+  "satellite_detailed": [
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "satellites orbit in space"
+    },
+    {
+      "word": "television",
+      "type": "common association",
+      "hint": "satellite TV broadcasts"
+    },
+    {
+      "word": "dish",
+      "type": "common association",
+      "hint": "satellite dishes receive signals"
+    },
+    {
+      "word": "GPS",
+      "type": "common association",
+      "hint": "global positioning system uses satellites"
+    },
+    {
+      "word": "communication",
+      "type": "common association",
+      "hint": "satellites relay signals globally"
+    },
+    {
+      "word": "weather",
+      "type": "common association",
+      "hint": "weather satellites track atmospheric conditions"
+    },
+    {
+      "word": "orbit",
+      "type": "common association",
+      "hint": "path a satellite follows around a planet"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "space agency that launches satellites"
+    }
+  ],
+  "houston": [
+    "Texas",
+    "NASA",
+    "Rockets",
+    "Oil",
+    "Astros",
+    "Space",
+    "Humidity"
+  ],
+  "houston_detailed": [
+    {
+      "word": "Texas",
+      "type": "common association",
+      "hint": "largest city in the state"
+    },
+    {
+      "word": "NASA",
+      "type": "common association",
+      "hint": "home of Johnson Space Center"
+    },
+    {
+      "word": "Rockets",
+      "type": "common association",
+      "hint": "NBA basketball team"
+    },
+    {
+      "word": "Oil",
+      "type": "common association",
+      "hint": "major industry in the area"
+    },
+    {
+      "word": "Astros",
+      "type": "common association",
+      "hint": "MLB baseball team"
+    },
+    {
+      "word": "Space",
+      "type": "common association",
+      "hint": "known for space exploration"
+    },
+    {
+      "word": "Humidity",
+      "type": "common association",
+      "hint": "known for hot, humid climate"
+    }
+  ],
+  "sad": [
+    "tears",
+    "depression",
+    "blue",
+    "grief",
+    "crying",
+    "lonely",
+    "gloomy"
+  ],
+  "sad_detailed": [
+    {
+      "word": "tears",
+      "type": "common association",
+      "hint": "physical expression of sadness"
+    },
+    {
+      "word": "depression",
+      "type": "common association",
+      "hint": "mental health condition related to sadness"
+    },
+    {
+      "word": "blue",
+      "type": "common association",
+      "hint": "color often associated with sadness"
+    },
+    {
+      "word": "grief",
+      "type": "common association",
+      "hint": "intense sadness, often due to loss"
+    },
+    {
+      "word": "crying",
+      "type": "common association",
+      "hint": "action associated with sadness"
+    },
+    {
+      "word": "lonely",
+      "type": "common association",
+      "hint": "feeling often linked to sadness"
+    },
+    {
+      "word": "gloomy",
+      "type": "common association",
+      "hint": "describes a sad atmosphere or mood"
+    }
+  ],
+  "cold": [
+    "ice",
+    "snow",
+    "winter",
+    "freezing",
+    "shiver",
+    "flu",
+    "jacket"
+  ],
+  "cold_detailed": [
+    {
+      "word": "ice",
+      "type": "common association",
+      "hint": "frozen water often associated with cold temperatures"
+    },
+    {
+      "word": "snow",
+      "type": "common association",
+      "hint": "frozen precipitation that falls in cold weather"
+    },
+    {
+      "word": "winter",
+      "type": "common association",
+      "hint": "coldest season of the year"
+    },
+    {
+      "word": "freezing",
+      "type": "common association",
+      "hint": "temperature at or below 0°C/32°F"
+    },
+    {
+      "word": "shiver",
+      "type": "common association",
+      "hint": "bodily reaction to feeling cold"
+    },
+    {
+      "word": "flu",
+      "type": "common association",
+      "hint": "illness often referred to as a 'cold'"
+    },
+    {
+      "word": "jacket",
+      "type": "common association",
+      "hint": "clothing worn for warmth in cold weather"
+    }
+  ],
+  "black": [
+    "night",
+    "coal",
+    "darkness",
+    "funeral",
+    "space",
+    "cat",
+    "coffee",
+    "ink"
+  ],
+  "black_detailed": [
+    {
+      "word": "night",
+      "type": "common association",
+      "hint": "darkness after sunset"
+    },
+    {
+      "word": "coal",
+      "type": "common association",
+      "hint": "dark fossil fuel"
+    },
+    {
+      "word": "darkness",
+      "type": "common association",
+      "hint": "absence of light"
+    },
+    {
+      "word": "funeral",
+      "type": "common association",
+      "hint": "color of mourning attire"
+    },
+    {
+      "word": "space",
+      "type": "common association",
+      "hint": "the dark void beyond Earth"
+    },
+    {
+      "word": "cat",
+      "type": "common association",
+      "hint": "common color for felines"
+    },
+    {
+      "word": "coffee",
+      "type": "common association",
+      "hint": "dark caffeinated beverage"
+    },
+    {
+      "word": "ink",
+      "type": "common association",
+      "hint": "dark liquid used for writing"
+    }
+  ],
+  "gum": [
+    "chew",
+    "bubble",
+    "mint",
+    "stick",
+    "teeth",
+    "wrapper",
+    "sugar-free",
+    "breath"
+  ],
+  "gum_detailed": [
+    {
+      "word": "chew",
+      "type": "common association",
+      "hint": "action of using gum"
+    },
+    {
+      "word": "bubble",
+      "type": "common association",
+      "hint": "can be blown with certain types of gum"
+    },
+    {
+      "word": "mint",
+      "type": "common association",
+      "hint": "popular gum flavor"
+    },
+    {
+      "word": "stick",
+      "type": "common association",
+      "hint": "common shape of packaged gum"
+    },
+    {
+      "word": "teeth",
+      "type": "common association",
+      "hint": "part of body involved in chewing gum"
+    },
+    {
+      "word": "wrapper",
+      "type": "common association",
+      "hint": "packaging material for gum"
+    },
+    {
+      "word": "sugar-free",
+      "type": "common association",
+      "hint": "health-conscious gum option"
+    },
+    {
+      "word": "breath",
+      "type": "common association",
+      "hint": "gum often used to freshen breath"
+    }
+  ],
+  "christmas": [
+    "tree",
+    "presents",
+    "Santa",
+    "snow",
+    "caroling",
+    "reindeer",
+    "stockings"
+  ],
+  "christmas_detailed": [
+    {
+      "word": "tree",
+      "type": "common association",
+      "hint": "decorated evergreen"
+    },
+    {
+      "word": "presents",
+      "type": "common association",
+      "hint": "gifts exchanged"
+    },
+    {
+      "word": "Santa",
+      "type": "common association",
+      "hint": "jolly gift-giver"
+    },
+    {
+      "word": "snow",
+      "type": "common association",
+      "hint": "wintry weather"
+    },
+    {
+      "word": "caroling",
+      "type": "common association",
+      "hint": "singing festive songs"
+    },
+    {
+      "word": "reindeer",
+      "type": "common association",
+      "hint": "Santa's sleigh pullers"
+    },
+    {
+      "word": "stockings",
+      "type": "common association",
+      "hint": "hung for small gifts"
+    }
+  ],
+  "wrapping paper": [
+    "gift",
+    "birthday",
+    "Christmas",
+    "scissors",
+    "tape",
+    "bow",
+    "patterns",
+    "ribbon"
+  ],
+  "wrapping paper_detailed": [
+    {
+      "word": "gift",
+      "type": "common association",
+      "hint": "wrapping paper is used to cover presents"
+    },
+    {
+      "word": "birthday",
+      "type": "common association",
+      "hint": "occasion where wrapped gifts are common"
+    },
+    {
+      "word": "Christmas",
+      "type": "common association",
+      "hint": "holiday associated with wrapped presents"
+    },
+    {
+      "word": "scissors",
+      "type": "common association",
+      "hint": "tool used to cut wrapping paper"
+    },
+    {
+      "word": "tape",
+      "type": "common association",
+      "hint": "used to secure wrapping paper"
+    },
+    {
+      "word": "bow",
+      "type": "common association",
+      "hint": "decorative addition to wrapped gifts"
+    },
+    {
+      "word": "patterns",
+      "type": "common association",
+      "hint": "wrapping paper often has decorative designs"
+    },
+    {
+      "word": "ribbon",
+      "type": "common association",
+      "hint": "used to decorate wrapped presents"
+    }
+  ],
+  "bow": [
+    "arrow",
+    "tie",
+    "ribbon",
+    "violin",
+    "curtsy",
+    "gift",
+    "ship",
+    "hair"
+  ],
+  "bow_detailed": [
+    {
+      "word": "arrow",
+      "type": "common association",
+      "hint": "used together for archery"
+    },
+    {
+      "word": "tie",
+      "type": "common association",
+      "hint": "a type of necktie"
+    },
+    {
+      "word": "ribbon",
+      "type": "common association",
+      "hint": "decorative knot"
+    },
+    {
+      "word": "violin",
+      "type": "common association",
+      "hint": "used to play string instruments"
+    },
+    {
+      "word": "curtsy",
+      "type": "common association",
+      "hint": "a formal greeting"
+    },
+    {
+      "word": "gift",
+      "type": "common association",
+      "hint": "decorative topping on presents"
+    },
+    {
+      "word": "ship",
+      "type": "common association",
+      "hint": "front part of a boat"
+    },
+    {
+      "word": "hair",
+      "type": "common association",
+      "hint": "decorative accessory"
+    }
+  ],
+  "romantic": [
+    "love",
+    "roses",
+    "candlelight",
+    "dinner",
+    "sunset",
+    "valentine",
+    "chocolate"
+  ],
+  "romantic_detailed": [
+    {
+      "word": "love",
+      "type": "common association",
+      "hint": "strong affection and emotional attachment"
+    },
+    {
+      "word": "roses",
+      "type": "common association",
+      "hint": "flowers often given as a romantic gesture"
+    },
+    {
+      "word": "candlelight",
+      "type": "common association",
+      "hint": "creates an intimate atmosphere"
+    },
+    {
+      "word": "dinner",
+      "type": "common association",
+      "hint": "sharing a meal as a romantic activity"
+    },
+    {
+      "word": "sunset",
+      "type": "common association",
+      "hint": "picturesque setting for romance"
+    },
+    {
+      "word": "valentine",
+      "type": "common association",
+      "hint": "holiday celebrating romantic love"
+    },
+    {
+      "word": "chocolate",
+      "type": "common association",
+      "hint": "sweet treat often given as a romantic gift"
+    }
+  ],
+  "playing": [
+    "games",
+    "sports",
+    "toys",
+    "music",
+    "children",
+    "fun",
+    "cards"
+  ],
+  "playing_detailed": [
+    {
+      "word": "games",
+      "type": "common association",
+      "hint": "activities done for fun or entertainment"
+    },
+    {
+      "word": "sports",
+      "type": "common association",
+      "hint": "physical activities with rules and competition"
+    },
+    {
+      "word": "toys",
+      "type": "common association",
+      "hint": "objects used for play, especially by children"
+    },
+    {
+      "word": "music",
+      "type": "common association",
+      "hint": "performing with instruments or singing"
+    },
+    {
+      "word": "children",
+      "type": "common association",
+      "hint": "young people who often engage in play"
+    },
+    {
+      "word": "fun",
+      "type": "common association",
+      "hint": "enjoyment or amusement derived from an activity"
+    },
+    {
+      "word": "cards",
+      "type": "common association",
+      "hint": "games involving a deck of playing cards"
+    }
+  ],
+  "credit": [
+    "card",
+    "score",
+    "loan",
+    "debt",
+    "bank",
+    "interest",
+    "report",
+    "limit"
+  ],
+  "credit_detailed": [
+    {
+      "word": "card",
+      "type": "common association",
+      "hint": "plastic payment method"
+    },
+    {
+      "word": "score",
+      "type": "common association",
+      "hint": "numerical rating of creditworthiness"
+    },
+    {
+      "word": "loan",
+      "type": "common association",
+      "hint": "borrowing money with promise to repay"
+    },
+    {
+      "word": "debt",
+      "type": "common association",
+      "hint": "money owed"
+    },
+    {
+      "word": "bank",
+      "type": "common association",
+      "hint": "financial institution that issues credit"
+    },
+    {
+      "word": "interest",
+      "type": "common association",
+      "hint": "cost of borrowing money"
+    },
+    {
+      "word": "report",
+      "type": "common association",
+      "hint": "document detailing credit history"
+    },
+    {
+      "word": "limit",
+      "type": "common association",
+      "hint": "maximum amount one can borrow"
+    }
+  ],
+  "business": [
+    "money",
+    "office",
+    "suit",
+    "meeting",
+    "company",
+    "entrepreneur",
+    "profit",
+    "contract"
+  ],
+  "business_detailed": [
+    {
+      "word": "money",
+      "type": "common association",
+      "hint": "profit and financial transactions"
+    },
+    {
+      "word": "office",
+      "type": "common association",
+      "hint": "workplace for many businesses"
+    },
+    {
+      "word": "suit",
+      "type": "common association",
+      "hint": "formal attire often worn in business settings"
+    },
+    {
+      "word": "meeting",
+      "type": "common association",
+      "hint": "gathering to discuss business matters"
+    },
+    {
+      "word": "company",
+      "type": "common association",
+      "hint": "an organization that conducts business"
+    },
+    {
+      "word": "entrepreneur",
+      "type": "common association",
+      "hint": "person who starts and runs a business"
+    },
+    {
+      "word": "profit",
+      "type": "common association",
+      "hint": "financial gain from business activities"
+    },
+    {
+      "word": "contract",
+      "type": "common association",
+      "hint": "legal agreement in business dealings"
+    }
+  ],
+  "rainbow": [
+    "colors",
+    "rain",
+    "sky",
+    "arch",
+    "pot of gold",
+    "sun",
+    "prism"
+  ],
+  "rainbow_detailed": [
+    {
+      "word": "colors",
+      "type": "common association",
+      "hint": "rainbows display multiple colors"
+    },
+    {
+      "word": "rain",
+      "type": "common association",
+      "hint": "rainbows often appear after rain"
+    },
+    {
+      "word": "sky",
+      "type": "common association",
+      "hint": "rainbows are seen in the sky"
+    },
+    {
+      "word": "arch",
+      "type": "common association",
+      "hint": "rainbows have an arched shape"
+    },
+    {
+      "word": "pot of gold",
+      "type": "common association",
+      "hint": "from folklore about leprechauns"
+    },
+    {
+      "word": "sun",
+      "type": "common association",
+      "hint": "sunlight is needed to create rainbows"
+    },
+    {
+      "word": "prism",
+      "type": "common association",
+      "hint": "prisms create rainbow-like effects"
+    }
+  ]
+}

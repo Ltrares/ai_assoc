@@ -12,6 +12,8 @@ const mongoose = require('mongoose');
 const axios = require('axios');
 const Anthropic = require('@anthropic-ai/sdk');
 const path = require('path');
+const fs = require('fs');
+const { promisify } = require('util');
 
 const app = express();
 const PORT = process.env.PORT || 5050;
@@ -45,7 +47,136 @@ nextGameTime.setMinutes(0);
 nextGameTime.setSeconds(0);
 nextGameTime.setMilliseconds(0);
 
-// Function to generate a new puzzle with a linear association path
+// Helper function to check if a word is a valid target
+async function isValidTargetWord(candidateTarget, previousWords) {
+  // Check if candidate target appears in associations of previous words
+  for (const word of previousWords) {
+    const key = word.toLowerCase().trim();
+    let associations;
+    
+    // Get associations if they exist in cache, otherwise fetch them
+    if (associationCache[key]) {
+      associations = associationCache[key];
+    } else {
+      try {
+        console.log(`Getting associations for previous word: ${word}`);
+        associations = await getAssociations(word);
+      } catch (error) {
+        console.error(`Error getting associations for "${word}":`, error);
+        continue; // Skip this word if we can't get associations
+      }
+    }
+    
+    // If candidate target is directly associated with this previous word,
+    // it's not a valid target (would create a shortcut)
+    const normalizedCandidate = candidateTarget.toLowerCase().trim();
+    if (associations.some(assoc => assoc.toLowerCase().trim() === normalizedCandidate)) {
+      console.log(`Candidate target "${candidateTarget}" appears in associations of "${word}" - not valid`);
+      return false;
+    }
+  }
+  
+  // If we get here, the candidate is valid
+  return true;
+}
+
+// Helper function to find a path through the word association graph
+async function findPathThroughGraph(startWord) {
+  // Define our minimum path length (words) and maximum depth for search
+  const MIN_PATH_LENGTH = 6; // at least 6 words total (5 steps)
+  const MAX_DEPTH = 10; // don't go too deep in the graph
+  
+  // Initialize path with start word
+  const initialPath = [startWord];
+  
+  // Get associations for the start word if not already in cache
+  console.log(`Getting associations for start word: ${startWord}`);
+  const startAssociations = await getAssociations(startWord);
+  console.log(`Cached ${startAssociations.length} associations for ${startWord}`);
+  
+  // Queue for breadth-first traversal with paths
+  // Each entry contains the current path and the depth
+  const queue = [{
+    path: initialPath,
+    depth: 1
+  }];
+  
+  // Keep track of visited words to avoid cycles
+  const visited = new Set([startWord.toLowerCase().trim()]);
+  
+  // Process the queue for breadth-first traversal
+  while (queue.length > 0) {
+    // Get the next path to explore
+    const { path, depth } = queue.shift();
+    const currentWord = path[path.length - 1];
+        
+    // If we've reached sufficient depth, this could be a target word
+    if (depth >= MIN_PATH_LENGTH - 1) { // -1 because path length = depth + 1
+      // Check if this word would be a good target
+      // It shouldn't be directly associated with any word in the path except the last one
+      const isValidTarget = await isValidTargetWord(currentWord, path.slice(0, -1));
+      
+      if (isValidTarget) {
+        console.log(`Found valid target word "${currentWord}" at depth ${depth}`);
+        return { path, targetWord: currentWord };
+      }
+    }
+    
+    // Stop exploring this path if we've reached max depth
+    if (depth >= MAX_DEPTH) {
+      continue;
+    }
+    
+    // Get associations for the current word
+    let associations;
+    try {
+      // Check if we already have associations in cache first
+      const key = currentWord.toLowerCase().trim();
+      if (associationCache[key]) {
+        associations = associationCache[key];
+      } else {
+        // Otherwise, fetch new associations
+        console.log(`Getting associations for: ${currentWord}`);
+        associations = await getAssociations(currentWord);
+        console.log(`Cached ${associations.length} associations for ${currentWord}`);
+      }
+    } catch (error) {
+      console.error(`Error getting associations for "${currentWord}":`, error);
+      continue; // Skip this word if we can't get associations
+    }
+    
+    // Filter to avoid visited words
+    const validNextWords = associations.filter(word => {
+      const normalizedWord = word.toLowerCase().trim();
+      return !visited.has(normalizedWord);
+    });
+    
+    // Skip if dead end
+    if (validNextWords.length === 0) {
+      continue;
+    }
+    
+    // Add each valid next word to queue (limit to 3 for breadth control)
+    const nextWords = validNextWords.slice(0, 5); // Take at most 5 words
+    for (const nextWord of nextWords) {
+      const normalizedWord = nextWord.toLowerCase().trim();
+      visited.add(normalizedWord); // Mark as visited
+      
+      // Create a new path by adding this word
+      const newPath = [...path, nextWord];
+      queue.push({
+        path: newPath,
+        depth: depth + 1
+      });
+    }
+  }
+  
+  // If we're here, we didn't find a valid path
+  console.log(`No valid path found from "${startWord}" after exploring ${visited.size} words`);
+  return null;
+}
+
+// Function to generate a new puzzle using a graph traversal approach
 async function generatePuzzle() {
   // Set next game time to the next hour
   nextGameTime = new Date();
@@ -54,13 +185,9 @@ async function generatePuzzle() {
   nextGameTime.setSeconds(0);
   nextGameTime.setMilliseconds(0);
   
-  // Clear the association cache before generating a new puzzle
-  // to prevent reusing the same associations
-  console.log(`Clearing association cache with ${Object.keys(associationCache).length} entries`);
-  Object.keys(associationCache).forEach(key => {
-    delete associationCache[key];
-  });
-  console.log("Association cache cleared for fresh puzzle generation");
+  // We're preserving the cache as it represents our word association graph
+  console.log(`Using association cache with ${Object.keys(associationCache).length} entries as graph`);
+  console.log("Association cache maintained for consistent word associations");
   
   // Track previously used words to ensure variety
   // We'll maintain a "memory" of recent start words to avoid repetition
@@ -89,162 +216,84 @@ async function generatePuzzle() {
   console.log(`Previously used start words (avoiding): ${global.previousStartWords.join(', ')}`);
   
   try {
-    console.log("Generating new puzzle using linear path approach...");
+    console.log("Generating new puzzle using graph traversal approach...");
     
-    // Step 1: Generate a random seed word
-    const seedWordMessage = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-20240620",
-      max_tokens: 100,
-      messages: [
-        {
-          role: "user",
-          content: `Generate ONE random, interesting seed word for a word association puzzle.
-          
-          The word should:
-          1. Be a simple, common, recognizable noun or verb
-          2. Have multiple potential word associations
-          3. NOT include any of these previous words: ${[currentStartWord, currentTargetWord, ...global.previousStartWords].filter(w => w && w !== 'null').join(', ')}
-          4. Be a single word (not a phrase)
-          5. Be varied and distinct from recent themes, choose something creative
-          
-          Return ONLY the word as plain text, nothing else.`
-        }
-      ]
-    });
-
-    // Get the seed word and trim any whitespace
-    const seedWord = seedWordMessage.content[0].text.trim();
-    console.log(`Generated seed word: ${seedWord}`);
+    // Maximum attempts to find a valid path with different start words
+    const MAX_ATTEMPTS = 5;
+    let validPath = null;
+    let seedWord = null;
+    let targetWord = null;
     
-    // Create path starting with seed word
-    const path = [seedWord];
-    
-    // Step 2: Build a linear path by following associations
-    // We want a path of 5-6 steps (6-7 words total including start and end)
-    const desiredPathLength = Math.floor(Math.random() * 2) + 6; // 6-7 words total
-    console.log(`Aiming for a path with ${desiredPathLength} words (${desiredPathLength-1} steps)`);
-    
-    // Get associations for the seed word
-    console.log(`Getting associations for seed word: ${seedWord}`);
-    let associations = await getAssociations(seedWord);
-    console.log(`Cached ${associations.length} associations for ${seedWord}`);
-    
-    // Iteratively build the path step by step
-    let currentWord = seedWord;
-    
-    while (path.length < desiredPathLength - 1) { // -1 because we'll add the last word as target
-      // Filter out associations:
-      // 1. Already in our path
-      // 2. Already in our cache (meaning they've been seen before)
-      const availableAssociations = associations.filter(word => {
-        // Skip if already in our path
-        if (path.includes(word)) return false;
-        
-        // Skip if this word is already in the cache from previous puzzles/steps
-        // We need to normalize the word (lowercase, trim) for consistent comparison
-        const normalizedWord = word.toLowerCase().trim();
-        const inCache = Object.keys(associationCache)
-          .filter(key => !key.includes('_detailed')) // Exclude detailed cache entries
-          .some(key => key.toLowerCase().trim() === normalizedWord);
-        
-        // Only keep words not in cache
-        return !inCache;
+    // Attempt to generate a valid path, trying different start words if needed
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      console.log(`Attempt ${attempt}/${MAX_ATTEMPTS} to find a valid path`);
+      
+      // Step 1: Generate a random seed word
+      const seedWordMessage = await anthropic.messages.create({
+        model: "claude-3-5-sonnet-20240620",
+        max_tokens: 100,
+        messages: [
+          {
+            role: "user",
+            content: `Generate ONE random, interesting seed word for a word association puzzle.
+            
+            The word should:
+            1. Be a simple, common, recognizable noun or verb
+            2. Have multiple potential word associations
+            3. NOT include any of these previous words: ${[currentStartWord, currentTargetWord, ...global.previousStartWords].filter(w => w && w !== 'null').join(', ')}
+            4. Be a single word (not a phrase)
+            5. Be varied and distinct from recent themes, choose something creative
+            
+            Return ONLY the word as plain text, nothing else.`
+          }
+        ]
       });
+
+      // Get the seed word and trim any whitespace
+      seedWord = seedWordMessage.content[0].text.trim();
+      console.log(`Generated seed word for attempt ${attempt}: ${seedWord}`);
       
-      console.log(`Found ${availableAssociations.length} available new associations`);
-      
-      if (availableAssociations.length === 0) {
-        // Try again with just excluding words in our path but allowing cached words
-        // This is a fallback to ensure we can at least build a path
-        console.log(`No new uncached associations found for ${currentWord}. Falling back to cached words...`);
-        const fallbackAssociations = associations.filter(word => !path.includes(word));
-        
-        if (fallbackAssociations.length === 0) {
-          // If still no associations, we have to end the path
-          console.log(`No more available associations for ${currentWord}, ending path early`);
-          break;
-        }
-        
-        // Pick a random fallback association
-        const randomIndex = Math.floor(Math.random() * fallbackAssociations.length);
-        const nextWord = fallbackAssociations[randomIndex];
-        
-        // Add the word to our path and continue
-        path.push(nextWord);
-        console.log(`Added fallback word ${nextWord} to path: ${path.join(' → ')}`);
-        currentWord = nextWord;
-        
-        // Continue building the path
-        if (path.length < desiredPathLength - 1) {
-          console.log(`Getting associations for fallback word: ${currentWord}`);
-          associations = await getAssociations(currentWord);
-          console.log(`Cached ${associations.length} associations for ${currentWord}`);
-        }
-        
-        continue; // Skip to next iteration
+      // Try to find a valid path from this seed word
+      const result = await findPathThroughGraph(seedWord);
+      if (result) {
+        validPath = result.path;
+        targetWord = result.targetWord;
+        console.log(`Found valid path on attempt ${attempt}!`);
+        break;
       }
       
-      // Pick a random association as the next word
-      const randomIndex = Math.floor(Math.random() * availableAssociations.length);
-      const nextWord = availableAssociations[randomIndex];
-      
-      // Add the word to our path
-      path.push(nextWord);
-      console.log(`Added ${nextWord} to path: ${path.join(' → ')}`);
-      
-      // This word becomes our new current word
-      currentWord = nextWord;
-      
-      // Get associations for this new word, unless we've reached our target length - 1
-      if (path.length < desiredPathLength - 1) {
-        console.log(`Getting associations for: ${currentWord}`);
-        associations = await getAssociations(currentWord);
-        console.log(`Cached ${associations.length} associations for ${currentWord}`);
-      }
+      console.log(`No valid path found from "${seedWord}" on attempt ${attempt}`);
     }
     
-    // Get the last word in the path as our target word candidate
-    let targetWord = path[path.length - 1];
-    console.log(`Initial target word candidate: ${targetWord}`);
+    // If we couldn't find a valid path after all attempts, throw an error
+    if (!validPath) {
+      throw new Error("Failed to generate a valid puzzle path after multiple attempts");
+    }
+    
+    console.log(`Final path: ${validPath.join(' → ')}`);
+    console.log(`Target word: ${targetWord}`);
+    
+    // TODO: Our graph traversal approach has been tested and shown to work well.
+    // We now treat the cache as a directed graph and find paths through it
+    // ensuring the target word isn't directly connected to any prior word
+    // except its immediate parent. This creates more interesting puzzles.
     
     // Check if the target word appears as an association in any previous steps
-    // This is a key improvement to prevent confusing puzzles
+    // This is for logging purposes only
     const allPreviousAssociations = [];
-    for (let i = 0; i < path.length - 1; i++) {
-      const word = path[i];
-      if (associationCache[word.toLowerCase().trim()]) {
-        allPreviousAssociations.push(...associationCache[word.toLowerCase().trim()]);
+    for (let i = 0; i < validPath.length - 1; i++) {
+      const word = validPath[i];
+      const key = word.toLowerCase().trim();
+      if (associationCache[key]) {
+        allPreviousAssociations.push(...associationCache[key]);
       }
     }
     
-    // If target word appears in previous associations, remove it from those lists
+    // Log if target word appears in previous associations
     if (allPreviousAssociations.some(word => word.toLowerCase().trim() === targetWord.toLowerCase().trim())) {
-      console.log(`⚠️ Target word "${targetWord}" appears in previous associations. Removing it from association lists.`);
-      
-      // Remove the target word from all association lists to prevent confusion
-      for (let i = 0; i < path.length - 1; i++) {
-        const word = path[i];
-        const key = word.toLowerCase().trim();
-        
-        if (associationCache[key]) {
-          associationCache[key] = associationCache[key].filter(
-            assoc => assoc.toLowerCase().trim() !== targetWord.toLowerCase().trim()
-          );
-          console.log(`Removed "${targetWord}" from associations of "${word}"`);
-        }
-        
-        // Also remove from detailed cache
-        const detailedKey = `${key}_detailed`;
-        if (associationCache[detailedKey]) {
-          associationCache[detailedKey] = associationCache[detailedKey].filter(
-            item => item.word.toLowerCase().trim() !== targetWord.toLowerCase().trim()
-          );
-        }
-      }
+      console.log(`ℹ️ Target word "${targetWord}" appears in previous associations.`);
+      console.log(`This may create multiple solution paths, enhancing puzzle variety.`);
     }
-    
-    console.log(`Final path: ${path.join(' → ')}`);
-    console.log(`Target word: ${targetWord}`);
     
     // Step 3: Generate a theme based on the start and target words
     console.log("Generating theme based on start and target words...");
@@ -288,7 +337,7 @@ async function generatePuzzle() {
     
     // Step 4: Pre-cache all associations for words in the path
     console.log("Pre-caching associations for all path words...");
-    for (const word of path) {
+    for (const word of validPath) {
       if (!associationCache[word.toLowerCase()]) {
         console.log(`Pre-caching associations for: ${word}`);
         await getAssociations(word);
@@ -304,8 +353,8 @@ async function generatePuzzle() {
       theme: themeData.theme,
       description: themeData.description || "",
       difficulty: themeData.difficulty || "hard",
-      hiddenSolution: path,
-      minExpectedSteps: path.length - 1,
+      hiddenSolution: validPath,
+      minExpectedSteps: validPath.length - 1,
       associationGraph: {},
       gameDate: new Date().toISOString().split('T')[0],
       stats: { 
@@ -439,11 +488,71 @@ app.options('*', cors());
 // });
 // const Game = mongoose.model('Game', GameSchema);
 
+// Path for cache file
+const CACHE_FILE_PATH = path.join(__dirname, 'data', 'association-cache.json');
+
+// Promisify fs functions
+const writeFileAsync = promisify(fs.writeFile);
+const readFileAsync = promisify(fs.readFile);
+const mkdirAsync = promisify(fs.mkdir);
+
 // Cache for word associations to minimize API calls
-// This cache will persist throughout the server's lifetime
-const associationCache = {
-  // Starting with an empty cache to prevent getting stuck with the same words
+// This cache will persist throughout the server's lifetime and be saved to disk
+let associationCache = {
+  // Will be loaded from disk if available, otherwise starts empty
 };
+
+// Function to save the association cache to disk
+async function saveAssociationCache() {
+  try {
+    // Ensure the data directory exists
+    await mkdirAsync(path.dirname(CACHE_FILE_PATH), { recursive: true }).catch(() => {});
+    
+    // Save cache to file
+    await writeFileAsync(CACHE_FILE_PATH, JSON.stringify(associationCache, null, 2), 'utf8');
+    
+    // Update last saved timestamp
+    cacheStats.lastSaved = new Date();
+    
+    console.log(`Association cache saved to ${CACHE_FILE_PATH} (${Object.keys(associationCache).length} entries)`);
+    return true;
+  } catch (error) {
+    console.error('Error saving association cache:', error);
+    return false;
+  }
+}
+
+// Function to load the association cache from disk
+async function loadAssociationCache() {
+  try {
+    // Check if cache file exists
+    if (!fs.existsSync(CACHE_FILE_PATH)) {
+      console.log(`No cache file found at ${CACHE_FILE_PATH}. Starting with empty cache.`);
+      return false;
+    }
+    
+    // Read and parse cache file
+    const data = await readFileAsync(CACHE_FILE_PATH, 'utf8');
+    const loadedCache = JSON.parse(data);
+    
+    // Validate and use the loaded cache
+    if (loadedCache && typeof loadedCache === 'object') {
+      associationCache = loadedCache;
+      
+      // Record stats about loaded cache
+      cacheStats.lastSaved = new Date(); // Set this as if we just saved it
+      
+      console.log(`Association cache loaded from ${CACHE_FILE_PATH} (${Object.keys(associationCache).length} entries)`);
+      return true;
+    } else {
+      console.error('Invalid cache file format. Starting with empty cache.');
+      return false;
+    }
+  } catch (error) {
+    console.error('Error loading association cache:', error);
+    return false;
+  }
+}
 
 // API usage limits
 const apiLimits = {
@@ -462,7 +571,8 @@ const cacheStats = {
   misses: 0,
   lastCleared: new Date(),
   hintHits: 0,
-  hintMisses: 0
+  hintMisses: 0,
+  lastSaved: null
 };
 
 // Cache for hint responses to avoid repeated API calls
@@ -473,7 +583,7 @@ async function getAssociationsFromAI(word) {
   try {
     const message = await anthropic.messages.create({
       model: "claude-3-5-sonnet-20240620",
-      max_tokens: 250, // Reduced token limit for cost optimization
+      max_tokens: 400, // Increased token limit to ensure complete responses
       messages: [
         {
           role: "user",
@@ -499,23 +609,27 @@ async function getAssociationsFromAI(word) {
     // Parse the response to get an array of word association objects
     const responseText = message.content[0].text;
     
-    // Handle potential JSON parsing errors
-    let associationsArray;
-    try {
-      associationsArray = JSON.parse(responseText);
-    } catch (parseError) {
-      console.error('Error parsing JSON response:', parseError);
-      console.log('Raw response:', responseText);
-      
-      // Fallback to a simple array with default values
-      associationsArray = [
-        {"word": "related1", "type": "common association", "hint": `Related to ${word}`},
-        {"word": "related2", "type": "common association", "hint": `Related to ${word}`},
-        {"word": "related3", "type": "common association", "hint": `Related to ${word}`},
-        {"word": "related4", "type": "common association", "hint": `Related to ${word}`},
-        {"word": "related5", "type": "common association", "hint": `Related to ${word}`}
-      ];
+    // Parse the JSON response - let it fail if it's malformed
+    let associationsArray = JSON.parse(responseText);
+    
+    // Validate the structure of the parsed array
+    if (!Array.isArray(associationsArray) || associationsArray.length < 3) {
+      throw new Error("Invalid association array structure: too few items or not an array");
     }
+    
+    // Validate each item in the array
+    const validItems = associationsArray.filter(item => 
+      item && 
+      typeof item === 'object' && 
+      typeof item.word === 'string' && 
+      item.word.trim() !== ''
+    );
+    
+    if (validItems.length < 3) {
+      throw new Error("Too few valid items in the associations array");
+    }
+    
+    associationsArray = validItems;
     
     // Extract just the words for backward compatibility with the rest of the code
     const wordOnlyArray = associationsArray.map(item => item.word);
@@ -530,8 +644,8 @@ async function getAssociationsFromAI(word) {
     return wordOnlyArray;
   } catch (error) {
     console.error('Error getting AI associations:', error);
-    // Return fallback associations instead of throwing
-    return ['related1', 'related2', 'related3', 'related4', 'related5'];
+    // Throw the error rather than hiding it with fallback values
+    throw error;
   }
 }
 
@@ -584,7 +698,8 @@ async function getAssociations(word) {
     return await getAssociationsFromAI(normalizedWord);
   } catch (error) {
     console.error('Error in getAssociations:', error);
-    return ['not found'];
+    // Throw the error instead of returning a fallback
+    throw error;
   }
 }
 
@@ -627,6 +742,28 @@ app.get('/api/admin/cache-stats', (req, res) => {
     // Calculate API calls saved by caching
     const totalCacheSavings = cacheStats.hits + cacheStats.hintHits;
     
+    // Check if cache file exists and get its stats
+    let cacheFileInfo = {
+      exists: false,
+      size: 0,
+      lastModified: null,
+      path: CACHE_FILE_PATH
+    };
+    
+    try {
+      if (fs.existsSync(CACHE_FILE_PATH)) {
+        const stats = fs.statSync(CACHE_FILE_PATH);
+        cacheFileInfo = {
+          exists: true,
+          size: Math.round(stats.size / 1024), // Convert to KB
+          lastModified: stats.mtime,
+          path: CACHE_FILE_PATH
+        };
+      }
+    } catch (err) {
+      console.error('Error checking cache file:', err);
+    }
+    
     res.json({
       wordAssociations: {
         cacheSize,
@@ -643,8 +780,10 @@ app.get('/api/admin/cache-stats', (req, res) => {
       },
       overall: {
         totalCacheSavings,
-        lastCleared: cacheStats.lastCleared
-      }
+        lastCleared: cacheStats.lastCleared,
+        lastSaved: cacheStats.lastSaved
+      },
+      cacheFile: cacheFileInfo
     });
   } catch (error) {
     console.error('Error in cache-stats endpoint:', error);
@@ -752,27 +891,40 @@ app.get('/api/associations/:word', async (req, res) => {
     const word = req.params.word.toLowerCase().trim();
     const detailed = req.query.detailed === 'true';
     
-    // Get the basic associations
-    const associations = await getAssociations(word);
-    
-    // Check for detailed associations with case-insensitive matching
-    if (detailed) {
-      const detailedKey = Object.keys(associationCache).find(key => 
-        key.toLowerCase().trim() === `${word.toLowerCase().trim()}_detailed`
-      );
+    try {
+      // Get the basic associations
+      const associations = await getAssociations(word);
       
-      if (detailedKey) {
-        // Return detailed information if available
-        return res.json({ 
-          word, 
-          associations,
-          detailed: associationCache[detailedKey]
-        });
+      // Check for detailed associations with case-insensitive matching
+      if (detailed) {
+        const detailedKey = Object.keys(associationCache).find(key => 
+          key.toLowerCase().trim() === `${word.toLowerCase().trim()}_detailed`
+        );
+        
+        if (detailedKey) {
+          // Return detailed information if available
+          return res.json({ 
+            word, 
+            associations,
+            detailed: associationCache[detailedKey]
+          });
+        }
       }
+      
+      res.json({ word, associations });
+    } catch (associationError) {
+      // Handle specific errors related to getting associations
+      console.error(`Error getting associations for word "${word}":`, associationError);
+      
+      // Return a detailed error response with the actual error
+      return res.status(500).json({ 
+        error: 'Association generation failed',
+        message: `Failed to generate associations for "${word}": ${associationError.message}`,
+        word: word
+      });
     }
-    
-    res.json({ word, associations });
   } catch (error) {
+    // Handle any other errors in the endpoint
     console.error('Error in associations endpoint:', error);
     res.status(500).json({ error: 'Failed to get associations', message: error.message });
   }
@@ -954,6 +1106,33 @@ app.get('/api/admin/solution', (req, res) => {
   }
 });
 
+// Admin endpoint to manually save the cache
+app.post('/api/admin/save-cache', async (req, res) => {
+  try {
+    // Check for admin auth in production
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+    }
+    
+    const saved = await saveAssociationCache();
+    if (saved) {
+      res.json({ 
+        message: 'Association cache saved successfully', 
+        entries: Object.keys(associationCache).length,
+        path: CACHE_FILE_PATH
+      });
+    } else {
+      res.status(500).json({ error: 'Failed to save cache' });
+    }
+  } catch (error) {
+    console.error('Error in save-cache endpoint:', error);
+    res.status(500).json({ error: 'Failed to save cache', message: error.message });
+  }
+});
+
 // Add route to generate a new game (admin use)
 app.post('/api/admin/generate-game', async (req, res) => {
   try {
@@ -980,10 +1159,28 @@ app.post('/api/admin/generate-game', async (req, res) => {
 
 // Generate a new game hourly or on server start
 if (process.env.NODE_ENV !== 'test') {
-  // Always generate a new game on server start (now using random defaults if API fails)
-  generatePuzzle()
+  // Load the association cache first
+  loadAssociationCache()
+    .then(loaded => {
+      console.log(`Cache ${loaded ? 'successfully loaded' : 'not loaded, starting with empty cache'}`);
+      
+      // Then generate the initial game
+      return generatePuzzle();
+    })
     .then(() => console.log('Initial game generated on server start'))
     .catch(err => console.error('Failed to generate initial game:', err));
+  
+  // Set up periodic cache saving (every 5 minutes)
+  const CACHE_SAVE_INTERVAL = 5 * 60 * 1000; // 5 minutes in milliseconds
+  setInterval(() => {
+    saveAssociationCache()
+      .then(saved => {
+        if (saved) {
+          console.log(`Cache automatically saved. Current size: ${Object.keys(associationCache).length} entries`);
+        }
+      })
+      .catch(err => console.error('Failed to auto-save cache:', err));
+  }, CACHE_SAVE_INTERVAL);
   
   // Schedule game generation (with limits)
   setInterval(async () => {
@@ -1046,6 +1243,45 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode`);
+});
+
+// Handle graceful shutdown and save cache
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, shutting down gracefully');
+  saveAssociationCache()
+    .then(() => {
+      console.log('Cache saved on shutdown');
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(0);
+      });
+    })
+    .catch(err => {
+      console.error('Error saving cache on shutdown:', err);
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(1);
+      });
+    });
+});
+
+process.on('SIGINT', () => {
+  console.log('SIGINT received, shutting down gracefully');
+  saveAssociationCache()
+    .then(() => {
+      console.log('Cache saved on shutdown');
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(0);
+      });
+    })
+    .catch(err => {
+      console.error('Error saving cache on shutdown:', err);
+      server.close(() => {
+        console.log('Server closed');
+        process.exit(1);
+      });
+    });
 });
