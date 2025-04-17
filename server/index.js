@@ -54,6 +54,14 @@ async function generatePuzzle() {
   nextGameTime.setSeconds(0);
   nextGameTime.setMilliseconds(0);
   
+  // Clear the association cache before generating a new puzzle
+  // to prevent reusing the same associations
+  console.log(`Clearing association cache with ${Object.keys(associationCache).length} entries`);
+  Object.keys(associationCache).forEach(key => {
+    delete associationCache[key];
+  });
+  console.log("Association cache cleared for fresh puzzle generation");
+  
   // Track previously used words to ensure variety
   // We'll maintain a "memory" of recent start words to avoid repetition
   if (!global.previousStartWords) {
@@ -126,13 +134,55 @@ async function generatePuzzle() {
     let currentWord = seedWord;
     
     while (path.length < desiredPathLength - 1) { // -1 because we'll add the last word as target
-      // Filter out associations already in our path
-      const availableAssociations = associations.filter(word => !path.includes(word));
+      // Filter out associations:
+      // 1. Already in our path
+      // 2. Already in our cache (meaning they've been seen before)
+      const availableAssociations = associations.filter(word => {
+        // Skip if already in our path
+        if (path.includes(word)) return false;
+        
+        // Skip if this word is already in the cache from previous puzzles/steps
+        // We need to normalize the word (lowercase, trim) for consistent comparison
+        const normalizedWord = word.toLowerCase().trim();
+        const inCache = Object.keys(associationCache)
+          .filter(key => !key.includes('_detailed')) // Exclude detailed cache entries
+          .some(key => key.toLowerCase().trim() === normalizedWord);
+        
+        // Only keep words not in cache
+        return !inCache;
+      });
+      
+      console.log(`Found ${availableAssociations.length} available new associations`);
       
       if (availableAssociations.length === 0) {
-        // If we can't find any new associations, break the loop
-        console.log(`No more available associations for ${currentWord}, ending path early`);
-        break;
+        // Try again with just excluding words in our path but allowing cached words
+        // This is a fallback to ensure we can at least build a path
+        console.log(`No new uncached associations found for ${currentWord}. Falling back to cached words...`);
+        const fallbackAssociations = associations.filter(word => !path.includes(word));
+        
+        if (fallbackAssociations.length === 0) {
+          // If still no associations, we have to end the path
+          console.log(`No more available associations for ${currentWord}, ending path early`);
+          break;
+        }
+        
+        // Pick a random fallback association
+        const randomIndex = Math.floor(Math.random() * fallbackAssociations.length);
+        const nextWord = fallbackAssociations[randomIndex];
+        
+        // Add the word to our path and continue
+        path.push(nextWord);
+        console.log(`Added fallback word ${nextWord} to path: ${path.join(' → ')}`);
+        currentWord = nextWord;
+        
+        // Continue building the path
+        if (path.length < desiredPathLength - 1) {
+          console.log(`Getting associations for fallback word: ${currentWord}`);
+          associations = await getAssociations(currentWord);
+          console.log(`Cached ${associations.length} associations for ${currentWord}`);
+        }
+        
+        continue; // Skip to next iteration
       }
       
       // Pick a random association as the next word
