@@ -216,36 +216,43 @@ async function getAssociations(word) {
 }
 
 // Helper function to check if a word is a valid target
+// Since we're filtering out visited words at each step, we only need to verify
+// that the candidate target is associated with the LAST word in the path.
 async function isValidTargetWord(candidateTarget, previousWords) {
-  // Check if candidate target appears in associations of previous words
-  for (const word of previousWords) {
-    const key = word.toLowerCase().trim();
-    let associations;
-    
-    // Get associations if they exist in cache, otherwise fetch them
-    if (associationCache[key]) {
-      associations = associationCache[key];
-    } else {
-      try {
-        console.log(`Getting associations for previous word: ${word}`);
-        associations = await getAssociations(word);
-      } catch (error) {
-        console.error(`Error getting associations for "${word}":`, error);
-        continue; // Skip this word if we can't get associations
-      }
-    }
-    
-    // If candidate target is directly associated with this previous word,
-    // it's not a valid target (would create a shortcut)
-    const normalizedCandidate = candidateTarget.toLowerCase().trim();
-    if (associations.some(assoc => assoc.toLowerCase().trim() === normalizedCandidate)) {
-      console.log(`Candidate target "${candidateTarget}" appears in associations of "${word}" - not valid`);
-      return false;
+  // For a valid target, we only need to confirm it's connected to the last word in the path
+  if (previousWords.length === 0) {
+    return true; // No previous words to check
+  }
+  
+  // Get the last word in the previous words
+  const lastWord = previousWords[previousWords.length - 1];
+  const key = lastWord.toLowerCase().trim();
+  
+  // Get associations for the last word
+  let associations;
+  if (associationCache[key]) {
+    associations = associationCache[key];
+  } else {
+    try {
+      console.log(`Getting associations for last word: ${lastWord}`);
+      associations = await getAssociations(lastWord);
+    } catch (error) {
+      console.error(`Error getting associations for "${lastWord}":`, error);
+      return false; // Can't verify, so not valid
     }
   }
   
-  // If we get here, the candidate is valid
-  return true;
+  // Check if candidate is in the last word's associations
+  const normalizedCandidate = candidateTarget.toLowerCase().trim();
+  const isConnected = associations.some(assoc => assoc.toLowerCase().trim() === normalizedCandidate);
+  
+  if (isConnected) {
+    console.log(`✓ VALID TARGET: "${candidateTarget}" is connected to last word "${lastWord}"`);
+    return true; // Valid - connected to last word
+  } else {
+    console.log(`✗ INVALID TARGET: "${candidateTarget}" is not directly connected to "${lastWord}"`);
+    return false;
+  }
 }
 
 // Helper function to find a path through the word association graph
@@ -253,9 +260,9 @@ async function findPathThroughGraph(startWord) {
   console.log(`Starting path search from "${startWord}"`);
   
   // Define parameters
-  const MIN_PATH_LENGTH = 4; // at least 4 words total (3 steps)
-  const MAX_DEPTH = 6;       // don't go too deep in the graph
-  const MAX_EXPLORATIONS = 50; // limit explorations to prevent excessive API calls
+  const MIN_PATH_LENGTH = 5; // at least 5 words total (4 steps) - balanced for path finding
+  const MAX_DEPTH = 10;      // increased to allow deeper exploration
+  const MAX_EXPLORATIONS = 250; // increased to allow more exploration with stricter path requirements
   
   // Early abort check to save cache if we're close to API limit
   if (apiCallCounter > API_CALL_LIMIT * 0.8) {
@@ -286,6 +293,7 @@ async function findPathThroughGraph(startWord) {
   // Track exploration stats
   let explored = 0;
   let validTargetsChecked = 0;
+  let pathsAbandoned = 0; // Track paths abandoned due to low diversity
   
   // Process the queue for breadth-first traversal
   while (queue.length > 0 && explored < MAX_EXPLORATIONS) {
@@ -295,14 +303,22 @@ async function findPathThroughGraph(startWord) {
     
     explored++;
     
-    // Log progress
+    // Log progress with more detail
     if (explored % 10 === 0) {
       console.log(`Explored ${explored}/${MAX_EXPLORATIONS} paths, queue size: ${queue.length}, targets checked: ${validTargetsChecked}`);
+      // Log current path if available
+      if (path.length > 1) {
+        console.log(`Current path (${path.length} words): ${path.join(' → ')}`);
+      }
     }
         
-    // If we've reached sufficient depth, this could be a target word
-    if (depth >= MIN_PATH_LENGTH - 1) { // -1 because path length = depth + 1
+    // If we've reached AT LEAST the minimum depth required, this could be a target word
+    // Accept paths that are at least MIN_PATH_LENGTH to find more valid paths
+    if (path.length >= MIN_PATH_LENGTH) {
       validTargetsChecked++;
+      
+      // Debug info about path length
+      console.log(`Validating potential target "${currentWord}" at depth ${depth} (path length: ${path.length})`);
       
       // Check if we're at API limit before validation
       if (apiCallCounter >= API_CALL_LIMIT) {
@@ -315,7 +331,12 @@ async function findPathThroughGraph(startWord) {
       const isValidTarget = await isValidTargetWord(currentWord, path.slice(0, -1));
       
       if (isValidTarget) {
-        console.log(`Found valid target word "${currentWord}" at depth ${depth}`);
+        console.log(`====== FOUND VALID SOLUTION PATH ======`);
+        console.log(`✓ Target word: "${currentWord}"`);
+        console.log(`✓ Path length: ${path.length} words (${path.length-1} steps)`);
+        console.log(`✓ Full path: ${path.join(' → ')}`);
+        console.log(`======================================`);
+        
         // Save cache when we find a solution
         await saveAssociationCache();
         return { path, targetWord: currentWord };
@@ -369,13 +390,21 @@ async function findPathThroughGraph(startWord) {
       return !visited.has(normalizedWord);
     });
     
-    // Skip if dead end
-    if (validNextWords.length === 0) {
+    // Extra logging about potential paths
+    if (depth >= MIN_PATH_LENGTH - 2) {
+      console.log(`At depth ${depth}, path: ${path.join(' → ')}`);
+      console.log(`Found ${validNextWords.length} potential next words: ${validNextWords.join(', ')}`);
+    }
+    
+    // Skip if we have fewer than 3 new associations (ensures path diversity)
+    if (validNextWords.length < 3) {
+      pathsAbandoned++;
+      console.log(`Abandoning path at "${currentWord}" - only ${validNextWords.length} new associations remain [${pathsAbandoned} abandoned]`);
       continue;
     }
     
-    // Add each valid next word to queue (limit to 3 for breadth control)
-    const nextWords = validNextWords.slice(0, 3); // Take at most 3 words to limit branching
+    // Add each valid next word to queue (limit for breadth control)
+    const nextWords = validNextWords.slice(0, 5); // Increased to 5 since we're stricter about path quality
     for (const nextWord of nextWords) {
       const normalizedWord = nextWord.toLowerCase().trim();
       visited.add(normalizedWord); // Mark as visited
@@ -390,7 +419,7 @@ async function findPathThroughGraph(startWord) {
   }
   
   // If we're here, we didn't find a valid path
-  console.log(`No valid path found from "${startWord}" after exploring ${explored} paths`);
+  console.log(`No valid path found from "${startWord}" after exploring ${explored} paths, abandoning ${pathsAbandoned} for diversity reasons`);
   return null;
     
   } catch (error) {
@@ -407,37 +436,21 @@ async function generatePuzzle() {
   try {
     console.log("Generating new puzzle using graph traversal approach...");
     
-        // Step 1: Generate a random seed word
-    // Check API limits first
-    if (apiCallCounter >= API_CALL_LIMIT) {
-      // Save cache before exiting
-      await saveAssociationCache();
-      throw new Error(`API call limit (${API_CALL_LIMIT}) reached before generating seed word`);
+    // Step 1: Get a seed word from cache or use default
+    let seedWord;
+    
+    // Get all real words from the cache (not metadata/detailed entries)
+    const cacheWords = Object.keys(associationCache).filter(key => !key.includes('_detailed'));
+    
+    if (cacheWords.length > 0) {
+      // Choose a random word from the cache
+      seedWord = cacheWords[Math.floor(Math.random() * cacheWords.length)];
+      console.log(`Using random word from cache: "${seedWord}"`);
+    } else {
+      // Default word if cache is empty
+      seedWord = "environment";
+      console.log(`Cache is empty, using default word: "${seedWord}"`);
     }
-    
-    // Generate seed word
-    const seedWordMessage = await anthropic.messages.create({
-      model: "claude-3-5-sonnet-20240620",
-      max_tokens: 100,
-      messages: [
-        {
-          role: "user",
-          content: `Generate ONE random, interesting seed word for a word association puzzle.
-          
-          The word should:
-          1. Be a simple, common, recognizable noun or verb
-          2. Have multiple potential word associations
-          3. Be a single word (not a phrase)
-          4. Be varied and distinct from recent themes, choose something creative
-          
-          Return ONLY the word as plain text, nothing else.`
-        }
-      ]
-    });
-    apiCallCounter++;
-    
-    // Get the seed word and trim any whitespace
-    const seedWord = seedWordMessage.content[0].text.trim();
     
     console.log(`Using seed word: ${seedWord}`);
     

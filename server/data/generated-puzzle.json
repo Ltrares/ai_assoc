@@ -1,0 +1,16 @@
+{
+  "startWord": "telescope",
+  "targetWord": "ocean",
+  "theme": "Deep Sea Discovery",
+  "description": "Exploring oceanic mysteries through advanced technologies and scientific observation.",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "telescope",
+    "stars",
+    "sky",
+    "blue",
+    "ocean"
+  ],
+  "minExpectedSteps": 4,
+  "gameDate": "2025-04-17"
+}
