@@ -315,6 +315,15 @@ button:disabled, button.used {
   background-color: #7851b5;
 }
 
+.music-button {
+  background-color: #7851b5;
+  margin-bottom: 1rem;
+}
+
+.music-button:hover, .music-button.active {
+  background-color: #9370db;
+}
+
 .hint-display {
   background-color: rgba(255, 204, 0, 0.1);
   padding: 0.75rem 1.5rem;

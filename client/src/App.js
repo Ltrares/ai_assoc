@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import * as Tone from 'tone';
 import './App.css';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
   const [loadingAssociations, setLoadingAssociations] = useState(false);
   const [isRestoringProgress, setIsRestoringProgress] = useState(false); // Flag for restoring progress
   const [notification, setNotification] = useState(null); // For showing temporary notifications
+  const [musicEnabled, setMusicEnabled] = useState(localStorage.getItem('musicEnabled') !== 'false'); // Music toggle state
+  const synthRef = useRef(null); // Reference to synth object
+  const sequenceRef = useRef(null); // Reference to sequence
 
   // Get base API URL based on environment
   const getApiUrl = () => {
@@ -57,6 +61,86 @@ function App() {
     }, duration);
   };
 
+  // Fetch game data on component mount
+  // Initialize synth and sequences
+  useEffect(() => {
+    // Create a simple polyphonic synth
+    synthRef.current = new Tone.PolySynth(Tone.Synth).toDestination();
+    synthRef.current.volume.value = -15; // Set default volume 
+    
+    // Set up background sequence pattern (low-fi style)
+    const backgroundSequence = [
+      { note: "C3", duration: "8n" },
+      { note: "E3", duration: "8n" },
+      { note: "G3", duration: "8n" },
+      { note: "B3", duration: "8n" },
+      { note: "G3", duration: "8n" },
+      { note: "E3", duration: "8n" }
+    ];
+    
+    // Create a sequence
+    sequenceRef.current = new Tone.Sequence((time, note) => {
+      if (musicEnabled) {
+        synthRef.current.triggerAttackRelease(note.note, note.duration, time);
+      }
+    }, backgroundSequence, "4n");
+    
+    // Start the transport
+    if (musicEnabled) {
+      Tone.Transport.start();
+      sequenceRef.current.start(0);
+    }
+    
+    // Cleanup function
+    return () => {
+      if (sequenceRef.current) {
+        sequenceRef.current.stop();
+        sequenceRef.current.dispose();
+      }
+      Tone.Transport.stop();
+      if (synthRef.current) {
+        synthRef.current.dispose();
+      }
+    };
+  }, [musicEnabled]);
+  
+  // Toggle music on/off
+  const toggleMusic = () => {
+    const newState = !musicEnabled;
+    setMusicEnabled(newState);
+    localStorage.setItem('musicEnabled', newState);
+    
+    if (newState) {
+      // Start music
+      Tone.start();
+      Tone.Transport.start();
+      sequenceRef.current.start(0);
+    } else {
+      // Stop music
+      sequenceRef.current.stop();
+      Tone.Transport.stop();
+    }
+  };
+  
+  // Play success jingle when game is completed
+  useEffect(() => {
+    if (gameComplete && musicEnabled) {
+      // Success jingle
+      const successNotes = ["C4", "E4", "G4", "C5"];
+      
+      successNotes.forEach((note, index) => {
+        synthRef.current.triggerAttackRelease(note, "8n", Tone.now() + index * 0.2);
+      });
+    }
+  }, [gameComplete, musicEnabled]);
+  
+  // Play note when selecting a word
+  const playSelectNote = () => {
+    if (musicEnabled) {
+      synthRef.current.triggerAttackRelease("G4", "16n");
+    }
+  };
+  
   // Fetch game data on component mount
   useEffect(() => {
     fetch(`${getApiUrl()}/game`)
@@ -144,6 +228,9 @@ function App() {
   const handleWordSelect = (word) => {
     // Check if game is already complete or if we're loading
     if (gameComplete || loadingAssociations) return;
+    
+    // Play selection sound
+    playSelectNote();
     
     // Set loading state
     setLoadingAssociations(true);
@@ -432,6 +519,13 @@ function App() {
                 title="Show/hide detailed association explanations"
               >
                 {showHints ? 'Hide Details' : 'Show Details'}
+              </button>
+              <button
+                onClick={toggleMusic}
+                className={`music-button ${musicEnabled ? 'active' : ''}`}
+                title={musicEnabled ? 'Disable background music' : 'Enable background music'}
+              >
+                {musicEnabled ? '🔊' : '🔇'}
               </button>
             </div>
             
