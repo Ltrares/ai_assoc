@@ -105,8 +105,7 @@ async function generatePuzzle() {
           2. Have multiple potential word associations
           3. NOT include any of these previous words: ${[currentStartWord, currentTargetWord, ...global.previousStartWords].filter(w => w && w !== 'null').join(', ')}
           4. Be a single word (not a phrase)
-          5. NOT be related to "balloon" or "balloons" which has been overused
-          6. Be varied and distinct from recent themes, choose something creative
+          5. Be varied and distinct from recent themes, choose something creative
           
           Return ONLY the word as plain text, nothing else.`
         }

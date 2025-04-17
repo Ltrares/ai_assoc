@@ -76,7 +76,7 @@ function App() {
         release: 1.2
       }
     }).toDestination();
-    synthRef.current.volume.value = -20; // Lower volume
+    synthRef.current.volume.value = -18; // Increased overall volume by 20% (approximately 2dB)
     
     // Separate synth for melody - store as ref to avoid recreation issues
     const melodySynth = new Tone.Synth({
@@ -90,7 +90,7 @@ function App() {
         release: 1.5
       }
     }).toDestination();
-    melodySynth.volume.value = -25; // Even softer melody
+    melodySynth.volume.value = -23; // Increased overall volume by 20% (approximately 2dB)
     // Store in a ref for proper cleanup
     const melodySynthRef = melodySynth;
     
@@ -99,31 +99,31 @@ function App() {
     const highPerc = new Tone.NoiseSynth({
       noise: {
         type: "pink",
-        playbackRate: 3
+        playbackRate: 3.5 // Slightly higher playback rate for brighter sound
       },
       envelope: {
         attack: 0.001,
-        decay: 0.1,
-        sustain: 0.01,
-        release: 0.2
+        decay: 0.15, // Slightly longer decay
+        sustain: 0.02, // Slightly higher sustain
+        release: 0.25 // Slightly longer release
       }
     }).toDestination();
-    highPerc.volume.value = -27; // Increase hi-hat volume by ~15%
+    highPerc.volume.value = -18; // Significantly increased hi-hat volume to make it more audible
     const percSynthHigh = highPerc; // Reference for cleanup
     
     const lowPerc = new Tone.NoiseSynth({
       noise: {
         type: "brown",
-        playbackRate: 0.8
+        playbackRate: 1.0 // Slightly higher playback rate for more presence
       },
       envelope: {
-        attack: 0.005,
-        decay: 0.1,
-        sustain: 0.01,
-        release: 0.4
+        attack: 0.002, // Faster attack for more punch
+        decay: 0.15, // Slightly longer decay
+        sustain: 0.04, // Higher sustain for more body
+        release: 0.5 // Longer release for more presence
       }
     }).toDestination();
-    lowPerc.volume.value = -25; // Increase kick drum volume by ~15%
+    lowPerc.volume.value = -16; // Significantly increased kick drum volume to make it more audible
     const percSynthLow = lowPerc; // Reference for cleanup
     
     // G minor → Eb major → Bb major → F major progression (more emotional/contemplative)
@@ -181,20 +181,37 @@ function App() {
       { note: null, time: 28, duration: "2n" } // Rest
     ];
     
-    // Percussion pattern - simple 4/4 pattern with variations
+    // Variation on the melody that moves in the opposite direction at times
+    const melodyVariationPattern = [
+      { note: "D5", time: 32, duration: "4n" },
+      { note: "C5", time: 34, duration: "4n" },
+      { note: "Bb4", time: 36, duration: "4n" },
+      { note: "G4", time: 38, duration: "8n" },
+      { note: "Bb4", time: 39, duration: "4n" },
+      { note: "D5", time: 42, duration: "2n" },
+      { note: "F5", time: 46, duration: "4n" },
+      { note: "D5", time: 48, duration: "4n" },
+      { note: "Bb4", time: 52, duration: "4n" },
+      { note: "C5", time: 56, duration: "2n" },
+      { note: null, time: 60, duration: "2n" } // Rest
+    ];
+    
+    // Percussion pattern - enhanced 4/4 pattern with more hits for greater prominence
     const percussionPattern = [
       // Beat positions (0-15 for a full bar at 16th notes)
       // Format: [position, type] where type is 'high' or 'low'
       [0, 'low'],   // Kick on the 1
-      [4, 'high'],  // Hi-hat on the & of 2
+      [2, 'high'],  // Hi-hat on the & of 1
+      [4, 'high'],  // Hi-hat on the 2
+      [6, 'high'],  // Hi-hat on the & of 2
       [8, 'low'],   // Kick on the 3
-      [12, 'high'], // Hi-hat on the & of 4
-      [14, 'high']  // Additional hi-hat for variation
+      [10, 'high'], // Hi-hat on the & of 3
+      [12, 'high'], // Hi-hat on the 4
+      [14, 'high']  // Hi-hat on the & of 4
     ];
     
     let currentChordIndex = 0;
     let noteIndex = 0;
-    let melodyIndex = 0;
     let melodyCounter = 0;
     let percCounter = 0;
     
@@ -222,18 +239,33 @@ function App() {
         // Handle melody playback - separate from chord timing
         melodyCounter++;
         
-        // Check if we need to play a melody note
-        for (let i = 0; i < melodyPattern.length; i++) {
-          const melodyNote = melodyPattern[i];
-          if (melodyNote.time === melodyCounter % 32) { // 32-beat pattern
-            if (melodyNote.note) { // Only play if not a rest
-              melodySynthRef.triggerAttackRelease(
-                melodyNote.note, 
-                melodyNote.duration, 
-                time
-              );
+        // Determine if we're in a pause cycle
+        // After playing twice (2 * 64 = 128 beats), pause for one cycle (64 beats)
+        const totalCycleLength = 64 * 3; // Two melody cycles plus one pause cycle
+        const currentPosition = melodyCounter % totalCycleLength;
+        const isInPauseCycle = currentPosition >= 128 && currentPosition < 192;
+        
+        // Only play melody if not in pause cycle
+        if (!isInPauseCycle) {
+          // Adjust counter to work with the combined pattern during play cycles
+          const adjustedCounter = currentPosition % 64;
+          
+          // Check if we need to play a melody note (now includes both patterns)
+          // Create combined array of both patterns
+          const combinedMelodyPatterns = [...melodyPattern, ...melodyVariationPattern];
+          
+          for (let i = 0; i < combinedMelodyPatterns.length; i++) {
+            const melodyNote = combinedMelodyPatterns[i];
+            if (melodyNote.time === adjustedCounter) {
+              if (melodyNote.note) { // Only play if not a rest
+                melodySynthRef.triggerAttackRelease(
+                  melodyNote.note, 
+                  melodyNote.duration, 
+                  time
+                );
+              }
+              break;
             }
-            break;
           }
         }
         
