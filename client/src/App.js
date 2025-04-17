@@ -18,7 +18,7 @@ function App() {
   const [loadingAssociations, setLoadingAssociations] = useState(false);
   const [isRestoringProgress, setIsRestoringProgress] = useState(false); // Flag for restoring progress
   const [notification, setNotification] = useState(null); // For showing temporary notifications
-  const [musicEnabled, setMusicEnabled] = useState(localStorage.getItem('musicEnabled') !== 'false'); // Music toggle state
+  const [musicEnabled, setMusicEnabled] = useState(localStorage.getItem('musicEnabled') === 'true'); // Music toggle state - default to muted
   const synthRef = useRef(null); // Reference to synth object
   const sequenceRef = useRef(null); // Reference to sequence
 
