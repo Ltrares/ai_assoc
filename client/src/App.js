@@ -108,7 +108,7 @@ function App() {
         release: 0.2
       }
     }).toDestination();
-    highPerc.volume.value = -30; // Very quiet hi-hat sound
+    highPerc.volume.value = -27; // Increase hi-hat volume by ~15%
     const percSynthHigh = highPerc; // Reference for cleanup
     
     const lowPerc = new Tone.NoiseSynth({
@@ -123,7 +123,7 @@ function App() {
         release: 0.4
       }
     }).toDestination();
-    lowPerc.volume.value = -28; // Soft kick drum sound
+    lowPerc.volume.value = -25; // Increase kick drum volume by ~15%
     const percSynthLow = lowPerc; // Reference for cleanup
     
     // G minor → Eb major → Bb major → F major progression (more emotional/contemplative)
