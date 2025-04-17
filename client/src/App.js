@@ -296,7 +296,7 @@ function App() {
   
   // Adjust tempo based on game progress
   useEffect(() => {
-    if (musicEnabled && path.length > 2 && !gameComplete) {
+    if (musicEnabled && path && path.length > 2 && !gameComplete) {
       // Gradually increase tempo as player makes progress
       const maxSteps = game?.minExpectedSteps || 10;
       const currentProgress = path.length - 1; // Subtract start word
@@ -306,7 +306,7 @@ function App() {
       const newTempo = 70 + (progressRatio * 15);
       Tone.Transport.bpm.value = newTempo;
     }
-  }, [path.length, musicEnabled, gameComplete, game]);
+  }, [path, path?.length, musicEnabled, gameComplete, game]);
   
   // Play success jingle when game is completed
   useEffect(() => {
