@@ -120,8 +120,9 @@ async function getAssociationsFromAI(word) {
           2. Ensure all JSON is properly formatted
           3. No trailing commas
           4. No comments or explanation text
+          5. ALWAYS use singular forms for words (e.g., "balloon" instead of "balloons")
           
-          If you cannot come up with at least 5 good word associations, include "__ERROR__" as one of the words.
+          If you cannot come up with at least 3 good word associations, include "__ERROR__" as one of the words.
           
           Ensure associations are intuitive and would be recognized by most adults.`
         }
