@@ -29,12 +29,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Error messages should be specific and detailed
 - When "please note" is used in instructions, update this file with the noted information
 
+## Word Associations Guidelines
+- Always use singular forms for word associations (e.g., "balloon" not "balloons")
+- Remove "type" field from association objects, use only "word" and "hint" fields
+- Minimum of 3 valid associations required for each word
+- Words must be intuitive and recognizable by most adults
+
 ## Environment Configuration
 - API keys and environment variables are stored in the .env file under /server directory
 - When running scripts, make sure to look for and load the .env file from the correct location
 
+## Shared Module Architecture
+- Core puzzle generation code is in `/server/lib/puzzle-generator.js` 
+- This module is used by both:
+  1. Server (`/server/index.js`) - For API endpoints and game logic
+  2. Standalone script (`/server/scripts/generate-puzzle.js`) - For generating puzzles offline
+
 ## Heroku Deployment Notes
 - The app returns 503 errors when:
-  1. No game has been generated yet (lines 605-612 in server/index.js)
-  2. When making API calls before the game initializes (lines 634-638)
+  1. No game has been generated yet (lines 321-328 in server/index.js)
+  2. When making API calls before the game initializes (lines 385-392)
   3. Heroku app transitions from "idling" to "up" state (cold start)
