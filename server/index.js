@@ -5,8 +5,9 @@ const { promisify } = require('util');
 const cors = require('cors');
 const Anthropic = require('@anthropic-ai/sdk');
 
-// Import shared puzzle generator module
+// Import shared puzzle generator module and puzzle repository
 const puzzleGenerator = require('./lib/puzzle-generator');
+const puzzleRepository = require('./lib/puzzle-repository');
 
 // Get environment variables
 require('dotenv').config();
@@ -108,7 +109,7 @@ function onApiCallMade() {
 let isGeneratingGame = false;
 
 // Generate a new puzzle using the shared module
-async function generatePuzzle() {
+async function generatePuzzle(useRepository = false) {
   // If already generating a game, don't start another one
   if (isGeneratingGame) {
     console.log("Game generation already in progress, skipping new request");
@@ -117,6 +118,52 @@ async function generatePuzzle() {
   
   try {
     isGeneratingGame = true;
+    
+    // If requested to use repository, try to get a saved puzzle first
+    if (useRepository) {
+      console.log("Trying to use a saved puzzle from repository...");
+      const savedPuzzle = await puzzleRepository.getRandomPuzzle();
+      
+      if (savedPuzzle) {
+        console.log(`Using saved puzzle: ${savedPuzzle.startWord} → ${savedPuzzle.targetWord}`);
+        
+        // Check if we already have a game - if not, create stats object
+        const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
+          totalPlays: 0,
+          completions: [],
+          averageSteps: 0,
+          backSteps: [],
+          averageBackSteps: 0,
+          totalSteps: [],
+          averageTotalSteps: 0
+        };
+        
+        // Update game date to today
+        const today = new Date().toISOString().split('T')[0];
+        
+        // Update the daily game state, preserving stats if they exist
+        dailyGame = {
+          ...savedPuzzle,
+          gameDate: today,
+          stats: existingStats
+        };
+        
+        // Update next game time
+        nextGameTime = new Date();
+        nextGameTime.setHours(nextGameTime.getHours() + 1);
+        nextGameTime.setMinutes(0);
+        
+        console.log(`Loaded saved puzzle: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
+        console.log(`Theme: ${dailyGame.theme} (${dailyGame.difficulty})`);
+        console.log(`Hidden path: ${dailyGame.hiddenSolution.join(' → ')}`);
+        
+        return dailyGame;
+      }
+      
+      // If no saved puzzle is available, continue with generation
+      console.log("No suitable saved puzzle found, generating new one...");
+    }
+    
     console.log("Generating new puzzle using shared module...");
     
     // Use the shared puzzle generator
@@ -154,9 +201,57 @@ async function generatePuzzle() {
     console.log(`Theme: ${dailyGame.theme} (${dailyGame.difficulty})`);
     console.log(`Hidden path: ${dailyGame.hiddenSolution.join(' → ')}`);
     
+    // Save the newly generated puzzle to the repository for future use
+    const saveResult = await puzzleRepository.savePuzzle(puzzle);
+    if (saveResult.success) {
+      console.log(`Puzzle saved to repository for future use: ${saveResult.filename}`);
+    }
+    
     return dailyGame;
   } catch (error) {
     console.error('Error generating puzzle:', error);
+    
+    // Try to get a fallback puzzle from repository
+    try {
+      console.log("Attempting to load fallback puzzle from repository...");
+      const fallbackPuzzle = await puzzleRepository.getFallbackPuzzle();
+      
+      if (fallbackPuzzle) {
+        console.log(`Using fallback puzzle: ${fallbackPuzzle.startWord} → ${fallbackPuzzle.targetWord}`);
+        
+        // Check if we already have a game - if not, create stats object
+        const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
+          totalPlays: 0,
+          completions: [],
+          averageSteps: 0,
+          backSteps: [],
+          averageBackSteps: 0,
+          totalSteps: [],
+          averageTotalSteps: 0
+        };
+        
+        // Update game date to today
+        const today = new Date().toISOString().split('T')[0];
+        
+        // Update the daily game state, preserving stats if they exist
+        dailyGame = {
+          ...fallbackPuzzle,
+          gameDate: today,
+          stats: existingStats
+        };
+        
+        // Update next game time
+        nextGameTime = new Date();
+        nextGameTime.setHours(nextGameTime.getHours() + 1);
+        nextGameTime.setMinutes(0);
+        
+        return dailyGame;
+      }
+    } catch (fallbackError) {
+      console.error('Error getting fallback puzzle:', fallbackError);
+    }
+    
+    // If fallback also fails, rethrow the original error
     throw error;
   } finally {
     // Always reset the generation flag when done, even if there was an error
@@ -607,6 +702,63 @@ app.post('/api/admin/save-cache', async (req, res) => {
   }
 });
 
+// List saved puzzles (admin only)
+app.get('/api/admin/puzzles', async (req, res) => {
+  try {
+    // Check for admin auth in production
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+    }
+    
+    // Get list of saved puzzles
+    const puzzles = await puzzleRepository.listPuzzles();
+    
+    // Return the list
+    res.json({
+      count: puzzles.length,
+      puzzles
+    });
+  } catch (error) {
+    console.error('Error listing puzzles:', error);
+    res.status(500).json({ error: 'Failed to list puzzles' });
+  }
+});
+
+// Force use of a saved puzzle (admin only)
+app.post('/api/admin/use-saved-puzzle', async (req, res) => {
+  try {
+    // Check for admin auth in production
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+    }
+    
+    // Generate new game using the repository
+    await generatePuzzle(true);
+    
+    // Return success with the new game
+    res.json({
+      success: true,
+      message: 'Loaded puzzle from repository',
+      game: {
+        startWord: dailyGame.startWord,
+        targetWord: dailyGame.targetWord,
+        theme: dailyGame.theme,
+        gameDate: dailyGame.gameDate,
+        nextGameTime: nextGameTime
+      }
+    });
+  } catch (error) {
+    console.error('Error loading saved puzzle:', error);
+    res.status(500).json({ error: 'Failed to load saved puzzle' });
+  }
+});
+
 // Serve React app for any other route
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'client/build/index.html'));
@@ -625,7 +777,43 @@ if (process.env.NODE_ENV !== 'test') {
       return generatePuzzle();
     })
     .then(() => console.log('Initial game generated on server start'))
-    .catch(err => console.error('Failed to generate initial game:', err));
+    .catch(err => {
+      console.error('Failed to generate initial game:', err);
+      
+      // Try to use a saved puzzle as fallback
+      console.log('Attempting to use saved puzzle as fallback...');
+      return puzzleRepository.getFallbackPuzzle()
+        .then(fallbackPuzzle => {
+          if (fallbackPuzzle) {
+            console.log(`Using fallback puzzle: ${fallbackPuzzle.startWord} → ${fallbackPuzzle.targetWord}`);
+            
+            // Update game date to today
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Update the daily game state with default stats
+            dailyGame = {
+              ...fallbackPuzzle,
+              gameDate: today,
+              stats: {
+                totalPlays: 0,
+                completions: [],
+                averageSteps: 0,
+                backSteps: [],
+                averageBackSteps: 0,
+                totalSteps: [],
+                averageTotalSteps: 0
+              }
+            };
+            
+            console.log('Fallback puzzle loaded successfully');
+          } else {
+            console.error('No fallback puzzles available. Game will be unavailable until generation succeeds.');
+          }
+        })
+        .catch(fallbackErr => {
+          console.error('Error loading fallback puzzle:', fallbackErr);
+        });
+    });
   
   // Set up periodic cache saving (every 5 minutes)
   const CACHE_SAVE_INTERVAL = 5 * 60 * 1000; // 5 minutes in milliseconds
@@ -662,11 +850,20 @@ if (process.env.NODE_ENV !== 'test') {
       const forceRefreshHours = [0, 6, 12, 18]; // Midnight, 6am, noon, 6pm
       const shouldForceRefresh = forceRefreshHours.includes(hourOfDay);
       
+      // Use repository hours - hours when we prefer to use saved puzzles to save API calls
+      const useRepositoryHours = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23];
+      const shouldUseRepository = useRepositoryHours.includes(hourOfDay);
+      
       if (shouldForceRefresh || apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
         console.log("Generating new game...");
-        await generatePuzzle();
+        
+        // If it's a force refresh hour, always generate a new puzzle
+        // Otherwise use repository on repository hours (to save API calls), and generate new puzzles on other hours
+        const useRepo = !shouldForceRefresh && shouldUseRepository;
+        
+        await generatePuzzle(useRepo);
         apiLimits.gamesGenerated++;
-        console.log(`New game generated by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
+        console.log(`New game ${useRepo ? 'loaded from repository' : 'generated'} by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
       } else {
         console.log(`Game generation skipped - daily limit of ${apiLimits.gameGenerationPerDay} reached`);
       }
