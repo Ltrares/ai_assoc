@@ -13506,5 +13506,171 @@
       "word": "polar bear",
       "hint": "large white Arctic mammal"
     }
+  ],
+  "landscape": [
+    "mountain",
+    "tree",
+    "river",
+    "field",
+    "grass",
+    "hill",
+    "flower",
+    "sky"
+  ],
+  "landscape_detailed": [
+    {
+      "word": "mountain",
+      "hint": "prominent landform rising above surroundings"
+    },
+    {
+      "word": "tree",
+      "hint": "woody plant with trunk and branches"
+    },
+    {
+      "word": "river",
+      "hint": "natural flowing watercourse"
+    },
+    {
+      "word": "field",
+      "hint": "open area of land, often for agriculture"
+    },
+    {
+      "word": "grass",
+      "hint": "green ground cover in lawns and meadows"
+    },
+    {
+      "word": "hill",
+      "hint": "raised area of land, smaller than a mountain"
+    },
+    {
+      "word": "flower",
+      "hint": "colorful plant bloom"
+    },
+    {
+      "word": "sky",
+      "hint": "visible atmosphere above the horizon"
+    }
+  ],
+  "vase": [
+    "flower",
+    "ceramic",
+    "glass",
+    "water",
+    "decoration",
+    "centerpiece",
+    "fragile"
+  ],
+  "vase_detailed": [
+    {
+      "word": "flower",
+      "hint": "commonly placed in vases"
+    },
+    {
+      "word": "ceramic",
+      "hint": "material vases are often made from"
+    },
+    {
+      "word": "glass",
+      "hint": "another common material for vases"
+    },
+    {
+      "word": "water",
+      "hint": "used to keep flowers fresh in vases"
+    },
+    {
+      "word": "decoration",
+      "hint": "vases are often used as decorative items"
+    },
+    {
+      "word": "centerpiece",
+      "hint": "vases frequently serve as table centerpieces"
+    },
+    {
+      "word": "fragile",
+      "hint": "many vases are delicate and easily broken"
+    }
+  ],
+  "water": [
+    "ocean",
+    "rain",
+    "river",
+    "thirst",
+    "swimming",
+    "fish",
+    "boat"
+  ],
+  "water_detailed": [
+    {
+      "word": "ocean",
+      "hint": "large body of salt water"
+    },
+    {
+      "word": "rain",
+      "hint": "water falling from the sky"
+    },
+    {
+      "word": "river",
+      "hint": "flowing body of freshwater"
+    },
+    {
+      "word": "thirst",
+      "hint": "feeling of needing to drink"
+    },
+    {
+      "word": "swimming",
+      "hint": "activity done in water"
+    },
+    {
+      "word": "fish",
+      "hint": "aquatic animal"
+    },
+    {
+      "word": "boat",
+      "hint": "vessel for water transportation"
+    }
+  ],
+  "swimming": [
+    "pool",
+    "beach",
+    "ocean",
+    "water",
+    "stroke",
+    "lifeguard",
+    "goggle",
+    "chlorine"
+  ],
+  "swimming_detailed": [
+    {
+      "word": "pool",
+      "hint": "common place for swimming"
+    },
+    {
+      "word": "beach",
+      "hint": "natural body of water for swimming"
+    },
+    {
+      "word": "ocean",
+      "hint": "large body of saltwater for swimming"
+    },
+    {
+      "word": "water",
+      "hint": "essential element for swimming"
+    },
+    {
+      "word": "stroke",
+      "hint": "swimming technique"
+    },
+    {
+      "word": "lifeguard",
+      "hint": "person who ensures safety while swimming"
+    },
+    {
+      "word": "goggle",
+      "hint": "eyewear used for swimming"
+    },
+    {
+      "word": "chlorine",
+      "hint": "chemical used to clean swimming pools"
+    }
   ]
 }
