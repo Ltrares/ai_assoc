@@ -239,6 +239,7 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
   
   // Define parameters
   const MIN_PATH_LENGTH = 5; // at least 5 words total (4 steps) - the minimum acceptable puzzle length
+  const PREFERRED_PATH_LENGTH = 7; // preferred path length for optimal puzzle difficulty
   const MAX_DEPTH = 10;      // maximum path depth to explore - prevents excessive branching
   const MAX_EXPLORATIONS = 250; // maximum number of paths to check - prevents excessive API usage
   
@@ -278,17 +279,45 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
           const depthDiff = b.depth - a.depth;
           if (depthDiff !== 0) return depthDiff;
           
-          // Secondary sort: proximity to target length
-          const distA = Math.abs(a.path.length - MIN_PATH_LENGTH);
-          const distB = Math.abs(b.path.length - MIN_PATH_LENGTH);
-          
+          // Secondary sort based on path length preferences
+          // If both paths are below minimum length, favor longer paths to get to minimum faster
           if (a.path.length < MIN_PATH_LENGTH && b.path.length < MIN_PATH_LENGTH) {
             return b.path.length - a.path.length; // Favor longer paths when below minimum
-          } else if (a.path.length >= MIN_PATH_LENGTH && b.path.length >= MIN_PATH_LENGTH) {
-            return a.path.length - b.path.length; // Favor shorter paths when above minimum
-          } else {
-            return distA - distB; // Favor paths closer to minimum length
           }
+          
+          // If both paths are valid (>= MIN_PATH_LENGTH)
+          if (a.path.length >= MIN_PATH_LENGTH && b.path.length >= MIN_PATH_LENGTH) {
+            // If either path is already at or above preferred length, favor those paths
+            if (a.path.length >= PREFERRED_PATH_LENGTH && b.path.length < PREFERRED_PATH_LENGTH) {
+              return -1; // Favor path A that's at preferred length
+            }
+            if (b.path.length >= PREFERRED_PATH_LENGTH && a.path.length < PREFERRED_PATH_LENGTH) {
+              return 1; // Favor path B that's at preferred length
+            }
+            
+            // If both paths are between MIN and PREFERRED, favor the longer ones to reach PREFERRED
+            if (a.path.length < PREFERRED_PATH_LENGTH && b.path.length < PREFERRED_PATH_LENGTH) {
+              return b.path.length - a.path.length; // Favor longer paths to reach preferred length
+            }
+            
+            // If both are above PREFERRED, favor the shorter ones (to avoid excessive length)
+            if (a.path.length >= PREFERRED_PATH_LENGTH && b.path.length >= PREFERRED_PATH_LENGTH) {
+              return a.path.length - b.path.length; // Favor shorter paths when both exceed preferred
+            }
+          }
+          
+          // If one path is valid and one isn't, favor the valid one
+          if (a.path.length >= MIN_PATH_LENGTH && b.path.length < MIN_PATH_LENGTH) {
+            return -1; // Favor path A that's valid
+          }
+          if (b.path.length >= MIN_PATH_LENGTH && a.path.length < MIN_PATH_LENGTH) {
+            return 1; // Favor path B that's valid
+          }
+          
+          // Default: favor paths closer to preferred length
+          const distA = Math.abs(a.path.length - PREFERRED_PATH_LENGTH);
+          const distB = Math.abs(b.path.length - PREFERRED_PATH_LENGTH);
+          return distA - distB;
         });
       }
     };
@@ -300,13 +329,14 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
     let explored = 0;
     let validTargetsChecked = 0;
     let pathsAbandoned = 0; // Track paths abandoned due to low diversity
+    let validShorterPath = null; // Track a valid path that meets minimum but not preferred length
     
     // Process the stack for depth-first traversal
     while (stack.length > 0 && explored < MAX_EXPLORATIONS) {
       // Check for abort signal
       if (abortSignal && abortSignal.aborted) {
         console.log('Path finding aborted by abort signal');
-        return null;
+        return validShorterPath || null; // Return shorter path if available, otherwise null
       }
       
       // Periodically prioritize the stack to focus on promising paths
@@ -329,6 +359,8 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         }
       }
           
+      // Check if we should validate this path as a potential target
+      
       // If we've reached AT LEAST the minimum length required, consider this as a target
       // Paths of at least MIN_PATH_LENGTH are valid puzzles - we're just checking if current word works as a target
       if (path.length >= MIN_PATH_LENGTH) {
@@ -346,15 +378,26 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
             console.log(`✓ Target word: "${currentWord}"`);
             console.log(`✓ Path length: ${path.length} words (${path.length-1} steps)`);
             console.log(`✓ Full path: ${path.join(' → ')}`);
-            console.log(`======================================`);
             
-            return { path, targetWord: currentWord };
+            // If path is of preferred length, return it immediately
+            if (path.length >= PREFERRED_PATH_LENGTH) {
+              console.log(`✓ Found path of preferred length (${path.length} ≥ ${PREFERRED_PATH_LENGTH})`);
+              console.log(`======================================`);
+              return { path, targetWord: currentWord };
+            }
+            
+            // Otherwise, store it as a valid path but continue searching for preferred length
+            console.log(`✓ Found valid path but continuing to search for preferred length path (${path.length} < ${PREFERRED_PATH_LENGTH})`);
+            console.log(`======================================`);
+            validShorterPath = { path, targetWord: currentWord };
+            
+            // Don't return yet - keep searching for a longer path
           }
         } catch (error) {
           // Check if error is due to API limit being reached
           if (error.message && error.message.includes('API call limit')) {
             console.warn(`⚠️ ${error.message} - aborting path search during target validation`);
-            return null; // Stop the search completely
+            return validShorterPath || null; // Return shorter path if available, otherwise null
           }
           
           console.error(`Error validating target "${currentWord}":`, error);
@@ -429,7 +472,14 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
       }
     }
     
-    // If we're here, we didn't find a valid path
+    // If we have a valid shorter path, use it as fallback
+    if (validShorterPath) {
+      console.log(`No preferred-length path found after exploring ${explored} paths, using valid shorter path of length ${validShorterPath.path.length}`);
+      console.log(`✓ Final path: ${validShorterPath.path.join(' → ')}`);
+      return validShorterPath;
+    }
+    
+    // If we're here, we didn't find any valid path
     console.log(`No valid path found from "${startWord}" after exploring ${explored} paths, abandoning ${pathsAbandoned} for diversity reasons`);
     return null;
   } catch (error) {

@@ -9629,5 +9629,1851 @@
       "word": "contact",
       "hint": "thin lens worn directly on eye"
     }
+  ],
+  "time": [
+    "clock",
+    "hour",
+    "watch",
+    "schedule",
+    "deadline",
+    "minute",
+    "calendar",
+    "future"
+  ],
+  "time_detailed": [
+    {
+      "word": "clock",
+      "hint": "device for measuring time"
+    },
+    {
+      "word": "hour",
+      "hint": "unit of time"
+    },
+    {
+      "word": "watch",
+      "hint": "wearable timepiece"
+    },
+    {
+      "word": "schedule",
+      "hint": "plan for allocating time"
+    },
+    {
+      "word": "deadline",
+      "hint": "time limit for completion"
+    },
+    {
+      "word": "minute",
+      "hint": "unit of time"
+    },
+    {
+      "word": "calendar",
+      "hint": "system for organizing days and dates"
+    },
+    {
+      "word": "future",
+      "hint": "period that is to come"
+    }
+  ],
+  "tick": [
+    "clock",
+    "insect",
+    "mark",
+    "time",
+    "tock",
+    "bite",
+    "Lyme"
+  ],
+  "tick_detailed": [
+    {
+      "word": "clock",
+      "hint": "ticking sound of clock hands"
+    },
+    {
+      "word": "insect",
+      "hint": "blood-sucking arachnid"
+    },
+    {
+      "word": "mark",
+      "hint": "checkmark or symbol"
+    },
+    {
+      "word": "time",
+      "hint": "measurement of passing seconds"
+    },
+    {
+      "word": "tock",
+      "hint": "paired sound with tick"
+    },
+    {
+      "word": "bite",
+      "hint": "result of tick attaching to skin"
+    },
+    {
+      "word": "Lyme",
+      "hint": "disease transmitted by ticks"
+    }
+  ],
+  "hand": [
+    "finger",
+    "palm",
+    "glove",
+    "shake",
+    "wave",
+    "grip",
+    "clap"
+  ],
+  "hand_detailed": [
+    {
+      "word": "finger",
+      "hint": "digit on a hand"
+    },
+    {
+      "word": "palm",
+      "hint": "inner surface of a hand"
+    },
+    {
+      "word": "glove",
+      "hint": "covering worn on a hand"
+    },
+    {
+      "word": "shake",
+      "hint": "greeting gesture with hands"
+    },
+    {
+      "word": "wave",
+      "hint": "gesture of moving hand back and forth"
+    },
+    {
+      "word": "grip",
+      "hint": "firm hold with the hand"
+    },
+    {
+      "word": "clap",
+      "hint": "striking hands together to make a sound"
+    }
+  ],
+  "alarm": [
+    "clock",
+    "fire",
+    "siren",
+    "security",
+    "burglar",
+    "wake",
+    "emergency"
+  ],
+  "alarm_detailed": [
+    {
+      "word": "clock",
+      "hint": "device that often has an alarm function"
+    },
+    {
+      "word": "fire",
+      "hint": "emergency situation that triggers alarms"
+    },
+    {
+      "word": "siren",
+      "hint": "loud sound made by many alarm systems"
+    },
+    {
+      "word": "security",
+      "hint": "alarms are used for protection"
+    },
+    {
+      "word": "burglar",
+      "hint": "intruder that might set off an alarm"
+    },
+    {
+      "word": "wake",
+      "hint": "alarms are commonly used to wake people up"
+    },
+    {
+      "word": "emergency",
+      "hint": "urgent situation signaled by an alarm"
+    }
+  ],
+  "digital": [
+    "computer",
+    "internet",
+    "technology",
+    "electronic",
+    "online",
+    "software",
+    "smartphone"
+  ],
+  "digital_detailed": [
+    {
+      "word": "computer",
+      "hint": "electronic device for processing data"
+    },
+    {
+      "word": "internet",
+      "hint": "global network of connected computers"
+    },
+    {
+      "word": "technology",
+      "hint": "application of scientific knowledge for practical purposes"
+    },
+    {
+      "word": "electronic",
+      "hint": "operated by electricity and using electronic components"
+    },
+    {
+      "word": "online",
+      "hint": "connected to or available through the internet"
+    },
+    {
+      "word": "software",
+      "hint": "programs and operating information used by a computer"
+    },
+    {
+      "word": "smartphone",
+      "hint": "mobile device combining computing and communication features"
+    }
+  ],
+  "grandfather": [
+    "elderly",
+    "wise",
+    "storyteller",
+    "gray",
+    "chair",
+    "pipe",
+    "clock"
+  ],
+  "grandfather_detailed": [
+    {
+      "word": "elderly",
+      "hint": "grandfathers are typically older"
+    },
+    {
+      "word": "wise",
+      "hint": "associated with life experience and knowledge"
+    },
+    {
+      "word": "storyteller",
+      "hint": "often share tales from the past"
+    },
+    {
+      "word": "gray",
+      "hint": "common hair color for older men"
+    },
+    {
+      "word": "chair",
+      "hint": "rocking or armchair often associated with grandfathers"
+    },
+    {
+      "word": "pipe",
+      "hint": "traditional smoking accessory"
+    },
+    {
+      "word": "clock",
+      "hint": "grandfather clock is a type of tall standing clock"
+    }
+  ],
+  "watch": [
+    "time",
+    "wrist",
+    "clock",
+    "digital",
+    "analog",
+    "battery",
+    "strap",
+    "alarm"
+  ],
+  "watch_detailed": [
+    {
+      "word": "time",
+      "hint": "watches are used to tell time"
+    },
+    {
+      "word": "wrist",
+      "hint": "many watches are worn on the wrist"
+    },
+    {
+      "word": "clock",
+      "hint": "watches are like small, portable clocks"
+    },
+    {
+      "word": "digital",
+      "hint": "a type of watch display"
+    },
+    {
+      "word": "analog",
+      "hint": "traditional watch face with hands"
+    },
+    {
+      "word": "battery",
+      "hint": "powers most modern watches"
+    },
+    {
+      "word": "strap",
+      "hint": "holds the watch on the wrist"
+    },
+    {
+      "word": "alarm",
+      "hint": "feature on many watches"
+    }
+  ],
+  "face": [
+    "expression",
+    "eye",
+    "nose",
+    "mouth",
+    "smile",
+    "mask",
+    "makeup",
+    "portrait"
+  ],
+  "face_detailed": [
+    {
+      "word": "expression",
+      "hint": "facial display of emotion"
+    },
+    {
+      "word": "eye",
+      "hint": "visual organ on the face"
+    },
+    {
+      "word": "nose",
+      "hint": "central feature for smell"
+    },
+    {
+      "word": "mouth",
+      "hint": "opening for eating and speaking"
+    },
+    {
+      "word": "smile",
+      "hint": "happy facial expression"
+    },
+    {
+      "word": "mask",
+      "hint": "covering worn over the face"
+    },
+    {
+      "word": "makeup",
+      "hint": "cosmetics applied to the face"
+    },
+    {
+      "word": "portrait",
+      "hint": "artistic representation of a face"
+    }
+  ],
+  "hour": [
+    "time",
+    "clock",
+    "minute",
+    "day",
+    "wait",
+    "schedule",
+    "watch"
+  ],
+  "hour_detailed": [
+    {
+      "word": "time",
+      "hint": "unit of measurement"
+    },
+    {
+      "word": "clock",
+      "hint": "device for telling time"
+    },
+    {
+      "word": "minute",
+      "hint": "60 of these in an hour"
+    },
+    {
+      "word": "day",
+      "hint": "24 hours make up this period"
+    },
+    {
+      "word": "wait",
+      "hint": "passing of time"
+    },
+    {
+      "word": "schedule",
+      "hint": "planning based on time"
+    },
+    {
+      "word": "watch",
+      "hint": "wearable timepiece"
+    }
+  ],
+  "schedule": [
+    "calendar",
+    "appointment",
+    "time",
+    "planner",
+    "deadline",
+    "routine",
+    "task",
+    "agenda"
+  ],
+  "schedule_detailed": [
+    {
+      "word": "calendar",
+      "hint": "tool for organizing dates and events"
+    },
+    {
+      "word": "appointment",
+      "hint": "planned meeting or event"
+    },
+    {
+      "word": "time",
+      "hint": "measurement of when events occur"
+    },
+    {
+      "word": "planner",
+      "hint": "book or tool for organizing activities"
+    },
+    {
+      "word": "deadline",
+      "hint": "date or time by which something must be completed"
+    },
+    {
+      "word": "routine",
+      "hint": "regular sequence of activities"
+    },
+    {
+      "word": "task",
+      "hint": "activity to be completed"
+    },
+    {
+      "word": "agenda",
+      "hint": "list of items to be discussed or addressed"
+    }
+  ],
+  "deadline": [
+    "stress",
+    "time",
+    "project",
+    "calendar",
+    "procrastination",
+    "rush",
+    "extension",
+    "panic"
+  ],
+  "deadline_detailed": [
+    {
+      "word": "stress",
+      "hint": "feeling of pressure as deadline approaches"
+    },
+    {
+      "word": "time",
+      "hint": "limited amount remaining before due date"
+    },
+    {
+      "word": "project",
+      "hint": "task or assignment with a due date"
+    },
+    {
+      "word": "calendar",
+      "hint": "tool used to track and manage deadlines"
+    },
+    {
+      "word": "procrastination",
+      "hint": "delaying work until close to deadline"
+    },
+    {
+      "word": "rush",
+      "hint": "hurried effort to complete work before deadline"
+    },
+    {
+      "word": "extension",
+      "hint": "request for more time beyond original deadline"
+    },
+    {
+      "word": "panic",
+      "hint": "sudden anxiety when realizing deadline is near"
+    }
+  ],
+  "minute": [
+    "second",
+    "hour",
+    "clock",
+    "time",
+    "short",
+    "wait",
+    "60"
+  ],
+  "minute_detailed": [
+    {
+      "word": "second",
+      "hint": "unit of time smaller than a minute"
+    },
+    {
+      "word": "hour",
+      "hint": "unit of time larger than a minute"
+    },
+    {
+      "word": "clock",
+      "hint": "device for measuring minutes"
+    },
+    {
+      "word": "time",
+      "hint": "general concept related to minutes"
+    },
+    {
+      "word": "short",
+      "hint": "describes the brief duration of a minute"
+    },
+    {
+      "word": "wait",
+      "hint": "often measured in minutes"
+    },
+    {
+      "word": "60",
+      "hint": "number of seconds in a minute"
+    }
+  ],
+  "calendar": [
+    "date",
+    "month",
+    "year",
+    "appointment",
+    "holiday",
+    "schedule",
+    "planner",
+    "wall"
+  ],
+  "calendar_detailed": [
+    {
+      "word": "date",
+      "hint": "specific day on a calendar"
+    },
+    {
+      "word": "month",
+      "hint": "division of time on a calendar"
+    },
+    {
+      "word": "year",
+      "hint": "period of 12 months on a calendar"
+    },
+    {
+      "word": "appointment",
+      "hint": "scheduled event marked on a calendar"
+    },
+    {
+      "word": "holiday",
+      "hint": "special day noted on a calendar"
+    },
+    {
+      "word": "schedule",
+      "hint": "plan of events often recorded on a calendar"
+    },
+    {
+      "word": "planner",
+      "hint": "organizational tool similar to a calendar"
+    },
+    {
+      "word": "wall",
+      "hint": "common location to hang a calendar"
+    }
+  ],
+  "insect": [
+    "bug",
+    "fly",
+    "ant",
+    "butterfly",
+    "bee",
+    "spider",
+    "mosquito",
+    "cricket",
+    "ladybug"
+  ],
+  "insect_detailed": [
+    {
+      "word": "bug",
+      "hint": "common synonym for insect"
+    },
+    {
+      "word": "fly",
+      "hint": "a common flying insect"
+    },
+    {
+      "word": "ant",
+      "hint": "small, social insect often seen in colonies"
+    },
+    {
+      "word": "butterfly",
+      "hint": "colorful flying insect with large wings"
+    },
+    {
+      "word": "bee",
+      "hint": "flying insect that produces honey"
+    },
+    {
+      "word": "spider",
+      "hint": "often mistaken for an insect, known for webs"
+    },
+    {
+      "word": "mosquito",
+      "hint": "blood-sucking flying insect"
+    },
+    {
+      "word": "cricket",
+      "hint": "known for chirping sound"
+    },
+    {
+      "word": "ladybug",
+      "hint": "small, round, often red with black spots"
+    }
+  ],
+  "mark": [
+    "spot",
+    "grade",
+    "target",
+    "signature",
+    "bookmark",
+    "watermark",
+    "trademark",
+    "birthmark"
+  ],
+  "mark_detailed": [
+    {
+      "word": "spot",
+      "hint": "a visible mark or stain"
+    },
+    {
+      "word": "grade",
+      "hint": "a score or assessment mark"
+    },
+    {
+      "word": "target",
+      "hint": "a mark to aim at"
+    },
+    {
+      "word": "signature",
+      "hint": "a person's identifying mark"
+    },
+    {
+      "word": "bookmark",
+      "hint": "a mark to save a place in a book"
+    },
+    {
+      "word": "watermark",
+      "hint": "a faint design to identify paper"
+    },
+    {
+      "word": "trademark",
+      "hint": "a distinctive symbol of a brand"
+    },
+    {
+      "word": "birthmark",
+      "hint": "a natural mark on the skin"
+    }
+  ],
+  "tock": [
+    "tick",
+    "clock",
+    "time",
+    "pendulum",
+    "sound",
+    "rhythm",
+    "countdown"
+  ],
+  "tock_detailed": [
+    {
+      "word": "tick",
+      "hint": "paired sound in clocks"
+    },
+    {
+      "word": "clock",
+      "hint": "device that makes ticking sound"
+    },
+    {
+      "word": "time",
+      "hint": "measurement tock is associated with"
+    },
+    {
+      "word": "pendulum",
+      "hint": "swinging part of some clocks"
+    },
+    {
+      "word": "sound",
+      "hint": "auditory nature of tock"
+    },
+    {
+      "word": "rhythm",
+      "hint": "regular pattern of ticks and tocks"
+    },
+    {
+      "word": "countdown",
+      "hint": "ticking often used in countdowns"
+    }
+  ],
+  "bite": [
+    "dog",
+    "food",
+    "snake",
+    "insect",
+    "teeth",
+    "pain",
+    "apple",
+    "shark"
+  ],
+  "bite_detailed": [
+    {
+      "word": "dog",
+      "hint": "canine biting or nipping"
+    },
+    {
+      "word": "food",
+      "hint": "taking a bite of something edible"
+    },
+    {
+      "word": "snake",
+      "hint": "venomous snake bite"
+    },
+    {
+      "word": "insect",
+      "hint": "mosquito or other bug bites"
+    },
+    {
+      "word": "teeth",
+      "hint": "used for biting"
+    },
+    {
+      "word": "pain",
+      "hint": "sensation often associated with being bitten"
+    },
+    {
+      "word": "apple",
+      "hint": "common fruit to bite into"
+    },
+    {
+      "word": "shark",
+      "hint": "marine predator known for powerful bites"
+    }
+  ],
+  "lyme": [
+    "disease",
+    "tick",
+    "lime",
+    "forest",
+    "rash",
+    "antibiotic",
+    "Connecticut"
+  ],
+  "lyme_detailed": [
+    {
+      "word": "disease",
+      "hint": "Lyme disease, a tick-borne illness"
+    },
+    {
+      "word": "tick",
+      "hint": "The insect that transmits Lyme disease"
+    },
+    {
+      "word": "lime",
+      "hint": "Similar sounding citrus fruit"
+    },
+    {
+      "word": "forest",
+      "hint": "Habitat where Lyme-carrying ticks are often found"
+    },
+    {
+      "word": "rash",
+      "hint": "Common symptom of Lyme disease"
+    },
+    {
+      "word": "antibiotic",
+      "hint": "Treatment for Lyme disease"
+    },
+    {
+      "word": "Connecticut",
+      "hint": "State where Lyme disease was first identified"
+    }
+  ],
+  "appointment": [
+    "doctor",
+    "calendar",
+    "meeting",
+    "reminder",
+    "dentist",
+    "haircut",
+    "interview",
+    "time"
+  ],
+  "appointment_detailed": [
+    {
+      "word": "doctor",
+      "hint": "medical consultation"
+    },
+    {
+      "word": "calendar",
+      "hint": "scheduling tool"
+    },
+    {
+      "word": "meeting",
+      "hint": "scheduled gathering"
+    },
+    {
+      "word": "reminder",
+      "hint": "notification to remember"
+    },
+    {
+      "word": "dentist",
+      "hint": "dental check-up"
+    },
+    {
+      "word": "haircut",
+      "hint": "salon visit"
+    },
+    {
+      "word": "interview",
+      "hint": "job application process"
+    },
+    {
+      "word": "time",
+      "hint": "specific moment scheduled"
+    }
+  ],
+  "planner": [
+    "calendar",
+    "schedule",
+    "organizer",
+    "goal",
+    "appointment",
+    "task",
+    "deadline",
+    "productivity"
+  ],
+  "planner_detailed": [
+    {
+      "word": "calendar",
+      "hint": "used to track dates and events"
+    },
+    {
+      "word": "schedule",
+      "hint": "organizing tasks and appointments"
+    },
+    {
+      "word": "organizer",
+      "hint": "tool for managing time and activities"
+    },
+    {
+      "word": "goal",
+      "hint": "setting and tracking objectives"
+    },
+    {
+      "word": "appointment",
+      "hint": "scheduled meeting or event"
+    },
+    {
+      "word": "task",
+      "hint": "item to be completed or accomplished"
+    },
+    {
+      "word": "deadline",
+      "hint": "time by which something must be done"
+    },
+    {
+      "word": "productivity",
+      "hint": "efficiency in completing tasks"
+    }
+  ],
+  "routine": [
+    "habit",
+    "schedule",
+    "daily",
+    "repetition",
+    "monotonous",
+    "ritual",
+    "predictable",
+    "structured"
+  ],
+  "routine_detailed": [
+    {
+      "word": "habit",
+      "hint": "regular behavior pattern"
+    },
+    {
+      "word": "schedule",
+      "hint": "organized plan for activities"
+    },
+    {
+      "word": "daily",
+      "hint": "occurring every day"
+    },
+    {
+      "word": "repetition",
+      "hint": "doing something over and over"
+    },
+    {
+      "word": "monotonous",
+      "hint": "lacking variety, boring"
+    },
+    {
+      "word": "ritual",
+      "hint": "customary or regular procedure"
+    },
+    {
+      "word": "predictable",
+      "hint": "behaving in an expected way"
+    },
+    {
+      "word": "structured",
+      "hint": "arranged in a definite pattern"
+    }
+  ],
+  "task": [
+    "work",
+    "assignment",
+    "goal",
+    "deadline",
+    "checklist",
+    "responsibility",
+    "project",
+    "priority"
+  ],
+  "task_detailed": [
+    {
+      "word": "work",
+      "hint": "a job or activity that needs to be done"
+    },
+    {
+      "word": "assignment",
+      "hint": "a specific job given to someone"
+    },
+    {
+      "word": "goal",
+      "hint": "an objective or target to be achieved"
+    },
+    {
+      "word": "deadline",
+      "hint": "the time by which a task must be completed"
+    },
+    {
+      "word": "checklist",
+      "hint": "a list of tasks to be done"
+    },
+    {
+      "word": "responsibility",
+      "hint": "a duty or obligation to complete something"
+    },
+    {
+      "word": "project",
+      "hint": "a planned piece of work"
+    },
+    {
+      "word": "priority",
+      "hint": "importance or urgency of a task"
+    }
+  ],
+  "agenda": [
+    "meeting",
+    "schedule",
+    "planner",
+    "goal",
+    "politician",
+    "calendar",
+    "priority"
+  ],
+  "agenda_detailed": [
+    {
+      "word": "meeting",
+      "hint": "planned gathering to discuss topics"
+    },
+    {
+      "word": "schedule",
+      "hint": "list of planned activities or events"
+    },
+    {
+      "word": "planner",
+      "hint": "book or tool for organizing tasks and appointments"
+    },
+    {
+      "word": "goal",
+      "hint": "objective or aim to be achieved"
+    },
+    {
+      "word": "politician",
+      "hint": "person involved in government or public affairs"
+    },
+    {
+      "word": "calendar",
+      "hint": "system for organizing days and dates"
+    },
+    {
+      "word": "priority",
+      "hint": "item given or meriting attention before competing alternatives"
+    }
+  ],
+  "stress": [
+    "anxiety",
+    "pressure",
+    "headache",
+    "deadline",
+    "work",
+    "tension",
+    "insomnia"
+  ],
+  "stress_detailed": [
+    {
+      "word": "anxiety",
+      "hint": "feeling of worry or unease"
+    },
+    {
+      "word": "pressure",
+      "hint": "feeling of urgency or demand"
+    },
+    {
+      "word": "headache",
+      "hint": "common physical symptom of stress"
+    },
+    {
+      "word": "deadline",
+      "hint": "time limit causing stress"
+    },
+    {
+      "word": "work",
+      "hint": "common source of stress for many people"
+    },
+    {
+      "word": "tension",
+      "hint": "physical or emotional strain"
+    },
+    {
+      "word": "insomnia",
+      "hint": "difficulty sleeping due to stress"
+    }
+  ],
+  "project": [
+    "management",
+    "deadline",
+    "team",
+    "goal",
+    "budget",
+    "timeline",
+    "presentation"
+  ],
+  "project_detailed": [
+    {
+      "word": "management",
+      "hint": "overseeing and organizing tasks"
+    },
+    {
+      "word": "deadline",
+      "hint": "due date for completion"
+    },
+    {
+      "word": "team",
+      "hint": "group working together"
+    },
+    {
+      "word": "goal",
+      "hint": "desired outcome or result"
+    },
+    {
+      "word": "budget",
+      "hint": "financial allocation"
+    },
+    {
+      "word": "timeline",
+      "hint": "schedule of tasks and milestones"
+    },
+    {
+      "word": "presentation",
+      "hint": "showcasing results or progress"
+    }
+  ],
+  "procrastination": [
+    "delay",
+    "laziness",
+    "deadline",
+    "stress",
+    "distraction",
+    "excuse",
+    "guilt",
+    "productivity"
+  ],
+  "procrastination_detailed": [
+    {
+      "word": "delay",
+      "hint": "putting things off until later"
+    },
+    {
+      "word": "laziness",
+      "hint": "lack of motivation or energy"
+    },
+    {
+      "word": "deadline",
+      "hint": "time limit for task completion"
+    },
+    {
+      "word": "stress",
+      "hint": "anxiety caused by postponing tasks"
+    },
+    {
+      "word": "distraction",
+      "hint": "something that diverts attention"
+    },
+    {
+      "word": "excuse",
+      "hint": "reason given to justify postponing"
+    },
+    {
+      "word": "guilt",
+      "hint": "feeling bad about not doing tasks"
+    },
+    {
+      "word": "productivity",
+      "hint": "opposite of procrastination"
+    }
+  ],
+  "rush": [
+    "hurry",
+    "traffic",
+    "adrenaline",
+    "gold",
+    "band",
+    "hour",
+    "drug"
+  ],
+  "rush_detailed": [
+    {
+      "word": "hurry",
+      "hint": "moving quickly"
+    },
+    {
+      "word": "traffic",
+      "hint": "busy roads during peak hours"
+    },
+    {
+      "word": "adrenaline",
+      "hint": "excitement or thrill"
+    },
+    {
+      "word": "gold",
+      "hint": "historical gold rush events"
+    },
+    {
+      "word": "band",
+      "hint": "Canadian rock group Rush"
+    },
+    {
+      "word": "hour",
+      "hint": "busy time period"
+    },
+    {
+      "word": "drug",
+      "hint": "intense feeling from substance use"
+    }
+  ],
+  "extension": [
+    "cord",
+    "hair",
+    "phone",
+    "deadline",
+    "ladder",
+    "file",
+    "building"
+  ],
+  "extension_detailed": [
+    {
+      "word": "cord",
+      "hint": "electrical extension cord"
+    },
+    {
+      "word": "hair",
+      "hint": "artificial hair extensions"
+    },
+    {
+      "word": "phone",
+      "hint": "phone number extension"
+    },
+    {
+      "word": "deadline",
+      "hint": "extending a due date"
+    },
+    {
+      "word": "ladder",
+      "hint": "extendable ladder"
+    },
+    {
+      "word": "file",
+      "hint": "file extension in computing"
+    },
+    {
+      "word": "building",
+      "hint": "addition to existing structure"
+    }
+  ],
+  "touchscreen": [
+    "smartphone",
+    "tablet",
+    "finger",
+    "swipe",
+    "tap",
+    "screen",
+    "responsive",
+    "kiosk"
+  ],
+  "touchscreen_detailed": [
+    {
+      "word": "smartphone",
+      "hint": "common device with touchscreen"
+    },
+    {
+      "word": "tablet",
+      "hint": "portable computer with touchscreen"
+    },
+    {
+      "word": "finger",
+      "hint": "used to interact with touchscreens"
+    },
+    {
+      "word": "swipe",
+      "hint": "gesture used on touchscreens"
+    },
+    {
+      "word": "tap",
+      "hint": "action to select items on touchscreens"
+    },
+    {
+      "word": "screen",
+      "hint": "display surface of touchscreen devices"
+    },
+    {
+      "word": "responsive",
+      "hint": "quality of good touchscreens"
+    },
+    {
+      "word": "kiosk",
+      "hint": "public terminal often with touchscreen"
+    }
+  ],
+  "regular": [
+    "normal",
+    "routine",
+    "ordinary",
+    "consistent",
+    "frequent",
+    "standard",
+    "periodic",
+    "uniform"
+  ],
+  "regular_detailed": [
+    {
+      "word": "normal",
+      "hint": "typical or standard"
+    },
+    {
+      "word": "routine",
+      "hint": "done habitually"
+    },
+    {
+      "word": "ordinary",
+      "hint": "common or unremarkable"
+    },
+    {
+      "word": "consistent",
+      "hint": "unchanging over time"
+    },
+    {
+      "word": "frequent",
+      "hint": "occurring often"
+    },
+    {
+      "word": "standard",
+      "hint": "usual or typical"
+    },
+    {
+      "word": "periodic",
+      "hint": "recurring at intervals"
+    },
+    {
+      "word": "uniform",
+      "hint": "consistent or unvarying"
+    }
+  ],
+  "normal": [
+    "average",
+    "ordinary",
+    "standard",
+    "regular",
+    "typical",
+    "usual",
+    "conventional",
+    "routine"
+  ],
+  "normal_detailed": [
+    {
+      "word": "average",
+      "hint": "typical or expected value"
+    },
+    {
+      "word": "ordinary",
+      "hint": "common or unremarkable"
+    },
+    {
+      "word": "standard",
+      "hint": "widely accepted or typical"
+    },
+    {
+      "word": "regular",
+      "hint": "occurring at fixed intervals or following a pattern"
+    },
+    {
+      "word": "typical",
+      "hint": "having characteristics of a particular type"
+    },
+    {
+      "word": "usual",
+      "hint": "commonly occurring or experienced"
+    },
+    {
+      "word": "conventional",
+      "hint": "based on or in accordance with general agreement"
+    },
+    {
+      "word": "routine",
+      "hint": "commonplace or repetitive"
+    }
+  ],
+  "conventional": [
+    "traditional",
+    "standard",
+    "ordinary",
+    "conservative",
+    "mainstream",
+    "old-fashioned",
+    "typical",
+    "orthodox"
+  ],
+  "conventional_detailed": [
+    {
+      "word": "traditional",
+      "hint": "following established customs or practices"
+    },
+    {
+      "word": "standard",
+      "hint": "widely accepted or typical"
+    },
+    {
+      "word": "ordinary",
+      "hint": "common or usual"
+    },
+    {
+      "word": "conservative",
+      "hint": "adhering to traditional values"
+    },
+    {
+      "word": "mainstream",
+      "hint": "considered normal or typical"
+    },
+    {
+      "word": "old-fashioned",
+      "hint": "not modern or contemporary"
+    },
+    {
+      "word": "typical",
+      "hint": "characteristic or expected"
+    },
+    {
+      "word": "orthodox",
+      "hint": "conforming to established beliefs or practices"
+    }
+  ],
+  "consequence": [
+    "punishment",
+    "result",
+    "effect",
+    "outcome",
+    "repercussion",
+    "aftermath",
+    "impact"
+  ],
+  "consequence_detailed": [
+    {
+      "word": "punishment",
+      "hint": "a negative result of actions"
+    },
+    {
+      "word": "result",
+      "hint": "outcome of an action or decision"
+    },
+    {
+      "word": "effect",
+      "hint": "something produced by a cause"
+    },
+    {
+      "word": "outcome",
+      "hint": "final result of a situation"
+    },
+    {
+      "word": "repercussion",
+      "hint": "indirect effect of an action"
+    },
+    {
+      "word": "aftermath",
+      "hint": "period following a significant event"
+    },
+    {
+      "word": "impact",
+      "hint": "strong effect or influence"
+    }
+  ],
+  "punishment": [
+    "prison",
+    "spanking",
+    "fine",
+    "grounding",
+    "detention",
+    "timeout",
+    "sentence",
+    "consequence",
+    "discipline"
+  ],
+  "punishment_detailed": [
+    {
+      "word": "prison",
+      "hint": "place of confinement for criminals"
+    },
+    {
+      "word": "spanking",
+      "hint": "physical discipline often used on children"
+    },
+    {
+      "word": "fine",
+      "hint": "monetary penalty for breaking rules"
+    },
+    {
+      "word": "grounding",
+      "hint": "restricting activities as discipline"
+    },
+    {
+      "word": "detention",
+      "hint": "form of punishment in schools"
+    },
+    {
+      "word": "timeout",
+      "hint": "brief isolation as a disciplinary measure"
+    },
+    {
+      "word": "sentence",
+      "hint": "legal penalty imposed by a court"
+    },
+    {
+      "word": "consequence",
+      "hint": "result of one's actions"
+    },
+    {
+      "word": "discipline",
+      "hint": "training to obey rules or a code of behavior"
+    }
+  ],
+  "discipline": [
+    "punishment",
+    "military",
+    "school",
+    "self-control",
+    "training",
+    "rule",
+    "strict"
+  ],
+  "discipline_detailed": [
+    {
+      "word": "punishment",
+      "hint": "disciplinary action for misconduct"
+    },
+    {
+      "word": "military",
+      "hint": "strict adherence to rules and orders"
+    },
+    {
+      "word": "school",
+      "hint": "maintaining order in educational settings"
+    },
+    {
+      "word": "self-control",
+      "hint": "ability to regulate one's behavior"
+    },
+    {
+      "word": "training",
+      "hint": "rigorous preparation for a task or sport"
+    },
+    {
+      "word": "rule",
+      "hint": "guidelines that must be followed"
+    },
+    {
+      "word": "strict",
+      "hint": "demanding adherence to specific standards"
+    }
+  ],
+  "strict": [
+    "rule",
+    "discipline",
+    "teacher",
+    "parent",
+    "punishment",
+    "military",
+    "rigid",
+    "control"
+  ],
+  "strict_detailed": [
+    {
+      "word": "rule",
+      "hint": "enforced guidelines or regulations"
+    },
+    {
+      "word": "discipline",
+      "hint": "adherence to rules and order"
+    },
+    {
+      "word": "teacher",
+      "hint": "authority figure in education"
+    },
+    {
+      "word": "parent",
+      "hint": "authority figure in family"
+    },
+    {
+      "word": "punishment",
+      "hint": "consequence for breaking rules"
+    },
+    {
+      "word": "military",
+      "hint": "organization known for rigorous discipline"
+    },
+    {
+      "word": "rigid",
+      "hint": "inflexible or unyielding"
+    },
+    {
+      "word": "control",
+      "hint": "exerting authority or restraint"
+    }
+  ],
+  "step": [
+    "stair",
+    "ladder",
+    "dance",
+    "instructions",
+    "father",
+    "forward",
+    "program"
+  ],
+  "step_detailed": [
+    {
+      "word": "stair",
+      "hint": "part of a staircase"
+    },
+    {
+      "word": "ladder",
+      "hint": "used to climb up or down"
+    },
+    {
+      "word": "dance",
+      "hint": "a movement in choreography"
+    },
+    {
+      "word": "instructions",
+      "hint": "part of a process or guide"
+    },
+    {
+      "word": "father",
+      "hint": "related to blended families"
+    },
+    {
+      "word": "forward",
+      "hint": "progressing or advancing"
+    },
+    {
+      "word": "program",
+      "hint": "part of a plan or course of action"
+    }
+  ],
+  "father": [
+    "dad",
+    "parent",
+    "protector",
+    "provider",
+    "mentor",
+    "discipline",
+    "love"
+  ],
+  "father_detailed": [
+    {
+      "word": "dad",
+      "hint": "informal term for father"
+    },
+    {
+      "word": "parent",
+      "hint": "general term for mother or father"
+    },
+    {
+      "word": "protector",
+      "hint": "role of providing safety and security"
+    },
+    {
+      "word": "provider",
+      "hint": "one who supports the family financially"
+    },
+    {
+      "word": "mentor",
+      "hint": "someone who offers guidance and wisdom"
+    },
+    {
+      "word": "discipline",
+      "hint": "associated with setting rules and boundaries"
+    },
+    {
+      "word": "love",
+      "hint": "emotional bond between father and child"
+    }
+  ],
+  "playground": [
+    "swing",
+    "slide",
+    "sandbox",
+    "monkey bar",
+    "seesaw",
+    "child",
+    "fun",
+    "park"
+  ],
+  "playground_detailed": [
+    {
+      "word": "swing",
+      "hint": "common playground equipment for swinging"
+    },
+    {
+      "word": "slide",
+      "hint": "inclined surface for sliding down"
+    },
+    {
+      "word": "sandbox",
+      "hint": "area filled with sand for play"
+    },
+    {
+      "word": "monkey bar",
+      "hint": "climbing equipment with horizontal bars"
+    },
+    {
+      "word": "seesaw",
+      "hint": "balanced board for two children"
+    },
+    {
+      "word": "child",
+      "hint": "primary users of playgrounds"
+    },
+    {
+      "word": "fun",
+      "hint": "enjoyment associated with playground activities"
+    },
+    {
+      "word": "park",
+      "hint": "common location for playgrounds"
+    }
+  ],
+  "meal": [
+    "food",
+    "plate",
+    "dinner",
+    "restaurant",
+    "family",
+    "kitchen",
+    "table"
+  ],
+  "meal_detailed": [
+    {
+      "word": "food",
+      "hint": "what a meal consists of"
+    },
+    {
+      "word": "plate",
+      "hint": "where a meal is typically served"
+    },
+    {
+      "word": "dinner",
+      "hint": "a common type of meal"
+    },
+    {
+      "word": "restaurant",
+      "hint": "where meals are often eaten out"
+    },
+    {
+      "word": "family",
+      "hint": "people often share meals together"
+    },
+    {
+      "word": "kitchen",
+      "hint": "where meals are usually prepared"
+    },
+    {
+      "word": "table",
+      "hint": "where meals are commonly eaten"
+    }
+  ],
+  "family": [
+    "love",
+    "home",
+    "parent",
+    "child",
+    "sibling",
+    "support",
+    "tradition",
+    "reunion"
+  ],
+  "family_detailed": [
+    {
+      "word": "love",
+      "hint": "strong affection between family members"
+    },
+    {
+      "word": "home",
+      "hint": "place where family lives together"
+    },
+    {
+      "word": "parent",
+      "hint": "mother or father in a family"
+    },
+    {
+      "word": "child",
+      "hint": "offspring in a family"
+    },
+    {
+      "word": "sibling",
+      "hint": "brother or sister in a family"
+    },
+    {
+      "word": "support",
+      "hint": "emotional and physical assistance within family"
+    },
+    {
+      "word": "tradition",
+      "hint": "customs passed down through generations"
+    },
+    {
+      "word": "reunion",
+      "hint": "gathering of extended family members"
+    }
+  ],
+  "parent": [
+    "mother",
+    "father",
+    "child",
+    "family",
+    "love",
+    "responsibility",
+    "guardian",
+    "nurture"
+  ],
+  "parent_detailed": [
+    {
+      "word": "mother",
+      "hint": "female parent"
+    },
+    {
+      "word": "father",
+      "hint": "male parent"
+    },
+    {
+      "word": "child",
+      "hint": "offspring of a parent"
+    },
+    {
+      "word": "family",
+      "hint": "unit including parents and children"
+    },
+    {
+      "word": "love",
+      "hint": "strong affection from parent to child"
+    },
+    {
+      "word": "responsibility",
+      "hint": "duty of caring for children"
+    },
+    {
+      "word": "guardian",
+      "hint": "person who acts as a parent"
+    },
+    {
+      "word": "nurture",
+      "hint": "to care for and encourage growth"
+    }
+  ],
+  "guardian": [
+    "protector",
+    "angel",
+    "parent",
+    "security",
+    "shield",
+    "watchdog",
+    "newspaper"
+  ],
+  "guardian_detailed": [
+    {
+      "word": "protector",
+      "hint": "someone who defends or shields others"
+    },
+    {
+      "word": "angel",
+      "hint": "spiritual being believed to watch over people"
+    },
+    {
+      "word": "parent",
+      "hint": "person who cares for and raises a child"
+    },
+    {
+      "word": "security",
+      "hint": "measures taken to ensure safety"
+    },
+    {
+      "word": "shield",
+      "hint": "device used for protection"
+    },
+    {
+      "word": "watchdog",
+      "hint": "person or group that monitors for wrongdoing"
+    },
+    {
+      "word": "newspaper",
+      "hint": "referring to 'The Guardian' publication"
+    }
+  ],
+  "protector": [
+    "guardian",
+    "shield",
+    "hero",
+    "defender",
+    "bodyguard",
+    "police",
+    "armor",
+    "parent"
+  ],
+  "protector_detailed": [
+    {
+      "word": "guardian",
+      "hint": "someone who protects or defends"
+    },
+    {
+      "word": "shield",
+      "hint": "protective barrier used for defense"
+    },
+    {
+      "word": "hero",
+      "hint": "person admired for courage or noble qualities"
+    },
+    {
+      "word": "defender",
+      "hint": "one who protects from attack or danger"
+    },
+    {
+      "word": "bodyguard",
+      "hint": "person who protects someone physically"
+    },
+    {
+      "word": "police",
+      "hint": "law enforcement officers who protect citizens"
+    },
+    {
+      "word": "armor",
+      "hint": "protective covering used in combat"
+    },
+    {
+      "word": "parent",
+      "hint": "caregiver who protects their children"
+    }
   ]
 }

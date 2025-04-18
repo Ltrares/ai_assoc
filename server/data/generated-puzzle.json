@@ -1,16 +1,18 @@
 {
-  "startWord": "telescope",
-  "targetWord": "ocean",
-  "theme": "Deep Sea Discovery",
-  "description": "Exploring oceanic mysteries through advanced technologies and scientific observation.",
+  "startWord": "food",
+  "targetWord": "hero",
+  "theme": "Culinary Champions",
+  "description": "Exploring the journey of chefs who become celebrated figures in gastronomy",
   "difficulty": "medium",
   "hiddenSolution": [
-    "telescope",
-    "stars",
-    "sky",
-    "blue",
-    "ocean"
+    "food",
+    "meal",
+    "family",
+    "parent",
+    "guardian",
+    "protector",
+    "hero"
   ],
-  "minExpectedSteps": 4,
-  "gameDate": "2025-04-17"
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18"
 }
