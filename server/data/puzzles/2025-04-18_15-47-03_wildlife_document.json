@@ -1,0 +1,20 @@
+{
+  "startWord": "wildlife",
+  "targetWord": "document",
+  "theme": "Conservation Research Archive",
+  "description": "Documenting endangered species through scientific field studies and official reports",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "wildlife",
+    "safari",
+    "savanna",
+    "zebra",
+    "white",
+    "paper",
+    "document"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T15:47:03.344Z",
+  "timestamp": 1744991223344
+}

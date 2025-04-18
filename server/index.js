@@ -926,58 +926,79 @@ if (process.env.NODE_ENV !== 'test') {
       .catch(err => console.error('Failed to auto-save cache:', err));
   }, CACHE_SAVE_INTERVAL);
   
-  // Schedule game generation (with limits)
-  setInterval(async () => {
-    try {
-      // Get current date and hour
-      const now = new Date();
-      const currentDate = now.toISOString().split('T')[0]; // Get YYYY-MM-DD format
-      const currentHour = now.getHours();
-      
-      // Reset game generation counter if it's a new day
-      if (currentGame.gameDate !== currentDate) {
-        console.log(`New day detected, resetting game generation counter`);
-        apiLimits.gamesGenerated = 0;
-        currentGame.gameDate = currentDate;
-      }
-      
-      console.log(`Hourly scheduler running at hour ${currentHour}...`);
-      
-      // First check if we already have a puzzle from the current hour
-      const hourlyPuzzle = await puzzleRepository.getPuzzleFromCurrentHour();
-      
-      if (hourlyPuzzle) {
-        console.log(`Using existing puzzle for hour ${currentHour}: ${hourlyPuzzle.startWord} → ${hourlyPuzzle.targetWord}`);
+  // Function to schedule game generation for the next hour
+  function scheduleNextHourGeneration() {
+    // Calculate time until the next hour
+    const now = new Date();
+    const nextHour = new Date(now);
+    nextHour.setHours(nextHour.getHours() + 1);
+    nextHour.setMinutes(0);
+    nextHour.setSeconds(0);
+    nextHour.setMilliseconds(0);
+    
+    const timeUntilNextHour = nextHour.getTime() - now.getTime();
+    
+    console.log(`Scheduling next game generation at ${nextHour.toISOString()} (in ${Math.round(timeUntilNextHour/1000/60)} minutes)`);
+    
+    // Set timeout to generate puzzle at the next hour
+    setTimeout(async () => {
+      try {
+        // Get current date and hour
+        const now = new Date();
+        const currentDate = now.toISOString().split('T')[0]; // Get YYYY-MM-DD format
+        const currentHour = now.getHours();
         
-        // Log the data from the hourly puzzle
-        console.log("Hourly puzzle data:", {
-          startWord: hourlyPuzzle.startWord,
-          targetWord: hourlyPuzzle.targetWord,
-          minExpectedSteps: hourlyPuzzle.minExpectedSteps,
-          hiddenSolutionLength: hourlyPuzzle.hiddenSolution ? hourlyPuzzle.hiddenSolution.length : 'N/A'
-        });
-        
-        // Calculate minExpectedSteps if needed
-        let calculatedMinSteps = hourlyPuzzle.minExpectedSteps;
-        if (calculatedMinSteps === undefined && hourlyPuzzle.hiddenSolution) {
-          calculatedMinSteps = hourlyPuzzle.hiddenSolution.length - 1;
-          console.log(`Calculated minExpectedSteps: ${calculatedMinSteps} from hiddenSolution length: ${hourlyPuzzle.hiddenSolution.length}`);
+        // Reset game generation counter if it's a new day
+        if (currentGame.gameDate !== currentDate) {
+          console.log(`New day detected, resetting game generation counter`);
+          apiLimits.gamesGenerated = 0;
+          currentGame.gameDate = currentDate;
         }
         
-        // Update the current game state with the found puzzle
-        currentGame = {
-          ...hourlyPuzzle,
-          gameDate: currentDate,
-          minExpectedSteps: calculatedMinSteps,
-          stats: currentGame.stats // Preserve existing stats
-        };
+        console.log(`Hourly scheduler running at hour ${currentHour}...`);
         
-        // Log the updated current game
-        console.log("Updated current game:", {
-          startWord: currentGame.startWord,
-          targetWord: currentGame.targetWord,
-          minExpectedSteps: currentGame.minExpectedSteps
-        });
+        // First check if we already have a puzzle from the current hour
+        const hourlyPuzzle = await puzzleRepository.getPuzzleFromCurrentHour();
+        
+        if (hourlyPuzzle) {
+          console.log(`Using existing puzzle for hour ${currentHour}: ${hourlyPuzzle.startWord} → ${hourlyPuzzle.targetWord}`);
+          
+          // Log the data from the hourly puzzle
+          console.log("Hourly puzzle data:", {
+            startWord: hourlyPuzzle.startWord,
+            targetWord: hourlyPuzzle.targetWord,
+            minExpectedSteps: hourlyPuzzle.minExpectedSteps,
+            hiddenSolutionLength: hourlyPuzzle.hiddenSolution ? hourlyPuzzle.hiddenSolution.length : 'N/A'
+          });
+          
+          // Calculate minExpectedSteps if needed
+          let calculatedMinSteps = hourlyPuzzle.minExpectedSteps;
+          if (calculatedMinSteps === undefined && hourlyPuzzle.hiddenSolution) {
+            calculatedMinSteps = hourlyPuzzle.hiddenSolution.length - 1;
+            console.log(`Calculated minExpectedSteps: ${calculatedMinSteps} from hiddenSolution length: ${hourlyPuzzle.hiddenSolution.length}`);
+          }
+          
+          // Update the current game state with the found puzzle
+          currentGame = {
+            ...hourlyPuzzle,
+            gameDate: currentDate,
+            minExpectedSteps: calculatedMinSteps,
+            stats: currentGame.stats // Preserve existing stats
+          };
+          
+          // Log the updated current game
+          console.log("Updated current game:", {
+            startWord: currentGame.startWord,
+            targetWord: currentGame.targetWord,
+            minExpectedSteps: currentGame.minExpectedSteps
+          });
+        } else {
+          // No existing puzzle for this hour, generate a new one
+          console.log("No puzzle found for current hour, generating a new one...");
+          await generatePuzzle();
+          apiLimits.gamesGenerated++;
+          console.log(`New game generated by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
+        }
         
         // Update next game time
         nextGameTime = new Date();
@@ -985,42 +1006,23 @@ if (process.env.NODE_ENV !== 'test') {
         nextGameTime.setMinutes(0);
         nextGameTime.setSeconds(0);
         
-        console.log(`Game updated from existing hourly puzzle. Next game at ${nextGameTime.toISOString()}`);
-        return;
-      }
-      
-      // No existing puzzle for this hour, decide whether to generate a new one
-      
-      // Override the game limit check to ensure we get at least a few new games per day
-      // to fix the issue of having the same words repeatedly
-      
-      // Always generate a new game at specific hours regardless of counter
-      const forceRefreshHours = [0, 6, 12, 18]; // Midnight, 6am, noon, 6pm
-      const shouldForceRefresh = forceRefreshHours.includes(currentHour);
-      
-      // Use repository hours - hours when we prefer to use saved puzzles to save API calls
-      const useRepositoryHours = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23];
-      const shouldUseRepository = useRepositoryHours.includes(currentHour);
-      
-      if (shouldForceRefresh || apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
-        console.log("Creating new game for current hour...");
+        console.log(`Next game scheduled for ${nextGameTime.toISOString()}`);
         
-        // If it's a force refresh hour, always generate a new puzzle
-        // Otherwise use repository on repository hours (to save API calls), and generate new puzzles on other hours
-        const useRepo = !shouldForceRefresh && shouldUseRepository;
+        // Schedule the next generation
+        scheduleNextHourGeneration();
+      } catch (error) {
+        console.error('Scheduler failed to generate game:', error);
+        // No fallback - if game generation fails, we won't have a game
+        console.log('No game available until next successful generation attempt');
         
-        await generatePuzzle(useRepo);
-        apiLimits.gamesGenerated++;
-        console.log(`New game ${useRepo ? 'loaded from repository' : 'generated'} by scheduler (${apiLimits.gamesGenerated}/${apiLimits.gameGenerationPerDay} today)`);
-      } else {
-        console.log(`Game generation skipped - daily limit of ${apiLimits.gameGenerationPerDay} reached`);
+        // Even if we fail, schedule the next attempt
+        scheduleNextHourGeneration();
       }
-    } catch (error) {
-      console.error('Scheduler failed to generate game:', error);
-      // No fallback - if game generation fails, we won't have a game
-      console.log('No game available until next successful generation attempt');
-    }
-  }, 3600000); // Check every hour (3,600,000 ms)
+    }, timeUntilNextHour);
+  }
+  
+  // Start the hourly scheduling
+  scheduleNextHourGeneration();
 }
 
 // Start the server

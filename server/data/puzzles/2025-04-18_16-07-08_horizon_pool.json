@@ -1,0 +1,20 @@
+{
+  "startWord": "horizon",
+  "targetWord": "pool",
+  "theme": "Expanding Perspectives",
+  "description": "Journey from distant views to intimate reflections, exploring shifts in perception and scale.",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "horizon",
+    "landscape",
+    "flower",
+    "vase",
+    "water",
+    "swimming",
+    "pool"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T16:07:08.856Z",
+  "timestamp": 1744992428856
+}

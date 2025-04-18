@@ -99,12 +99,34 @@ async function getRandomPuzzle() {
     
     const puzzle = await loadPuzzleByFilename(randomFile);
     
-    // Log timestamp information if available
-    if (puzzle && puzzle.generatedAt) {
-      console.log(`Puzzle was generated at: ${puzzle.generatedAt}`);
+    // Validate puzzle data before returning
+    if (puzzle && puzzle.startWord && puzzle.targetWord) {
+      // Log timestamp information if available
+      if (puzzle.generatedAt) {
+        console.log(`Puzzle was generated at: ${puzzle.generatedAt}`);
+      }
+      
+      // Verify that hiddenSolution is properly formed - this is critical
+      if (!Array.isArray(puzzle.hiddenSolution) || puzzle.hiddenSolution.length < 2) {
+        console.warn(`Warning: Puzzle ${randomFile} has invalid hiddenSolution - creating fallback path`);
+        // Create a minimal valid path from start to target
+        puzzle.hiddenSolution = [puzzle.startWord, puzzle.targetWord];
+        // Also update minExpectedSteps to match path length
+        puzzle.minExpectedSteps = 1;
+      } else {
+        console.log(`Hidden path: ${puzzle.hiddenSolution.join(' → ')}`);
+        // Make sure minExpectedSteps is consistent with the path
+        if (puzzle.minExpectedSteps === undefined || puzzle.minExpectedSteps === null) {
+          puzzle.minExpectedSteps = puzzle.hiddenSolution.length - 1;
+          console.log(`Set missing minExpectedSteps to ${puzzle.minExpectedSteps}`);
+        }
+      }
+      
+      return puzzle;
+    } else {
+      console.warn(`Warning: Invalid puzzle data in ${randomFile}`);
+      return null;
     }
-    
-    return puzzle;
   } catch (error) {
     console.error('Error getting random puzzle:', error);
     return null;
@@ -152,8 +174,36 @@ async function getFallbackPuzzle() {
       console.log(`Using newest puzzle file: ${puzzleFiles[0]}`);
     }
     
-    // Get the newest puzzle
-    return await loadPuzzleByFilename(puzzleFiles[0]);
+    // Try to get a valid puzzle from the most recent files
+    // If the first one is invalid, try others until we find a valid one
+    for (let i = 0; i < Math.min(puzzleFiles.length, 5); i++) {
+      const puzzle = await loadPuzzleByFilename(puzzleFiles[i]);
+      
+      // Validate the puzzle
+      if (puzzle && puzzle.startWord && puzzle.targetWord) {
+        // Verify that hiddenSolution is properly formed
+        if (!Array.isArray(puzzle.hiddenSolution) || puzzle.hiddenSolution.length < 2) {
+          console.warn(`Warning: Fallback puzzle ${puzzleFiles[i]} has invalid hiddenSolution - creating fallback path`);
+          // Create a minimal valid path
+          puzzle.hiddenSolution = [puzzle.startWord, puzzle.targetWord];
+          puzzle.minExpectedSteps = 1;
+        } else {
+          console.log(`Fallback puzzle hidden path: ${puzzle.hiddenSolution.join(' → ')}`);
+          // Make sure minExpectedSteps is consistent with the path
+          if (puzzle.minExpectedSteps === undefined || puzzle.minExpectedSteps === null) {
+            puzzle.minExpectedSteps = puzzle.hiddenSolution.length - 1;
+            console.log(`Set missing minExpectedSteps to ${puzzle.minExpectedSteps}`);
+          }
+        }
+        
+        return puzzle;
+      } else {
+        console.warn(`Warning: Invalid fallback puzzle data in ${puzzleFiles[i]}, trying next file`);
+      }
+    }
+    
+    console.warn(`Failed to find any valid fallback puzzles after checking ${Math.min(puzzleFiles.length, 5)} files`);
+    return null;
   } catch (error) {
     console.error('Error getting fallback puzzle:', error);
     return null;
@@ -190,7 +240,30 @@ async function getPuzzleFromCurrentHour() {
         // Check if puzzle is from the current date and hour
         if (puzzleDate === currentDate && puzzleHour === currentHour) {
           console.log(`Found puzzle from current hour (${currentHour}:00): ${file}`);
-          return puzzle;
+          
+          // Validate puzzle data before returning
+          if (puzzle && puzzle.startWord && puzzle.targetWord) {
+            // Verify that hiddenSolution is properly formed - this is critical
+            if (!Array.isArray(puzzle.hiddenSolution) || puzzle.hiddenSolution.length < 2) {
+              console.warn(`Warning: Puzzle ${file} has invalid hiddenSolution - creating fallback path`);
+              // Create a minimal valid path from start to target
+              puzzle.hiddenSolution = [puzzle.startWord, puzzle.targetWord];
+              // Also update minExpectedSteps to match path length
+              puzzle.minExpectedSteps = 1;
+            } else {
+              console.log(`Hidden path: ${puzzle.hiddenSolution.join(' → ')}`);
+              // Make sure minExpectedSteps is consistent with the path
+              if (puzzle.minExpectedSteps === undefined || puzzle.minExpectedSteps === null) {
+                puzzle.minExpectedSteps = puzzle.hiddenSolution.length - 1;
+                console.log(`Set missing minExpectedSteps to ${puzzle.minExpectedSteps}`);
+              }
+            }
+            
+            return puzzle;
+          } else {
+            console.warn(`Warning: Invalid puzzle data in ${file}`);
+            continue; // Try the next file
+          }
         }
       }
     }

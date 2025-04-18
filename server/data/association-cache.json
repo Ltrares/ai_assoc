@@ -13330,5 +13330,181 @@
       "word": "jacket",
       "hint": "outerwear for upper body"
     }
+  ],
+  "safari": [
+    "animal",
+    "Africa",
+    "jeep",
+    "lion",
+    "elephant",
+    "binocular",
+    "savanna",
+    "guide"
+  ],
+  "safari_detailed": [
+    {
+      "word": "animal",
+      "hint": "wildlife encountered on safari"
+    },
+    {
+      "word": "Africa",
+      "hint": "continent most associated with safaris"
+    },
+    {
+      "word": "jeep",
+      "hint": "vehicle commonly used for safari tours"
+    },
+    {
+      "word": "lion",
+      "hint": "iconic African predator often seen on safari"
+    },
+    {
+      "word": "elephant",
+      "hint": "large mammal frequently spotted on safari"
+    },
+    {
+      "word": "binocular",
+      "hint": "optical device used for viewing distant wildlife"
+    },
+    {
+      "word": "savanna",
+      "hint": "grassland ecosystem where safaris often take place"
+    },
+    {
+      "word": "guide",
+      "hint": "expert who leads safari expeditions"
+    }
+  ],
+  "savanna": [
+    "lion",
+    "grass",
+    "acacia",
+    "zebra",
+    "elephant",
+    "giraffe",
+    "Africa",
+    "drought"
+  ],
+  "savanna_detailed": [
+    {
+      "word": "lion",
+      "hint": "large predator common in African savannas"
+    },
+    {
+      "word": "grass",
+      "hint": "dominant vegetation in savanna ecosystems"
+    },
+    {
+      "word": "acacia",
+      "hint": "tree species typical of savanna landscapes"
+    },
+    {
+      "word": "zebra",
+      "hint": "striped herbivore found in African savannas"
+    },
+    {
+      "word": "elephant",
+      "hint": "large mammal often associated with savanna habitats"
+    },
+    {
+      "word": "giraffe",
+      "hint": "long-necked animal iconic to African savannas"
+    },
+    {
+      "word": "Africa",
+      "hint": "continent where many savannas are located"
+    },
+    {
+      "word": "drought",
+      "hint": "periodic dry conditions in savanna climates"
+    }
+  ],
+  "zebra": [
+    "stripe",
+    "africa",
+    "savanna",
+    "herd",
+    "horse",
+    "black",
+    "white",
+    "safari"
+  ],
+  "zebra_detailed": [
+    {
+      "word": "stripe",
+      "hint": "black and white pattern on zebra's coat"
+    },
+    {
+      "word": "africa",
+      "hint": "continent where zebras are native"
+    },
+    {
+      "word": "savanna",
+      "hint": "grassland habitat of zebras"
+    },
+    {
+      "word": "herd",
+      "hint": "group of zebras"
+    },
+    {
+      "word": "horse",
+      "hint": "similar equine animal"
+    },
+    {
+      "word": "black",
+      "hint": "one of the two colors of a zebra's coat"
+    },
+    {
+      "word": "white",
+      "hint": "one of the two colors of a zebra's coat"
+    },
+    {
+      "word": "safari",
+      "hint": "wildlife expedition where zebras might be seen"
+    }
+  ],
+  "white": [
+    "snow",
+    "cloud",
+    "paper",
+    "milk",
+    "ivory",
+    "cotton",
+    "chalk",
+    "polar bear"
+  ],
+  "white_detailed": [
+    {
+      "word": "snow",
+      "hint": "frozen precipitation that is white in color"
+    },
+    {
+      "word": "cloud",
+      "hint": "visible mass of water droplets in the sky"
+    },
+    {
+      "word": "paper",
+      "hint": "material commonly used for writing or printing"
+    },
+    {
+      "word": "milk",
+      "hint": "white liquid produced by mammals"
+    },
+    {
+      "word": "ivory",
+      "hint": "hard white material from animal tusks"
+    },
+    {
+      "word": "cotton",
+      "hint": "soft white fibrous substance from cotton plants"
+    },
+    {
+      "word": "chalk",
+      "hint": "soft white limestone used for writing"
+    },
+    {
+      "word": "polar bear",
+      "hint": "large white Arctic mammal"
+    }
   ]
 }

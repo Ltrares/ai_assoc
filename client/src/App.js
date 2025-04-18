@@ -2,6 +2,52 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import * as Tone from 'tone';
 import './App.css';
 
+// Timer component to display countdown to next puzzle
+function NewPuzzleTimer({ nextGameTime }) {
+  const [timeRemaining, setTimeRemaining] = useState("");
+  
+  useEffect(() => {
+    // Function to calculate and format time remaining
+    const updateTimeRemaining = () => {
+      // Parse the nextGameTime string to a Date object if it's a string
+      const targetTime = typeof nextGameTime === 'string' 
+        ? new Date(nextGameTime) 
+        : nextGameTime;
+      
+      // Calculate time difference
+      const now = new Date();
+      const diff = targetTime - now;
+      
+      // If time is up or invalid, show a generic message
+      if (isNaN(diff) || diff <= 0) {
+        setTimeRemaining("New puzzle coming soon");
+        return;
+      }
+      
+      // Format minutes and seconds as MM:SS
+      const minutes = Math.floor(diff / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      
+      // Format with leading zeros
+      const formattedMinutes = String(minutes).padStart(2, '0');
+      const formattedSeconds = String(seconds).padStart(2, '0');
+      
+      setTimeRemaining(`New puzzle in ${formattedMinutes}:${formattedSeconds}`);
+    };
+    
+    // Update immediately
+    updateTimeRemaining();
+    
+    // Then update every second
+    const interval = setInterval(updateTimeRemaining, 1000);
+    
+    // Clean up interval on component unmount
+    return () => clearInterval(interval);
+  }, [nextGameTime]);
+  
+  return <span>{timeRemaining}</span>;
+}
+
 function App() {
   const [game, setGame] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -22,11 +68,26 @@ function App() {
   const synthRef = useRef(null); // Reference to synth object
   const sequenceRef = useRef(null); // Reference to sequence
 
-  // Get base API URL based on environment
-  const getApiUrl = () => {
-    // In production, use relative URLs
+  // Get base API URL based on environment 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const getApiUrl = useCallback(() => {
+    const hostname = window.location.hostname;
+    
+    // If we're running locally (localhost or 127.0.0.1)
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      // In development mode, the proxy in package.json will handle redirecting '/api' to the server
+      if (process.env.NODE_ENV === 'development') {
+        return '/api';
+      } else {
+        // If running in production mode locally, explicit port is needed
+        // The proxy in package.json points to port 5050
+        return 'http://localhost:5050/api';
+      }
+    }
+    
+    // For Heroku or other production environments, use relative URL
     return '/api';
-  };
+  }, []);
 
   // Function to save progress to localStorage
   const saveProgress = (gameData, currentPath, currBackSteps, currTotalSteps) => {
@@ -422,7 +483,7 @@ function App() {
     setShowHints(false);
     setLoadingAssociations(false);
     setIsRestoringProgress(false);
-    clearSavedProgress();
+    localStorage.removeItem('wordGameProgress'); // Directly clear saved progress
   };
   
   // Load or reload game data (wrapped in useCallback to avoid recreating on every render)
@@ -445,13 +506,21 @@ function App() {
         // Check if we received a new game (different from current game)
         const isNewGame = !game || data.gameDate !== game.gameDate;
         
+        // Log game data for debugging
+        console.log("Game data received from server:", {
+          startWord: data.startWord,
+          targetWord: data.targetWord,
+          minExpectedSteps: data.minExpectedSteps,
+          nextGameTime: data.nextGameTime
+        });
+        
         // Always set the game data
         setGame(data);
         
         // If it's a new game, clear any saved progress
         if (isNewGame) {
           console.log('New game detected - resetting progress');
-          clearSavedProgress();
+          localStorage.removeItem('wordGameProgress');
           setGameComplete(false);
         }
         
@@ -537,9 +606,11 @@ function App() {
         setLoading(false);
         setIsRestoringProgress(false);
       });
-  }, [getApiUrl, game]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getApiUrl]);
   
   // Initial game load on component mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     resetGameState();
     loadGameData();
@@ -571,22 +642,24 @@ function App() {
       setLoadingAssociations(false); // Reset loading state
       
       // Clear saved progress when the game is completed
-      clearSavedProgress();
+      localStorage.removeItem('wordGameProgress');
       
-      // Submit result to server with total steps (including back steps)
-      fetch(`${getApiUrl()}/game/complete`, {
+      // Submit result to server with path and step stats for verification
+      fetch(`${getApiUrl()}/verify`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
-          steps: newPath.length - 1, // Path length minus start word
-          backSteps: backSteps,      // Number of back steps
-          totalSteps: newTotalSteps  // Total steps including backs
+          path: newPath, // The complete path including start and target
+          backSteps: backSteps, // Number of back steps
+          totalSteps: newTotalSteps // Total steps including forward and back
         })
       })
         .then(response => response.json())
         .then(data => {
-          // Update game with new stats
-          setGame({...game, stats: data.stats});
+          // Update game with stats from server if available
+          if (data && data.success && data.stats) {
+            setGame({...game, stats: data.stats});
+          }
         })
         .catch(err => {
           console.error('Error submitting results:', err);
@@ -631,10 +704,8 @@ function App() {
     // Set loading state
     setLoadingAssociations(true);
     
-    // Convert path to JSON string for the query parameter
-    const pathJson = JSON.stringify(path);
-    
-    fetch(`${getApiUrl()}/game/hint?progress=${encodeURIComponent(pathJson)}`)
+    // Get hint for the current word
+    fetch(`${getApiUrl()}/hint/${currentWord}`)
       .then(response => response.json())
       .then(data => {
         setHint(data.hint);
@@ -770,13 +841,17 @@ function App() {
           </div>
         )}
         <h1>Word Association Game</h1>
-        <p>Find your way from <strong>{game.startWord}</strong> to <strong>{game.targetWord}</strong> using word associations!</p>
+        <p>Find your way from <strong style={{color: '#ffcc00'}}>{game.startWord}</strong> to <strong style={{color: '#ffcc00'}}>{game.targetWord}</strong> using word associations!</p>
         <div className="game-info">
           <div className="game-theme">
-            {game.minExpectedSteps && <span className="min-steps">Par: {game.minExpectedSteps}</span>}
+            {(game.minExpectedSteps !== undefined && game.minExpectedSteps !== null) && 
+              <span className="min-steps">Par: {game.minExpectedSteps}</span>
+            }
           </div>
           <div className="refresh-timer">
-            New puzzle available every hour
+            {game.nextGameTime && (
+              <NewPuzzleTimer nextGameTime={game.nextGameTime} />
+            )}
           </div>
         </div>
         
@@ -790,7 +865,7 @@ function App() {
                 <div className="solution-theme">
                   <strong>Theme:</strong> {game.theme}
                 </div>
-                {game.minExpectedSteps && (
+                {(game.minExpectedSteps !== undefined && game.minExpectedSteps !== null) && (
                   <div className="solution-steps">
                     <strong>Par:</strong> {game.minExpectedSteps}
                     {path.length - 1 < game.minExpectedSteps && (
@@ -806,29 +881,47 @@ function App() {
                 )}
               </div>
             )}
-            <p className="stats-divider">Game Statistics</p>
-            <div className="stats-grid">
-              <div className="stat-box">
-                <div className="stat-title">Path Length</div>
-                <div className="stat-value">{game.stats.averageSteps.toFixed(1)}</div>
-                <div className="stat-label">avg</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-title">Back Steps</div>
-                <div className="stat-value">{game.stats.averageBackSteps.toFixed(1)}</div>
-                <div className="stat-label">avg</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-title">Total Moves</div>
-                <div className="stat-value">{game.stats.averageTotalSteps.toFixed(1)}</div>
-                <div className="stat-label">avg</div>
-              </div>
-              <div className="stat-box">
-                <div className="stat-title">Plays</div>
-                <div className="stat-value">{game.stats.totalPlays}</div>
-                <div className="stat-label">today</div>
-              </div>
-            </div>
+            {game.stats && (
+              <>
+                <p className="stats-divider">Game Statistics</p>
+                <div className="stats-grid">
+                  <div className="stat-box">
+                    <div className="stat-title">Path Length</div>
+                    <div className="stat-value">
+                      {game.stats.averageSteps ? Number(game.stats.averageSteps).toFixed(1) : path.length - 1}
+                    </div>
+                    <div className="stat-label">
+                      {game.stats.averageSteps ? 'avg' : 'your score'}
+                    </div>
+                  </div>
+                  <div className="stat-box">
+                    <div className="stat-title">Back Steps</div>
+                    <div className="stat-value">
+                      {game.stats.averageBackSteps ? Number(game.stats.averageBackSteps).toFixed(1) : backSteps}
+                    </div>
+                    <div className="stat-label">
+                      {game.stats.averageBackSteps ? 'avg' : 'your score'}
+                    </div>
+                  </div>
+                  <div className="stat-box">
+                    <div className="stat-title">Total Moves</div>
+                    <div className="stat-value">
+                      {game.stats.averageTotalSteps ? Number(game.stats.averageTotalSteps).toFixed(1) : totalSteps}
+                    </div>
+                    <div className="stat-label">
+                      {game.stats.averageTotalSteps ? 'avg' : 'your score'}
+                    </div>
+                  </div>
+                  <div className="stat-box">
+                    <div className="stat-title">Plays</div>
+                    <div className="stat-value">
+                      {game.stats.totalPlays || 1}
+                    </div>
+                    <div className="stat-label">today</div>
+                  </div>
+                </div>
+              </>
+            )}
             <div className="path-display">
               Your path: {path.join(' → ')}
             </div>
@@ -836,9 +929,6 @@ function App() {
               <button onClick={() => window.location.reload()} className="play-again-button">
                 Play Again
               </button>
-              <div className="next-puzzle-timer">
-                New puzzle available every hour
-              </div>
             </div>
             <div className="win-footer">
               <a href="/about">About</a>
@@ -913,31 +1003,42 @@ function App() {
                   <p>Loading associations...</p>
                 </div>
               ) : (
-                <div className={`word-buttons ${showHints ? 'with-details' : ''}`}>
-                  {associations && associations.length > 0 ? associations.map((word, index) => {
-                    // Find the detailed association if available
-                    const details = detailedAssociations && detailedAssociations.length > 0 
-                      ? detailedAssociations.find(d => d.word === word)
-                      : null;
-                    
-                    return (
-                      <div key={index} className="word-option">
-                        <button 
-                          onClick={() => handleWordSelect(word)}
-                          disabled={(path && path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim())) || loadingAssociations}
-                          className={(path && path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim())) ? 'used' : ''}
-                        >
-                          {word}
-                        </button>
-                        {showHints && details && details.hint && (
-                          <div className="word-details">
-                            <p className="connection-hint">{details.hint}</p>
+                <div className={`word-buttons two-columns ${showHints ? 'with-details' : ''}`}>
+                  {associations && associations.length > 0 ? (
+                    // Filter out words already used in the path
+                    associations
+                      .filter(word => !path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim()))
+                      .map((word, index) => {
+                        // Find the detailed association if available
+                        const details = detailedAssociations && detailedAssociations.length > 0 
+                          ? detailedAssociations.find(d => d.word === word)
+                          : null;
+                        
+                        return (
+                          <div key={index} className="word-option">
+                            <button 
+                              onClick={() => handleWordSelect(word)}
+                              disabled={loadingAssociations}
+                              // No need for 'used' class since we filter them out entirely
+                            >
+                              {word}
+                            </button>
+                            {showHints && details && details.hint && (
+                              <div className="word-details">
+                                <p className="connection-hint">{details.hint}</p>
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </div>
-                    );
-                  }) : (
+                        );
+                      })
+                  ) : (
                     <div className="no-associations">No associations available</div>
+                  )}
+                  
+                  {/* Show a message if all associations are filtered out because they've been used */}
+                  {associations && associations.length > 0 && 
+                   !associations.some(word => !path.some(p => p.toLowerCase().trim() === word.toLowerCase().trim())) && (
+                    <div className="no-associations">All associations have been used. Try going back.</div>
                   )}
                 </div>
               )}
