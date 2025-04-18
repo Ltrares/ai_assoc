@@ -2,9 +2,10 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import * as Tone from 'tone';
 import './App.css';
 
-// Timer component to display countdown to next puzzle
-function NewPuzzleTimer({ nextGameTime }) {
+// Timer component to display countdown to next puzzle or a button when time is up
+function NewPuzzleTimer({ nextGameTime, onLoadNewPuzzle }) {
   const [timeRemaining, setTimeRemaining] = useState("");
+  const [isTimeUp, setIsTimeUp] = useState(false);
   
   useEffect(() => {
     // Function to calculate and format time remaining
@@ -18,11 +19,15 @@ function NewPuzzleTimer({ nextGameTime }) {
       const now = new Date();
       const diff = targetTime - now;
       
-      // If time is up or invalid, show a generic message
+      // If time is up or invalid, show a button
       if (isNaN(diff) || diff <= 0) {
-        setTimeRemaining("New puzzle coming soon");
+        setTimeRemaining("New puzzle available!");
+        setIsTimeUp(true);
         return;
       }
+      
+      // Time is not up yet
+      setIsTimeUp(false);
       
       // Format minutes and seconds as MM:SS
       const minutes = Math.floor(diff / 60000);
@@ -45,7 +50,31 @@ function NewPuzzleTimer({ nextGameTime }) {
     return () => clearInterval(interval);
   }, [nextGameTime]);
   
-  return <span>{timeRemaining}</span>;
+  // Handle loading the new puzzle
+  const handleLoadNewPuzzle = () => {
+    // Show a loading message
+    setTimeRemaining("Loading new puzzle...");
+    setIsTimeUp(false);
+    
+    // Call the provided callback
+    if (onLoadNewPuzzle) {
+      onLoadNewPuzzle();
+    } else {
+      // Fallback if callback not provided
+      window.location.reload();
+    }
+  };
+  
+  return isTimeUp ? (
+    <button 
+      onClick={handleLoadNewPuzzle} 
+      className="new-puzzle-button"
+    >
+      Load New Puzzle
+    </button>
+  ) : (
+    <span>{timeRemaining}</span>
+  );
 }
 
 function App() {
@@ -487,7 +516,12 @@ function App() {
   };
   
   // Load or reload game data (wrapped in useCallback to avoid recreating on every render)
-  const loadGameData = useCallback(() => {
+  const loadGameData = useCallback((shouldReset = false) => {
+    // Reset game state if requested
+    if (shouldReset) {
+      resetGameState();
+    }
+    
     // Reset loading state first
     setLoading(true);
     setError('');
@@ -612,8 +646,8 @@ function App() {
   // Initial game load on component mount
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    resetGameState();
-    loadGameData();
+    // Load game data with reset (the reset is now handled within loadGameData)
+    loadGameData(true);
   }, []);
 
   // Handle word selection
@@ -627,17 +661,20 @@ function App() {
     // Set loading state
     setLoadingAssociations(true);
     
+    // Sanitize input on client side (basic XSS protection)
+    const sanitizedWord = word.trim().toLowerCase();
+    
     // Add word to path
-    const newPath = [...path, word];
+    const newPath = [...path, sanitizedWord];
     setPath(newPath);
-    setCurrentWord(word);
+    setCurrentWord(sanitizedWord);
     
     // Increment total steps (forward step)
     const newTotalSteps = totalSteps + 1;
     setTotalSteps(newTotalSteps);
     
     // Check if target word reached (normalize case and whitespace)
-    if (word.toLowerCase().trim() === game.targetWord.toLowerCase().trim()) {
+    if (sanitizedWord === game.targetWord.toLowerCase().trim()) {
       setGameComplete(true);
       setLoadingAssociations(false); // Reset loading state
       
@@ -667,7 +704,7 @@ function App() {
         });
     } else {
       // Get new associations with detailed info
-      fetch(`${getApiUrl()}/associations/${word}?detailed=true`)
+      fetch(`${getApiUrl()}/associations/${sanitizedWord}?detailed=true`)
         .then(response => response.json())
         .then(data => {
           setAssociations(data.associations);
@@ -704,8 +741,11 @@ function App() {
     // Set loading state
     setLoadingAssociations(true);
     
+    // Sanitize input before sending to API
+    const sanitizedCurrentWord = currentWord.trim().toLowerCase();
+    
     // Get hint for the current word
-    fetch(`${getApiUrl()}/hint/${currentWord}`)
+    fetch(`${getApiUrl()}/hint/${sanitizedCurrentWord}`)
       .then(response => response.json())
       .then(data => {
         setHint(data.hint);
@@ -783,7 +823,7 @@ function App() {
       refreshTimer = setInterval(() => {
         console.log('Auto-checking for puzzle availability...');
         // Use our loadGameData function instead of full page reload
-        loadGameData();
+        loadGameData(true);
       }, 10000); // Check every 10 seconds
     }
     
@@ -822,7 +862,7 @@ function App() {
             )}
           </div>
           <button 
-            onClick={() => isPuzzleGenerating ? loadGameData() : window.location.reload()}
+            onClick={() => isPuzzleGenerating ? loadGameData(true) : window.location.reload()}
             className={isPuzzleGenerating ? "primary-button" : ""}
           >
             {isPuzzleGenerating ? "Check Now" : "Try Again"}
@@ -850,7 +890,10 @@ function App() {
           </div>
           <div className="refresh-timer">
             {game.nextGameTime && (
-              <NewPuzzleTimer nextGameTime={game.nextGameTime} />
+              <NewPuzzleTimer 
+                nextGameTime={game.nextGameTime} 
+                onLoadNewPuzzle={() => loadGameData(true)}
+              />
             )}
           </div>
         </div>

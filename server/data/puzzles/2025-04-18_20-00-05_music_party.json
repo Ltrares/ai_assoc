@@ -1,0 +1,20 @@
+{
+  "startWord": "music",
+  "targetWord": "party",
+  "theme": "Celebration Evolution",
+  "description": "Tracing the progression from individual musical experiences to full-scale social gatherings",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "music",
+    "concert",
+    "ticket",
+    "lottery",
+    "winner",
+    "celebration",
+    "party"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T20:00:05.922Z",
+  "timestamp": 1745006405922
+}

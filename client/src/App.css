@@ -314,6 +314,9 @@ button:disabled, button.used {
   padding: 0.4rem 1rem;
   border-radius: 0.75rem;
   border-left: 2px solid #ffcc00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown {
@@ -325,6 +328,26 @@ button:disabled, button.used {
   font-weight: bold;
   color: #61dafb;
   animation: pulse 1.5s infinite;
+}
+
+.new-puzzle-button {
+  background-color: #ffcc00;
+  color: #282c34;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  animation: pulse 1.5s infinite;
+}
+
+.new-puzzle-button:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes pulse {

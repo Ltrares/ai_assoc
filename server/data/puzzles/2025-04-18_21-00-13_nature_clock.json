@@ -1,0 +1,20 @@
+{
+  "startWord": "nature",
+  "targetWord": "clock",
+  "theme": "Nature's Timekeepers",
+  "description": "Exploring natural phenomena that mark the passage of time in ecosystems",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "nature",
+    "mountain",
+    "view",
+    "panorama",
+    "360-degree",
+    "rotation",
+    "clock"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T21:00:13.461Z",
+  "timestamp": 1745010013461
+}

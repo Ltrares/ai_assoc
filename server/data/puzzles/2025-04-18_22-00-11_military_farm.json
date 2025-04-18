@@ -1,0 +1,20 @@
+{
+  "startWord": "military",
+  "targetWord": "farm",
+  "theme": "Strategic Resource Management",
+  "description": "Exploring how military logistics and farming both involve careful resource allocation and planning.",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "military",
+    "drill",
+    "team",
+    "sport",
+    "stadium",
+    "field",
+    "farm"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T22:00:11.300Z",
+  "timestamp": 1745013611300
+}

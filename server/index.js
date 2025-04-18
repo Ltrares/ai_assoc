@@ -8,6 +8,7 @@ const Anthropic = require('@anthropic-ai/sdk');
 // Import shared puzzle generator module and puzzle repository
 const puzzleGenerator = require('./lib/puzzle-generator');
 const puzzleRepository = require('./lib/puzzle-repository');
+const { sanitizeInput } = require('./lib/input-sanitizer');
 
 // Get environment variables
 require('dotenv').config();
@@ -244,13 +245,13 @@ async function getHintFromAI(startWord, targetWord, currentWord) {
       throw new Error('API daily limit reached - unable to generate hint');
     }
     
-    // Normalize for consistent caching
-    const normalizedStart = startWord.toLowerCase().trim();
-    const normalizedTarget = targetWord.toLowerCase().trim();
-    const normalizedCurrent = currentWord.toLowerCase().trim();
+    // Sanitize input for secure usage
+    const sanitizedStart = sanitizeInput(startWord);
+    const sanitizedTarget = sanitizeInput(targetWord);
+    const sanitizedCurrent = sanitizeInput(currentWord);
     
     // Create a cache key
-    const cacheKey = `${normalizedStart}-${normalizedTarget}-${normalizedCurrent}`;
+    const cacheKey = `${sanitizedStart}-${sanitizedTarget}-${sanitizedCurrent}`;
     
     // Check hint cache first
     if (hintCache[cacheKey]) {
@@ -272,9 +273,9 @@ async function getHintFromAI(startWord, targetWord, currentWord) {
       messages: [
         {
           role: "user",
-          content: `I am playing a word association game. I need to find a path from "${startWord}" to "${targetWord}" by finding words that are associated with each other. I'm currently at "${currentWord}".
+          content: `I am playing a word association game. I need to find a path from "${sanitizedStart}" to "${sanitizedTarget}" by finding words that are associated with each other. I'm currently at "${sanitizedCurrent}".
 
-Give me a subtle hint for a word that's associated with "${currentWord}" and will help me move toward "${targetWord}". 
+Give me a subtle hint for a word that's associated with "${sanitizedCurrent}" and will help me move toward "${sanitizedTarget}". 
 
 Your hint should:
 1. NOT directly reveal any next words
@@ -477,11 +478,12 @@ app.get('/api/associations/:word', async (req, res) => {
       });
     }
     
-    const { word } = req.params;
+    // Sanitize input parameters
+    const word = sanitizeInput(req.params.word);
     const wantDetailed = req.query.detailed === 'true';
     
     // Validate input
-    if (!word || typeof word !== 'string' || word.length < 1) {
+    if (!word || word.length < 1) {
       return res.status(400).json({ error: 'Invalid word parameter' });
     }
     
@@ -541,12 +543,15 @@ app.post('/api/verify', (req, res) => {
       return res.status(400).json({ error: 'Invalid path submitted' });
     }
     
+    // Sanitize each word in the path
+    const sanitizedPath = path.map(word => sanitizeInput(word));
+    
     // Verify path starts with the correct start word and ends with the target
-    if (path[0].toLowerCase() !== currentGame.startWord.toLowerCase()) {
+    if (sanitizedPath[0] !== sanitizeInput(currentGame.startWord)) {
       return res.status(400).json({ error: 'Path must start with the start word' });
     }
     
-    if (path[path.length - 1].toLowerCase() !== currentGame.targetWord.toLowerCase()) {
+    if (sanitizedPath[sanitizedPath.length - 1] !== sanitizeInput(currentGame.targetWord)) {
       return res.status(400).json({ error: 'Path must end with the target word' });
     }
     
@@ -578,9 +583,9 @@ app.post('/api/verify', (req, res) => {
     // Success response with complete stats
     res.json({
       success: true,
-      path,
+      path: sanitizedPath,
       stats: {
-        stepsUsed: path.length - 1,
+        stepsUsed: sanitizedPath.length - 1,
         totalPlays: currentGame.stats.totalPlays,
         completions: currentGame.stats.completions,
         averageSteps: currentGame.stats.averageSteps,
@@ -608,10 +613,11 @@ app.get('/api/hint/:currentWord', async (req, res) => {
       });
     }
     
-    const { currentWord } = req.params;
+    // Sanitize input parameter
+    const currentWord = sanitizeInput(req.params.currentWord);
     
     // Validate input
-    if (!currentWord || typeof currentWord !== 'string' || currentWord.length < 1) {
+    if (!currentWord || currentWord.length < 1) {
       return res.status(400).json({ error: 'Invalid word parameter' });
     }
     

@@ -1,0 +1,20 @@
+{
+  "startWord": "meeting",
+  "targetWord": "asteroid",
+  "theme": "Cosmic Conference",
+  "description": "Scientists gather to discuss potential asteroid impacts and planetary defense strategies.",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "meeting",
+    "schedule",
+    "calendar",
+    "month",
+    "moon",
+    "crater",
+    "asteroid"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T23:00:08.924Z",
+  "timestamp": 1745017208924
+}
