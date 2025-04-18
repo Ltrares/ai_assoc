@@ -21,6 +21,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - ES6+ features preferred (arrow functions, destructuring, template literals)
 - Follow eslint rules: "react-app" and "react-app/jest" presets
 
+## Error Handling Requirements
+- DO NOT hide errors with fallback mechanisms or automatic recovery
+- DO NOT silently replace errors with default values
+- DO expose all errors clearly to users/developers
+- DO save important data (like cache) when errors occur to prevent loss
+- Error messages should be specific and detailed
+- When "please note" is used in instructions, update this file with the noted information
+
+## Environment Configuration
+- API keys and environment variables are stored in the .env file under /server directory
+- When running scripts, make sure to look for and load the .env file from the correct location
+
 ## Heroku Deployment Notes
 - The app returns 503 errors when:
   1. No game has been generated yet (lines 605-612 in server/index.js)
