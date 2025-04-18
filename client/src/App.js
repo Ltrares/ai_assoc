@@ -1095,7 +1095,6 @@ function App() {
               <div className="solution-display">
                 <h3>Solution Path:</h3>
                 <p className="solution-path">{solution.join(' → ')}</p>
-                <p className="solution-note">Try clicking words in the solution to continue your game!</p>
               </div>
             )}
             
