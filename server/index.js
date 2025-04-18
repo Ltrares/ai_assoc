@@ -104,15 +104,36 @@ function onApiCallMade() {
   }
 }
 
+// Flag to track if game generation is in progress
+let isGeneratingGame = false;
+
 // Generate a new puzzle using the shared module
 async function generatePuzzle() {
+  // If already generating a game, don't start another one
+  if (isGeneratingGame) {
+    console.log("Game generation already in progress, skipping new request");
+    return dailyGame;
+  }
+  
   try {
+    isGeneratingGame = true;
     console.log("Generating new puzzle using shared module...");
     
     // Use the shared puzzle generator
     const puzzle = await puzzleGenerator.generatePuzzle(associationCache, anthropic, onApiCallMade);
     
-    // Update the daily game state
+    // Check if we already have a game - if not, create stats object
+    const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
+      totalPlays: 0,
+      completions: [],
+      averageSteps: 0,
+      backSteps: [],
+      averageBackSteps: 0,
+      totalSteps: [],
+      averageTotalSteps: 0
+    };
+    
+    // Update the daily game state, preserving stats if they exist
     dailyGame = {
       startWord: puzzle.startWord,
       targetWord: puzzle.targetWord,
@@ -121,15 +142,7 @@ async function generatePuzzle() {
       difficulty: puzzle.difficulty,
       hiddenSolution: puzzle.hiddenSolution,
       gameDate: puzzle.gameDate || new Date().toISOString().split('T')[0],
-      stats: { 
-        totalPlays: 0,
-        completions: [],
-        averageSteps: 0,
-        backSteps: [],
-        averageBackSteps: 0,
-        totalSteps: [],
-        averageTotalSteps: 0
-      }
+      stats: existingStats
     };
     
     // Update next game time
@@ -145,6 +158,9 @@ async function generatePuzzle() {
   } catch (error) {
     console.error('Error generating puzzle:', error);
     throw error;
+  } finally {
+    // Always reset the generation flag when done, even if there was an error
+    isGeneratingGame = false;
   }
 }
 
