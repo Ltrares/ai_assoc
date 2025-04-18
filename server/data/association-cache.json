@@ -1,1 +1,1257 @@
-{}
+{
+  "environment": [
+    "nature",
+    "pollution",
+    "climate",
+    "recycling",
+    "conservation",
+    "sustainability",
+    "habitat"
+  ],
+  "environment_detailed": [
+    {
+      "word": "nature",
+      "hint": "the natural world and ecosystem"
+    },
+    {
+      "word": "pollution",
+      "hint": "contamination of air, water, or soil"
+    },
+    {
+      "word": "climate",
+      "hint": "long-term weather patterns"
+    },
+    {
+      "word": "recycling",
+      "hint": "process of converting waste into reusable material"
+    },
+    {
+      "word": "conservation",
+      "hint": "protection of natural resources"
+    },
+    {
+      "word": "sustainability",
+      "hint": "ability to maintain ecological balance"
+    },
+    {
+      "word": "habitat",
+      "hint": "natural home of plants and animals"
+    }
+  ],
+  "nature": [
+    "tree",
+    "mountain",
+    "animal",
+    "river",
+    "flower",
+    "forest",
+    "bird",
+    "ocean"
+  ],
+  "nature_detailed": [
+    {
+      "word": "tree",
+      "hint": "common plant in natural environments"
+    },
+    {
+      "word": "mountain",
+      "hint": "large landform found in nature"
+    },
+    {
+      "word": "animal",
+      "hint": "living creatures in the natural world"
+    },
+    {
+      "word": "river",
+      "hint": "natural flowing water body"
+    },
+    {
+      "word": "flower",
+      "hint": "plant's reproductive structure"
+    },
+    {
+      "word": "forest",
+      "hint": "large area covered with trees"
+    },
+    {
+      "word": "bird",
+      "hint": "flying animal often associated with nature"
+    },
+    {
+      "word": "ocean",
+      "hint": "vast body of saltwater covering Earth"
+    }
+  ],
+  "pollution": [
+    "smog",
+    "trash",
+    "factory",
+    "oil spill",
+    "plastic",
+    "car",
+    "chemical",
+    "smoke"
+  ],
+  "pollution_detailed": [
+    {
+      "word": "smog",
+      "hint": "visible air pollution in cities"
+    },
+    {
+      "word": "trash",
+      "hint": "litter and waste in the environment"
+    },
+    {
+      "word": "factory",
+      "hint": "industrial source of emissions"
+    },
+    {
+      "word": "oil spill",
+      "hint": "water pollution from petroleum"
+    },
+    {
+      "word": "plastic",
+      "hint": "common pollutant in oceans"
+    },
+    {
+      "word": "car",
+      "hint": "vehicle exhaust contributes to air pollution"
+    },
+    {
+      "word": "chemical",
+      "hint": "harmful substances released into environment"
+    },
+    {
+      "word": "smoke",
+      "hint": "visible air pollutant from burning"
+    }
+  ],
+  "climate": [
+    "weather",
+    "change",
+    "temperature",
+    "environment",
+    "season",
+    "greenhouse",
+    "pollution"
+  ],
+  "climate_detailed": [
+    {
+      "word": "weather",
+      "hint": "daily atmospheric conditions"
+    },
+    {
+      "word": "change",
+      "hint": "global warming and environmental shifts"
+    },
+    {
+      "word": "temperature",
+      "hint": "measure of heat or cold"
+    },
+    {
+      "word": "environment",
+      "hint": "natural surroundings"
+    },
+    {
+      "word": "season",
+      "hint": "divisions of the year"
+    },
+    {
+      "word": "greenhouse",
+      "hint": "effect causing global warming"
+    },
+    {
+      "word": "pollution",
+      "hint": "contamination of the environment"
+    }
+  ],
+  "recycling": [
+    "plastic",
+    "bin",
+    "green",
+    "paper",
+    "symbol",
+    "environment",
+    "can",
+    "sorting"
+  ],
+  "recycling_detailed": [
+    {
+      "word": "plastic",
+      "hint": "common recyclable material"
+    },
+    {
+      "word": "bin",
+      "hint": "container for collecting recyclables"
+    },
+    {
+      "word": "green",
+      "hint": "color associated with environmental efforts"
+    },
+    {
+      "word": "paper",
+      "hint": "frequently recycled material"
+    },
+    {
+      "word": "symbol",
+      "hint": "three arrows in a triangle shape"
+    },
+    {
+      "word": "environment",
+      "hint": "recycling benefits this"
+    },
+    {
+      "word": "can",
+      "hint": "metal container often recycled"
+    },
+    {
+      "word": "sorting",
+      "hint": "separating different recyclable materials"
+    }
+  ],
+  "conservation": [
+    "environment",
+    "wildlife",
+    "recycling",
+    "endangered",
+    "sustainability",
+    "preservation",
+    "nature",
+    "energy"
+  ],
+  "conservation_detailed": [
+    {
+      "word": "environment",
+      "hint": "protecting natural resources and ecosystems"
+    },
+    {
+      "word": "wildlife",
+      "hint": "preserving animal species and habitats"
+    },
+    {
+      "word": "recycling",
+      "hint": "reusing materials to reduce waste"
+    },
+    {
+      "word": "endangered",
+      "hint": "species at risk of extinction"
+    },
+    {
+      "word": "sustainability",
+      "hint": "maintaining ecological balance for future generations"
+    },
+    {
+      "word": "preservation",
+      "hint": "keeping something in its original state"
+    },
+    {
+      "word": "nature",
+      "hint": "the natural world and its ecosystems"
+    },
+    {
+      "word": "energy",
+      "hint": "efficient use of power resources"
+    }
+  ],
+  "tree": [
+    "leaf",
+    "branch",
+    "root",
+    "bark",
+    "forest",
+    "wood",
+    "shade"
+  ],
+  "tree_detailed": [
+    {
+      "word": "leaf",
+      "hint": "green part that grows on branches"
+    },
+    {
+      "word": "branch",
+      "hint": "extends from trunk, holds leaves"
+    },
+    {
+      "word": "root",
+      "hint": "underground part that absorbs water"
+    },
+    {
+      "word": "bark",
+      "hint": "outer protective layer of trunk"
+    },
+    {
+      "word": "forest",
+      "hint": "large area with many trees"
+    },
+    {
+      "word": "wood",
+      "hint": "material obtained from trees"
+    },
+    {
+      "word": "shade",
+      "hint": "cooler area beneath tree canopy"
+    }
+  ],
+  "mountain": [
+    "peak",
+    "climb",
+    "snow",
+    "hike",
+    "view",
+    "rock",
+    "altitude",
+    "forest"
+  ],
+  "mountain_detailed": [
+    {
+      "word": "peak",
+      "hint": "highest point of a mountain"
+    },
+    {
+      "word": "climb",
+      "hint": "act of ascending a mountain"
+    },
+    {
+      "word": "snow",
+      "hint": "often covers mountain tops"
+    },
+    {
+      "word": "hike",
+      "hint": "walking activity on mountain trails"
+    },
+    {
+      "word": "view",
+      "hint": "panoramic sight from a mountain"
+    },
+    {
+      "word": "rock",
+      "hint": "primary material mountains are made of"
+    },
+    {
+      "word": "altitude",
+      "hint": "height above sea level"
+    },
+    {
+      "word": "forest",
+      "hint": "trees often covering mountain slopes"
+    }
+  ],
+  "animal": [
+    "pet",
+    "zoo",
+    "wild",
+    "fur",
+    "paw",
+    "tail",
+    "mammal",
+    "bird"
+  ],
+  "animal_detailed": [
+    {
+      "word": "pet",
+      "hint": "domesticated companion animal"
+    },
+    {
+      "word": "zoo",
+      "hint": "facility where animals are kept for public viewing"
+    },
+    {
+      "word": "wild",
+      "hint": "animals living in nature, not domesticated"
+    },
+    {
+      "word": "fur",
+      "hint": "hair covering many animals' bodies"
+    },
+    {
+      "word": "paw",
+      "hint": "foot of an animal with claws"
+    },
+    {
+      "word": "tail",
+      "hint": "rear appendage of many animals"
+    },
+    {
+      "word": "mammal",
+      "hint": "class of animals that give birth to live young"
+    },
+    {
+      "word": "bird",
+      "hint": "feathered, winged animal"
+    }
+  ],
+  "river": [
+    "water",
+    "fish",
+    "boat",
+    "bridge",
+    "bank",
+    "current",
+    "flood"
+  ],
+  "river_detailed": [
+    {
+      "word": "water",
+      "hint": "rivers are bodies of flowing water"
+    },
+    {
+      "word": "fish",
+      "hint": "many fish species live in rivers"
+    },
+    {
+      "word": "boat",
+      "hint": "rivers are often used for boating and transportation"
+    },
+    {
+      "word": "bridge",
+      "hint": "structures built to cross rivers"
+    },
+    {
+      "word": "bank",
+      "hint": "the land alongside a river"
+    },
+    {
+      "word": "current",
+      "hint": "the flow of water in a river"
+    },
+    {
+      "word": "flood",
+      "hint": "rivers can overflow their banks"
+    }
+  ],
+  "flower": [
+    "petal",
+    "garden",
+    "bouquet",
+    "stem",
+    "rose",
+    "vase",
+    "bee"
+  ],
+  "flower_detailed": [
+    {
+      "word": "petal",
+      "hint": "colorful part of flower"
+    },
+    {
+      "word": "garden",
+      "hint": "where flowers are grown"
+    },
+    {
+      "word": "bouquet",
+      "hint": "arrangement of cut flowers"
+    },
+    {
+      "word": "stem",
+      "hint": "part that supports the flower"
+    },
+    {
+      "word": "rose",
+      "hint": "popular romantic flower"
+    },
+    {
+      "word": "vase",
+      "hint": "container for displaying flowers"
+    },
+    {
+      "word": "bee",
+      "hint": "insect that pollinates flowers"
+    }
+  ],
+  "smog": [
+    "pollution",
+    "city",
+    "factory",
+    "car",
+    "haze",
+    "lung",
+    "mask",
+    "fog"
+  ],
+  "smog_detailed": [
+    {
+      "word": "pollution",
+      "hint": "smog is a type of air pollution"
+    },
+    {
+      "word": "city",
+      "hint": "smog is often associated with urban areas"
+    },
+    {
+      "word": "factory",
+      "hint": "industrial emissions contribute to smog"
+    },
+    {
+      "word": "car",
+      "hint": "vehicle exhaust is a major source of smog"
+    },
+    {
+      "word": "haze",
+      "hint": "smog creates a hazy appearance in the air"
+    },
+    {
+      "word": "lung",
+      "hint": "smog can negatively impact respiratory health"
+    },
+    {
+      "word": "mask",
+      "hint": "people wear masks to protect from smog"
+    },
+    {
+      "word": "fog",
+      "hint": "smog is sometimes described as a type of fog"
+    }
+  ],
+  "trash": [
+    "garbage",
+    "dump",
+    "smelly",
+    "bin",
+    "plastic",
+    "litter",
+    "recycle"
+  ],
+  "trash_detailed": [
+    {
+      "word": "garbage",
+      "hint": "synonym for waste"
+    },
+    {
+      "word": "dump",
+      "hint": "place where trash is disposed"
+    },
+    {
+      "word": "smelly",
+      "hint": "unpleasant odor associated with waste"
+    },
+    {
+      "word": "bin",
+      "hint": "container for collecting trash"
+    },
+    {
+      "word": "plastic",
+      "hint": "common material in disposable items"
+    },
+    {
+      "word": "litter",
+      "hint": "improperly discarded waste"
+    },
+    {
+      "word": "recycle",
+      "hint": "process of reusing waste materials"
+    }
+  ],
+  "factory": [
+    "machine",
+    "production",
+    "assembly line",
+    "worker",
+    "industry",
+    "pollution",
+    "warehouse"
+  ],
+  "factory_detailed": [
+    {
+      "word": "machine",
+      "hint": "mechanical devices used in manufacturing"
+    },
+    {
+      "word": "production",
+      "hint": "process of making goods"
+    },
+    {
+      "word": "assembly line",
+      "hint": "manufacturing process where parts are added sequentially"
+    },
+    {
+      "word": "worker",
+      "hint": "person employed in a factory"
+    },
+    {
+      "word": "industry",
+      "hint": "economic activity concerned with manufacturing"
+    },
+    {
+      "word": "pollution",
+      "hint": "contamination often associated with factories"
+    },
+    {
+      "word": "warehouse",
+      "hint": "large building for storing manufactured goods"
+    }
+  ],
+  "oil spill": [
+    "pollution",
+    "ocean",
+    "disaster",
+    "cleanup",
+    "bird",
+    "tanker",
+    "beach",
+    "slick"
+  ],
+  "oil spill_detailed": [
+    {
+      "word": "pollution",
+      "hint": "environmental contamination"
+    },
+    {
+      "word": "ocean",
+      "hint": "common location of large spills"
+    },
+    {
+      "word": "disaster",
+      "hint": "negative impact on ecosystem"
+    },
+    {
+      "word": "cleanup",
+      "hint": "efforts to remove spilled oil"
+    },
+    {
+      "word": "bird",
+      "hint": "wildlife often affected by spills"
+    },
+    {
+      "word": "tanker",
+      "hint": "ship that transports oil"
+    },
+    {
+      "word": "beach",
+      "hint": "coastal area impacted by spills"
+    },
+    {
+      "word": "slick",
+      "hint": "visible layer of oil on water"
+    }
+  ],
+  "plastic": [
+    "bottle",
+    "bag",
+    "toy",
+    "pollution",
+    "recycling",
+    "container",
+    "credit card"
+  ],
+  "plastic_detailed": [
+    {
+      "word": "bottle",
+      "hint": "common plastic container for beverages"
+    },
+    {
+      "word": "bag",
+      "hint": "disposable shopping or storage item"
+    },
+    {
+      "word": "toy",
+      "hint": "children's playthings often made of plastic"
+    },
+    {
+      "word": "pollution",
+      "hint": "environmental concern related to plastic waste"
+    },
+    {
+      "word": "recycling",
+      "hint": "process of reusing plastic materials"
+    },
+    {
+      "word": "container",
+      "hint": "storage item for food or other goods"
+    },
+    {
+      "word": "credit card",
+      "hint": "payment method made of plastic"
+    }
+  ],
+  "weather": [
+    "rain",
+    "sun",
+    "cloud",
+    "wind",
+    "storm",
+    "snow",
+    "temperature",
+    "forecast"
+  ],
+  "weather_detailed": [
+    {
+      "word": "rain",
+      "hint": "water falling from clouds"
+    },
+    {
+      "word": "sun",
+      "hint": "bright star at center of solar system"
+    },
+    {
+      "word": "cloud",
+      "hint": "visible mass of water droplets in sky"
+    },
+    {
+      "word": "wind",
+      "hint": "movement of air in atmosphere"
+    },
+    {
+      "word": "storm",
+      "hint": "violent disturbance of atmosphere"
+    },
+    {
+      "word": "snow",
+      "hint": "frozen water falling as flakes"
+    },
+    {
+      "word": "temperature",
+      "hint": "degree of heat or cold"
+    },
+    {
+      "word": "forecast",
+      "hint": "prediction of future weather conditions"
+    }
+  ],
+  "change": [
+    "money",
+    "transformation",
+    "difference",
+    "adjustment",
+    "growth",
+    "evolution",
+    "transition"
+  ],
+  "change_detailed": [
+    {
+      "word": "money",
+      "hint": "coins and bills exchanged"
+    },
+    {
+      "word": "transformation",
+      "hint": "altering form or appearance"
+    },
+    {
+      "word": "difference",
+      "hint": "something that's not the same"
+    },
+    {
+      "word": "adjustment",
+      "hint": "modifying to fit new circumstances"
+    },
+    {
+      "word": "growth",
+      "hint": "development or progress"
+    },
+    {
+      "word": "evolution",
+      "hint": "gradual development over time"
+    },
+    {
+      "word": "transition",
+      "hint": "process of changing from one state to another"
+    }
+  ],
+  "temperature": [
+    "hot",
+    "cold",
+    "thermometer",
+    "fever",
+    "weather",
+    "oven",
+    "ice",
+    "summer"
+  ],
+  "temperature_detailed": [
+    {
+      "word": "hot",
+      "hint": "high temperature"
+    },
+    {
+      "word": "cold",
+      "hint": "low temperature"
+    },
+    {
+      "word": "thermometer",
+      "hint": "device to measure temperature"
+    },
+    {
+      "word": "fever",
+      "hint": "elevated body temperature"
+    },
+    {
+      "word": "weather",
+      "hint": "atmospheric conditions including temperature"
+    },
+    {
+      "word": "oven",
+      "hint": "appliance that generates high temperatures"
+    },
+    {
+      "word": "ice",
+      "hint": "frozen water associated with cold temperatures"
+    },
+    {
+      "word": "summer",
+      "hint": "season typically associated with warm temperatures"
+    }
+  ],
+  "season": [
+    "weather",
+    "change",
+    "holiday",
+    "clothing",
+    "sport",
+    "food",
+    "color"
+  ],
+  "season_detailed": [
+    {
+      "word": "weather",
+      "hint": "climatic conditions associated with different times of year"
+    },
+    {
+      "word": "change",
+      "hint": "transition from one season to another"
+    },
+    {
+      "word": "holiday",
+      "hint": "festive periods often linked to specific seasons"
+    },
+    {
+      "word": "clothing",
+      "hint": "attire appropriate for different seasonal temperatures"
+    },
+    {
+      "word": "sport",
+      "hint": "activities often associated with particular seasons"
+    },
+    {
+      "word": "food",
+      "hint": "seasonal produce and dishes"
+    },
+    {
+      "word": "color",
+      "hint": "hues associated with different times of year"
+    }
+  ],
+  "greenhouse": [
+    "plant",
+    "glass",
+    "garden",
+    "heat",
+    "humidity",
+    "tomato",
+    "flower",
+    "effect"
+  ],
+  "greenhouse_detailed": [
+    {
+      "word": "plant",
+      "hint": "vegetation grown inside"
+    },
+    {
+      "word": "glass",
+      "hint": "transparent material used for walls and roof"
+    },
+    {
+      "word": "garden",
+      "hint": "area for cultivating plants"
+    },
+    {
+      "word": "heat",
+      "hint": "warmth trapped inside"
+    },
+    {
+      "word": "humidity",
+      "hint": "moisture in the air"
+    },
+    {
+      "word": "tomato",
+      "hint": "common crop grown in greenhouses"
+    },
+    {
+      "word": "flower",
+      "hint": "ornamental plants often cultivated"
+    },
+    {
+      "word": "effect",
+      "hint": "climate phenomenon of trapped heat"
+    }
+  ],
+  "bin": [
+    "trash",
+    "storage",
+    "recycle",
+    "container",
+    "basket",
+    "sorting",
+    "plastic",
+    "compost"
+  ],
+  "bin_detailed": [
+    {
+      "word": "trash",
+      "hint": "container for garbage"
+    },
+    {
+      "word": "storage",
+      "hint": "box for keeping items"
+    },
+    {
+      "word": "recycle",
+      "hint": "container for recyclable materials"
+    },
+    {
+      "word": "container",
+      "hint": "general term for a holding vessel"
+    },
+    {
+      "word": "basket",
+      "hint": "open-top container for items"
+    },
+    {
+      "word": "sorting",
+      "hint": "organizing items into different containers"
+    },
+    {
+      "word": "plastic",
+      "hint": "common material for bins"
+    },
+    {
+      "word": "compost",
+      "hint": "container for organic waste"
+    }
+  ],
+  "green": [
+    "grass",
+    "tree",
+    "leaf",
+    "vegetable",
+    "frog",
+    "nature",
+    "environment",
+    "money"
+  ],
+  "green_detailed": [
+    {
+      "word": "grass",
+      "hint": "common green plant in lawns"
+    },
+    {
+      "word": "tree",
+      "hint": "plant with leaves"
+    },
+    {
+      "word": "leaf",
+      "hint": "part of a plant"
+    },
+    {
+      "word": "vegetable",
+      "hint": "edible plant"
+    },
+    {
+      "word": "frog",
+      "hint": "amphibian often depicted as green"
+    },
+    {
+      "word": "nature",
+      "hint": "the natural world"
+    },
+    {
+      "word": "environment",
+      "hint": "surroundings or ecological concerns"
+    },
+    {
+      "word": "money",
+      "hint": "US currency color"
+    }
+  ],
+  "paper": [
+    "pencil",
+    "pen",
+    "notebook",
+    "origami",
+    "document",
+    "newspaper",
+    "printer"
+  ],
+  "paper_detailed": [
+    {
+      "word": "pencil",
+      "hint": "writing implement often used with paper"
+    },
+    {
+      "word": "pen",
+      "hint": "writing tool commonly used on paper"
+    },
+    {
+      "word": "notebook",
+      "hint": "bound collection of paper sheets"
+    },
+    {
+      "word": "origami",
+      "hint": "Japanese art of paper folding"
+    },
+    {
+      "word": "document",
+      "hint": "written or printed paper with information"
+    },
+    {
+      "word": "newspaper",
+      "hint": "printed publication on paper"
+    },
+    {
+      "word": "printer",
+      "hint": "device that produces text/images on paper"
+    }
+  ],
+  "symbol": [
+    "sign",
+    "logo",
+    "icon",
+    "emblem",
+    "flag",
+    "statue",
+    "crucifix"
+  ],
+  "symbol_detailed": [
+    {
+      "word": "sign",
+      "hint": "visual representation of an idea"
+    },
+    {
+      "word": "logo",
+      "hint": "graphic mark representing a brand"
+    },
+    {
+      "word": "icon",
+      "hint": "pictorial representation of a concept"
+    },
+    {
+      "word": "emblem",
+      "hint": "object representing a group or idea"
+    },
+    {
+      "word": "flag",
+      "hint": "piece of fabric used as a national symbol"
+    },
+    {
+      "word": "statue",
+      "hint": "sculpture representing a person or concept"
+    },
+    {
+      "word": "crucifix",
+      "hint": "cross symbolizing Christianity"
+    }
+  ],
+  "can": [
+    "opener",
+    "soda",
+    "food",
+    "metal",
+    "recycle",
+    "tin",
+    "soup"
+  ],
+  "can_detailed": [
+    {
+      "word": "opener",
+      "hint": "tool to open cans"
+    },
+    {
+      "word": "soda",
+      "hint": "carbonated beverage often in cans"
+    },
+    {
+      "word": "food",
+      "hint": "many foods are stored in cans"
+    },
+    {
+      "word": "metal",
+      "hint": "material cans are often made from"
+    },
+    {
+      "word": "recycle",
+      "hint": "cans are commonly recycled"
+    },
+    {
+      "word": "tin",
+      "hint": "another term for a metal can"
+    },
+    {
+      "word": "soup",
+      "hint": "popular canned food item"
+    }
+  ],
+  "wildlife": [
+    "animal",
+    "forest",
+    "conservation",
+    "safari",
+    "endangered",
+    "nature",
+    "bird",
+    "predator"
+  ],
+  "wildlife_detailed": [
+    {
+      "word": "animal",
+      "hint": "living creatures in nature"
+    },
+    {
+      "word": "forest",
+      "hint": "natural habitat for many species"
+    },
+    {
+      "word": "conservation",
+      "hint": "protection of natural ecosystems"
+    },
+    {
+      "word": "safari",
+      "hint": "expedition to observe animals in their habitat"
+    },
+    {
+      "word": "endangered",
+      "hint": "species at risk of extinction"
+    },
+    {
+      "word": "nature",
+      "hint": "the natural world and its ecosystems"
+    },
+    {
+      "word": "bird",
+      "hint": "feathered flying creatures"
+    },
+    {
+      "word": "predator",
+      "hint": "animal that hunts others for food"
+    }
+  ],
+  "endangered": [
+    "species",
+    "animal",
+    "extinction",
+    "conservation",
+    "habitat",
+    "poaching",
+    "panda",
+    "tiger"
+  ],
+  "endangered_detailed": [
+    {
+      "word": "species",
+      "hint": "animals at risk of extinction"
+    },
+    {
+      "word": "animal",
+      "hint": "living creature facing threat"
+    },
+    {
+      "word": "extinction",
+      "hint": "complete disappearance of a species"
+    },
+    {
+      "word": "conservation",
+      "hint": "efforts to protect and preserve"
+    },
+    {
+      "word": "habitat",
+      "hint": "natural environment under threat"
+    },
+    {
+      "word": "poaching",
+      "hint": "illegal hunting of protected animals"
+    },
+    {
+      "word": "panda",
+      "hint": "iconic endangered animal"
+    },
+    {
+      "word": "tiger",
+      "hint": "well-known endangered big cat"
+    }
+  ],
+  "sustainability": [
+    "green",
+    "recycling",
+    "renewable",
+    "environment",
+    "conservation",
+    "eco-friendly",
+    "energy"
+  ],
+  "sustainability_detailed": [
+    {
+      "word": "green",
+      "hint": "associated with eco-friendly practices"
+    },
+    {
+      "word": "recycling",
+      "hint": "reusing materials to reduce waste"
+    },
+    {
+      "word": "renewable",
+      "hint": "resources that can be naturally replenished"
+    },
+    {
+      "word": "environment",
+      "hint": "focus on protecting natural surroundings"
+    },
+    {
+      "word": "conservation",
+      "hint": "preserving and protecting natural resources"
+    },
+    {
+      "word": "eco-friendly",
+      "hint": "not harmful to the environment"
+    },
+    {
+      "word": "energy",
+      "hint": "often referring to clean or renewable sources"
+    }
+  ],
+  "preservation": [
+    "conservation",
+    "history",
+    "food",
+    "museum",
+    "archive",
+    "wildlife",
+    "fossil",
+    "freezing",
+    "canning"
+  ],
+  "preservation_detailed": [
+    {
+      "word": "conservation",
+      "hint": "protecting natural resources"
+    },
+    {
+      "word": "history",
+      "hint": "maintaining records of the past"
+    },
+    {
+      "word": "food",
+      "hint": "keeping edibles from spoiling"
+    },
+    {
+      "word": "museum",
+      "hint": "institution dedicated to preserving artifacts"
+    },
+    {
+      "word": "archive",
+      "hint": "storage of important documents"
+    },
+    {
+      "word": "wildlife",
+      "hint": "protecting endangered species"
+    },
+    {
+      "word": "fossil",
+      "hint": "preserved remains or traces of ancient life"
+    },
+    {
+      "word": "freezing",
+      "hint": "method of preserving food"
+    },
+    {
+      "word": "canning",
+      "hint": "preserving food in airtight containers"
+    }
+  ]
+}
