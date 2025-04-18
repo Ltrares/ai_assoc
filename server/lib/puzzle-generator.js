@@ -237,9 +237,9 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
   console.log(`Starting path search from "${startWord}"`);
   
   // Define parameters
-  const MIN_PATH_LENGTH = 5; // at least 5 words total (4 steps) - balanced for path finding
-  const MAX_DEPTH = 10;      // increased to allow deeper exploration
-  const MAX_EXPLORATIONS = 250; // increased to allow more exploration with stricter path requirements
+  const MIN_PATH_LENGTH = 5; // at least 5 words total (4 steps) - the minimum acceptable puzzle length
+  const MAX_DEPTH = 10;      // maximum path depth to explore - prevents excessive branching
+  const MAX_EXPLORATIONS = 250; // maximum number of paths to check - prevents excessive API usage
   
   // Set up error handling for the entire function
   try {
@@ -251,11 +251,33 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
     const startAssociations = await getAssociations(associationCache, startWord, anthropic, onApiCallMade);
     console.log(`Cached ${startAssociations.length} associations for ${startWord}`);
     
-    // Queue for breadth-first traversal
+    // Queue for breadth-first traversal with priority for paths close to target length
     const queue = [{
       path: initialPath,
       depth: 1
     }];
+    
+    // Add a sorting function to prioritize checking paths that are close to MIN_PATH_LENGTH
+    // This will help us find valid puzzles sooner
+    const prioritizeQueue = () => {
+      if (queue.length > 10) { // Only sort if queue is substantial
+        queue.sort((a, b) => {
+          // Prioritize paths that are close to MIN_PATH_LENGTH
+          // If both are below MIN_PATH_LENGTH, favor longer paths
+          // If both are above MIN_PATH_LENGTH, favor shorter paths (to find simpler puzzles)
+          const distA = Math.abs(a.path.length - MIN_PATH_LENGTH);
+          const distB = Math.abs(b.path.length - MIN_PATH_LENGTH);
+          
+          if (a.path.length < MIN_PATH_LENGTH && b.path.length < MIN_PATH_LENGTH) {
+            return b.path.length - a.path.length; // Favor longer paths when below minimum
+          } else if (a.path.length >= MIN_PATH_LENGTH && b.path.length >= MIN_PATH_LENGTH) {
+            return a.path.length - b.path.length; // Favor shorter paths when above minimum
+          } else {
+            return distA - distB; // Favor paths closer to minimum length
+          }
+        });
+      }
+    };
     
     // Keep track of visited words
     const visited = new Set([startWord.toLowerCase().trim()]);
@@ -265,12 +287,17 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
     let validTargetsChecked = 0;
     let pathsAbandoned = 0; // Track paths abandoned due to low diversity
     
-    // Process the queue for breadth-first traversal
+    // Process the queue for traversal with path prioritization
     while (queue.length > 0 && explored < MAX_EXPLORATIONS) {
       // Check for abort signal
       if (abortSignal && abortSignal.aborted) {
         console.log('Path finding aborted by abort signal');
         return null;
+      }
+      
+      // Periodically prioritize the queue to focus on promising paths
+      if (explored % 10 === 0 && queue.length > 5) {
+        prioritizeQueue();
       }
       
       // Get the next path to explore
@@ -288,8 +315,8 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         }
       }
           
-      // If we've reached AT LEAST the minimum depth required, this could be a target word
-      // Accept paths that are at least MIN_PATH_LENGTH to find more valid paths
+      // If we've reached AT LEAST the minimum length required, consider this as a target
+      // Paths of at least MIN_PATH_LENGTH are valid puzzles - we're just checking if current word works as a target
       if (path.length >= MIN_PATH_LENGTH) {
         validTargetsChecked++;
         
@@ -369,9 +396,9 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         continue;
       }
       
-      // Add each valid next word to queue (limit for breadth control)
-      const nextWords = validNextWords.slice(0, 5); // Increased to 5 since we're stricter about path quality
-      for (const nextWord of nextWords) {
+      // Add ALL valid next words to queue - use them all instead of limiting to first few
+      // This should improve exploration of promising paths
+      for (const nextWord of validNextWords) {
         const normalizedWord = nextWord.toLowerCase().trim();
         visited.add(normalizedWord); // Mark as visited
         
