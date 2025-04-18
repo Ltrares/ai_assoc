@@ -233,6 +233,7 @@ async function isValidTargetWord(associationCache, candidateTarget, previousWord
 }
 
 // Helper function to find a path through the word association graph
+// Implements a hybrid approach: Primarily Depth-First Search with periodic breadth prioritization
 async function findPathThroughGraph(associationCache, startWord, anthropic, onApiCallMade, abortSignal) {
   console.log(`Starting path search from "${startWord}"`);
   
@@ -251,20 +252,33 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
     const startAssociations = await getAssociations(associationCache, startWord, anthropic, onApiCallMade);
     console.log(`Cached ${startAssociations.length} associations for ${startWord}`);
     
-    // Queue for breadth-first traversal with priority for paths close to target length
-    const queue = [{
+    // Stack for depth-first traversal (last in, first out)
+    // Using a stack enables depth-first search which aims to find paths to target depth faster
+    const stack = [{
       path: initialPath,
       depth: 1
     }];
     
-    // Add a sorting function to prioritize checking paths that are close to MIN_PATH_LENGTH
-    // This will help us find valid puzzles sooner
-    const prioritizeQueue = () => {
-      if (queue.length > 10) { // Only sort if queue is substantial
-        queue.sort((a, b) => {
-          // Prioritize paths that are close to MIN_PATH_LENGTH
-          // If both are below MIN_PATH_LENGTH, favor longer paths
-          // If both are above MIN_PATH_LENGTH, favor shorter paths (to find simpler puzzles)
+    // Function to shuffle an array for randomizing exploration
+    const shuffle = array => {
+      // Fisher-Yates shuffle algorithm
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    };
+    
+    // Function to prioritize paths to focus on promising ones
+    const prioritizeStack = () => {
+      if (stack.length > 10) { // Only sort if stack is substantial
+        // Sort stack with depth-first priority while also considering target length
+        stack.sort((a, b) => {
+          // Primary sort: higher depth first (depth-first search)
+          const depthDiff = b.depth - a.depth;
+          if (depthDiff !== 0) return depthDiff;
+          
+          // Secondary sort: proximity to target length
           const distA = Math.abs(a.path.length - MIN_PATH_LENGTH);
           const distB = Math.abs(b.path.length - MIN_PATH_LENGTH);
           
@@ -287,28 +301,28 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
     let validTargetsChecked = 0;
     let pathsAbandoned = 0; // Track paths abandoned due to low diversity
     
-    // Process the queue for traversal with path prioritization
-    while (queue.length > 0 && explored < MAX_EXPLORATIONS) {
+    // Process the stack for depth-first traversal
+    while (stack.length > 0 && explored < MAX_EXPLORATIONS) {
       // Check for abort signal
       if (abortSignal && abortSignal.aborted) {
         console.log('Path finding aborted by abort signal');
         return null;
       }
       
-      // Periodically prioritize the queue to focus on promising paths
-      if (explored % 10 === 0 && queue.length > 5) {
-        prioritizeQueue();
+      // Periodically prioritize the stack to focus on promising paths
+      if (explored % 20 === 0 && stack.length > 5) {
+        prioritizeStack();
       }
       
-      // Get the next path to explore
-      const { path, depth } = queue.shift();
+      // Get the next path to explore (from the top of the stack for DFS)
+      const { path, depth } = stack.pop();
       const currentWord = path[path.length - 1];
       
       explored++;
       
       // Log progress with more detail
       if (explored % 10 === 0) {
-        console.log(`Explored ${explored}/${MAX_EXPLORATIONS} paths, queue size: ${queue.length}, targets checked: ${validTargetsChecked}`);
+        console.log(`Explored ${explored}/${MAX_EXPLORATIONS} paths, stack size: ${stack.length}, targets checked: ${validTargetsChecked}`);
         // Log current path if available
         if (path.length > 1) {
           console.log(`Current path (${path.length} words): ${path.join(' → ')}`);
@@ -396,15 +410,19 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         continue;
       }
       
-      // Add ALL valid next words to queue - use them all instead of limiting to first few
-      // This should improve exploration of promising paths
-      for (const nextWord of validNextWords) {
+      // Add ALL valid next words to the stack, but shuffle them first to avoid bias toward alphabetical ordering
+      // In DFS, the order we add items is important since later additions will be explored first
+      const shuffledNextWords = shuffle([...validNextWords]);
+      
+      for (const nextWord of shuffledNextWords) {
         const normalizedWord = nextWord.toLowerCase().trim();
         visited.add(normalizedWord); // Mark as visited
         
         // Create a new path by adding this word
         const newPath = [...path, nextWord];
-        queue.push({
+        
+        // Push to stack (for DFS - last in, first out)
+        stack.push({
           path: newPath,
           depth: depth + 1
         });
