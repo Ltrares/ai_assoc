@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Run single client test: `cd client && npm test -- -t "test name pattern"`
 - Run client: `npm run client`
 - Run server: `npm run server`
+- Run server in background: `cd /Users/puffy_fluff/vs_code/ai_association && npm run server &`
 
 ## Code Style Guidelines
 - Client: React functional components with hooks (useState, useEffect)
@@ -41,7 +42,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Shared Module Architecture
 - Core puzzle generation code is in `/server/lib/puzzle-generator.js` 
-- This module is used by both:
+- Puzzle storage and retrieval in `/server/lib/puzzle-repository.js`
+- These modules are used by both:
   1. Server (`/server/index.js`) - For API endpoints and game logic
   2. Standalone script (`/server/scripts/generate-puzzle.js`) - For generating puzzles offline
 
