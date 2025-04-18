@@ -111,8 +111,8 @@ async function getAssociationsFromAI(word) {
           
           Return a JSON array with EXACTLY this format:
           [
-            {"word": "association1", "type": "common association", "hint": "brief explanation"},
-            {"word": "association2", "type": "common association", "hint": "brief explanation"}
+            {"word": "association1", "hint": "brief explanation"},
+            {"word": "association2", "hint": "brief explanation"}
           ]
           
           Important formatting rules:
@@ -155,7 +155,8 @@ async function getAssociationsFromAI(word) {
       item && 
       typeof item === 'object' && 
       typeof item.word === 'string' && 
-      item.word.trim() !== ''
+      item.word.trim() !== '' &&
+      typeof item.hint === 'string'
     );
     
     if (validItems.length < 3) {
