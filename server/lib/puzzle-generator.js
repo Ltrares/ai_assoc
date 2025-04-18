@@ -208,7 +208,14 @@ async function isValidTargetWord(associationCache, candidateTarget, previousWord
       associations = await getAssociations(associationCache, lastWord, anthropic, onApiCallMade);
     } catch (error) {
       console.error(`Error getting associations for "${lastWord}":`, error);
-      return false; // Can't verify, so not valid
+      
+      // Check if error is due to API limit being reached
+      if (error.message && error.message.includes('API call limit')) {
+        console.warn(`⚠️ ${error.message} - aborting target validation`);
+        throw error; // Rethrow to propagate the API limit error
+      }
+      
+      return false; // Can't verify for other reasons, so not valid
     }
   }
   
@@ -289,17 +296,27 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         // Debug info about path length
         console.log(`Validating potential target "${currentWord}" at depth ${depth} (path length: ${path.length})`);
         
-        // Check if this word would be a good target
-        const isValidTarget = await isValidTargetWord(associationCache, currentWord, path.slice(0, -1), anthropic, onApiCallMade);
-        
-        if (isValidTarget) {
-          console.log(`====== FOUND VALID SOLUTION PATH ======`);
-          console.log(`✓ Target word: "${currentWord}"`);
-          console.log(`✓ Path length: ${path.length} words (${path.length-1} steps)`);
-          console.log(`✓ Full path: ${path.join(' → ')}`);
-          console.log(`======================================`);
+        try {
+          // Check if this word would be a good target
+          const isValidTarget = await isValidTargetWord(associationCache, currentWord, path.slice(0, -1), anthropic, onApiCallMade);
           
-          return { path, targetWord: currentWord };
+          if (isValidTarget) {
+            console.log(`====== FOUND VALID SOLUTION PATH ======`);
+            console.log(`✓ Target word: "${currentWord}"`);
+            console.log(`✓ Path length: ${path.length} words (${path.length-1} steps)`);
+            console.log(`✓ Full path: ${path.join(' → ')}`);
+            console.log(`======================================`);
+            
+            return { path, targetWord: currentWord };
+          }
+        } catch (error) {
+          // Check if error is due to API limit being reached
+          if (error.message && error.message.includes('API call limit')) {
+            console.warn(`⚠️ ${error.message} - aborting path search during target validation`);
+            return null; // Stop the search completely
+          }
+          
+          console.error(`Error validating target "${currentWord}":`, error);
         }
       }
       
@@ -323,7 +340,14 @@ async function findPathThroughGraph(associationCache, startWord, anthropic, onAp
         }
       } catch (error) {
         console.error(`Error getting associations for "${currentWord}":`, error);
-        continue; // Skip this word if we can't get associations
+        
+        // Check if error is due to API limit being reached
+        if (error.message && error.message.includes('API call limit')) {
+          console.warn(`⚠️ ${error.message} - aborting path search`);
+          return null; // Stop the search completely
+        }
+        
+        continue; // Skip this word if we can't get associations for other reasons
       }
       
       // Filter to avoid visited words

@@ -43,7 +43,8 @@ function onApiCallMade() {
   console.log(`API Call #${apiCallCounter}`);
   
   // Check if we've hit the limit
-  if (apiCallCounter > API_CALL_LIMIT) {
+  if (apiCallCounter >= API_CALL_LIMIT) {
+    // Use >= instead of > to ensure we don't exceed the limit
     throw new Error(`API call limit of ${API_CALL_LIMIT} reached. Stopping to prevent excessive usage.`);
   }
 }

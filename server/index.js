@@ -99,7 +99,8 @@ function onApiCallMade() {
   }
   
   // API limit check - no fallback, just throw an error if over limit
-  if (apiLimits.dailyCount > apiLimits.dailyLimit) {
+  if (apiLimits.dailyCount >= apiLimits.dailyLimit) {
+    // Use >= instead of > to ensure we don't exceed the limit
     console.warn(`API daily limit reached (${apiLimits.dailyCount}/${apiLimits.dailyLimit})`);
     throw new Error('API daily limit reached - unable to get associations');
   }
