@@ -1253,5 +1253,8381 @@
       "word": "canning",
       "hint": "preserving food in airtight containers"
     }
+  ],
+  "machine": [
+    "robot",
+    "computer",
+    "factory",
+    "engine",
+    "gears",
+    "production",
+    "automation",
+    "industrial"
+  ],
+  "machine_detailed": [
+    {
+      "word": "robot",
+      "hint": "automated mechanical device"
+    },
+    {
+      "word": "computer",
+      "hint": "electronic device for processing data"
+    },
+    {
+      "word": "factory",
+      "hint": "place where goods are manufactured"
+    },
+    {
+      "word": "engine",
+      "hint": "mechanical power source"
+    },
+    {
+      "word": "gears",
+      "hint": "interlocking toothed wheels"
+    },
+    {
+      "word": "production",
+      "hint": "process of making or manufacturing"
+    },
+    {
+      "word": "automation",
+      "hint": "use of machines to perform tasks"
+    },
+    {
+      "word": "industrial",
+      "hint": "related to manufacturing and factories"
+    }
+  ],
+  "production": [
+    "factory",
+    "movie",
+    "assembly",
+    "line",
+    "output",
+    "manufacturing",
+    "quality",
+    "efficiency"
+  ],
+  "production_detailed": [
+    {
+      "word": "factory",
+      "hint": "place where goods are manufactured"
+    },
+    {
+      "word": "movie",
+      "hint": "creation of films or shows"
+    },
+    {
+      "word": "assembly",
+      "hint": "process of putting parts together"
+    },
+    {
+      "word": "line",
+      "hint": "series of workers making a product"
+    },
+    {
+      "word": "output",
+      "hint": "amount of something produced"
+    },
+    {
+      "word": "manufacturing",
+      "hint": "making products on a large scale"
+    },
+    {
+      "word": "quality",
+      "hint": "standard of something as measured against others"
+    },
+    {
+      "word": "efficiency",
+      "hint": "achieving maximum productivity with minimum wasted effort"
+    }
+  ],
+  "assembly line": [
+    "factory",
+    "car",
+    "robot",
+    "conveyor",
+    "worker",
+    "mass production",
+    "Henry Ford"
+  ],
+  "assembly line_detailed": [
+    {
+      "word": "factory",
+      "hint": "place where assembly lines are commonly found"
+    },
+    {
+      "word": "car",
+      "hint": "vehicles are often produced on assembly lines"
+    },
+    {
+      "word": "robot",
+      "hint": "automated machines used in modern assembly lines"
+    },
+    {
+      "word": "conveyor",
+      "hint": "moving belt that transports items along the line"
+    },
+    {
+      "word": "worker",
+      "hint": "person performing tasks on an assembly line"
+    },
+    {
+      "word": "mass production",
+      "hint": "manufacturing method using assembly lines"
+    },
+    {
+      "word": "Henry Ford",
+      "hint": "industrialist who popularized assembly line production"
+    }
+  ],
+  "worker": [
+    "labor",
+    "employee",
+    "job",
+    "factory",
+    "uniform",
+    "union",
+    "paycheck",
+    "boss"
+  ],
+  "worker_detailed": [
+    {
+      "word": "labor",
+      "hint": "physical or mental work"
+    },
+    {
+      "word": "employee",
+      "hint": "person employed for wages"
+    },
+    {
+      "word": "job",
+      "hint": "regular employment"
+    },
+    {
+      "word": "factory",
+      "hint": "place where goods are manufactured"
+    },
+    {
+      "word": "uniform",
+      "hint": "standardized work clothing"
+    },
+    {
+      "word": "union",
+      "hint": "organization representing workers"
+    },
+    {
+      "word": "paycheck",
+      "hint": "payment for work done"
+    },
+    {
+      "word": "boss",
+      "hint": "person in charge of workers"
+    }
+  ],
+  "industry": [
+    "factory",
+    "business",
+    "manufacturing",
+    "worker",
+    "production",
+    "machine",
+    "technology"
+  ],
+  "industry_detailed": [
+    {
+      "word": "factory",
+      "hint": "place where goods are manufactured"
+    },
+    {
+      "word": "business",
+      "hint": "commercial activity or enterprise"
+    },
+    {
+      "word": "manufacturing",
+      "hint": "production of goods on a large scale"
+    },
+    {
+      "word": "worker",
+      "hint": "person employed in an industry"
+    },
+    {
+      "word": "production",
+      "hint": "process of making or creating goods"
+    },
+    {
+      "word": "machine",
+      "hint": "mechanical device used in industrial processes"
+    },
+    {
+      "word": "technology",
+      "hint": "application of scientific knowledge for practical purposes"
+    }
+  ],
+  "robot": [
+    "machine",
+    "artificial",
+    "automation",
+    "technology",
+    "android",
+    "computer",
+    "future"
+  ],
+  "robot_detailed": [
+    {
+      "word": "machine",
+      "hint": "mechanical device that performs tasks"
+    },
+    {
+      "word": "artificial",
+      "hint": "man-made, not natural"
+    },
+    {
+      "word": "automation",
+      "hint": "process of making tasks automatic"
+    },
+    {
+      "word": "technology",
+      "hint": "application of scientific knowledge"
+    },
+    {
+      "word": "android",
+      "hint": "humanoid robot with human-like appearance"
+    },
+    {
+      "word": "computer",
+      "hint": "electronic device for processing data"
+    },
+    {
+      "word": "future",
+      "hint": "time yet to come, often associated with advanced technology"
+    }
+  ],
+  "computer": [
+    "keyboard",
+    "mouse",
+    "screen",
+    "internet",
+    "software",
+    "hardware",
+    "file",
+    "processor"
+  ],
+  "computer_detailed": [
+    {
+      "word": "keyboard",
+      "hint": "input device for typing"
+    },
+    {
+      "word": "mouse",
+      "hint": "pointing device for navigation"
+    },
+    {
+      "word": "screen",
+      "hint": "display for visual output"
+    },
+    {
+      "word": "internet",
+      "hint": "global network for information"
+    },
+    {
+      "word": "software",
+      "hint": "programs that run on computers"
+    },
+    {
+      "word": "hardware",
+      "hint": "physical components of a computer"
+    },
+    {
+      "word": "file",
+      "hint": "stored digital information"
+    },
+    {
+      "word": "processor",
+      "hint": "central processing unit (CPU)"
+    }
+  ],
+  "engine": [
+    "car",
+    "motor",
+    "power",
+    "combustion",
+    "cylinder",
+    "fuel",
+    "oil",
+    "horsepower"
+  ],
+  "engine_detailed": [
+    {
+      "word": "car",
+      "hint": "engines power most automobiles"
+    },
+    {
+      "word": "motor",
+      "hint": "synonym for engine"
+    },
+    {
+      "word": "power",
+      "hint": "engines provide mechanical power"
+    },
+    {
+      "word": "combustion",
+      "hint": "many engines use internal combustion"
+    },
+    {
+      "word": "cylinder",
+      "hint": "component where fuel is burned in combustion engines"
+    },
+    {
+      "word": "fuel",
+      "hint": "engines require fuel to operate"
+    },
+    {
+      "word": "oil",
+      "hint": "lubricates engine parts"
+    },
+    {
+      "word": "horsepower",
+      "hint": "measure of engine power"
+    }
+  ],
+  "gears": [
+    "machine",
+    "clock",
+    "bicycle",
+    "car",
+    "cog",
+    "metal",
+    "teeth",
+    "rotation",
+    "mechanical"
+  ],
+  "gears_detailed": [
+    {
+      "word": "machine",
+      "hint": "gears are common components in machinery"
+    },
+    {
+      "word": "clock",
+      "hint": "many clocks use gears in their mechanisms"
+    },
+    {
+      "word": "bicycle",
+      "hint": "bikes use gears for different speeds"
+    },
+    {
+      "word": "car",
+      "hint": "automobiles have gears in the transmission"
+    },
+    {
+      "word": "cog",
+      "hint": "another name for a gear wheel"
+    },
+    {
+      "word": "metal",
+      "hint": "gears are typically made of metal"
+    },
+    {
+      "word": "teeth",
+      "hint": "gears have interlocking teeth"
+    },
+    {
+      "word": "rotation",
+      "hint": "gears rotate to transfer motion"
+    },
+    {
+      "word": "mechanical",
+      "hint": "gears are part of mechanical systems"
+    }
+  ],
+  "automation": [
+    "robot",
+    "factory",
+    "efficiency",
+    "technology",
+    "machine",
+    "computer",
+    "assembly line",
+    "artificial intelligence"
+  ],
+  "automation_detailed": [
+    {
+      "word": "robot",
+      "hint": "mechanical device that performs tasks automatically"
+    },
+    {
+      "word": "factory",
+      "hint": "place where goods are manufactured using automated processes"
+    },
+    {
+      "word": "efficiency",
+      "hint": "improved productivity through automated systems"
+    },
+    {
+      "word": "technology",
+      "hint": "use of scientific knowledge for practical purposes"
+    },
+    {
+      "word": "machine",
+      "hint": "device that performs specific tasks automatically"
+    },
+    {
+      "word": "computer",
+      "hint": "electronic device that processes data and automates tasks"
+    },
+    {
+      "word": "assembly line",
+      "hint": "manufacturing process where products move from station to station"
+    },
+    {
+      "word": "artificial intelligence",
+      "hint": "computer systems able to perform tasks that typically require human intelligence"
+    }
+  ],
+  "movie": [
+    "popcorn",
+    "theater",
+    "actor",
+    "director",
+    "Hollywood",
+    "screen",
+    "ticket",
+    "trailer"
+  ],
+  "movie_detailed": [
+    {
+      "word": "popcorn",
+      "hint": "popular snack eaten while watching"
+    },
+    {
+      "word": "theater",
+      "hint": "place where movies are shown"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs in a movie"
+    },
+    {
+      "word": "director",
+      "hint": "person who oversees the making of a movie"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "center of the American film industry"
+    },
+    {
+      "word": "screen",
+      "hint": "surface on which movies are projected"
+    },
+    {
+      "word": "ticket",
+      "hint": "purchased to gain admission to a movie"
+    },
+    {
+      "word": "trailer",
+      "hint": "preview advertisement for an upcoming movie"
+    }
+  ],
+  "assembly": [
+    "line",
+    "school",
+    "instruction",
+    "part",
+    "factory",
+    "meeting",
+    "language"
+  ],
+  "assembly_detailed": [
+    {
+      "word": "line",
+      "hint": "assembly line in manufacturing"
+    },
+    {
+      "word": "school",
+      "hint": "gathering of students for announcements"
+    },
+    {
+      "word": "instruction",
+      "hint": "directions for putting something together"
+    },
+    {
+      "word": "part",
+      "hint": "components used in assembly"
+    },
+    {
+      "word": "factory",
+      "hint": "place where products are assembled"
+    },
+    {
+      "word": "meeting",
+      "hint": "gathering of people for a purpose"
+    },
+    {
+      "word": "language",
+      "hint": "low-level programming code"
+    }
+  ],
+  "line": [
+    "straight",
+    "wait",
+    "ruler",
+    "horizon",
+    "curve",
+    "boundary",
+    "telephone"
+  ],
+  "line_detailed": [
+    {
+      "word": "straight",
+      "hint": "a line is often thought of as straight"
+    },
+    {
+      "word": "wait",
+      "hint": "people stand in lines to wait"
+    },
+    {
+      "word": "ruler",
+      "hint": "tool used to draw straight lines"
+    },
+    {
+      "word": "horizon",
+      "hint": "the line where sky meets earth"
+    },
+    {
+      "word": "curve",
+      "hint": "a type of line that's not straight"
+    },
+    {
+      "word": "boundary",
+      "hint": "lines often mark boundaries or borders"
+    },
+    {
+      "word": "telephone",
+      "hint": "communication over a phone line"
+    }
+  ],
+  "output": [
+    "result",
+    "production",
+    "data",
+    "printer",
+    "yield",
+    "export",
+    "performance"
+  ],
+  "output_detailed": [
+    {
+      "word": "result",
+      "hint": "the consequence or product of an action or process"
+    },
+    {
+      "word": "production",
+      "hint": "the action of making or manufacturing something"
+    },
+    {
+      "word": "data",
+      "hint": "information produced by a computer or system"
+    },
+    {
+      "word": "printer",
+      "hint": "device that produces physical copies of digital documents"
+    },
+    {
+      "word": "yield",
+      "hint": "the amount produced, especially in agriculture"
+    },
+    {
+      "word": "export",
+      "hint": "goods or services sent to another country for sale"
+    },
+    {
+      "word": "performance",
+      "hint": "measurable result of a system or process"
+    }
+  ],
+  "manufacturing": [
+    "factory",
+    "assembly",
+    "production",
+    "machine",
+    "worker",
+    "product",
+    "industry",
+    "quality"
+  ],
+  "manufacturing_detailed": [
+    {
+      "word": "factory",
+      "hint": "building where goods are manufactured"
+    },
+    {
+      "word": "assembly",
+      "hint": "process of putting parts together"
+    },
+    {
+      "word": "production",
+      "hint": "creation of goods on a large scale"
+    },
+    {
+      "word": "machine",
+      "hint": "equipment used in manufacturing processes"
+    },
+    {
+      "word": "worker",
+      "hint": "person employed in a manufacturing facility"
+    },
+    {
+      "word": "product",
+      "hint": "item created through manufacturing"
+    },
+    {
+      "word": "industry",
+      "hint": "economic sector involved in manufacturing"
+    },
+    {
+      "word": "quality",
+      "hint": "standard of goods produced"
+    }
+  ],
+  "car": [
+    "wheel",
+    "engine",
+    "driver",
+    "road",
+    "fuel",
+    "seat",
+    "key",
+    "steering"
+  ],
+  "car_detailed": [
+    {
+      "word": "wheel",
+      "hint": "round object that allows car to move"
+    },
+    {
+      "word": "engine",
+      "hint": "powers the car"
+    },
+    {
+      "word": "driver",
+      "hint": "person who operates the car"
+    },
+    {
+      "word": "road",
+      "hint": "surface on which cars travel"
+    },
+    {
+      "word": "fuel",
+      "hint": "gasoline or other energy source for car"
+    },
+    {
+      "word": "seat",
+      "hint": "where passengers sit in a car"
+    },
+    {
+      "word": "key",
+      "hint": "used to start the car"
+    },
+    {
+      "word": "steering",
+      "hint": "control system to direct car's movement"
+    }
+  ],
+  "conveyor": [
+    "belt",
+    "factory",
+    "assembly",
+    "package",
+    "airport",
+    "warehouse",
+    "automation",
+    "roller"
+  ],
+  "conveyor_detailed": [
+    {
+      "word": "belt",
+      "hint": "moving surface that transports items"
+    },
+    {
+      "word": "factory",
+      "hint": "industrial setting where conveyors are common"
+    },
+    {
+      "word": "assembly",
+      "hint": "production line process using conveyors"
+    },
+    {
+      "word": "package",
+      "hint": "items often moved on conveyor systems"
+    },
+    {
+      "word": "airport",
+      "hint": "luggage conveyor belts in terminals"
+    },
+    {
+      "word": "warehouse",
+      "hint": "storage facilities using conveyor systems"
+    },
+    {
+      "word": "automation",
+      "hint": "mechanized processes involving conveyors"
+    },
+    {
+      "word": "roller",
+      "hint": "component of some conveyor systems"
+    }
+  ],
+  "mass production": [
+    "factory",
+    "assembly line",
+    "automation",
+    "standardization",
+    "economy of scale",
+    "industrial revolution",
+    "consumer good"
+  ],
+  "mass production_detailed": [
+    {
+      "word": "factory",
+      "hint": "place where mass production typically occurs"
+    },
+    {
+      "word": "assembly line",
+      "hint": "production method used for mass manufacturing"
+    },
+    {
+      "word": "automation",
+      "hint": "use of machines to increase production efficiency"
+    },
+    {
+      "word": "standardization",
+      "hint": "making products uniform for mass production"
+    },
+    {
+      "word": "economy of scale",
+      "hint": "cost advantage from producing large quantities"
+    },
+    {
+      "word": "industrial revolution",
+      "hint": "historical period when mass production began"
+    },
+    {
+      "word": "consumer good",
+      "hint": "products typically made through mass production"
+    }
+  ],
+  "henry ford": [
+    "car",
+    "assembly line",
+    "model t",
+    "detroit",
+    "industrialist",
+    "automobile",
+    "innovation"
+  ],
+  "henry ford_detailed": [
+    {
+      "word": "car",
+      "hint": "founded Ford Motor Company"
+    },
+    {
+      "word": "assembly line",
+      "hint": "revolutionized manufacturing"
+    },
+    {
+      "word": "model t",
+      "hint": "iconic affordable automobile"
+    },
+    {
+      "word": "detroit",
+      "hint": "city where Ford established his company"
+    },
+    {
+      "word": "industrialist",
+      "hint": "business leader who shaped modern industry"
+    },
+    {
+      "word": "automobile",
+      "hint": "invented and mass-produced vehicles"
+    },
+    {
+      "word": "innovation",
+      "hint": "pioneered new manufacturing techniques"
+    }
+  ],
+  "labor": [
+    "work",
+    "childbirth",
+    "union",
+    "job",
+    "worker",
+    "factory",
+    "strike",
+    "wage"
+  ],
+  "labor_detailed": [
+    {
+      "word": "work",
+      "hint": "physical or mental effort"
+    },
+    {
+      "word": "childbirth",
+      "hint": "process of giving birth"
+    },
+    {
+      "word": "union",
+      "hint": "organized association of workers"
+    },
+    {
+      "word": "job",
+      "hint": "paid position of regular employment"
+    },
+    {
+      "word": "worker",
+      "hint": "person who performs labor"
+    },
+    {
+      "word": "factory",
+      "hint": "building where goods are manufactured"
+    },
+    {
+      "word": "strike",
+      "hint": "work stoppage by employees"
+    },
+    {
+      "word": "wage",
+      "hint": "fixed regular payment for work"
+    }
+  ],
+  "employee": [
+    "worker",
+    "salary",
+    "job",
+    "office",
+    "boss",
+    "company",
+    "benefits"
+  ],
+  "employee_detailed": [
+    {
+      "word": "worker",
+      "hint": "someone who performs tasks for an employer"
+    },
+    {
+      "word": "salary",
+      "hint": "regular payment for work"
+    },
+    {
+      "word": "job",
+      "hint": "position of employment"
+    },
+    {
+      "word": "office",
+      "hint": "place where many employees work"
+    },
+    {
+      "word": "boss",
+      "hint": "person who supervises employees"
+    },
+    {
+      "word": "company",
+      "hint": "organization that employs people"
+    },
+    {
+      "word": "benefits",
+      "hint": "additional perks provided to employees"
+    }
+  ],
+  "job": [
+    "work",
+    "career",
+    "salary",
+    "interview",
+    "resume",
+    "office",
+    "boss",
+    "promotion"
+  ],
+  "job_detailed": [
+    {
+      "word": "work",
+      "hint": "employment or occupation"
+    },
+    {
+      "word": "career",
+      "hint": "long-term professional path"
+    },
+    {
+      "word": "salary",
+      "hint": "payment for work"
+    },
+    {
+      "word": "interview",
+      "hint": "meeting to assess job candidate"
+    },
+    {
+      "word": "resume",
+      "hint": "document summarizing qualifications"
+    },
+    {
+      "word": "office",
+      "hint": "workplace for many jobs"
+    },
+    {
+      "word": "boss",
+      "hint": "person in charge at work"
+    },
+    {
+      "word": "promotion",
+      "hint": "advancement in job position"
+    }
+  ],
+  "uniform": [
+    "school",
+    "military",
+    "police",
+    "nurse",
+    "sports",
+    "consistent",
+    "dress code",
+    "identity"
+  ],
+  "uniform_detailed": [
+    {
+      "word": "school",
+      "hint": "students often wear uniforms"
+    },
+    {
+      "word": "military",
+      "hint": "soldiers wear distinctive uniforms"
+    },
+    {
+      "word": "police",
+      "hint": "law enforcement officers wear uniforms"
+    },
+    {
+      "word": "nurse",
+      "hint": "medical professionals often wear uniforms"
+    },
+    {
+      "word": "sports",
+      "hint": "athletes wear team uniforms"
+    },
+    {
+      "word": "consistent",
+      "hint": "uniforms create a uniform appearance"
+    },
+    {
+      "word": "dress code",
+      "hint": "rules for wearing uniforms"
+    },
+    {
+      "word": "identity",
+      "hint": "uniforms represent belonging to a group"
+    }
+  ],
+  "union": [
+    "labor",
+    "marriage",
+    "unity",
+    "organization",
+    "strike",
+    "solidarity",
+    "negotiation"
+  ],
+  "union_detailed": [
+    {
+      "word": "labor",
+      "hint": "organized group of workers"
+    },
+    {
+      "word": "marriage",
+      "hint": "legal joining of two people"
+    },
+    {
+      "word": "unity",
+      "hint": "state of being joined or united"
+    },
+    {
+      "word": "organization",
+      "hint": "structured group with a common purpose"
+    },
+    {
+      "word": "strike",
+      "hint": "work stoppage by employees"
+    },
+    {
+      "word": "solidarity",
+      "hint": "unity or agreement of feeling or action"
+    },
+    {
+      "word": "negotiation",
+      "hint": "discussion aimed at reaching an agreement"
+    }
+  ],
+  "artificial": [
+    "intelligence",
+    "synthetic",
+    "fake",
+    "plastic",
+    "flavor",
+    "sweetener",
+    "flower"
+  ],
+  "artificial_detailed": [
+    {
+      "word": "intelligence",
+      "hint": "AI or machine learning"
+    },
+    {
+      "word": "synthetic",
+      "hint": "man-made or not natural"
+    },
+    {
+      "word": "fake",
+      "hint": "not genuine or real"
+    },
+    {
+      "word": "plastic",
+      "hint": "common artificial material"
+    },
+    {
+      "word": "flavor",
+      "hint": "imitation taste in food"
+    },
+    {
+      "word": "sweetener",
+      "hint": "sugar substitute"
+    },
+    {
+      "word": "flower",
+      "hint": "decorative imitation plant"
+    }
+  ],
+  "technology": [
+    "computer",
+    "internet",
+    "smartphone",
+    "innovation",
+    "digital",
+    "robot",
+    "software",
+    "artificial intelligence"
+  ],
+  "technology_detailed": [
+    {
+      "word": "computer",
+      "hint": "electronic device for processing data"
+    },
+    {
+      "word": "internet",
+      "hint": "global network connecting devices"
+    },
+    {
+      "word": "smartphone",
+      "hint": "mobile device with advanced computing capabilities"
+    },
+    {
+      "word": "innovation",
+      "hint": "introduction of new ideas or methods"
+    },
+    {
+      "word": "digital",
+      "hint": "relating to electronic technology"
+    },
+    {
+      "word": "robot",
+      "hint": "programmable machine capable of carrying out tasks"
+    },
+    {
+      "word": "software",
+      "hint": "programs and operating information used by computers"
+    },
+    {
+      "word": "artificial intelligence",
+      "hint": "simulation of human intelligence in machines"
+    }
+  ],
+  "android": [
+    "robot",
+    "smartphone",
+    "technology",
+    "artificial",
+    "Google",
+    "app",
+    "mobile",
+    "touchscreen"
+  ],
+  "android_detailed": [
+    {
+      "word": "robot",
+      "hint": "artificial humanoid machine"
+    },
+    {
+      "word": "smartphone",
+      "hint": "mobile operating system"
+    },
+    {
+      "word": "technology",
+      "hint": "advanced electronic devices"
+    },
+    {
+      "word": "artificial",
+      "hint": "man-made or synthetic"
+    },
+    {
+      "word": "Google",
+      "hint": "company behind Android OS"
+    },
+    {
+      "word": "app",
+      "hint": "software application for mobile devices"
+    },
+    {
+      "word": "mobile",
+      "hint": "portable and wireless"
+    },
+    {
+      "word": "touchscreen",
+      "hint": "interactive display technology"
+    }
+  ],
+  "future": [
+    "technology",
+    "robot",
+    "flying car",
+    "space",
+    "artificial intelligence",
+    "hologram",
+    "time travel"
+  ],
+  "future_detailed": [
+    {
+      "word": "technology",
+      "hint": "advancement of science and tools"
+    },
+    {
+      "word": "robot",
+      "hint": "automated machines in future scenarios"
+    },
+    {
+      "word": "flying car",
+      "hint": "imagined futuristic transportation"
+    },
+    {
+      "word": "space",
+      "hint": "exploration and colonization of other planets"
+    },
+    {
+      "word": "artificial intelligence",
+      "hint": "advanced computer systems and automation"
+    },
+    {
+      "word": "hologram",
+      "hint": "3D projected images in future communications"
+    },
+    {
+      "word": "time travel",
+      "hint": "theoretical concept of moving through time"
+    }
+  ],
+  "keyboard": [
+    "computer",
+    "typing",
+    "key",
+    "qwerty",
+    "piano",
+    "letter",
+    "mouse",
+    "bluetooth"
+  ],
+  "keyboard_detailed": [
+    {
+      "word": "computer",
+      "hint": "device keyboards are commonly used with"
+    },
+    {
+      "word": "typing",
+      "hint": "action performed on a keyboard"
+    },
+    {
+      "word": "key",
+      "hint": "individual button on a keyboard"
+    },
+    {
+      "word": "qwerty",
+      "hint": "common keyboard layout"
+    },
+    {
+      "word": "piano",
+      "hint": "musical instrument with keys"
+    },
+    {
+      "word": "letter",
+      "hint": "characters typed on a keyboard"
+    },
+    {
+      "word": "mouse",
+      "hint": "often used alongside a keyboard"
+    },
+    {
+      "word": "bluetooth",
+      "hint": "wireless connectivity for some keyboards"
+    }
+  ],
+  "mouse": [
+    "cheese",
+    "trap",
+    "computer",
+    "cat",
+    "quiet",
+    "small",
+    "rodent"
+  ],
+  "mouse_detailed": [
+    {
+      "word": "cheese",
+      "hint": "stereotypical food for mice"
+    },
+    {
+      "word": "trap",
+      "hint": "device used to catch mice"
+    },
+    {
+      "word": "computer",
+      "hint": "pointing device for computers"
+    },
+    {
+      "word": "cat",
+      "hint": "natural predator of mice"
+    },
+    {
+      "word": "quiet",
+      "hint": "describes how mice move"
+    },
+    {
+      "word": "small",
+      "hint": "physical size of a mouse"
+    },
+    {
+      "word": "rodent",
+      "hint": "scientific classification of mice"
+    }
+  ],
+  "screen": [
+    "television",
+    "computer",
+    "movie",
+    "phone",
+    "window",
+    "projection",
+    "filter"
+  ],
+  "screen_detailed": [
+    {
+      "word": "television",
+      "hint": "device with a screen for watching shows"
+    },
+    {
+      "word": "computer",
+      "hint": "digital device with a display"
+    },
+    {
+      "word": "movie",
+      "hint": "film shown on a large screen"
+    },
+    {
+      "word": "phone",
+      "hint": "mobile device with a touchscreen"
+    },
+    {
+      "word": "window",
+      "hint": "screen that keeps out insects"
+    },
+    {
+      "word": "projection",
+      "hint": "image displayed on a large screen"
+    },
+    {
+      "word": "filter",
+      "hint": "screen used to separate or protect"
+    }
+  ],
+  "internet": [
+    "website",
+    "google",
+    "email",
+    "wifi",
+    "social media",
+    "browser",
+    "download",
+    "streaming"
+  ],
+  "internet_detailed": [
+    {
+      "word": "website",
+      "hint": "online page accessed via browser"
+    },
+    {
+      "word": "google",
+      "hint": "popular search engine"
+    },
+    {
+      "word": "email",
+      "hint": "electronic messaging system"
+    },
+    {
+      "word": "wifi",
+      "hint": "wireless network connection"
+    },
+    {
+      "word": "social media",
+      "hint": "online platforms for sharing content"
+    },
+    {
+      "word": "browser",
+      "hint": "software for accessing the web"
+    },
+    {
+      "word": "download",
+      "hint": "retrieving files from the internet"
+    },
+    {
+      "word": "streaming",
+      "hint": "watching video content online"
+    }
+  ],
+  "software": [
+    "computer",
+    "program",
+    "code",
+    "application",
+    "update",
+    "developer",
+    "bug",
+    "download"
+  ],
+  "software_detailed": [
+    {
+      "word": "computer",
+      "hint": "device that runs software"
+    },
+    {
+      "word": "program",
+      "hint": "another term for software"
+    },
+    {
+      "word": "code",
+      "hint": "instructions that make up software"
+    },
+    {
+      "word": "application",
+      "hint": "software designed for specific tasks"
+    },
+    {
+      "word": "update",
+      "hint": "improving or fixing existing software"
+    },
+    {
+      "word": "developer",
+      "hint": "person who creates software"
+    },
+    {
+      "word": "bug",
+      "hint": "error or flaw in software"
+    },
+    {
+      "word": "download",
+      "hint": "obtaining software from the internet"
+    }
+  ],
+  "motor": [
+    "car",
+    "engine",
+    "boat",
+    "electric",
+    "speed",
+    "oil",
+    "noise"
+  ],
+  "motor_detailed": [
+    {
+      "word": "car",
+      "hint": "vehicles powered by motors"
+    },
+    {
+      "word": "engine",
+      "hint": "the power source of a motor vehicle"
+    },
+    {
+      "word": "boat",
+      "hint": "watercraft often propelled by motors"
+    },
+    {
+      "word": "electric",
+      "hint": "type of motor powered by electricity"
+    },
+    {
+      "word": "speed",
+      "hint": "rate of movement associated with motors"
+    },
+    {
+      "word": "oil",
+      "hint": "lubricant used in many motors"
+    },
+    {
+      "word": "noise",
+      "hint": "sound produced by running motors"
+    }
+  ],
+  "power": [
+    "strength",
+    "electricity",
+    "control",
+    "authority",
+    "leadership",
+    "money",
+    "government"
+  ],
+  "power_detailed": [
+    {
+      "word": "strength",
+      "hint": "physical or mental force"
+    },
+    {
+      "word": "electricity",
+      "hint": "energy that powers devices"
+    },
+    {
+      "word": "control",
+      "hint": "ability to influence or direct"
+    },
+    {
+      "word": "authority",
+      "hint": "right to give orders or make decisions"
+    },
+    {
+      "word": "leadership",
+      "hint": "ability to guide or direct others"
+    },
+    {
+      "word": "money",
+      "hint": "financial influence or capability"
+    },
+    {
+      "word": "government",
+      "hint": "political control and administration"
+    }
+  ],
+  "combustion": [
+    "fire",
+    "fuel",
+    "engine",
+    "smoke",
+    "heat",
+    "oxygen",
+    "flame",
+    "explosion"
+  ],
+  "combustion_detailed": [
+    {
+      "word": "fire",
+      "hint": "visible result of combustion"
+    },
+    {
+      "word": "fuel",
+      "hint": "material that undergoes combustion"
+    },
+    {
+      "word": "engine",
+      "hint": "device that uses combustion for power"
+    },
+    {
+      "word": "smoke",
+      "hint": "byproduct of combustion"
+    },
+    {
+      "word": "heat",
+      "hint": "energy released during combustion"
+    },
+    {
+      "word": "oxygen",
+      "hint": "gas required for combustion"
+    },
+    {
+      "word": "flame",
+      "hint": "visible part of burning gases"
+    },
+    {
+      "word": "explosion",
+      "hint": "rapid combustion with expanding gases"
+    }
+  ],
+  "cylinder": [
+    "engine",
+    "pipe",
+    "can",
+    "log",
+    "barrel",
+    "tank",
+    "roll",
+    "pillar"
+  ],
+  "cylinder_detailed": [
+    {
+      "word": "engine",
+      "hint": "many engines have cylindrical components"
+    },
+    {
+      "word": "pipe",
+      "hint": "pipes are often cylindrical in shape"
+    },
+    {
+      "word": "can",
+      "hint": "canned food and beverages come in cylindrical containers"
+    },
+    {
+      "word": "log",
+      "hint": "tree logs are naturally cylindrical"
+    },
+    {
+      "word": "barrel",
+      "hint": "storage barrels are typically cylindrical"
+    },
+    {
+      "word": "tank",
+      "hint": "gas tanks and water tanks are often cylindrical"
+    },
+    {
+      "word": "roll",
+      "hint": "many rolled items form a cylinder shape"
+    },
+    {
+      "word": "pillar",
+      "hint": "architectural pillars are usually cylindrical"
+    }
+  ],
+  "fuel": [
+    "gas",
+    "oil",
+    "energy",
+    "car",
+    "fire",
+    "pump",
+    "tank",
+    "rocket"
+  ],
+  "fuel_detailed": [
+    {
+      "word": "gas",
+      "hint": "common fuel for vehicles"
+    },
+    {
+      "word": "oil",
+      "hint": "petroleum-based fuel"
+    },
+    {
+      "word": "energy",
+      "hint": "fuel provides energy"
+    },
+    {
+      "word": "car",
+      "hint": "vehicles require fuel"
+    },
+    {
+      "word": "fire",
+      "hint": "fuel can feed flames"
+    },
+    {
+      "word": "pump",
+      "hint": "device for dispensing fuel"
+    },
+    {
+      "word": "tank",
+      "hint": "container for storing fuel"
+    },
+    {
+      "word": "rocket",
+      "hint": "spacecraft powered by fuel"
+    }
+  ],
+  "clock": [
+    "time",
+    "tick",
+    "hand",
+    "alarm",
+    "digital",
+    "grandfather",
+    "watch",
+    "face"
+  ],
+  "clock_detailed": [
+    {
+      "word": "time",
+      "hint": "clocks measure and display time"
+    },
+    {
+      "word": "tick",
+      "hint": "sound made by many analog clocks"
+    },
+    {
+      "word": "hand",
+      "hint": "moving parts that point to numbers on analog clocks"
+    },
+    {
+      "word": "alarm",
+      "hint": "feature on many clocks to wake people up"
+    },
+    {
+      "word": "digital",
+      "hint": "type of clock with numerical display"
+    },
+    {
+      "word": "grandfather",
+      "hint": "large, freestanding type of clock"
+    },
+    {
+      "word": "watch",
+      "hint": "small, wearable timepiece"
+    },
+    {
+      "word": "face",
+      "hint": "front part of a clock where time is displayed"
+    }
+  ],
+  "bicycle": [
+    "wheel",
+    "pedal",
+    "chain",
+    "handlebar",
+    "seat",
+    "helmet",
+    "bell"
+  ],
+  "bicycle_detailed": [
+    {
+      "word": "wheel",
+      "hint": "circular component that rotates"
+    },
+    {
+      "word": "pedal",
+      "hint": "foot-operated mechanism for propulsion"
+    },
+    {
+      "word": "chain",
+      "hint": "links that transfer power from pedals to wheel"
+    },
+    {
+      "word": "handlebar",
+      "hint": "steering component for control"
+    },
+    {
+      "word": "seat",
+      "hint": "where the rider sits"
+    },
+    {
+      "word": "helmet",
+      "hint": "protective headgear for cyclists"
+    },
+    {
+      "word": "bell",
+      "hint": "warning device to alert others"
+    }
+  ],
+  "cog": [
+    "machine",
+    "wheel",
+    "gear",
+    "clock",
+    "factory",
+    "bicycle",
+    "robot"
+  ],
+  "cog_detailed": [
+    {
+      "word": "machine",
+      "hint": "cogs are common components in machines"
+    },
+    {
+      "word": "wheel",
+      "hint": "cogs often resemble small toothed wheels"
+    },
+    {
+      "word": "gear",
+      "hint": "another term for cog, often used interchangeably"
+    },
+    {
+      "word": "clock",
+      "hint": "cogs are frequently found in clock mechanisms"
+    },
+    {
+      "word": "factory",
+      "hint": "industrial settings where cogs are commonly used"
+    },
+    {
+      "word": "bicycle",
+      "hint": "bikes use cogs in their chain drive systems"
+    },
+    {
+      "word": "robot",
+      "hint": "cogs are often associated with robotics and automation"
+    }
+  ],
+  "metal": [
+    "steel",
+    "iron",
+    "silver",
+    "gold",
+    "aluminum",
+    "copper",
+    "rust",
+    "magnet"
+  ],
+  "metal_detailed": [
+    {
+      "word": "steel",
+      "hint": "common metal alloy"
+    },
+    {
+      "word": "iron",
+      "hint": "basic metallic element"
+    },
+    {
+      "word": "silver",
+      "hint": "precious metal"
+    },
+    {
+      "word": "gold",
+      "hint": "valuable precious metal"
+    },
+    {
+      "word": "aluminum",
+      "hint": "lightweight metal"
+    },
+    {
+      "word": "copper",
+      "hint": "reddish conductive metal"
+    },
+    {
+      "word": "rust",
+      "hint": "oxidation of metal"
+    },
+    {
+      "word": "magnet",
+      "hint": "attracts certain metals"
+    }
+  ],
+  "teeth": [
+    "brush",
+    "dentist",
+    "cavity",
+    "smile",
+    "bite",
+    "floss",
+    "toothpaste",
+    "braces"
+  ],
+  "teeth_detailed": [
+    {
+      "word": "brush",
+      "hint": "tool used to clean teeth"
+    },
+    {
+      "word": "dentist",
+      "hint": "professional who cares for teeth"
+    },
+    {
+      "word": "cavity",
+      "hint": "decay in a tooth"
+    },
+    {
+      "word": "smile",
+      "hint": "expression that shows teeth"
+    },
+    {
+      "word": "bite",
+      "hint": "action of using teeth to cut food"
+    },
+    {
+      "word": "floss",
+      "hint": "string used to clean between teeth"
+    },
+    {
+      "word": "toothpaste",
+      "hint": "cleaning substance for teeth"
+    },
+    {
+      "word": "braces",
+      "hint": "dental appliance to straighten teeth"
+    }
+  ],
+  "popcorn": [
+    "movie",
+    "butter",
+    "salt",
+    "kernel",
+    "microwave",
+    "theater",
+    "snack",
+    "bag"
+  ],
+  "popcorn_detailed": [
+    {
+      "word": "movie",
+      "hint": "commonly eaten while watching films"
+    },
+    {
+      "word": "butter",
+      "hint": "popular topping for popcorn"
+    },
+    {
+      "word": "salt",
+      "hint": "common seasoning for popcorn"
+    },
+    {
+      "word": "kernel",
+      "hint": "the seed that pops into popcorn"
+    },
+    {
+      "word": "microwave",
+      "hint": "common method of preparing popcorn"
+    },
+    {
+      "word": "theater",
+      "hint": "place where popcorn is often consumed"
+    },
+    {
+      "word": "snack",
+      "hint": "popcorn is a popular snack food"
+    },
+    {
+      "word": "bag",
+      "hint": "container for microwave or pre-popped popcorn"
+    }
+  ],
+  "theater": [
+    "stage",
+    "actor",
+    "curtain",
+    "audience",
+    "play",
+    "ticket",
+    "costume",
+    "script"
+  ],
+  "theater_detailed": [
+    {
+      "word": "stage",
+      "hint": "platform where performances take place"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs in plays or movies"
+    },
+    {
+      "word": "curtain",
+      "hint": "fabric that opens and closes to reveal the stage"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people watching the performance"
+    },
+    {
+      "word": "play",
+      "hint": "dramatic work performed on stage"
+    },
+    {
+      "word": "ticket",
+      "hint": "pass that allows entry to a show"
+    },
+    {
+      "word": "costume",
+      "hint": "clothing worn by performers"
+    },
+    {
+      "word": "script",
+      "hint": "written text of a play or performance"
+    }
+  ],
+  "actor": [
+    "movie",
+    "stage",
+    "celebrity",
+    "role",
+    "audition",
+    "script",
+    "Hollywood"
+  ],
+  "actor_detailed": [
+    {
+      "word": "movie",
+      "hint": "films actors perform in"
+    },
+    {
+      "word": "stage",
+      "hint": "platform where actors perform"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous status many actors achieve"
+    },
+    {
+      "word": "role",
+      "hint": "character an actor portrays"
+    },
+    {
+      "word": "audition",
+      "hint": "tryout process for acting jobs"
+    },
+    {
+      "word": "script",
+      "hint": "written text actors memorize"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "famous center of film industry"
+    }
+  ],
+  "director": [
+    "film",
+    "chair",
+    "megaphone",
+    "camera",
+    "script",
+    "actor",
+    "cut",
+    "Hollywood"
+  ],
+  "director_detailed": [
+    {
+      "word": "film",
+      "hint": "directs movies"
+    },
+    {
+      "word": "chair",
+      "hint": "iconic folding seat on set"
+    },
+    {
+      "word": "megaphone",
+      "hint": "used to give instructions on set"
+    },
+    {
+      "word": "camera",
+      "hint": "essential tool in filmmaking"
+    },
+    {
+      "word": "script",
+      "hint": "guides the film's dialogue and action"
+    },
+    {
+      "word": "actor",
+      "hint": "works closely with the director"
+    },
+    {
+      "word": "cut",
+      "hint": "command to stop filming"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "famous center of film industry"
+    }
+  ],
+  "hollywood": [
+    "movie",
+    "star",
+    "glamour",
+    "red carpet",
+    "award",
+    "studio",
+    "sign",
+    "director"
+  ],
+  "hollywood_detailed": [
+    {
+      "word": "movie",
+      "hint": "films produced in Hollywood"
+    },
+    {
+      "word": "star",
+      "hint": "famous actors and celebrities"
+    },
+    {
+      "word": "glamour",
+      "hint": "the allure and excitement of the entertainment industry"
+    },
+    {
+      "word": "red carpet",
+      "hint": "events where celebrities make grand entrances"
+    },
+    {
+      "word": "award",
+      "hint": "prestigious recognition in the film industry"
+    },
+    {
+      "word": "studio",
+      "hint": "large companies that produce movies"
+    },
+    {
+      "word": "sign",
+      "hint": "iconic Hollywood hillside landmark"
+    },
+    {
+      "word": "director",
+      "hint": "person who oversees the making of a film"
+    }
+  ],
+  "school": [
+    "teacher",
+    "student",
+    "classroom",
+    "homework",
+    "textbook",
+    "exam",
+    "playground"
+  ],
+  "school_detailed": [
+    {
+      "word": "teacher",
+      "hint": "person who instructs students"
+    },
+    {
+      "word": "student",
+      "hint": "person who attends school to learn"
+    },
+    {
+      "word": "classroom",
+      "hint": "room where lessons are taught"
+    },
+    {
+      "word": "homework",
+      "hint": "assignments to be completed outside of class"
+    },
+    {
+      "word": "textbook",
+      "hint": "book used for studying a subject"
+    },
+    {
+      "word": "exam",
+      "hint": "test to evaluate knowledge or skills"
+    },
+    {
+      "word": "playground",
+      "hint": "outdoor area for recreation during breaks"
+    }
+  ],
+  "instruction": [
+    "teacher",
+    "manual",
+    "classroom",
+    "direction",
+    "lesson",
+    "guide",
+    "step",
+    "tutorial"
+  ],
+  "instruction_detailed": [
+    {
+      "word": "teacher",
+      "hint": "person who gives instructions"
+    },
+    {
+      "word": "manual",
+      "hint": "book containing instructions"
+    },
+    {
+      "word": "classroom",
+      "hint": "place where instruction often occurs"
+    },
+    {
+      "word": "direction",
+      "hint": "guidance or order given to someone"
+    },
+    {
+      "word": "lesson",
+      "hint": "period of teaching or learning"
+    },
+    {
+      "word": "guide",
+      "hint": "something that provides instructions or information"
+    },
+    {
+      "word": "step",
+      "hint": "single action in a set of instructions"
+    },
+    {
+      "word": "tutorial",
+      "hint": "explanation of how to do something"
+    }
+  ],
+  "part": [
+    "whole",
+    "piece",
+    "section",
+    "component",
+    "fraction",
+    "segment",
+    "role",
+    "division"
+  ],
+  "part_detailed": [
+    {
+      "word": "whole",
+      "hint": "opposite of part"
+    },
+    {
+      "word": "piece",
+      "hint": "a portion or segment"
+    },
+    {
+      "word": "section",
+      "hint": "a distinct portion or division"
+    },
+    {
+      "word": "component",
+      "hint": "an element or constituent"
+    },
+    {
+      "word": "fraction",
+      "hint": "a numerical quantity that is less than whole"
+    },
+    {
+      "word": "segment",
+      "hint": "a portion or division of something"
+    },
+    {
+      "word": "role",
+      "hint": "a function or position"
+    },
+    {
+      "word": "division",
+      "hint": "the act of separating into parts"
+    }
+  ],
+  "meeting": [
+    "agenda",
+    "conference",
+    "boardroom",
+    "minute",
+    "presentation",
+    "schedule",
+    "attendee"
+  ],
+  "meeting_detailed": [
+    {
+      "word": "agenda",
+      "hint": "list of topics to be discussed"
+    },
+    {
+      "word": "conference",
+      "hint": "a formal gathering for discussion"
+    },
+    {
+      "word": "boardroom",
+      "hint": "typical location for business meetings"
+    },
+    {
+      "word": "minute",
+      "hint": "written record of a meeting"
+    },
+    {
+      "word": "presentation",
+      "hint": "visual aid often used in meetings"
+    },
+    {
+      "word": "schedule",
+      "hint": "planned time for a meeting"
+    },
+    {
+      "word": "attendee",
+      "hint": "person who participates in a meeting"
+    }
+  ],
+  "language": [
+    "communication",
+    "speech",
+    "writing",
+    "grammar",
+    "vocabulary",
+    "translation",
+    "dialect"
+  ],
+  "language_detailed": [
+    {
+      "word": "communication",
+      "hint": "primary purpose of language"
+    },
+    {
+      "word": "speech",
+      "hint": "verbal expression of language"
+    },
+    {
+      "word": "writing",
+      "hint": "written form of language"
+    },
+    {
+      "word": "grammar",
+      "hint": "rules governing language structure"
+    },
+    {
+      "word": "vocabulary",
+      "hint": "words that make up a language"
+    },
+    {
+      "word": "translation",
+      "hint": "converting between languages"
+    },
+    {
+      "word": "dialect",
+      "hint": "regional variant of a language"
+    }
+  ],
+  "straight": [
+    "line",
+    "arrow",
+    "ruler",
+    "road",
+    "posture",
+    "honest",
+    "heterosexual"
+  ],
+  "straight_detailed": [
+    {
+      "word": "line",
+      "hint": "a geometric shape without curves"
+    },
+    {
+      "word": "arrow",
+      "hint": "typically depicted as a straight line with a point"
+    },
+    {
+      "word": "ruler",
+      "hint": "a tool used to draw straight lines"
+    },
+    {
+      "word": "road",
+      "hint": "a long, straight path for travel"
+    },
+    {
+      "word": "posture",
+      "hint": "standing up straight"
+    },
+    {
+      "word": "honest",
+      "hint": "being direct or straightforward"
+    },
+    {
+      "word": "heterosexual",
+      "hint": "referring to sexual orientation"
+    }
+  ],
+  "wait": [
+    "line",
+    "patience",
+    "time",
+    "delay",
+    "anticipation",
+    "pause",
+    "stop",
+    "hold"
+  ],
+  "wait_detailed": [
+    {
+      "word": "line",
+      "hint": "waiting in a queue"
+    },
+    {
+      "word": "patience",
+      "hint": "virtue needed when waiting"
+    },
+    {
+      "word": "time",
+      "hint": "period of waiting"
+    },
+    {
+      "word": "delay",
+      "hint": "postponement or holdup"
+    },
+    {
+      "word": "anticipation",
+      "hint": "feeling while waiting for something"
+    },
+    {
+      "word": "pause",
+      "hint": "brief stop or interruption"
+    },
+    {
+      "word": "stop",
+      "hint": "ceasing movement or action"
+    },
+    {
+      "word": "hold",
+      "hint": "keeping in a suspended state"
+    }
+  ],
+  "ruler": [
+    "measurement",
+    "king",
+    "school",
+    "straight",
+    "inches",
+    "wood",
+    "monarch",
+    "geometry"
+  ],
+  "ruler_detailed": [
+    {
+      "word": "measurement",
+      "hint": "tool for measuring length"
+    },
+    {
+      "word": "king",
+      "hint": "person who rules a kingdom"
+    },
+    {
+      "word": "school",
+      "hint": "commonly used in classrooms"
+    },
+    {
+      "word": "straight",
+      "hint": "used to draw straight lines"
+    },
+    {
+      "word": "inches",
+      "hint": "unit of measurement on a ruler"
+    },
+    {
+      "word": "wood",
+      "hint": "material rulers are often made from"
+    },
+    {
+      "word": "monarch",
+      "hint": "sovereign head of state"
+    },
+    {
+      "word": "geometry",
+      "hint": "subject where rulers are frequently used"
+    }
+  ],
+  "horizon": [
+    "sunset",
+    "ocean",
+    "future",
+    "distant",
+    "skyline",
+    "line",
+    "landscape"
+  ],
+  "horizon_detailed": [
+    {
+      "word": "sunset",
+      "hint": "colorful sky as sun dips below horizon"
+    },
+    {
+      "word": "ocean",
+      "hint": "where sky meets water at the horizon"
+    },
+    {
+      "word": "future",
+      "hint": "metaphorical horizon of upcoming events"
+    },
+    {
+      "word": "distant",
+      "hint": "horizon is far away"
+    },
+    {
+      "word": "skyline",
+      "hint": "outline of buildings against the horizon"
+    },
+    {
+      "word": "line",
+      "hint": "horizon appears as a line dividing sky and land/sea"
+    },
+    {
+      "word": "landscape",
+      "hint": "horizon is a key element in scenic views"
+    }
+  ],
+  "curve": [
+    "bend",
+    "road",
+    "ball",
+    "graph",
+    "shape",
+    "line",
+    "body"
+  ],
+  "curve_detailed": [
+    {
+      "word": "bend",
+      "hint": "a change in direction"
+    },
+    {
+      "word": "road",
+      "hint": "winding path for vehicles"
+    },
+    {
+      "word": "ball",
+      "hint": "spherical object with curved surface"
+    },
+    {
+      "word": "graph",
+      "hint": "visual representation of data"
+    },
+    {
+      "word": "shape",
+      "hint": "form or outline of an object"
+    },
+    {
+      "word": "line",
+      "hint": "non-straight path or trajectory"
+    },
+    {
+      "word": "body",
+      "hint": "human figure with natural curves"
+    }
+  ],
+  "result": [
+    "outcome",
+    "conclusion",
+    "effect",
+    "consequence",
+    "answer",
+    "score",
+    "finding"
+  ],
+  "result_detailed": [
+    {
+      "word": "outcome",
+      "hint": "final consequence of an action or event"
+    },
+    {
+      "word": "conclusion",
+      "hint": "end point or final outcome"
+    },
+    {
+      "word": "effect",
+      "hint": "change produced by an action or cause"
+    },
+    {
+      "word": "consequence",
+      "hint": "outcome of an action or situation"
+    },
+    {
+      "word": "answer",
+      "hint": "solution to a problem or question"
+    },
+    {
+      "word": "score",
+      "hint": "numerical outcome in a game or test"
+    },
+    {
+      "word": "finding",
+      "hint": "conclusion reached by a study or investigation"
+    }
+  ],
+  "data": [
+    "information",
+    "computer",
+    "database",
+    "analysis",
+    "statistic",
+    "spreadsheet",
+    "chart",
+    "storage"
+  ],
+  "data_detailed": [
+    {
+      "word": "information",
+      "hint": "raw facts or details"
+    },
+    {
+      "word": "computer",
+      "hint": "device that processes data"
+    },
+    {
+      "word": "database",
+      "hint": "organized collection of data"
+    },
+    {
+      "word": "analysis",
+      "hint": "examining data for insights"
+    },
+    {
+      "word": "statistic",
+      "hint": "numerical data point"
+    },
+    {
+      "word": "spreadsheet",
+      "hint": "tool for organizing data"
+    },
+    {
+      "word": "chart",
+      "hint": "visual representation of data"
+    },
+    {
+      "word": "storage",
+      "hint": "keeping data for future use"
+    }
+  ],
+  "printer": [
+    "paper",
+    "ink",
+    "computer",
+    "office",
+    "document",
+    "cartridge",
+    "toner",
+    "wireless"
+  ],
+  "printer_detailed": [
+    {
+      "word": "paper",
+      "hint": "material printed on"
+    },
+    {
+      "word": "ink",
+      "hint": "liquid used to create prints"
+    },
+    {
+      "word": "computer",
+      "hint": "device often connected to printers"
+    },
+    {
+      "word": "office",
+      "hint": "common location for printers"
+    },
+    {
+      "word": "document",
+      "hint": "typical item produced by printers"
+    },
+    {
+      "word": "cartridge",
+      "hint": "container holding printer ink"
+    },
+    {
+      "word": "toner",
+      "hint": "powder used in laser printers"
+    },
+    {
+      "word": "wireless",
+      "hint": "modern printing without cables"
+    }
+  ],
+  "yield": [
+    "harvest",
+    "surrender",
+    "traffic",
+    "profit",
+    "result",
+    "bend",
+    "investment"
+  ],
+  "yield_detailed": [
+    {
+      "word": "harvest",
+      "hint": "crop production or gathering"
+    },
+    {
+      "word": "surrender",
+      "hint": "giving up or submitting"
+    },
+    {
+      "word": "traffic",
+      "hint": "road sign to give way"
+    },
+    {
+      "word": "profit",
+      "hint": "financial return or gain"
+    },
+    {
+      "word": "result",
+      "hint": "outcome or consequence"
+    },
+    {
+      "word": "bend",
+      "hint": "to give way under pressure"
+    },
+    {
+      "word": "investment",
+      "hint": "return on financial assets"
+    }
+  ],
+  "export": [
+    "trade",
+    "shipping",
+    "product",
+    "tariff",
+    "economy",
+    "container",
+    "customs"
+  ],
+  "export_detailed": [
+    {
+      "word": "trade",
+      "hint": "international exchange of goods"
+    },
+    {
+      "word": "shipping",
+      "hint": "transporting goods overseas"
+    },
+    {
+      "word": "product",
+      "hint": "item sent to other countries"
+    },
+    {
+      "word": "tariff",
+      "hint": "tax on exported goods"
+    },
+    {
+      "word": "economy",
+      "hint": "national financial system affected by exports"
+    },
+    {
+      "word": "container",
+      "hint": "large box for shipping exports"
+    },
+    {
+      "word": "customs",
+      "hint": "border control for exported goods"
+    }
+  ],
+  "wheel": [
+    "car",
+    "bicycle",
+    "tire",
+    "round",
+    "spin",
+    "hub",
+    "spoke",
+    "steering"
+  ],
+  "wheel_detailed": [
+    {
+      "word": "car",
+      "hint": "wheels are essential components of vehicles"
+    },
+    {
+      "word": "bicycle",
+      "hint": "two-wheeled mode of transportation"
+    },
+    {
+      "word": "tire",
+      "hint": "rubber covering on a wheel"
+    },
+    {
+      "word": "round",
+      "hint": "shape of a typical wheel"
+    },
+    {
+      "word": "spin",
+      "hint": "rotational motion of a wheel"
+    },
+    {
+      "word": "hub",
+      "hint": "central part of a wheel"
+    },
+    {
+      "word": "spoke",
+      "hint": "radial support in some wheel designs"
+    },
+    {
+      "word": "steering",
+      "hint": "controlling direction with a wheel"
+    }
+  ],
+  "driver": [
+    "car",
+    "license",
+    "wheel",
+    "road",
+    "taxi",
+    "bus",
+    "truck",
+    "golf"
+  ],
+  "driver_detailed": [
+    {
+      "word": "car",
+      "hint": "vehicle operated by a driver"
+    },
+    {
+      "word": "license",
+      "hint": "legal document required to operate a vehicle"
+    },
+    {
+      "word": "wheel",
+      "hint": "steering device used by a driver"
+    },
+    {
+      "word": "road",
+      "hint": "surface on which drivers typically travel"
+    },
+    {
+      "word": "taxi",
+      "hint": "professional driver who transports passengers"
+    },
+    {
+      "word": "bus",
+      "hint": "large vehicle operated by a professional driver"
+    },
+    {
+      "word": "truck",
+      "hint": "large vehicle for transporting goods"
+    },
+    {
+      "word": "golf",
+      "hint": "sport where a driver is a type of club"
+    }
+  ],
+  "road": [
+    "car",
+    "trip",
+    "traffic",
+    "highway",
+    "sign",
+    "map",
+    "asphalt"
+  ],
+  "road_detailed": [
+    {
+      "word": "car",
+      "hint": "vehicle commonly driven on roads"
+    },
+    {
+      "word": "trip",
+      "hint": "journey taken on a road"
+    },
+    {
+      "word": "traffic",
+      "hint": "congestion of vehicles on a road"
+    },
+    {
+      "word": "highway",
+      "hint": "large, main road for travel between cities"
+    },
+    {
+      "word": "sign",
+      "hint": "information posted along a road"
+    },
+    {
+      "word": "map",
+      "hint": "guide showing roads and routes"
+    },
+    {
+      "word": "asphalt",
+      "hint": "material used to pave roads"
+    }
+  ],
+  "seat": [
+    "chair",
+    "couch",
+    "car",
+    "airplane",
+    "theater",
+    "bench",
+    "office",
+    "classroom"
+  ],
+  "seat_detailed": [
+    {
+      "word": "chair",
+      "hint": "common type of seat"
+    },
+    {
+      "word": "couch",
+      "hint": "furniture for sitting"
+    },
+    {
+      "word": "car",
+      "hint": "vehicle with seats"
+    },
+    {
+      "word": "airplane",
+      "hint": "mode of transport with seats"
+    },
+    {
+      "word": "theater",
+      "hint": "venue with many seats"
+    },
+    {
+      "word": "bench",
+      "hint": "outdoor seating"
+    },
+    {
+      "word": "office",
+      "hint": "workplace with desk seats"
+    },
+    {
+      "word": "classroom",
+      "hint": "educational space with student seats"
+    }
+  ],
+  "key": [
+    "lock",
+    "door",
+    "car",
+    "house",
+    "solution",
+    "piano",
+    "computer",
+    "map"
+  ],
+  "key_detailed": [
+    {
+      "word": "lock",
+      "hint": "keys are used to open locks"
+    },
+    {
+      "word": "door",
+      "hint": "keys often unlock doors"
+    },
+    {
+      "word": "car",
+      "hint": "keys start and unlock vehicles"
+    },
+    {
+      "word": "house",
+      "hint": "house keys are common"
+    },
+    {
+      "word": "solution",
+      "hint": "key can mean an important answer"
+    },
+    {
+      "word": "piano",
+      "hint": "keys are pressed to play piano"
+    },
+    {
+      "word": "computer",
+      "hint": "keyboards have keys for typing"
+    },
+    {
+      "word": "map",
+      "hint": "maps have keys to explain symbols"
+    }
+  ],
+  "belt": [
+    "pants",
+    "buckle",
+    "leather",
+    "waist",
+    "loop",
+    "hole",
+    "notch",
+    "strap"
+  ],
+  "belt_detailed": [
+    {
+      "word": "pants",
+      "hint": "used to hold up pants"
+    },
+    {
+      "word": "buckle",
+      "hint": "fastens the belt"
+    },
+    {
+      "word": "leather",
+      "hint": "common material for belts"
+    },
+    {
+      "word": "waist",
+      "hint": "where a belt is typically worn"
+    },
+    {
+      "word": "loop",
+      "hint": "part of pants that holds the belt"
+    },
+    {
+      "word": "hole",
+      "hint": "for adjusting belt tightness"
+    },
+    {
+      "word": "notch",
+      "hint": "marks on belt for sizing"
+    },
+    {
+      "word": "strap",
+      "hint": "synonymous with belt"
+    }
+  ],
+  "package": [
+    "delivery",
+    "box",
+    "gift",
+    "shipping",
+    "tape",
+    "label",
+    "tracking"
+  ],
+  "package_detailed": [
+    {
+      "word": "delivery",
+      "hint": "receiving something sent through the mail"
+    },
+    {
+      "word": "box",
+      "hint": "container used for shipping items"
+    },
+    {
+      "word": "gift",
+      "hint": "present wrapped for a special occasion"
+    },
+    {
+      "word": "shipping",
+      "hint": "process of sending items from one place to another"
+    },
+    {
+      "word": "tape",
+      "hint": "adhesive used to seal packages"
+    },
+    {
+      "word": "label",
+      "hint": "sticker with address information"
+    },
+    {
+      "word": "tracking",
+      "hint": "following the progress of a shipped item"
+    }
+  ],
+  "airport": [
+    "plane",
+    "luggage",
+    "terminal",
+    "security",
+    "runway",
+    "passport",
+    "ticket"
+  ],
+  "airport_detailed": [
+    {
+      "word": "plane",
+      "hint": "aircraft that take off and land at airports"
+    },
+    {
+      "word": "luggage",
+      "hint": "baggage carried by travelers"
+    },
+    {
+      "word": "terminal",
+      "hint": "building where passengers board and disembark"
+    },
+    {
+      "word": "security",
+      "hint": "checkpoints for passenger and baggage screening"
+    },
+    {
+      "word": "runway",
+      "hint": "strip for planes to take off and land"
+    },
+    {
+      "word": "passport",
+      "hint": "document required for international travel"
+    },
+    {
+      "word": "ticket",
+      "hint": "document allowing entry onto a flight"
+    }
+  ],
+  "warehouse": [
+    "storage",
+    "forklift",
+    "box",
+    "shelf",
+    "inventory",
+    "pallet",
+    "loading dock"
+  ],
+  "warehouse_detailed": [
+    {
+      "word": "storage",
+      "hint": "primary function of a warehouse"
+    },
+    {
+      "word": "forklift",
+      "hint": "common vehicle used in warehouses"
+    },
+    {
+      "word": "box",
+      "hint": "items are often stored in boxes"
+    },
+    {
+      "word": "shelf",
+      "hint": "used to organize and store items"
+    },
+    {
+      "word": "inventory",
+      "hint": "tracking of goods stored"
+    },
+    {
+      "word": "pallet",
+      "hint": "platform for stacking and moving goods"
+    },
+    {
+      "word": "loading dock",
+      "hint": "area for loading/unloading trucks"
+    }
+  ],
+  "roller": [
+    "coaster",
+    "skate",
+    "paint",
+    "derby",
+    "disco",
+    "blade",
+    "hair"
+  ],
+  "roller_detailed": [
+    {
+      "word": "coaster",
+      "hint": "amusement park ride"
+    },
+    {
+      "word": "skate",
+      "hint": "wheeled footwear"
+    },
+    {
+      "word": "paint",
+      "hint": "tool for applying paint"
+    },
+    {
+      "word": "derby",
+      "hint": "competitive roller skating sport"
+    },
+    {
+      "word": "disco",
+      "hint": "associated with roller rinks and 70s culture"
+    },
+    {
+      "word": "blade",
+      "hint": "inline skate"
+    },
+    {
+      "word": "hair",
+      "hint": "cylindrical tool for styling hair"
+    }
+  ],
+  "standardization": [
+    "consistency",
+    "quality",
+    "uniformity",
+    "regulation",
+    "measurement",
+    "efficiency",
+    "compliance"
+  ],
+  "standardization_detailed": [
+    {
+      "word": "consistency",
+      "hint": "uniform application of rules or practices"
+    },
+    {
+      "word": "quality",
+      "hint": "ensuring products meet specific standards"
+    },
+    {
+      "word": "uniformity",
+      "hint": "making things the same or similar"
+    },
+    {
+      "word": "regulation",
+      "hint": "rules or guidelines to follow"
+    },
+    {
+      "word": "measurement",
+      "hint": "using common units or scales"
+    },
+    {
+      "word": "efficiency",
+      "hint": "streamlining processes for better results"
+    },
+    {
+      "word": "compliance",
+      "hint": "adhering to set standards or requirements"
+    }
+  ],
+  "economy of scale": [
+    "business",
+    "production",
+    "cost",
+    "efficiency",
+    "bulk",
+    "manufacturing",
+    "growth"
+  ],
+  "economy of scale_detailed": [
+    {
+      "word": "business",
+      "hint": "economy of scale often applies to business operations"
+    },
+    {
+      "word": "production",
+      "hint": "increased production can lead to economies of scale"
+    },
+    {
+      "word": "cost",
+      "hint": "reduced costs are a key benefit of economies of scale"
+    },
+    {
+      "word": "efficiency",
+      "hint": "economies of scale improve operational efficiency"
+    },
+    {
+      "word": "bulk",
+      "hint": "buying in bulk is a common example of economies of scale"
+    },
+    {
+      "word": "manufacturing",
+      "hint": "manufacturing industries often benefit from economies of scale"
+    },
+    {
+      "word": "growth",
+      "hint": "company growth can lead to economies of scale"
+    }
+  ],
+  "industrial revolution": [
+    "factory",
+    "machine",
+    "steam",
+    "coal",
+    "pollution",
+    "urbanization",
+    "worker",
+    "railroad"
+  ],
+  "industrial revolution_detailed": [
+    {
+      "word": "factory",
+      "hint": "mass production facility"
+    },
+    {
+      "word": "machine",
+      "hint": "mechanical device for manufacturing"
+    },
+    {
+      "word": "steam",
+      "hint": "power source for early industrial engines"
+    },
+    {
+      "word": "coal",
+      "hint": "fuel for industrial processes"
+    },
+    {
+      "word": "pollution",
+      "hint": "environmental impact of industrialization"
+    },
+    {
+      "word": "urbanization",
+      "hint": "growth of cities due to industrial jobs"
+    },
+    {
+      "word": "worker",
+      "hint": "laborer in industrial settings"
+    },
+    {
+      "word": "railroad",
+      "hint": "transportation system for goods and people"
+    }
+  ],
+  "consumer good": [
+    "product",
+    "brand",
+    "purchase",
+    "store",
+    "advertisement",
+    "packaging",
+    "quality",
+    "price"
+  ],
+  "consumer good_detailed": [
+    {
+      "word": "product",
+      "hint": "item sold to consumers"
+    },
+    {
+      "word": "brand",
+      "hint": "identifier for a particular product line"
+    },
+    {
+      "word": "purchase",
+      "hint": "act of buying a consumer good"
+    },
+    {
+      "word": "store",
+      "hint": "place where consumer goods are sold"
+    },
+    {
+      "word": "advertisement",
+      "hint": "promotion of consumer goods"
+    },
+    {
+      "word": "packaging",
+      "hint": "container or wrapping for a product"
+    },
+    {
+      "word": "quality",
+      "hint": "standard of a consumer good"
+    },
+    {
+      "word": "price",
+      "hint": "cost of a consumer good"
+    }
+  ],
+  "model t": [
+    "ford",
+    "car",
+    "black",
+    "assembly line",
+    "antique",
+    "affordable",
+    "henry ford"
+  ],
+  "model t_detailed": [
+    {
+      "word": "ford",
+      "hint": "company that manufactured the Model T"
+    },
+    {
+      "word": "car",
+      "hint": "type of vehicle the Model T was"
+    },
+    {
+      "word": "black",
+      "hint": "famous color of early Model T cars"
+    },
+    {
+      "word": "assembly line",
+      "hint": "manufacturing method used to produce Model T"
+    },
+    {
+      "word": "antique",
+      "hint": "describes the age and collectible status of Model T"
+    },
+    {
+      "word": "affordable",
+      "hint": "key selling point of the Model T for middle-class buyers"
+    },
+    {
+      "word": "henry ford",
+      "hint": "inventor and founder of Ford Motor Company"
+    }
+  ],
+  "detroit": [
+    "car",
+    "motown",
+    "motor city",
+    "ruin",
+    "renaissance",
+    "tiger",
+    "ford",
+    "industry"
+  ],
+  "detroit_detailed": [
+    {
+      "word": "car",
+      "hint": "major auto industry hub"
+    },
+    {
+      "word": "motown",
+      "hint": "famous music genre originating in Detroit"
+    },
+    {
+      "word": "motor city",
+      "hint": "nickname for Detroit"
+    },
+    {
+      "word": "ruin",
+      "hint": "urban decay and abandoned buildings"
+    },
+    {
+      "word": "renaissance",
+      "hint": "city's efforts to revitalize"
+    },
+    {
+      "word": "tiger",
+      "hint": "Detroit's baseball team"
+    },
+    {
+      "word": "ford",
+      "hint": "iconic car company founded in Detroit"
+    },
+    {
+      "word": "industry",
+      "hint": "historically known for manufacturing"
+    }
+  ],
+  "industrialist": [
+    "factory",
+    "wealth",
+    "tycoon",
+    "entrepreneur",
+    "capitalism",
+    "innovation",
+    "magnate",
+    "manufacturing"
+  ],
+  "industrialist_detailed": [
+    {
+      "word": "factory",
+      "hint": "industrial production facility"
+    },
+    {
+      "word": "wealth",
+      "hint": "accumulation of money and assets"
+    },
+    {
+      "word": "tycoon",
+      "hint": "powerful business leader"
+    },
+    {
+      "word": "entrepreneur",
+      "hint": "person who starts and runs businesses"
+    },
+    {
+      "word": "capitalism",
+      "hint": "economic system based on private ownership"
+    },
+    {
+      "word": "innovation",
+      "hint": "introduction of new ideas or methods"
+    },
+    {
+      "word": "magnate",
+      "hint": "influential person in an industry"
+    },
+    {
+      "word": "manufacturing",
+      "hint": "production of goods on a large scale"
+    }
+  ],
+  "automobile": [
+    "car",
+    "wheel",
+    "road",
+    "driver",
+    "engine",
+    "gasoline",
+    "traffic",
+    "garage"
+  ],
+  "automobile_detailed": [
+    {
+      "word": "car",
+      "hint": "common synonym for automobile"
+    },
+    {
+      "word": "wheel",
+      "hint": "essential component for movement"
+    },
+    {
+      "word": "road",
+      "hint": "surface on which automobiles travel"
+    },
+    {
+      "word": "driver",
+      "hint": "person who operates an automobile"
+    },
+    {
+      "word": "engine",
+      "hint": "powers the automobile"
+    },
+    {
+      "word": "gasoline",
+      "hint": "fuel used by many automobiles"
+    },
+    {
+      "word": "traffic",
+      "hint": "congestion of automobiles on roads"
+    },
+    {
+      "word": "garage",
+      "hint": "structure for storing automobiles"
+    }
+  ],
+  "innovation": [
+    "technology",
+    "creativity",
+    "progress",
+    "invention",
+    "breakthrough",
+    "future",
+    "change",
+    "idea"
+  ],
+  "innovation_detailed": [
+    {
+      "word": "technology",
+      "hint": "new inventions and advancements"
+    },
+    {
+      "word": "creativity",
+      "hint": "original ideas and thinking"
+    },
+    {
+      "word": "progress",
+      "hint": "moving forward and improvement"
+    },
+    {
+      "word": "invention",
+      "hint": "creating something new"
+    },
+    {
+      "word": "breakthrough",
+      "hint": "significant advancement or discovery"
+    },
+    {
+      "word": "future",
+      "hint": "looking ahead and envisioning possibilities"
+    },
+    {
+      "word": "change",
+      "hint": "altering the status quo"
+    },
+    {
+      "word": "idea",
+      "hint": "concept or thought that sparks innovation"
+    }
+  ],
+  "work": [
+    "job",
+    "office",
+    "money",
+    "stress",
+    "career",
+    "boss",
+    "deadline",
+    "computer",
+    "meeting"
+  ],
+  "work_detailed": [
+    {
+      "word": "job",
+      "hint": "employment or occupation"
+    },
+    {
+      "word": "office",
+      "hint": "place where work is done"
+    },
+    {
+      "word": "money",
+      "hint": "compensation for work"
+    },
+    {
+      "word": "stress",
+      "hint": "mental or emotional strain from work"
+    },
+    {
+      "word": "career",
+      "hint": "long-term professional path"
+    },
+    {
+      "word": "boss",
+      "hint": "person in charge at work"
+    },
+    {
+      "word": "deadline",
+      "hint": "time limit for completing work"
+    },
+    {
+      "word": "computer",
+      "hint": "common tool used for work"
+    },
+    {
+      "word": "meeting",
+      "hint": "gathering to discuss work-related matters"
+    }
+  ],
+  "childbirth": [
+    "baby",
+    "hospital",
+    "pain",
+    "midwife",
+    "contraction",
+    "epidural",
+    "umbilical cord",
+    "water breaking"
+  ],
+  "childbirth_detailed": [
+    {
+      "word": "baby",
+      "hint": "the newborn child"
+    },
+    {
+      "word": "hospital",
+      "hint": "common place for delivery"
+    },
+    {
+      "word": "pain",
+      "hint": "physical discomfort during labor"
+    },
+    {
+      "word": "midwife",
+      "hint": "professional who assists in childbirth"
+    },
+    {
+      "word": "contraction",
+      "hint": "uterine muscle tightening"
+    },
+    {
+      "word": "epidural",
+      "hint": "pain relief medication"
+    },
+    {
+      "word": "umbilical cord",
+      "hint": "connects baby to placenta"
+    },
+    {
+      "word": "water breaking",
+      "hint": "rupture of amniotic sac"
+    }
+  ],
+  "strike": [
+    "baseball",
+    "lightning",
+    "union",
+    "match",
+    "bowling",
+    "clock",
+    "gold",
+    "military"
+  ],
+  "strike_detailed": [
+    {
+      "word": "baseball",
+      "hint": "hitting the ball in the sport"
+    },
+    {
+      "word": "lightning",
+      "hint": "bolt of electricity from the sky"
+    },
+    {
+      "word": "union",
+      "hint": "workers stopping work to protest"
+    },
+    {
+      "word": "match",
+      "hint": "tool for lighting a fire"
+    },
+    {
+      "word": "bowling",
+      "hint": "knocking down all pins in one throw"
+    },
+    {
+      "word": "clock",
+      "hint": "sound made when time is announced"
+    },
+    {
+      "word": "gold",
+      "hint": "discovery of precious metal"
+    },
+    {
+      "word": "military",
+      "hint": "attack on an enemy target"
+    }
+  ],
+  "wage": [
+    "salary",
+    "income",
+    "paycheck",
+    "minimum",
+    "hourly",
+    "labor",
+    "job",
+    "employee"
+  ],
+  "wage_detailed": [
+    {
+      "word": "salary",
+      "hint": "fixed regular payment for work"
+    },
+    {
+      "word": "income",
+      "hint": "money received for work or investments"
+    },
+    {
+      "word": "paycheck",
+      "hint": "check or direct deposit for wages"
+    },
+    {
+      "word": "minimum",
+      "hint": "lowest legal wage rate"
+    },
+    {
+      "word": "hourly",
+      "hint": "paid by the hour"
+    },
+    {
+      "word": "labor",
+      "hint": "work done for wages"
+    },
+    {
+      "word": "job",
+      "hint": "employment that pays wages"
+    },
+    {
+      "word": "employee",
+      "hint": "person who receives wages for work"
+    }
+  ],
+  "salary": [
+    "money",
+    "job",
+    "income",
+    "paycheck",
+    "raise",
+    "compensation",
+    "wage",
+    "career"
+  ],
+  "salary_detailed": [
+    {
+      "word": "money",
+      "hint": "payment received for work"
+    },
+    {
+      "word": "job",
+      "hint": "employment that provides a salary"
+    },
+    {
+      "word": "income",
+      "hint": "earnings from employment"
+    },
+    {
+      "word": "paycheck",
+      "hint": "document or payment of wages"
+    },
+    {
+      "word": "raise",
+      "hint": "increase in salary"
+    },
+    {
+      "word": "compensation",
+      "hint": "payment for services rendered"
+    },
+    {
+      "word": "wage",
+      "hint": "fixed regular payment for work"
+    },
+    {
+      "word": "career",
+      "hint": "profession with salary progression"
+    }
+  ],
+  "office": [
+    "desk",
+    "computer",
+    "chair",
+    "meeting",
+    "file",
+    "cubicle",
+    "printer",
+    "boss"
+  ],
+  "office_detailed": [
+    {
+      "word": "desk",
+      "hint": "primary workspace in an office"
+    },
+    {
+      "word": "computer",
+      "hint": "essential tool for office work"
+    },
+    {
+      "word": "chair",
+      "hint": "seating for office workers"
+    },
+    {
+      "word": "meeting",
+      "hint": "common office activity"
+    },
+    {
+      "word": "file",
+      "hint": "storage of documents and information"
+    },
+    {
+      "word": "cubicle",
+      "hint": "individual workspace in open office"
+    },
+    {
+      "word": "printer",
+      "hint": "device for producing hard copies"
+    },
+    {
+      "word": "boss",
+      "hint": "person in charge of the office"
+    }
+  ],
+  "boss": [
+    "manager",
+    "authority",
+    "leader",
+    "supervisor",
+    "employer",
+    "executive",
+    "chief"
+  ],
+  "boss_detailed": [
+    {
+      "word": "manager",
+      "hint": "person in charge of employees"
+    },
+    {
+      "word": "authority",
+      "hint": "power to give orders"
+    },
+    {
+      "word": "leader",
+      "hint": "person who guides or directs others"
+    },
+    {
+      "word": "supervisor",
+      "hint": "oversees work of others"
+    },
+    {
+      "word": "employer",
+      "hint": "person who hires and pays employees"
+    },
+    {
+      "word": "executive",
+      "hint": "high-ranking business leader"
+    },
+    {
+      "word": "chief",
+      "hint": "head of an organization or department"
+    }
+  ],
+  "company": [
+    "business",
+    "employee",
+    "office",
+    "profit",
+    "CEO",
+    "corporation",
+    "startup"
+  ],
+  "company_detailed": [
+    {
+      "word": "business",
+      "hint": "an organization that sells goods or services"
+    },
+    {
+      "word": "employee",
+      "hint": "a person who works for a company"
+    },
+    {
+      "word": "office",
+      "hint": "a place where business is conducted"
+    },
+    {
+      "word": "profit",
+      "hint": "financial gain for a business"
+    },
+    {
+      "word": "CEO",
+      "hint": "Chief Executive Officer, head of a company"
+    },
+    {
+      "word": "corporation",
+      "hint": "a large business entity"
+    },
+    {
+      "word": "startup",
+      "hint": "a newly established business"
+    }
+  ],
+  "benefits": [
+    "health",
+    "retirement",
+    "vacation",
+    "insurance",
+    "bonus",
+    "discount",
+    "advantage"
+  ],
+  "benefits_detailed": [
+    {
+      "word": "health",
+      "hint": "medical coverage and wellness programs"
+    },
+    {
+      "word": "retirement",
+      "hint": "401(k) plans and pensions"
+    },
+    {
+      "word": "vacation",
+      "hint": "paid time off from work"
+    },
+    {
+      "word": "insurance",
+      "hint": "protection against various risks"
+    },
+    {
+      "word": "bonus",
+      "hint": "additional compensation for performance"
+    },
+    {
+      "word": "discount",
+      "hint": "reduced prices for employees"
+    },
+    {
+      "word": "advantage",
+      "hint": "positive outcome or gain"
+    }
+  ],
+  "career": [
+    "job",
+    "profession",
+    "success",
+    "promotion",
+    "resume",
+    "interview",
+    "salary",
+    "growth"
+  ],
+  "career_detailed": [
+    {
+      "word": "job",
+      "hint": "specific occupation or position"
+    },
+    {
+      "word": "profession",
+      "hint": "vocation requiring specialized education"
+    },
+    {
+      "word": "success",
+      "hint": "achievement of goals or prosperity"
+    },
+    {
+      "word": "promotion",
+      "hint": "advancement to a higher position"
+    },
+    {
+      "word": "resume",
+      "hint": "document summarizing work experience"
+    },
+    {
+      "word": "interview",
+      "hint": "meeting to evaluate job candidates"
+    },
+    {
+      "word": "salary",
+      "hint": "payment for work performed"
+    },
+    {
+      "word": "growth",
+      "hint": "development and progress in one's field"
+    }
+  ],
+  "interview": [
+    "job",
+    "question",
+    "resume",
+    "nervous",
+    "suit",
+    "candidate",
+    "preparation"
+  ],
+  "interview_detailed": [
+    {
+      "word": "job",
+      "hint": "often conducted for employment"
+    },
+    {
+      "word": "question",
+      "hint": "asked during an interview"
+    },
+    {
+      "word": "resume",
+      "hint": "document often required for interviews"
+    },
+    {
+      "word": "nervous",
+      "hint": "common feeling before an interview"
+    },
+    {
+      "word": "suit",
+      "hint": "formal attire often worn to interviews"
+    },
+    {
+      "word": "candidate",
+      "hint": "person being interviewed"
+    },
+    {
+      "word": "preparation",
+      "hint": "getting ready for an interview"
+    }
+  ],
+  "resume": [
+    "job",
+    "interview",
+    "skill",
+    "experience",
+    "education",
+    "career",
+    "application"
+  ],
+  "resume_detailed": [
+    {
+      "word": "job",
+      "hint": "a resume is used when applying for jobs"
+    },
+    {
+      "word": "interview",
+      "hint": "resumes are often reviewed before interviews"
+    },
+    {
+      "word": "skill",
+      "hint": "resumes highlight a person's skills"
+    },
+    {
+      "word": "experience",
+      "hint": "work experience is typically listed on a resume"
+    },
+    {
+      "word": "education",
+      "hint": "educational background is included on resumes"
+    },
+    {
+      "word": "career",
+      "hint": "resumes are important for career advancement"
+    },
+    {
+      "word": "application",
+      "hint": "resumes are often part of job applications"
+    }
+  ],
+  "promotion": [
+    "raise",
+    "advancement",
+    "career",
+    "responsibility",
+    "celebration",
+    "manager",
+    "achievement",
+    "opportunity"
+  ],
+  "promotion_detailed": [
+    {
+      "word": "raise",
+      "hint": "increase in salary often accompanying a promotion"
+    },
+    {
+      "word": "advancement",
+      "hint": "moving up in rank or position"
+    },
+    {
+      "word": "career",
+      "hint": "professional progress in one's work life"
+    },
+    {
+      "word": "responsibility",
+      "hint": "additional duties that come with a higher position"
+    },
+    {
+      "word": "celebration",
+      "hint": "recognizing the achievement of a promotion"
+    },
+    {
+      "word": "manager",
+      "hint": "a common role after being promoted"
+    },
+    {
+      "word": "achievement",
+      "hint": "recognition of one's accomplishments"
+    },
+    {
+      "word": "opportunity",
+      "hint": "chance for growth and new experiences"
+    }
+  ],
+  "military": [
+    "soldier",
+    "war",
+    "uniform",
+    "weapon",
+    "discipline",
+    "tank",
+    "drill",
+    "rank"
+  ],
+  "military_detailed": [
+    {
+      "word": "soldier",
+      "hint": "person serving in the armed forces"
+    },
+    {
+      "word": "war",
+      "hint": "armed conflict between nations"
+    },
+    {
+      "word": "uniform",
+      "hint": "standardized clothing worn by service members"
+    },
+    {
+      "word": "weapon",
+      "hint": "tool used for combat or defense"
+    },
+    {
+      "word": "discipline",
+      "hint": "strict adherence to rules and order"
+    },
+    {
+      "word": "tank",
+      "hint": "armored combat vehicle"
+    },
+    {
+      "word": "drill",
+      "hint": "practice of military exercises and procedures"
+    },
+    {
+      "word": "rank",
+      "hint": "hierarchical structure of military personnel"
+    }
+  ],
+  "police": [
+    "officer",
+    "badge",
+    "patrol",
+    "arrest",
+    "siren",
+    "uniform",
+    "detective",
+    "handcuff"
+  ],
+  "police_detailed": [
+    {
+      "word": "officer",
+      "hint": "a person who works for the police force"
+    },
+    {
+      "word": "badge",
+      "hint": "a symbol of police authority"
+    },
+    {
+      "word": "patrol",
+      "hint": "routine monitoring of an area by police"
+    },
+    {
+      "word": "arrest",
+      "hint": "taking a person into custody"
+    },
+    {
+      "word": "siren",
+      "hint": "loud warning sound on police vehicles"
+    },
+    {
+      "word": "uniform",
+      "hint": "standard clothing worn by police officers"
+    },
+    {
+      "word": "detective",
+      "hint": "investigates crimes for the police"
+    },
+    {
+      "word": "handcuff",
+      "hint": "restraining device used by police"
+    }
+  ],
+  "nurse": [
+    "hospital",
+    "scrub",
+    "stethoscope",
+    "patient",
+    "medicine",
+    "injection",
+    "caring",
+    "doctor"
+  ],
+  "nurse_detailed": [
+    {
+      "word": "hospital",
+      "hint": "common workplace for nurses"
+    },
+    {
+      "word": "scrub",
+      "hint": "typical clothing worn by nurses"
+    },
+    {
+      "word": "stethoscope",
+      "hint": "medical instrument used by nurses"
+    },
+    {
+      "word": "patient",
+      "hint": "person cared for by nurses"
+    },
+    {
+      "word": "medicine",
+      "hint": "administered by nurses"
+    },
+    {
+      "word": "injection",
+      "hint": "procedure often performed by nurses"
+    },
+    {
+      "word": "caring",
+      "hint": "quality associated with nursing"
+    },
+    {
+      "word": "doctor",
+      "hint": "healthcare professional nurses work with"
+    }
+  ],
+  "sports": [
+    "ball",
+    "team",
+    "athlete",
+    "competition",
+    "stadium",
+    "medal",
+    "coach",
+    "victory"
+  ],
+  "sports_detailed": [
+    {
+      "word": "ball",
+      "hint": "spherical object used in many sports"
+    },
+    {
+      "word": "team",
+      "hint": "group of players working together"
+    },
+    {
+      "word": "athlete",
+      "hint": "person who participates in sports"
+    },
+    {
+      "word": "competition",
+      "hint": "contest between individuals or teams"
+    },
+    {
+      "word": "stadium",
+      "hint": "large venue for sporting events"
+    },
+    {
+      "word": "medal",
+      "hint": "award given to top performers"
+    },
+    {
+      "word": "coach",
+      "hint": "person who trains and leads a team"
+    },
+    {
+      "word": "victory",
+      "hint": "achieving success in a sport"
+    }
+  ],
+  "consistent": [
+    "reliable",
+    "steady",
+    "regular",
+    "constant",
+    "persistent",
+    "stable",
+    "uniform"
+  ],
+  "consistent_detailed": [
+    {
+      "word": "reliable",
+      "hint": "dependable and trustworthy"
+    },
+    {
+      "word": "steady",
+      "hint": "unchanging or uniform"
+    },
+    {
+      "word": "regular",
+      "hint": "occurring at fixed intervals"
+    },
+    {
+      "word": "constant",
+      "hint": "continuous and unvarying"
+    },
+    {
+      "word": "persistent",
+      "hint": "continuing firmly despite challenges"
+    },
+    {
+      "word": "stable",
+      "hint": "not likely to change or fail"
+    },
+    {
+      "word": "uniform",
+      "hint": "remaining the same in all cases"
+    }
+  ],
+  "butter": [
+    "bread",
+    "toast",
+    "popcorn",
+    "yellow",
+    "creamy",
+    "cow",
+    "churning",
+    "dairy"
+  ],
+  "butter_detailed": [
+    {
+      "word": "bread",
+      "hint": "often spread on bread"
+    },
+    {
+      "word": "toast",
+      "hint": "commonly melted on toast"
+    },
+    {
+      "word": "popcorn",
+      "hint": "flavoring for movie theater popcorn"
+    },
+    {
+      "word": "yellow",
+      "hint": "typical color of butter"
+    },
+    {
+      "word": "creamy",
+      "hint": "texture of softened butter"
+    },
+    {
+      "word": "cow",
+      "hint": "source animal for most butter"
+    },
+    {
+      "word": "churning",
+      "hint": "process of making butter"
+    },
+    {
+      "word": "dairy",
+      "hint": "food category butter belongs to"
+    }
+  ],
+  "salt": [
+    "pepper",
+    "ocean",
+    "seasoning",
+    "sodium",
+    "mineral",
+    "crystal",
+    "shaker",
+    "preservative"
+  ],
+  "salt_detailed": [
+    {
+      "word": "pepper",
+      "hint": "common table seasoning paired with salt"
+    },
+    {
+      "word": "ocean",
+      "hint": "large body of salty water"
+    },
+    {
+      "word": "seasoning",
+      "hint": "used to enhance food flavor"
+    },
+    {
+      "word": "sodium",
+      "hint": "chemical component of salt"
+    },
+    {
+      "word": "mineral",
+      "hint": "natural substance found in the earth"
+    },
+    {
+      "word": "crystal",
+      "hint": "typical form of table salt"
+    },
+    {
+      "word": "shaker",
+      "hint": "container for dispensing salt"
+    },
+    {
+      "word": "preservative",
+      "hint": "used to prevent food spoilage"
+    }
+  ],
+  "kernel": [
+    "corn",
+    "popcorn",
+    "computer",
+    "nut",
+    "seed",
+    "center",
+    "grain"
+  ],
+  "kernel_detailed": [
+    {
+      "word": "corn",
+      "hint": "kernel of corn on the cob"
+    },
+    {
+      "word": "popcorn",
+      "hint": "unpopped kernel becomes popped corn"
+    },
+    {
+      "word": "computer",
+      "hint": "core part of an operating system"
+    },
+    {
+      "word": "nut",
+      "hint": "edible part inside a nutshell"
+    },
+    {
+      "word": "seed",
+      "hint": "core part of a fruit or plant"
+    },
+    {
+      "word": "center",
+      "hint": "innermost part of something"
+    },
+    {
+      "word": "grain",
+      "hint": "single seed of a cereal crop"
+    }
+  ],
+  "microwave": [
+    "food",
+    "radiation",
+    "oven",
+    "popcorn",
+    "quick",
+    "beep",
+    "plate",
+    "kitchen"
+  ],
+  "microwave_detailed": [
+    {
+      "word": "food",
+      "hint": "heated in microwave"
+    },
+    {
+      "word": "radiation",
+      "hint": "type of energy used"
+    },
+    {
+      "word": "oven",
+      "hint": "similar cooking appliance"
+    },
+    {
+      "word": "popcorn",
+      "hint": "common microwave snack"
+    },
+    {
+      "word": "quick",
+      "hint": "fast cooking method"
+    },
+    {
+      "word": "beep",
+      "hint": "sound when finished"
+    },
+    {
+      "word": "plate",
+      "hint": "rotates inside"
+    },
+    {
+      "word": "kitchen",
+      "hint": "common location"
+    }
+  ],
+  "snack": [
+    "chip",
+    "cookie",
+    "popcorn",
+    "cracker",
+    "fruit",
+    "chocolate",
+    "nut"
+  ],
+  "snack_detailed": [
+    {
+      "word": "chip",
+      "hint": "popular salty snack food"
+    },
+    {
+      "word": "cookie",
+      "hint": "sweet baked treat"
+    },
+    {
+      "word": "popcorn",
+      "hint": "movie theater favorite"
+    },
+    {
+      "word": "cracker",
+      "hint": "crunchy savory bite"
+    },
+    {
+      "word": "fruit",
+      "hint": "healthy snack option"
+    },
+    {
+      "word": "chocolate",
+      "hint": "sweet indulgence"
+    },
+    {
+      "word": "nut",
+      "hint": "protein-rich nibble"
+    }
+  ],
+  "stage": [
+    "theater",
+    "actor",
+    "curtain",
+    "spotlight",
+    "audience",
+    "microphone",
+    "prop",
+    "costume"
+  ],
+  "stage_detailed": [
+    {
+      "word": "theater",
+      "hint": "place where performances occur"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs on stage"
+    },
+    {
+      "word": "curtain",
+      "hint": "fabric covering that opens and closes"
+    },
+    {
+      "word": "spotlight",
+      "hint": "focused beam of light on performers"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people watching a performance"
+    },
+    {
+      "word": "microphone",
+      "hint": "device for amplifying sound"
+    },
+    {
+      "word": "prop",
+      "hint": "object used by actors during a performance"
+    },
+    {
+      "word": "costume",
+      "hint": "clothing worn by performers"
+    }
+  ],
+  "curtain": [
+    "window",
+    "fabric",
+    "drape",
+    "rod",
+    "privacy",
+    "theater",
+    "shower"
+  ],
+  "curtain_detailed": [
+    {
+      "word": "window",
+      "hint": "curtains often cover windows"
+    },
+    {
+      "word": "fabric",
+      "hint": "material curtains are made from"
+    },
+    {
+      "word": "drape",
+      "hint": "another term for curtain"
+    },
+    {
+      "word": "rod",
+      "hint": "used to hang curtains"
+    },
+    {
+      "word": "privacy",
+      "hint": "curtains provide privacy"
+    },
+    {
+      "word": "theater",
+      "hint": "stage curtains in a theater"
+    },
+    {
+      "word": "shower",
+      "hint": "curtain used in bathrooms"
+    }
+  ],
+  "audience": [
+    "applause",
+    "theater",
+    "spectator",
+    "crowd",
+    "listener",
+    "seat",
+    "ticket"
+  ],
+  "audience_detailed": [
+    {
+      "word": "applause",
+      "hint": "audience's approval shown by clapping"
+    },
+    {
+      "word": "theater",
+      "hint": "common venue for live performances"
+    },
+    {
+      "word": "spectator",
+      "hint": "person who watches an event"
+    },
+    {
+      "word": "crowd",
+      "hint": "large group of people gathered together"
+    },
+    {
+      "word": "listener",
+      "hint": "person who pays attention to speech or music"
+    },
+    {
+      "word": "seat",
+      "hint": "where audience members typically sit"
+    },
+    {
+      "word": "ticket",
+      "hint": "allows entry to a performance or event"
+    }
+  ],
+  "play": [
+    "game",
+    "child",
+    "toy",
+    "sport",
+    "theater",
+    "music",
+    "playground",
+    "fun"
+  ],
+  "play_detailed": [
+    {
+      "word": "game",
+      "hint": "an activity done for fun or competition"
+    },
+    {
+      "word": "child",
+      "hint": "young people often engage in play"
+    },
+    {
+      "word": "toy",
+      "hint": "an object used for play or amusement"
+    },
+    {
+      "word": "sport",
+      "hint": "physical activities often considered play"
+    },
+    {
+      "word": "theater",
+      "hint": "dramatic performance on stage"
+    },
+    {
+      "word": "music",
+      "hint": "performing or listening to melodies and songs"
+    },
+    {
+      "word": "playground",
+      "hint": "outdoor area designed for children to play"
+    },
+    {
+      "word": "fun",
+      "hint": "enjoyment or amusement derived from play"
+    }
+  ],
+  "ticket": [
+    "movie",
+    "concert",
+    "travel",
+    "parking",
+    "lottery",
+    "speeding",
+    "raffle",
+    "stub"
+  ],
+  "ticket_detailed": [
+    {
+      "word": "movie",
+      "hint": "admission to a film screening"
+    },
+    {
+      "word": "concert",
+      "hint": "entry pass for a musical performance"
+    },
+    {
+      "word": "travel",
+      "hint": "document for transportation, like a plane or train"
+    },
+    {
+      "word": "parking",
+      "hint": "slip received for vehicle storage"
+    },
+    {
+      "word": "lottery",
+      "hint": "chance to win a prize draw"
+    },
+    {
+      "word": "speeding",
+      "hint": "citation for traffic violation"
+    },
+    {
+      "word": "raffle",
+      "hint": "entry for a chance-based contest"
+    },
+    {
+      "word": "stub",
+      "hint": "remaining portion after use"
+    }
+  ],
+  "celebrity": [
+    "fame",
+    "paparazzi",
+    "autograph",
+    "Hollywood",
+    "red carpet",
+    "tabloid",
+    "award",
+    "scandal"
+  ],
+  "celebrity_detailed": [
+    {
+      "word": "fame",
+      "hint": "widespread recognition"
+    },
+    {
+      "word": "paparazzi",
+      "hint": "photographers who follow celebrities"
+    },
+    {
+      "word": "autograph",
+      "hint": "signature given to fans"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "entertainment industry center"
+    },
+    {
+      "word": "red carpet",
+      "hint": "event where celebrities are photographed"
+    },
+    {
+      "word": "tabloid",
+      "hint": "magazine featuring celebrity gossip"
+    },
+    {
+      "word": "award",
+      "hint": "recognition for achievements in entertainment"
+    },
+    {
+      "word": "scandal",
+      "hint": "controversial incident involving a celebrity"
+    }
+  ],
+  "role": [
+    "play",
+    "job",
+    "model",
+    "character",
+    "leader",
+    "identity",
+    "duty",
+    "actor"
+  ],
+  "role_detailed": [
+    {
+      "word": "play",
+      "hint": "acting in a performance"
+    },
+    {
+      "word": "job",
+      "hint": "position or responsibility in work"
+    },
+    {
+      "word": "model",
+      "hint": "example to follow or imitate"
+    },
+    {
+      "word": "character",
+      "hint": "persona in a story or film"
+    },
+    {
+      "word": "leader",
+      "hint": "person who guides or directs others"
+    },
+    {
+      "word": "identity",
+      "hint": "how one sees oneself or is perceived"
+    },
+    {
+      "word": "duty",
+      "hint": "obligation or responsibility"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs in theater or film"
+    }
+  ],
+  "audition": [
+    "nervousness",
+    "stage",
+    "actor",
+    "script",
+    "talent",
+    "callback",
+    "competition",
+    "performance"
+  ],
+  "audition_detailed": [
+    {
+      "word": "nervousness",
+      "hint": "feeling anxious before performing"
+    },
+    {
+      "word": "stage",
+      "hint": "where many auditions take place"
+    },
+    {
+      "word": "actor",
+      "hint": "person trying out for a role"
+    },
+    {
+      "word": "script",
+      "hint": "text performers read from"
+    },
+    {
+      "word": "talent",
+      "hint": "skill or ability being evaluated"
+    },
+    {
+      "word": "callback",
+      "hint": "invitation to return for another audition"
+    },
+    {
+      "word": "competition",
+      "hint": "vying against others for a role"
+    },
+    {
+      "word": "performance",
+      "hint": "demonstrating abilities during tryout"
+    }
+  ],
+  "script": [
+    "movie",
+    "play",
+    "handwriting",
+    "code",
+    "doctor",
+    "actor",
+    "writer"
+  ],
+  "script_detailed": [
+    {
+      "word": "movie",
+      "hint": "written text for a film"
+    },
+    {
+      "word": "play",
+      "hint": "written dialogue for theater"
+    },
+    {
+      "word": "handwriting",
+      "hint": "style of writing by hand"
+    },
+    {
+      "word": "code",
+      "hint": "programming instructions"
+    },
+    {
+      "word": "doctor",
+      "hint": "prescription for medication"
+    },
+    {
+      "word": "actor",
+      "hint": "performer who reads lines"
+    },
+    {
+      "word": "writer",
+      "hint": "person who creates scripts"
+    }
+  ],
+  "film": [
+    "movie",
+    "cinema",
+    "actor",
+    "director",
+    "camera",
+    "popcorn",
+    "Hollywood"
+  ],
+  "film_detailed": [
+    {
+      "word": "movie",
+      "hint": "another term for a film"
+    },
+    {
+      "word": "cinema",
+      "hint": "place where films are shown"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs in a film"
+    },
+    {
+      "word": "director",
+      "hint": "person who oversees the making of a film"
+    },
+    {
+      "word": "camera",
+      "hint": "device used to capture moving images"
+    },
+    {
+      "word": "popcorn",
+      "hint": "popular snack eaten while watching films"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "center of the American film industry"
+    }
+  ],
+  "chair": [
+    "sit",
+    "wood",
+    "table",
+    "office",
+    "leg",
+    "back",
+    "comfortable",
+    "desk"
+  ],
+  "chair_detailed": [
+    {
+      "word": "sit",
+      "hint": "action performed on a chair"
+    },
+    {
+      "word": "wood",
+      "hint": "common material chairs are made from"
+    },
+    {
+      "word": "table",
+      "hint": "furniture often paired with chairs"
+    },
+    {
+      "word": "office",
+      "hint": "place where chairs are commonly used"
+    },
+    {
+      "word": "leg",
+      "hint": "part of a chair's structure"
+    },
+    {
+      "word": "back",
+      "hint": "part of a chair for support"
+    },
+    {
+      "word": "comfortable",
+      "hint": "desired quality of a chair"
+    },
+    {
+      "word": "desk",
+      "hint": "furniture often used with a chair"
+    }
+  ],
+  "megaphone": [
+    "loud",
+    "announcement",
+    "protest",
+    "bullhorn",
+    "police",
+    "crowd",
+    "cone",
+    "voice"
+  ],
+  "megaphone_detailed": [
+    {
+      "word": "loud",
+      "hint": "amplifies sound to high volume"
+    },
+    {
+      "word": "announcement",
+      "hint": "often used to make public statements"
+    },
+    {
+      "word": "protest",
+      "hint": "commonly used at rallies and demonstrations"
+    },
+    {
+      "word": "bullhorn",
+      "hint": "alternative name for the device"
+    },
+    {
+      "word": "police",
+      "hint": "frequently used by law enforcement"
+    },
+    {
+      "word": "crowd",
+      "hint": "used to address large groups of people"
+    },
+    {
+      "word": "cone",
+      "hint": "typical shape of the device"
+    },
+    {
+      "word": "voice",
+      "hint": "amplifies human speech"
+    }
+  ],
+  "camera": [
+    "photograph",
+    "lens",
+    "flash",
+    "shutter",
+    "film",
+    "memory card",
+    "tripod",
+    "zoom"
+  ],
+  "camera_detailed": [
+    {
+      "word": "photograph",
+      "hint": "image captured by a camera"
+    },
+    {
+      "word": "lens",
+      "hint": "optical component of a camera"
+    },
+    {
+      "word": "flash",
+      "hint": "light source for low-light photography"
+    },
+    {
+      "word": "shutter",
+      "hint": "mechanism that controls light exposure"
+    },
+    {
+      "word": "film",
+      "hint": "traditional medium for storing images"
+    },
+    {
+      "word": "memory card",
+      "hint": "digital storage for photos"
+    },
+    {
+      "word": "tripod",
+      "hint": "stand for stabilizing a camera"
+    },
+    {
+      "word": "zoom",
+      "hint": "ability to magnify an image"
+    }
+  ],
+  "cut": [
+    "scissors",
+    "knife",
+    "hair",
+    "paper",
+    "wound",
+    "slice",
+    "edit"
+  ],
+  "cut_detailed": [
+    {
+      "word": "scissors",
+      "hint": "tool used for cutting"
+    },
+    {
+      "word": "knife",
+      "hint": "sharp blade for cutting"
+    },
+    {
+      "word": "hair",
+      "hint": "trimming or styling hair"
+    },
+    {
+      "word": "paper",
+      "hint": "material often cut with scissors"
+    },
+    {
+      "word": "wound",
+      "hint": "injury from being cut"
+    },
+    {
+      "word": "slice",
+      "hint": "to cut into thin pieces"
+    },
+    {
+      "word": "edit",
+      "hint": "to cut or remove parts of text or film"
+    }
+  ],
+  "star": [
+    "sky",
+    "space",
+    "sun",
+    "celebrity",
+    "constellation",
+    "wish",
+    "twinkle",
+    "astronomy"
+  ],
+  "star_detailed": [
+    {
+      "word": "sky",
+      "hint": "where stars are visible at night"
+    },
+    {
+      "word": "space",
+      "hint": "stars exist in outer space"
+    },
+    {
+      "word": "sun",
+      "hint": "the closest star to Earth"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous person often called a star"
+    },
+    {
+      "word": "constellation",
+      "hint": "pattern of stars in the night sky"
+    },
+    {
+      "word": "wish",
+      "hint": "people often wish upon a star"
+    },
+    {
+      "word": "twinkle",
+      "hint": "how stars appear to shine"
+    },
+    {
+      "word": "astronomy",
+      "hint": "scientific study of stars and space"
+    }
+  ],
+  "glamour": [
+    "beauty",
+    "fashion",
+    "celebrity",
+    "luxury",
+    "red carpet",
+    "magazine",
+    "makeup",
+    "Hollywood"
+  ],
+  "glamour_detailed": [
+    {
+      "word": "beauty",
+      "hint": "physical attractiveness"
+    },
+    {
+      "word": "fashion",
+      "hint": "stylish clothing and accessories"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous people often associated with glamour"
+    },
+    {
+      "word": "luxury",
+      "hint": "expensive and high-quality items"
+    },
+    {
+      "word": "red carpet",
+      "hint": "events where glamorous people are photographed"
+    },
+    {
+      "word": "magazine",
+      "hint": "publications often featuring glamorous content"
+    },
+    {
+      "word": "makeup",
+      "hint": "cosmetics used to enhance appearance"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "center of the entertainment industry"
+    }
+  ],
+  "red carpet": [
+    "celebrity",
+    "award",
+    "paparazzi",
+    "glamour",
+    "fashion",
+    "Hollywood",
+    "premiere",
+    "gala"
+  ],
+  "red carpet_detailed": [
+    {
+      "word": "celebrity",
+      "hint": "famous people who walk the red carpet"
+    },
+    {
+      "word": "award",
+      "hint": "ceremonies where red carpets are often featured"
+    },
+    {
+      "word": "paparazzi",
+      "hint": "photographers who take pictures on the red carpet"
+    },
+    {
+      "word": "glamour",
+      "hint": "the elegant and luxurious atmosphere of red carpet events"
+    },
+    {
+      "word": "fashion",
+      "hint": "stylish outfits worn by attendees on the red carpet"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "entertainment industry closely associated with red carpet events"
+    },
+    {
+      "word": "premiere",
+      "hint": "first showing of a movie often featuring a red carpet"
+    },
+    {
+      "word": "gala",
+      "hint": "formal celebration that may include a red carpet"
+    }
+  ],
+  "award": [
+    "trophy",
+    "ceremony",
+    "achievement",
+    "medal",
+    "recognition",
+    "prize",
+    "honor",
+    "nomination"
+  ],
+  "award_detailed": [
+    {
+      "word": "trophy",
+      "hint": "physical object given as recognition"
+    },
+    {
+      "word": "ceremony",
+      "hint": "event where awards are presented"
+    },
+    {
+      "word": "achievement",
+      "hint": "accomplishment worthy of recognition"
+    },
+    {
+      "word": "medal",
+      "hint": "metal disk given as an honor"
+    },
+    {
+      "word": "recognition",
+      "hint": "acknowledgment of accomplishment"
+    },
+    {
+      "word": "prize",
+      "hint": "reward given to a winner"
+    },
+    {
+      "word": "honor",
+      "hint": "high respect or distinction"
+    },
+    {
+      "word": "nomination",
+      "hint": "selection as a candidate for an award"
+    }
+  ],
+  "studio": [
+    "art",
+    "recording",
+    "film",
+    "photography",
+    "apartment",
+    "dance",
+    "television"
+  ],
+  "studio_detailed": [
+    {
+      "word": "art",
+      "hint": "place for creating visual artwork"
+    },
+    {
+      "word": "recording",
+      "hint": "facility for audio production"
+    },
+    {
+      "word": "film",
+      "hint": "location for movie production"
+    },
+    {
+      "word": "photography",
+      "hint": "space for taking professional photos"
+    },
+    {
+      "word": "apartment",
+      "hint": "small living space, often for one person"
+    },
+    {
+      "word": "dance",
+      "hint": "room for practicing choreography"
+    },
+    {
+      "word": "television",
+      "hint": "set for producing TV shows"
+    }
+  ],
+  "bread": [
+    "butter",
+    "sandwich",
+    "toast",
+    "loaf",
+    "slice",
+    "crust",
+    "yeast",
+    "bakery"
+  ],
+  "bread_detailed": [
+    {
+      "word": "butter",
+      "hint": "common spread for bread"
+    },
+    {
+      "word": "sandwich",
+      "hint": "food item made with bread slices"
+    },
+    {
+      "word": "toast",
+      "hint": "bread that is browned by heat"
+    },
+    {
+      "word": "loaf",
+      "hint": "typical shape of baked bread"
+    },
+    {
+      "word": "slice",
+      "hint": "a thin piece cut from bread"
+    },
+    {
+      "word": "crust",
+      "hint": "outer layer of bread"
+    },
+    {
+      "word": "yeast",
+      "hint": "ingredient used to make bread rise"
+    },
+    {
+      "word": "bakery",
+      "hint": "place where bread is made and sold"
+    }
+  ],
+  "toast": [
+    "bread",
+    "butter",
+    "jam",
+    "breakfast",
+    "toaster",
+    "crunchy",
+    "burn",
+    "slice"
+  ],
+  "toast_detailed": [
+    {
+      "word": "bread",
+      "hint": "main ingredient"
+    },
+    {
+      "word": "butter",
+      "hint": "common spread"
+    },
+    {
+      "word": "jam",
+      "hint": "popular topping"
+    },
+    {
+      "word": "breakfast",
+      "hint": "meal often including toast"
+    },
+    {
+      "word": "toaster",
+      "hint": "appliance used to make toast"
+    },
+    {
+      "word": "crunchy",
+      "hint": "texture of well-done toast"
+    },
+    {
+      "word": "burn",
+      "hint": "result of overcooking"
+    },
+    {
+      "word": "slice",
+      "hint": "unit of bread for toasting"
+    }
+  ],
+  "yellow": [
+    "sun",
+    "banana",
+    "lemon",
+    "sunflower",
+    "daffodil",
+    "taxi",
+    "mustard",
+    "canary"
+  ],
+  "yellow_detailed": [
+    {
+      "word": "sun",
+      "hint": "bright yellow celestial body"
+    },
+    {
+      "word": "banana",
+      "hint": "yellow fruit"
+    },
+    {
+      "word": "lemon",
+      "hint": "sour yellow citrus fruit"
+    },
+    {
+      "word": "sunflower",
+      "hint": "large yellow flower"
+    },
+    {
+      "word": "daffodil",
+      "hint": "spring flower with yellow petals"
+    },
+    {
+      "word": "taxi",
+      "hint": "yellow vehicle for hire"
+    },
+    {
+      "word": "mustard",
+      "hint": "yellow condiment"
+    },
+    {
+      "word": "canary",
+      "hint": "small yellow bird"
+    }
+  ],
+  "creamy": [
+    "smooth",
+    "butter",
+    "yogurt",
+    "cheese",
+    "ice cream",
+    "pudding",
+    "mousse",
+    "milkshake"
+  ],
+  "creamy_detailed": [
+    {
+      "word": "smooth",
+      "hint": "texture without lumps or graininess"
+    },
+    {
+      "word": "butter",
+      "hint": "dairy product known for its creamy consistency"
+    },
+    {
+      "word": "yogurt",
+      "hint": "dairy product with a creamy texture"
+    },
+    {
+      "word": "cheese",
+      "hint": "dairy product often with a creamy consistency"
+    },
+    {
+      "word": "ice cream",
+      "hint": "frozen dessert with a creamy texture"
+    },
+    {
+      "word": "pudding",
+      "hint": "dessert known for its smooth, creamy consistency"
+    },
+    {
+      "word": "mousse",
+      "hint": "light and creamy dessert or savory dish"
+    },
+    {
+      "word": "milkshake",
+      "hint": "creamy blended beverage"
+    }
+  ],
+  "cow": [
+    "milk",
+    "farm",
+    "moo",
+    "grass",
+    "beef",
+    "udder",
+    "pasture",
+    "barn"
+  ],
+  "cow_detailed": [
+    {
+      "word": "milk",
+      "hint": "primary product from cows"
+    },
+    {
+      "word": "farm",
+      "hint": "where cows are typically raised"
+    },
+    {
+      "word": "moo",
+      "hint": "sound a cow makes"
+    },
+    {
+      "word": "grass",
+      "hint": "main food for grazing cows"
+    },
+    {
+      "word": "beef",
+      "hint": "meat from cows"
+    },
+    {
+      "word": "udder",
+      "hint": "part of a cow that produces milk"
+    },
+    {
+      "word": "pasture",
+      "hint": "field where cows graze"
+    },
+    {
+      "word": "barn",
+      "hint": "structure that houses cows"
+    }
+  ],
+  "pepper": [
+    "salt",
+    "spicy",
+    "black",
+    "shaker",
+    "grinder",
+    "bell",
+    "sneeze"
+  ],
+  "pepper_detailed": [
+    {
+      "word": "salt",
+      "hint": "common table seasoning paired with pepper"
+    },
+    {
+      "word": "spicy",
+      "hint": "describes the hot taste of pepper"
+    },
+    {
+      "word": "black",
+      "hint": "most common color of ground pepper"
+    },
+    {
+      "word": "shaker",
+      "hint": "container used to dispense pepper"
+    },
+    {
+      "word": "grinder",
+      "hint": "tool used to crush peppercorns"
+    },
+    {
+      "word": "bell",
+      "hint": "type of mild pepper used as a vegetable"
+    },
+    {
+      "word": "sneeze",
+      "hint": "common reaction to inhaling pepper dust"
+    }
+  ],
+  "ocean": [
+    "wave",
+    "beach",
+    "fish",
+    "ship",
+    "salt",
+    "blue",
+    "shark"
+  ],
+  "ocean_detailed": [
+    {
+      "word": "wave",
+      "hint": "rolling water movement"
+    },
+    {
+      "word": "beach",
+      "hint": "sandy shore"
+    },
+    {
+      "word": "fish",
+      "hint": "aquatic animal"
+    },
+    {
+      "word": "ship",
+      "hint": "large sea vessel"
+    },
+    {
+      "word": "salt",
+      "hint": "ocean water taste"
+    },
+    {
+      "word": "blue",
+      "hint": "common color of ocean"
+    },
+    {
+      "word": "shark",
+      "hint": "large predatory fish"
+    }
+  ],
+  "seasoning": [
+    "salt",
+    "pepper",
+    "spice",
+    "herb",
+    "flavor",
+    "cooking",
+    "garlic",
+    "oregano"
+  ],
+  "seasoning_detailed": [
+    {
+      "word": "salt",
+      "hint": "basic seasoning ingredient"
+    },
+    {
+      "word": "pepper",
+      "hint": "common table seasoning"
+    },
+    {
+      "word": "spice",
+      "hint": "flavoring added to food"
+    },
+    {
+      "word": "herb",
+      "hint": "plant used for flavoring"
+    },
+    {
+      "word": "flavor",
+      "hint": "taste enhanced by seasoning"
+    },
+    {
+      "word": "cooking",
+      "hint": "process of preparing food"
+    },
+    {
+      "word": "garlic",
+      "hint": "popular savory seasoning"
+    },
+    {
+      "word": "oregano",
+      "hint": "herb used in Italian cuisine"
+    }
+  ],
+  "sodium": [
+    "salt",
+    "mineral",
+    "element",
+    "metal",
+    "ion",
+    "electrolyte",
+    "flame"
+  ],
+  "sodium_detailed": [
+    {
+      "word": "salt",
+      "hint": "table salt is sodium chloride"
+    },
+    {
+      "word": "mineral",
+      "hint": "sodium is an essential mineral for the body"
+    },
+    {
+      "word": "element",
+      "hint": "sodium is a chemical element on the periodic table"
+    },
+    {
+      "word": "metal",
+      "hint": "sodium is a soft, silvery-white alkali metal"
+    },
+    {
+      "word": "ion",
+      "hint": "sodium commonly exists as a positively charged ion"
+    },
+    {
+      "word": "electrolyte",
+      "hint": "sodium is a key electrolyte in the body"
+    },
+    {
+      "word": "flame",
+      "hint": "sodium produces a distinctive yellow flame in flame tests"
+    }
+  ],
+  "mineral": [
+    "rock",
+    "crystal",
+    "gem",
+    "quartz",
+    "salt",
+    "vitamin",
+    "mine",
+    "diamond"
+  ],
+  "mineral_detailed": [
+    {
+      "word": "rock",
+      "hint": "minerals are components of rocks"
+    },
+    {
+      "word": "crystal",
+      "hint": "many minerals form crystal structures"
+    },
+    {
+      "word": "gem",
+      "hint": "precious stones are minerals"
+    },
+    {
+      "word": "quartz",
+      "hint": "a common mineral"
+    },
+    {
+      "word": "salt",
+      "hint": "a mineral used in cooking"
+    },
+    {
+      "word": "vitamin",
+      "hint": "essential minerals in nutrition"
+    },
+    {
+      "word": "mine",
+      "hint": "where minerals are extracted"
+    },
+    {
+      "word": "diamond",
+      "hint": "a valuable mineral"
+    }
+  ],
+  "corn": [
+    "cob",
+    "yellow",
+    "kernel",
+    "popcorn",
+    "field",
+    "husk",
+    "butter",
+    "vegetable"
+  ],
+  "corn_detailed": [
+    {
+      "word": "cob",
+      "hint": "how corn grows"
+    },
+    {
+      "word": "yellow",
+      "hint": "common color of corn"
+    },
+    {
+      "word": "kernel",
+      "hint": "individual seed of corn"
+    },
+    {
+      "word": "popcorn",
+      "hint": "popular snack made from corn"
+    },
+    {
+      "word": "field",
+      "hint": "where corn is grown"
+    },
+    {
+      "word": "husk",
+      "hint": "outer covering of an ear of corn"
+    },
+    {
+      "word": "butter",
+      "hint": "often paired with corn when eating"
+    },
+    {
+      "word": "vegetable",
+      "hint": "food category corn belongs to"
+    }
+  ],
+  "nut": [
+    "squirrel",
+    "tree",
+    "shell",
+    "cracker",
+    "allergic",
+    "protein",
+    "snack",
+    "peanut"
+  ],
+  "nut_detailed": [
+    {
+      "word": "squirrel",
+      "hint": "animal that collects and eats nuts"
+    },
+    {
+      "word": "tree",
+      "hint": "where many nuts grow"
+    },
+    {
+      "word": "shell",
+      "hint": "hard outer covering of a nut"
+    },
+    {
+      "word": "cracker",
+      "hint": "tool used to break open nuts"
+    },
+    {
+      "word": "allergic",
+      "hint": "some people have nut allergies"
+    },
+    {
+      "word": "protein",
+      "hint": "nuts are a good source of protein"
+    },
+    {
+      "word": "snack",
+      "hint": "nuts are often eaten as a snack"
+    },
+    {
+      "word": "peanut",
+      "hint": "a common type of nut (technically a legume)"
+    }
+  ],
+  "seed": [
+    "plant",
+    "garden",
+    "flower",
+    "fruit",
+    "sprout",
+    "soil",
+    "sunflower",
+    "beginning"
+  ],
+  "seed_detailed": [
+    {
+      "word": "plant",
+      "hint": "seeds grow into plants"
+    },
+    {
+      "word": "garden",
+      "hint": "place where seeds are often planted"
+    },
+    {
+      "word": "flower",
+      "hint": "many flowers start from seeds"
+    },
+    {
+      "word": "fruit",
+      "hint": "seeds are often found inside fruits"
+    },
+    {
+      "word": "sprout",
+      "hint": "initial growth stage of a seed"
+    },
+    {
+      "word": "soil",
+      "hint": "medium in which seeds are planted"
+    },
+    {
+      "word": "sunflower",
+      "hint": "popular edible seed"
+    },
+    {
+      "word": "beginning",
+      "hint": "seeds represent the start of growth"
+    }
+  ],
+  "center": [
+    "middle",
+    "core",
+    "heart",
+    "focus",
+    "hub",
+    "nucleus",
+    "pivot",
+    "axis"
+  ],
+  "center_detailed": [
+    {
+      "word": "middle",
+      "hint": "the central point or part"
+    },
+    {
+      "word": "core",
+      "hint": "the central or most important part"
+    },
+    {
+      "word": "heart",
+      "hint": "the central or innermost part"
+    },
+    {
+      "word": "focus",
+      "hint": "the central point of attention or activity"
+    },
+    {
+      "word": "hub",
+      "hint": "the central part of a wheel or network"
+    },
+    {
+      "word": "nucleus",
+      "hint": "the central part around which other parts are grouped"
+    },
+    {
+      "word": "pivot",
+      "hint": "a central point on which something turns"
+    },
+    {
+      "word": "axis",
+      "hint": "a central line around which something rotates"
+    }
+  ],
+  "food": [
+    "delicious",
+    "restaurant",
+    "kitchen",
+    "recipe",
+    "meal",
+    "grocery",
+    "ingredient"
+  ],
+  "food_detailed": [
+    {
+      "word": "delicious",
+      "hint": "pleasing to taste"
+    },
+    {
+      "word": "restaurant",
+      "hint": "place to eat out"
+    },
+    {
+      "word": "kitchen",
+      "hint": "room for cooking"
+    },
+    {
+      "word": "recipe",
+      "hint": "instructions for preparing a dish"
+    },
+    {
+      "word": "meal",
+      "hint": "instance of eating"
+    },
+    {
+      "word": "grocery",
+      "hint": "store for buying food"
+    },
+    {
+      "word": "ingredient",
+      "hint": "component of a dish"
+    }
+  ],
+  "radiation": [
+    "nuclear",
+    "cancer",
+    "x-ray",
+    "radioactive",
+    "sunburn",
+    "Chernobyl",
+    "microwave"
+  ],
+  "radiation_detailed": [
+    {
+      "word": "nuclear",
+      "hint": "related to atomic energy and weapons"
+    },
+    {
+      "word": "cancer",
+      "hint": "potential health risk from exposure"
+    },
+    {
+      "word": "x-ray",
+      "hint": "medical imaging technique"
+    },
+    {
+      "word": "radioactive",
+      "hint": "emitting radiation"
+    },
+    {
+      "word": "sunburn",
+      "hint": "skin damage from UV radiation"
+    },
+    {
+      "word": "Chernobyl",
+      "hint": "infamous nuclear disaster site"
+    },
+    {
+      "word": "microwave",
+      "hint": "appliance using electromagnetic radiation"
+    }
+  ],
+  "oven": [
+    "bake",
+    "hot",
+    "pizza",
+    "timer",
+    "rack",
+    "preheat",
+    "mitt"
+  ],
+  "oven_detailed": [
+    {
+      "word": "bake",
+      "hint": "cooking method often done in an oven"
+    },
+    {
+      "word": "hot",
+      "hint": "ovens generate high temperatures"
+    },
+    {
+      "word": "pizza",
+      "hint": "popular food cooked in an oven"
+    },
+    {
+      "word": "timer",
+      "hint": "device used to track cooking time"
+    },
+    {
+      "word": "rack",
+      "hint": "shelf inside an oven for placing food"
+    },
+    {
+      "word": "preheat",
+      "hint": "warming up the oven before cooking"
+    },
+    {
+      "word": "mitt",
+      "hint": "protective hand covering for handling hot items"
+    }
+  ],
+  "quick": [
+    "fast",
+    "swift",
+    "speedy",
+    "hasty",
+    "rapid",
+    "instant",
+    "nimble"
+  ],
+  "quick_detailed": [
+    {
+      "word": "fast",
+      "hint": "rapid speed or motion"
+    },
+    {
+      "word": "swift",
+      "hint": "moving at high speed"
+    },
+    {
+      "word": "speedy",
+      "hint": "accomplished rapidly"
+    },
+    {
+      "word": "hasty",
+      "hint": "done with great speed, often carelessly"
+    },
+    {
+      "word": "rapid",
+      "hint": "happening in a short time"
+    },
+    {
+      "word": "instant",
+      "hint": "occurring immediately"
+    },
+    {
+      "word": "nimble",
+      "hint": "quick and light in movement"
+    }
+  ],
+  "beep": [
+    "car",
+    "alarm",
+    "microwave",
+    "computer",
+    "pager",
+    "censor",
+    "test"
+  ],
+  "beep_detailed": [
+    {
+      "word": "car",
+      "hint": "sound of a car horn"
+    },
+    {
+      "word": "alarm",
+      "hint": "sound of an alarm clock or security system"
+    },
+    {
+      "word": "microwave",
+      "hint": "sound when cooking is finished"
+    },
+    {
+      "word": "computer",
+      "hint": "error or notification sound"
+    },
+    {
+      "word": "pager",
+      "hint": "sound of receiving a message"
+    },
+    {
+      "word": "censor",
+      "hint": "used to bleep out inappropriate words"
+    },
+    {
+      "word": "test",
+      "hint": "sound in emergency broadcast system tests"
+    }
+  ],
+  "chip": [
+    "potato",
+    "computer",
+    "chocolate",
+    "wood",
+    "paint",
+    "tooth",
+    "gambling"
+  ],
+  "chip_detailed": [
+    {
+      "word": "potato",
+      "hint": "popular snack food"
+    },
+    {
+      "word": "computer",
+      "hint": "electronic component"
+    },
+    {
+      "word": "chocolate",
+      "hint": "ingredient in cookies"
+    },
+    {
+      "word": "wood",
+      "hint": "small piece from cutting"
+    },
+    {
+      "word": "paint",
+      "hint": "small flake or piece"
+    },
+    {
+      "word": "tooth",
+      "hint": "dental damage"
+    },
+    {
+      "word": "gambling",
+      "hint": "casino token"
+    }
+  ],
+  "cookie": [
+    "chocolate",
+    "milk",
+    "sweet",
+    "crunchy",
+    "bake",
+    "jar",
+    "dessert",
+    "sugar"
+  ],
+  "cookie_detailed": [
+    {
+      "word": "chocolate",
+      "hint": "common cookie flavor"
+    },
+    {
+      "word": "milk",
+      "hint": "often paired with cookies"
+    },
+    {
+      "word": "sweet",
+      "hint": "describes taste of most cookies"
+    },
+    {
+      "word": "crunchy",
+      "hint": "texture of many cookies"
+    },
+    {
+      "word": "bake",
+      "hint": "method of making cookies"
+    },
+    {
+      "word": "jar",
+      "hint": "container for storing cookies"
+    },
+    {
+      "word": "dessert",
+      "hint": "category of food"
+    },
+    {
+      "word": "sugar",
+      "hint": "key ingredient in cookies"
+    }
+  ],
+  "cracker": [
+    "cheese",
+    "snack",
+    "saltine",
+    "crisp",
+    "box",
+    "soup",
+    "appetizer",
+    "wheat"
+  ],
+  "cracker_detailed": [
+    {
+      "word": "cheese",
+      "hint": "often paired with crackers"
+    },
+    {
+      "word": "snack",
+      "hint": "crackers are a common snack food"
+    },
+    {
+      "word": "saltine",
+      "hint": "a popular type of cracker"
+    },
+    {
+      "word": "crisp",
+      "hint": "describes the texture of crackers"
+    },
+    {
+      "word": "box",
+      "hint": "how crackers are often packaged"
+    },
+    {
+      "word": "soup",
+      "hint": "crackers are often served with soup"
+    },
+    {
+      "word": "appetizer",
+      "hint": "crackers are used in many appetizers"
+    },
+    {
+      "word": "wheat",
+      "hint": "a common ingredient in crackers"
+    }
+  ],
+  "fruit": [
+    "apple",
+    "banana",
+    "orange",
+    "sweet",
+    "juicy",
+    "vitamin",
+    "tree",
+    "salad"
+  ],
+  "fruit_detailed": [
+    {
+      "word": "apple",
+      "hint": "common red or green fruit"
+    },
+    {
+      "word": "banana",
+      "hint": "yellow curved fruit"
+    },
+    {
+      "word": "orange",
+      "hint": "citrus fruit with same name as color"
+    },
+    {
+      "word": "sweet",
+      "hint": "typical taste of most fruits"
+    },
+    {
+      "word": "juicy",
+      "hint": "common texture of ripe fruits"
+    },
+    {
+      "word": "vitamin",
+      "hint": "nutritional benefit associated with fruits"
+    },
+    {
+      "word": "tree",
+      "hint": "where many fruits grow"
+    },
+    {
+      "word": "salad",
+      "hint": "dish often containing fruit pieces"
+    }
+  ],
+  "chocolate": [
+    "sweet",
+    "candy",
+    "dessert",
+    "cocoa",
+    "dark",
+    "milk",
+    "bar",
+    "cake"
+  ],
+  "chocolate_detailed": [
+    {
+      "word": "sweet",
+      "hint": "primary taste of chocolate"
+    },
+    {
+      "word": "candy",
+      "hint": "common form of chocolate"
+    },
+    {
+      "word": "dessert",
+      "hint": "chocolate is often used in desserts"
+    },
+    {
+      "word": "cocoa",
+      "hint": "main ingredient in chocolate"
+    },
+    {
+      "word": "dark",
+      "hint": "a popular type of chocolate"
+    },
+    {
+      "word": "milk",
+      "hint": "another common type of chocolate"
+    },
+    {
+      "word": "bar",
+      "hint": "typical shape of chocolate"
+    },
+    {
+      "word": "cake",
+      "hint": "popular chocolate-flavored dessert"
+    }
+  ],
+  "spotlight": [
+    "stage",
+    "attention",
+    "celebrity",
+    "bright",
+    "beam",
+    "performance",
+    "search",
+    "interview"
+  ],
+  "spotlight_detailed": [
+    {
+      "word": "stage",
+      "hint": "spotlights are often used in theater performances"
+    },
+    {
+      "word": "attention",
+      "hint": "being in the spotlight means receiving focus"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous people are often in the spotlight"
+    },
+    {
+      "word": "bright",
+      "hint": "spotlights produce intense, focused light"
+    },
+    {
+      "word": "beam",
+      "hint": "a spotlight creates a concentrated beam of light"
+    },
+    {
+      "word": "performance",
+      "hint": "spotlights are used to highlight performers"
+    },
+    {
+      "word": "search",
+      "hint": "spotlights can be used to locate things in the dark"
+    },
+    {
+      "word": "interview",
+      "hint": "spotlights are often used in TV interviews"
+    }
+  ],
+  "microphone": [
+    "sound",
+    "singer",
+    "speech",
+    "recording",
+    "voice",
+    "stage",
+    "radio",
+    "interview"
+  ],
+  "microphone_detailed": [
+    {
+      "word": "sound",
+      "hint": "microphones capture audio"
+    },
+    {
+      "word": "singer",
+      "hint": "often uses microphones to perform"
+    },
+    {
+      "word": "speech",
+      "hint": "microphones amplify public speaking"
+    },
+    {
+      "word": "recording",
+      "hint": "microphones are used to record audio"
+    },
+    {
+      "word": "voice",
+      "hint": "microphones pick up vocal sounds"
+    },
+    {
+      "word": "stage",
+      "hint": "microphones are common on performance stages"
+    },
+    {
+      "word": "radio",
+      "hint": "microphones are essential for radio broadcasting"
+    },
+    {
+      "word": "interview",
+      "hint": "microphones are used to capture responses"
+    }
+  ],
+  "prop": [
+    "movie",
+    "stage",
+    "support",
+    "fake",
+    "comedy",
+    "airplane",
+    "crutch"
+  ],
+  "prop_detailed": [
+    {
+      "word": "movie",
+      "hint": "objects used in film production"
+    },
+    {
+      "word": "stage",
+      "hint": "items used in theater performances"
+    },
+    {
+      "word": "support",
+      "hint": "to hold up or keep from falling"
+    },
+    {
+      "word": "fake",
+      "hint": "imitation objects used for display"
+    },
+    {
+      "word": "comedy",
+      "hint": "humorous items used in sketches"
+    },
+    {
+      "word": "airplane",
+      "hint": "rotating blade that provides thrust"
+    },
+    {
+      "word": "crutch",
+      "hint": "device used to assist with walking"
+    }
+  ],
+  "costume": [
+    "Halloween",
+    "party",
+    "mask",
+    "dress-up",
+    "theater",
+    "disguise",
+    "character"
+  ],
+  "costume_detailed": [
+    {
+      "word": "Halloween",
+      "hint": "holiday associated with dressing up"
+    },
+    {
+      "word": "party",
+      "hint": "social event where costumes are often worn"
+    },
+    {
+      "word": "mask",
+      "hint": "facial covering often part of a costume"
+    },
+    {
+      "word": "dress-up",
+      "hint": "act of putting on costumes for fun"
+    },
+    {
+      "word": "theater",
+      "hint": "performances often involve costumes"
+    },
+    {
+      "word": "disguise",
+      "hint": "hiding one's identity with a costume"
+    },
+    {
+      "word": "character",
+      "hint": "fictional persona represented by a costume"
+    }
+  ],
+  "window": [
+    "glass",
+    "view",
+    "curtain",
+    "frame",
+    "sill",
+    "pane",
+    "screen",
+    "blind"
+  ],
+  "window_detailed": [
+    {
+      "word": "glass",
+      "hint": "transparent material windows are made of"
+    },
+    {
+      "word": "view",
+      "hint": "what you see through a window"
+    },
+    {
+      "word": "curtain",
+      "hint": "fabric covering for windows"
+    },
+    {
+      "word": "frame",
+      "hint": "structure surrounding window glass"
+    },
+    {
+      "word": "sill",
+      "hint": "horizontal ledge at bottom of window"
+    },
+    {
+      "word": "pane",
+      "hint": "individual sheet of glass in window"
+    },
+    {
+      "word": "screen",
+      "hint": "mesh covering to keep insects out"
+    },
+    {
+      "word": "blind",
+      "hint": "adjustable covering for privacy"
+    }
+  ],
+  "fabric": [
+    "cloth",
+    "cotton",
+    "silk",
+    "sewing",
+    "texture",
+    "pattern",
+    "fashion",
+    "upholstery"
+  ],
+  "fabric_detailed": [
+    {
+      "word": "cloth",
+      "hint": "general term for woven material"
+    },
+    {
+      "word": "cotton",
+      "hint": "common natural fiber used in textiles"
+    },
+    {
+      "word": "silk",
+      "hint": "luxurious, smooth fabric from silkworms"
+    },
+    {
+      "word": "sewing",
+      "hint": "process of joining fabrics with needle and thread"
+    },
+    {
+      "word": "texture",
+      "hint": "feel or appearance of a fabric's surface"
+    },
+    {
+      "word": "pattern",
+      "hint": "design or print on fabric"
+    },
+    {
+      "word": "fashion",
+      "hint": "clothing and style trends"
+    },
+    {
+      "word": "upholstery",
+      "hint": "fabric used to cover furniture"
+    }
+  ],
+  "drape": [
+    "curtain",
+    "fabric",
+    "window",
+    "hang",
+    "fold",
+    "rod",
+    "decoration"
+  ],
+  "drape_detailed": [
+    {
+      "word": "curtain",
+      "hint": "fabric covering for windows"
+    },
+    {
+      "word": "fabric",
+      "hint": "material used to make drapes"
+    },
+    {
+      "word": "window",
+      "hint": "where drapes are commonly hung"
+    },
+    {
+      "word": "hang",
+      "hint": "action of putting up drapes"
+    },
+    {
+      "word": "fold",
+      "hint": "how drapes are often arranged"
+    },
+    {
+      "word": "rod",
+      "hint": "used to support drapes"
+    },
+    {
+      "word": "decoration",
+      "hint": "purpose of drapes in interior design"
+    }
+  ],
+  "rod": [
+    "fishing",
+    "lightning",
+    "curtain",
+    "measuring",
+    "hot",
+    "iron",
+    "correction",
+    "steering"
+  ],
+  "rod_detailed": [
+    {
+      "word": "fishing",
+      "hint": "tool used to catch fish"
+    },
+    {
+      "word": "lightning",
+      "hint": "electrical discharge in the sky"
+    },
+    {
+      "word": "curtain",
+      "hint": "pole for hanging drapes"
+    },
+    {
+      "word": "measuring",
+      "hint": "device for determining length"
+    },
+    {
+      "word": "hot",
+      "hint": "slang for attractive person"
+    },
+    {
+      "word": "iron",
+      "hint": "metal bar or shaft"
+    },
+    {
+      "word": "correction",
+      "hint": "disciplinary tool"
+    },
+    {
+      "word": "steering",
+      "hint": "component in vehicle control"
+    }
+  ],
+  "privacy": [
+    "secrecy",
+    "confidentiality",
+    "security",
+    "anonymity",
+    "protection",
+    "solitude",
+    "encryption",
+    "firewall"
+  ],
+  "privacy_detailed": [
+    {
+      "word": "secrecy",
+      "hint": "keeping information hidden"
+    },
+    {
+      "word": "confidentiality",
+      "hint": "protecting sensitive information"
+    },
+    {
+      "word": "security",
+      "hint": "safeguarding personal data"
+    },
+    {
+      "word": "anonymity",
+      "hint": "remaining unknown or unidentified"
+    },
+    {
+      "word": "protection",
+      "hint": "shielding from unwanted intrusion"
+    },
+    {
+      "word": "solitude",
+      "hint": "being alone without disturbance"
+    },
+    {
+      "word": "encryption",
+      "hint": "securing data with code"
+    },
+    {
+      "word": "firewall",
+      "hint": "barrier against unauthorized access"
+    }
+  ],
+  "applause": [
+    "clapping",
+    "audience",
+    "performance",
+    "ovation",
+    "cheer",
+    "approval",
+    "theater",
+    "encore"
+  ],
+  "applause_detailed": [
+    {
+      "word": "clapping",
+      "hint": "physical act of making applause"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people giving applause"
+    },
+    {
+      "word": "performance",
+      "hint": "event that often receives applause"
+    },
+    {
+      "word": "ovation",
+      "hint": "prolonged, enthusiastic applause"
+    },
+    {
+      "word": "cheer",
+      "hint": "vocal expression often accompanying applause"
+    },
+    {
+      "word": "approval",
+      "hint": "sentiment expressed through applause"
+    },
+    {
+      "word": "theater",
+      "hint": "common venue for applause"
+    },
+    {
+      "word": "encore",
+      "hint": "additional performance requested by applause"
+    }
+  ],
+  "spectator": [
+    "sport",
+    "audience",
+    "stadium",
+    "seat",
+    "cheer",
+    "binocular",
+    "ticket",
+    "sideline"
+  ],
+  "spectator_detailed": [
+    {
+      "word": "sport",
+      "hint": "watching athletic competitions"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people observing an event"
+    },
+    {
+      "word": "stadium",
+      "hint": "large venue for watching events"
+    },
+    {
+      "word": "seat",
+      "hint": "place to sit and watch"
+    },
+    {
+      "word": "cheer",
+      "hint": "vocal support from observers"
+    },
+    {
+      "word": "binocular",
+      "hint": "device for viewing distant action"
+    },
+    {
+      "word": "ticket",
+      "hint": "admission to watch an event"
+    },
+    {
+      "word": "sideline",
+      "hint": "area where spectators view a game"
+    }
+  ],
+  "crowd": [
+    "people",
+    "gather",
+    "busy",
+    "stadium",
+    "noise",
+    "concert",
+    "festival",
+    "protest"
+  ],
+  "crowd_detailed": [
+    {
+      "word": "people",
+      "hint": "large group of individuals"
+    },
+    {
+      "word": "gather",
+      "hint": "to come together in a group"
+    },
+    {
+      "word": "busy",
+      "hint": "full of activity or people"
+    },
+    {
+      "word": "stadium",
+      "hint": "venue where crowds often gather"
+    },
+    {
+      "word": "noise",
+      "hint": "sound produced by many people"
+    },
+    {
+      "word": "concert",
+      "hint": "musical event with many attendees"
+    },
+    {
+      "word": "festival",
+      "hint": "celebration attracting large crowds"
+    },
+    {
+      "word": "protest",
+      "hint": "public demonstration with many participants"
+    }
+  ],
+  "listener": [
+    "ear",
+    "radio",
+    "music",
+    "audience",
+    "headphone",
+    "attentive",
+    "podcast",
+    "speaker"
+  ],
+  "listener_detailed": [
+    {
+      "word": "ear",
+      "hint": "organ used for hearing"
+    },
+    {
+      "word": "radio",
+      "hint": "device for listening to broadcasts"
+    },
+    {
+      "word": "music",
+      "hint": "audio entertainment often listened to"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people listening"
+    },
+    {
+      "word": "headphone",
+      "hint": "device for private listening"
+    },
+    {
+      "word": "attentive",
+      "hint": "quality of a good listener"
+    },
+    {
+      "word": "podcast",
+      "hint": "audio content for listeners"
+    },
+    {
+      "word": "speaker",
+      "hint": "person talking to listeners"
+    }
+  ],
+  "game": [
+    "play",
+    "score",
+    "win",
+    "board",
+    "card",
+    "rule",
+    "team",
+    "competition"
+  ],
+  "game_detailed": [
+    {
+      "word": "play",
+      "hint": "to engage in a game for enjoyment"
+    },
+    {
+      "word": "score",
+      "hint": "points earned in a game"
+    },
+    {
+      "word": "win",
+      "hint": "to be victorious in a game"
+    },
+    {
+      "word": "board",
+      "hint": "surface on which many games are played"
+    },
+    {
+      "word": "card",
+      "hint": "used in various card games"
+    },
+    {
+      "word": "rule",
+      "hint": "guidelines that govern gameplay"
+    },
+    {
+      "word": "team",
+      "hint": "group of players working together"
+    },
+    {
+      "word": "competition",
+      "hint": "contest between players or teams"
+    }
+  ],
+  "child": [
+    "toy",
+    "school",
+    "parent",
+    "playground",
+    "birthday",
+    "innocence",
+    "growth"
+  ],
+  "child_detailed": [
+    {
+      "word": "toy",
+      "hint": "plaything for children"
+    },
+    {
+      "word": "school",
+      "hint": "place of education for young people"
+    },
+    {
+      "word": "parent",
+      "hint": "mother or father of a child"
+    },
+    {
+      "word": "playground",
+      "hint": "outdoor area for children to play"
+    },
+    {
+      "word": "birthday",
+      "hint": "annual celebration of a child's birth"
+    },
+    {
+      "word": "innocence",
+      "hint": "quality of being pure or naive"
+    },
+    {
+      "word": "growth",
+      "hint": "process of physical and mental development"
+    }
+  ],
+  "toy": [
+    "child",
+    "play",
+    "plastic",
+    "doll",
+    "car",
+    "game",
+    "teddy bear"
+  ],
+  "toy_detailed": [
+    {
+      "word": "child",
+      "hint": "primary user of toys"
+    },
+    {
+      "word": "play",
+      "hint": "activity associated with toys"
+    },
+    {
+      "word": "plastic",
+      "hint": "common material for toys"
+    },
+    {
+      "word": "doll",
+      "hint": "popular type of toy"
+    },
+    {
+      "word": "car",
+      "hint": "common toy vehicle"
+    },
+    {
+      "word": "game",
+      "hint": "interactive form of toy"
+    },
+    {
+      "word": "teddy bear",
+      "hint": "classic stuffed animal toy"
+    }
+  ],
+  "sport": [
+    "athlete",
+    "team",
+    "competition",
+    "ball",
+    "stadium",
+    "coach",
+    "trophy",
+    "fitness"
+  ],
+  "sport_detailed": [
+    {
+      "word": "athlete",
+      "hint": "person who participates in sports"
+    },
+    {
+      "word": "team",
+      "hint": "group of players working together"
+    },
+    {
+      "word": "competition",
+      "hint": "contest between individuals or teams"
+    },
+    {
+      "word": "ball",
+      "hint": "spherical object used in many sports"
+    },
+    {
+      "word": "stadium",
+      "hint": "large venue for sporting events"
+    },
+    {
+      "word": "coach",
+      "hint": "person who trains and leads athletes"
+    },
+    {
+      "word": "trophy",
+      "hint": "award given to winners in sports"
+    },
+    {
+      "word": "fitness",
+      "hint": "physical condition required for sports"
+    }
+  ],
+  "music": [
+    "instrument",
+    "rhythm",
+    "melody",
+    "concert",
+    "song",
+    "artist",
+    "genre",
+    "note"
+  ],
+  "music_detailed": [
+    {
+      "word": "instrument",
+      "hint": "tool used to create musical sounds"
+    },
+    {
+      "word": "rhythm",
+      "hint": "pattern of beats in music"
+    },
+    {
+      "word": "melody",
+      "hint": "sequence of notes that form a recognizable tune"
+    },
+    {
+      "word": "concert",
+      "hint": "live musical performance"
+    },
+    {
+      "word": "song",
+      "hint": "musical composition with vocals"
+    },
+    {
+      "word": "artist",
+      "hint": "person who creates or performs music"
+    },
+    {
+      "word": "genre",
+      "hint": "category or style of music"
+    },
+    {
+      "word": "note",
+      "hint": "single sound in music"
+    }
+  ],
+  "concert": [
+    "music",
+    "crowd",
+    "ticket",
+    "stage",
+    "band",
+    "venue",
+    "applause"
+  ],
+  "concert_detailed": [
+    {
+      "word": "music",
+      "hint": "primary focus of most concerts"
+    },
+    {
+      "word": "crowd",
+      "hint": "large group of people attending"
+    },
+    {
+      "word": "ticket",
+      "hint": "required for entry"
+    },
+    {
+      "word": "stage",
+      "hint": "where performers play"
+    },
+    {
+      "word": "band",
+      "hint": "group of musicians performing"
+    },
+    {
+      "word": "venue",
+      "hint": "location where concert is held"
+    },
+    {
+      "word": "applause",
+      "hint": "audience showing appreciation"
+    }
+  ],
+  "travel": [
+    "vacation",
+    "airplane",
+    "suitcase",
+    "passport",
+    "hotel",
+    "map",
+    "tourist"
+  ],
+  "travel_detailed": [
+    {
+      "word": "vacation",
+      "hint": "time off work or school for leisure"
+    },
+    {
+      "word": "airplane",
+      "hint": "common mode of transportation for long distances"
+    },
+    {
+      "word": "suitcase",
+      "hint": "luggage used to pack belongings"
+    },
+    {
+      "word": "passport",
+      "hint": "document for international travel"
+    },
+    {
+      "word": "hotel",
+      "hint": "accommodation for travelers"
+    },
+    {
+      "word": "map",
+      "hint": "guide for navigation in unfamiliar places"
+    },
+    {
+      "word": "tourist",
+      "hint": "person who travels for pleasure"
+    }
+  ],
+  "parking": [
+    "car",
+    "lot",
+    "meter",
+    "ticket",
+    "garage",
+    "space",
+    "valet"
+  ],
+  "parking_detailed": [
+    {
+      "word": "car",
+      "hint": "vehicle commonly parked"
+    },
+    {
+      "word": "lot",
+      "hint": "designated area for parking"
+    },
+    {
+      "word": "meter",
+      "hint": "device for paid parking"
+    },
+    {
+      "word": "ticket",
+      "hint": "fine for parking violation"
+    },
+    {
+      "word": "garage",
+      "hint": "covered structure for parking"
+    },
+    {
+      "word": "space",
+      "hint": "individual spot for a vehicle"
+    },
+    {
+      "word": "valet",
+      "hint": "service to park cars for patrons"
+    }
+  ],
+  "lottery": [
+    "ticket",
+    "jackpot",
+    "number",
+    "winner",
+    "millionaire",
+    "luck",
+    "drawing"
+  ],
+  "lottery_detailed": [
+    {
+      "word": "ticket",
+      "hint": "purchased to enter lottery"
+    },
+    {
+      "word": "jackpot",
+      "hint": "large prize money"
+    },
+    {
+      "word": "number",
+      "hint": "chosen for lottery entry"
+    },
+    {
+      "word": "winner",
+      "hint": "person who claims prize"
+    },
+    {
+      "word": "millionaire",
+      "hint": "potential outcome of winning"
+    },
+    {
+      "word": "luck",
+      "hint": "factor in lottery success"
+    },
+    {
+      "word": "drawing",
+      "hint": "event where numbers are selected"
+    }
+  ],
+  "speeding": [
+    "ticket",
+    "car",
+    "police",
+    "highway",
+    "radar",
+    "accident",
+    "rush",
+    "limit"
+  ],
+  "speeding_detailed": [
+    {
+      "word": "ticket",
+      "hint": "fine issued for driving too fast"
+    },
+    {
+      "word": "car",
+      "hint": "vehicle commonly associated with speeding"
+    },
+    {
+      "word": "police",
+      "hint": "law enforcement that catches speeders"
+    },
+    {
+      "word": "highway",
+      "hint": "road where speeding often occurs"
+    },
+    {
+      "word": "radar",
+      "hint": "device used to detect vehicle speed"
+    },
+    {
+      "word": "accident",
+      "hint": "potential consequence of speeding"
+    },
+    {
+      "word": "rush",
+      "hint": "feeling of urgency when speeding"
+    },
+    {
+      "word": "limit",
+      "hint": "maximum legal speed on a road"
+    }
+  ],
+  "fame": [
+    "celebrity",
+    "spotlight",
+    "paparazzi",
+    "star",
+    "fortune",
+    "autograph",
+    "Hollywood",
+    "red carpet"
+  ],
+  "fame_detailed": [
+    {
+      "word": "celebrity",
+      "hint": "a famous person"
+    },
+    {
+      "word": "spotlight",
+      "hint": "focus of attention"
+    },
+    {
+      "word": "paparazzi",
+      "hint": "photographers who pursue celebrities"
+    },
+    {
+      "word": "star",
+      "hint": "someone who is famous"
+    },
+    {
+      "word": "fortune",
+      "hint": "wealth often associated with fame"
+    },
+    {
+      "word": "autograph",
+      "hint": "signature of a famous person"
+    },
+    {
+      "word": "Hollywood",
+      "hint": "center of American entertainment industry"
+    },
+    {
+      "word": "red carpet",
+      "hint": "ceremonial walkway for celebrities"
+    }
+  ],
+  "paparazzi": [
+    "celebrity",
+    "camera",
+    "tabloid",
+    "invasion",
+    "scandal",
+    "photographer",
+    "gossip",
+    "privacy"
+  ],
+  "paparazzi_detailed": [
+    {
+      "word": "celebrity",
+      "hint": "famous people pursued by paparazzi"
+    },
+    {
+      "word": "camera",
+      "hint": "tool used by paparazzi to capture photos"
+    },
+    {
+      "word": "tabloid",
+      "hint": "type of magazine that often publishes paparazzi photos"
+    },
+    {
+      "word": "invasion",
+      "hint": "intrusion into personal lives by paparazzi"
+    },
+    {
+      "word": "scandal",
+      "hint": "sensational news often sought by paparazzi"
+    },
+    {
+      "word": "photographer",
+      "hint": "profession of paparazzi"
+    },
+    {
+      "word": "gossip",
+      "hint": "type of information paparazzi often seek"
+    },
+    {
+      "word": "privacy",
+      "hint": "concept often violated by paparazzi"
+    }
+  ],
+  "autograph": [
+    "celebrity",
+    "signature",
+    "fan",
+    "pen",
+    "book",
+    "memorabilia",
+    "sports",
+    "collector"
+  ],
+  "autograph_detailed": [
+    {
+      "word": "celebrity",
+      "hint": "famous person who signs autographs"
+    },
+    {
+      "word": "signature",
+      "hint": "handwritten name or symbol"
+    },
+    {
+      "word": "fan",
+      "hint": "person who collects autographs"
+    },
+    {
+      "word": "pen",
+      "hint": "tool used to write autographs"
+    },
+    {
+      "word": "book",
+      "hint": "object often signed by authors"
+    },
+    {
+      "word": "memorabilia",
+      "hint": "collectible items with autographs"
+    },
+    {
+      "word": "sports",
+      "hint": "athletes often sign autographs"
+    },
+    {
+      "word": "collector",
+      "hint": "person who seeks autographs"
+    }
+  ],
+  "tabloid": [
+    "gossip",
+    "scandal",
+    "paparazzi",
+    "headline",
+    "celebrity",
+    "sensationalism",
+    "supermarket"
+  ],
+  "tabloid_detailed": [
+    {
+      "word": "gossip",
+      "hint": "salacious rumors and celebrity news"
+    },
+    {
+      "word": "scandal",
+      "hint": "sensational stories about misconduct"
+    },
+    {
+      "word": "paparazzi",
+      "hint": "photographers who pursue celebrities"
+    },
+    {
+      "word": "headline",
+      "hint": "attention-grabbing titles on front page"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous people often featured in stories"
+    },
+    {
+      "word": "sensationalism",
+      "hint": "exaggerated or shocking content"
+    },
+    {
+      "word": "supermarket",
+      "hint": "common place to find tabloid magazines"
+    }
+  ],
+  "scandal": [
+    "politician",
+    "affair",
+    "corruption",
+    "coverup",
+    "media",
+    "resignation",
+    "investigation",
+    "celebrity"
+  ],
+  "scandal_detailed": [
+    {
+      "word": "politician",
+      "hint": "public figures often involved in scandals"
+    },
+    {
+      "word": "affair",
+      "hint": "romantic or sexual misconduct"
+    },
+    {
+      "word": "corruption",
+      "hint": "dishonest or fraudulent conduct by those in power"
+    },
+    {
+      "word": "coverup",
+      "hint": "attempt to conceal wrongdoing"
+    },
+    {
+      "word": "media",
+      "hint": "often reports and investigates scandals"
+    },
+    {
+      "word": "resignation",
+      "hint": "common consequence of a scandal"
+    },
+    {
+      "word": "investigation",
+      "hint": "process of examining a scandal"
+    },
+    {
+      "word": "celebrity",
+      "hint": "famous people frequently associated with scandals"
+    }
+  ],
+  "model": [
+    "fashion",
+    "car",
+    "example",
+    "scale",
+    "role",
+    "math",
+    "3D"
+  ],
+  "model_detailed": [
+    {
+      "word": "fashion",
+      "hint": "runway models in clothing industry"
+    },
+    {
+      "word": "car",
+      "hint": "specific design or type of vehicle"
+    },
+    {
+      "word": "example",
+      "hint": "a representative or ideal instance"
+    },
+    {
+      "word": "scale",
+      "hint": "miniature representation of something larger"
+    },
+    {
+      "word": "role",
+      "hint": "person to emulate or look up to"
+    },
+    {
+      "word": "math",
+      "hint": "mathematical representation of a system"
+    },
+    {
+      "word": "3D",
+      "hint": "digital or physical three-dimensional representation"
+    }
+  ],
+  "character": [
+    "personality",
+    "story",
+    "letter",
+    "moral",
+    "actor",
+    "strength",
+    "cartoon"
+  ],
+  "character_detailed": [
+    {
+      "word": "personality",
+      "hint": "traits that define a person"
+    },
+    {
+      "word": "story",
+      "hint": "fictional person in a narrative"
+    },
+    {
+      "word": "letter",
+      "hint": "symbol in written language"
+    },
+    {
+      "word": "moral",
+      "hint": "ethical qualities of a person"
+    },
+    {
+      "word": "actor",
+      "hint": "person who plays a role"
+    },
+    {
+      "word": "strength",
+      "hint": "positive attribute of someone"
+    },
+    {
+      "word": "cartoon",
+      "hint": "animated figure in media"
+    }
+  ],
+  "leader": [
+    "authority",
+    "guide",
+    "visionary",
+    "mentor",
+    "boss",
+    "role model",
+    "pioneer"
+  ],
+  "leader_detailed": [
+    {
+      "word": "authority",
+      "hint": "power to give orders or make decisions"
+    },
+    {
+      "word": "guide",
+      "hint": "someone who shows the way"
+    },
+    {
+      "word": "visionary",
+      "hint": "person with original ideas about the future"
+    },
+    {
+      "word": "mentor",
+      "hint": "experienced advisor"
+    },
+    {
+      "word": "boss",
+      "hint": "person in charge of others"
+    },
+    {
+      "word": "role model",
+      "hint": "person whose behavior is exemplary"
+    },
+    {
+      "word": "pioneer",
+      "hint": "person who is first to explore or develop something"
+    }
+  ],
+  "identity": [
+    "name",
+    "passport",
+    "fingerprint",
+    "personality",
+    "culture",
+    "photo",
+    "signature",
+    "DNA"
+  ],
+  "identity_detailed": [
+    {
+      "word": "name",
+      "hint": "primary identifier for a person"
+    },
+    {
+      "word": "passport",
+      "hint": "official document proving identity"
+    },
+    {
+      "word": "fingerprint",
+      "hint": "unique physical characteristic"
+    },
+    {
+      "word": "personality",
+      "hint": "individual's distinctive character"
+    },
+    {
+      "word": "culture",
+      "hint": "shared identity of a group"
+    },
+    {
+      "word": "photo",
+      "hint": "visual representation of a person"
+    },
+    {
+      "word": "signature",
+      "hint": "personal mark used for verification"
+    },
+    {
+      "word": "DNA",
+      "hint": "genetic code unique to an individual"
+    }
+  ],
+  "nervousness": [
+    "anxiety",
+    "sweating",
+    "trembling",
+    "butterflies",
+    "panic",
+    "fidgeting",
+    "nausea",
+    "palpitation"
+  ],
+  "nervousness_detailed": [
+    {
+      "word": "anxiety",
+      "hint": "intense worry or unease"
+    },
+    {
+      "word": "sweating",
+      "hint": "perspiration due to stress"
+    },
+    {
+      "word": "trembling",
+      "hint": "shaking of hands or body"
+    },
+    {
+      "word": "butterflies",
+      "hint": "fluttery feeling in stomach"
+    },
+    {
+      "word": "panic",
+      "hint": "sudden overwhelming fear"
+    },
+    {
+      "word": "fidgeting",
+      "hint": "restless movement"
+    },
+    {
+      "word": "nausea",
+      "hint": "feeling sick to stomach"
+    },
+    {
+      "word": "palpitation",
+      "hint": "rapid heartbeat"
+    }
+  ],
+  "talent": [
+    "skill",
+    "gift",
+    "performer",
+    "show",
+    "competition",
+    "prodigy",
+    "natural",
+    "ability"
+  ],
+  "talent_detailed": [
+    {
+      "word": "skill",
+      "hint": "natural ability or expertise"
+    },
+    {
+      "word": "gift",
+      "hint": "innate aptitude or special ability"
+    },
+    {
+      "word": "performer",
+      "hint": "someone who showcases their talents"
+    },
+    {
+      "word": "show",
+      "hint": "event where talents are displayed"
+    },
+    {
+      "word": "competition",
+      "hint": "contest to showcase talents"
+    },
+    {
+      "word": "prodigy",
+      "hint": "person with exceptional talents"
+    },
+    {
+      "word": "natural",
+      "hint": "innate or inborn ability"
+    },
+    {
+      "word": "ability",
+      "hint": "power or capacity to do something"
+    }
+  ],
+  "callback": [
+    "phone",
+    "function",
+    "audition",
+    "customer",
+    "interview",
+    "comedy",
+    "appointment"
+  ],
+  "callback_detailed": [
+    {
+      "word": "phone",
+      "hint": "returning a missed call"
+    },
+    {
+      "word": "function",
+      "hint": "programming concept"
+    },
+    {
+      "word": "audition",
+      "hint": "second chance for performers"
+    },
+    {
+      "word": "customer",
+      "hint": "contacting a client later"
+    },
+    {
+      "word": "interview",
+      "hint": "follow-up meeting for job applicants"
+    },
+    {
+      "word": "comedy",
+      "hint": "recurring joke or reference"
+    },
+    {
+      "word": "appointment",
+      "hint": "scheduling a future meeting"
+    }
+  ],
+  "competition": [
+    "sport",
+    "rival",
+    "winner",
+    "trophy",
+    "race",
+    "medal",
+    "tournament",
+    "challenge"
+  ],
+  "competition_detailed": [
+    {
+      "word": "sport",
+      "hint": "athletic contests or games"
+    },
+    {
+      "word": "rival",
+      "hint": "opponent or competitor"
+    },
+    {
+      "word": "winner",
+      "hint": "person who finishes first"
+    },
+    {
+      "word": "trophy",
+      "hint": "award given to the victor"
+    },
+    {
+      "word": "race",
+      "hint": "contest of speed"
+    },
+    {
+      "word": "medal",
+      "hint": "prize awarded in competitions"
+    },
+    {
+      "word": "tournament",
+      "hint": "series of contests"
+    },
+    {
+      "word": "challenge",
+      "hint": "test of skill or ability"
+    }
+  ],
+  "performance": [
+    "stage",
+    "actor",
+    "music",
+    "theater",
+    "audience",
+    "applause",
+    "costume",
+    "rehearsal"
+  ],
+  "performance_detailed": [
+    {
+      "word": "stage",
+      "hint": "where performances often take place"
+    },
+    {
+      "word": "actor",
+      "hint": "person who performs in plays or movies"
+    },
+    {
+      "word": "music",
+      "hint": "often associated with musical performances"
+    },
+    {
+      "word": "theater",
+      "hint": "venue for various types of performances"
+    },
+    {
+      "word": "audience",
+      "hint": "people watching a performance"
+    },
+    {
+      "word": "applause",
+      "hint": "audience reaction to a good performance"
+    },
+    {
+      "word": "costume",
+      "hint": "clothing worn during a performance"
+    },
+    {
+      "word": "rehearsal",
+      "hint": "practice before a performance"
+    }
+  ],
+  "handwriting": [
+    "pen",
+    "cursive",
+    "signature",
+    "letter",
+    "notebook",
+    "calligraphy",
+    "legibility",
+    "pencil"
+  ],
+  "handwriting_detailed": [
+    {
+      "word": "pen",
+      "hint": "common tool used for handwriting"
+    },
+    {
+      "word": "cursive",
+      "hint": "flowing style of handwriting"
+    },
+    {
+      "word": "signature",
+      "hint": "personal handwritten mark"
+    },
+    {
+      "word": "letter",
+      "hint": "handwritten message"
+    },
+    {
+      "word": "notebook",
+      "hint": "where handwriting is often practiced"
+    },
+    {
+      "word": "calligraphy",
+      "hint": "artistic handwriting"
+    },
+    {
+      "word": "legibility",
+      "hint": "clarity of handwritten text"
+    },
+    {
+      "word": "pencil",
+      "hint": "writing tool for handwriting"
+    }
+  ],
+  "code": [
+    "computer",
+    "programming",
+    "language",
+    "software",
+    "hacker",
+    "algorithm",
+    "encryption",
+    "binary"
+  ],
+  "code_detailed": [
+    {
+      "word": "computer",
+      "hint": "codes are used to program computers"
+    },
+    {
+      "word": "programming",
+      "hint": "the act of writing code"
+    },
+    {
+      "word": "language",
+      "hint": "programming languages used to write code"
+    },
+    {
+      "word": "software",
+      "hint": "programs created using code"
+    },
+    {
+      "word": "hacker",
+      "hint": "someone who writes or manipulates code"
+    },
+    {
+      "word": "algorithm",
+      "hint": "step-by-step instructions in code"
+    },
+    {
+      "word": "encryption",
+      "hint": "using code to secure information"
+    },
+    {
+      "word": "binary",
+      "hint": "basic code used by computers"
+    }
+  ],
+  "doctor": [
+    "hospital",
+    "stethoscope",
+    "prescription",
+    "nurse",
+    "white coat",
+    "appointment",
+    "checkup"
+  ],
+  "doctor_detailed": [
+    {
+      "word": "hospital",
+      "hint": "place where doctors often work"
+    },
+    {
+      "word": "stethoscope",
+      "hint": "instrument used by doctors to listen to heartbeats"
+    },
+    {
+      "word": "prescription",
+      "hint": "medication order written by a doctor"
+    },
+    {
+      "word": "nurse",
+      "hint": "healthcare professional who often works alongside doctors"
+    },
+    {
+      "word": "white coat",
+      "hint": "traditional attire worn by many doctors"
+    },
+    {
+      "word": "appointment",
+      "hint": "scheduled meeting with a doctor"
+    },
+    {
+      "word": "checkup",
+      "hint": "routine examination by a doctor"
+    }
+  ],
+  "writer": [
+    "book",
+    "pen",
+    "creativity",
+    "author",
+    "novel",
+    "publisher",
+    "editor",
+    "deadline"
+  ],
+  "writer_detailed": [
+    {
+      "word": "book",
+      "hint": "written work produced by writers"
+    },
+    {
+      "word": "pen",
+      "hint": "tool traditionally used for writing"
+    },
+    {
+      "word": "creativity",
+      "hint": "quality needed to produce original content"
+    },
+    {
+      "word": "author",
+      "hint": "synonym for writer"
+    },
+    {
+      "word": "novel",
+      "hint": "long-form fiction writing"
+    },
+    {
+      "word": "publisher",
+      "hint": "company that produces and distributes written works"
+    },
+    {
+      "word": "editor",
+      "hint": "person who reviews and refines written work"
+    },
+    {
+      "word": "deadline",
+      "hint": "time limit for completing writing tasks"
+    }
+  ],
+  "sit": [
+    "chair",
+    "down",
+    "rest",
+    "dog",
+    "couch",
+    "stay",
+    "relax",
+    "posture"
+  ],
+  "sit_detailed": [
+    {
+      "word": "chair",
+      "hint": "object commonly used for sitting"
+    },
+    {
+      "word": "down",
+      "hint": "direction associated with the act of sitting"
+    },
+    {
+      "word": "rest",
+      "hint": "purpose often associated with sitting"
+    },
+    {
+      "word": "dog",
+      "hint": "animal often trained to sit on command"
+    },
+    {
+      "word": "couch",
+      "hint": "furniture designed for sitting"
+    },
+    {
+      "word": "stay",
+      "hint": "command often paired with 'sit' for pets"
+    },
+    {
+      "word": "relax",
+      "hint": "state often achieved while sitting"
+    },
+    {
+      "word": "posture",
+      "hint": "body position while sitting"
+    }
+  ],
+  "wood": [
+    "tree",
+    "lumber",
+    "forest",
+    "log",
+    "furniture",
+    "fire",
+    "carpenter"
+  ],
+  "wood_detailed": [
+    {
+      "word": "tree",
+      "hint": "source of wood"
+    },
+    {
+      "word": "lumber",
+      "hint": "processed wood for construction"
+    },
+    {
+      "word": "forest",
+      "hint": "area with many trees"
+    },
+    {
+      "word": "log",
+      "hint": "section of a tree trunk"
+    },
+    {
+      "word": "furniture",
+      "hint": "items often made from wood"
+    },
+    {
+      "word": "fire",
+      "hint": "wood as fuel for burning"
+    },
+    {
+      "word": "carpenter",
+      "hint": "person who works with wood"
+    }
+  ],
+  "table": [
+    "chair",
+    "dining",
+    "wood",
+    "leg",
+    "surface",
+    "coffee",
+    "kitchen"
+  ],
+  "table_detailed": [
+    {
+      "word": "chair",
+      "hint": "seating used with a table"
+    },
+    {
+      "word": "dining",
+      "hint": "eating meals at a table"
+    },
+    {
+      "word": "wood",
+      "hint": "common material for tables"
+    },
+    {
+      "word": "leg",
+      "hint": "support structure of a table"
+    },
+    {
+      "word": "surface",
+      "hint": "flat top of a table"
+    },
+    {
+      "word": "coffee",
+      "hint": "type of small table in living rooms"
+    },
+    {
+      "word": "kitchen",
+      "hint": "room where tables are often found"
+    }
+  ],
+  "leg": [
+    "foot",
+    "knee",
+    "walk",
+    "run",
+    "pants",
+    "bone",
+    "muscle",
+    "shoe"
+  ],
+  "leg_detailed": [
+    {
+      "word": "foot",
+      "hint": "attached to the end of the leg"
+    },
+    {
+      "word": "knee",
+      "hint": "joint in the middle of the leg"
+    },
+    {
+      "word": "walk",
+      "hint": "action performed using legs"
+    },
+    {
+      "word": "run",
+      "hint": "faster movement using legs"
+    },
+    {
+      "word": "pants",
+      "hint": "clothing worn on legs"
+    },
+    {
+      "word": "bone",
+      "hint": "internal structure of the leg"
+    },
+    {
+      "word": "muscle",
+      "hint": "tissue that moves the leg"
+    },
+    {
+      "word": "shoe",
+      "hint": "footwear worn on the foot"
+    }
+  ],
+  "loud": [
+    "noise",
+    "music",
+    "scream",
+    "concert",
+    "siren",
+    "explosion",
+    "thunder"
+  ],
+  "loud_detailed": [
+    {
+      "word": "noise",
+      "hint": "unwanted or unpleasant sound"
+    },
+    {
+      "word": "music",
+      "hint": "high-volume audio entertainment"
+    },
+    {
+      "word": "scream",
+      "hint": "high-pitched vocal outburst"
+    },
+    {
+      "word": "concert",
+      "hint": "live musical performance with amplified sound"
+    },
+    {
+      "word": "siren",
+      "hint": "warning sound from emergency vehicles"
+    },
+    {
+      "word": "explosion",
+      "hint": "sudden, intense burst of sound"
+    },
+    {
+      "word": "thunder",
+      "hint": "booming sound accompanying lightning"
+    }
+  ],
+  "announcement": [
+    "news",
+    "loudspeaker",
+    "microphone",
+    "stage",
+    "broadcast",
+    "surprise",
+    "attention"
+  ],
+  "announcement_detailed": [
+    {
+      "word": "news",
+      "hint": "information being shared"
+    },
+    {
+      "word": "loudspeaker",
+      "hint": "device often used for public announcements"
+    },
+    {
+      "word": "microphone",
+      "hint": "tool used to amplify voice for announcements"
+    },
+    {
+      "word": "stage",
+      "hint": "platform where announcements are often made"
+    },
+    {
+      "word": "broadcast",
+      "hint": "widespread dissemination of information"
+    },
+    {
+      "word": "surprise",
+      "hint": "unexpected news or revelation"
+    },
+    {
+      "word": "attention",
+      "hint": "focus required for an announcement"
+    }
+  ],
+  "protest": [
+    "sign",
+    "march",
+    "chant",
+    "activist",
+    "rally",
+    "picket",
+    "riot",
+    "petition"
+  ],
+  "protest_detailed": [
+    {
+      "word": "sign",
+      "hint": "handheld message board used in demonstrations"
+    },
+    {
+      "word": "march",
+      "hint": "organized walk to demonstrate opposition"
+    },
+    {
+      "word": "chant",
+      "hint": "repeated phrase or slogan used by protesters"
+    },
+    {
+      "word": "activist",
+      "hint": "person who campaigns for social or political change"
+    },
+    {
+      "word": "rally",
+      "hint": "public meeting in support of a cause"
+    },
+    {
+      "word": "picket",
+      "hint": "form of demonstration where people stand with signs"
+    },
+    {
+      "word": "riot",
+      "hint": "violent disturbance that can arise from protests"
+    },
+    {
+      "word": "petition",
+      "hint": "formal written request, often used in peaceful protests"
+    }
+  ],
+  "bullhorn": [
+    "loud",
+    "protest",
+    "announcement",
+    "megaphone",
+    "police",
+    "coach",
+    "siren",
+    "cone"
+  ],
+  "bullhorn_detailed": [
+    {
+      "word": "loud",
+      "hint": "amplifies sound significantly"
+    },
+    {
+      "word": "protest",
+      "hint": "often used in demonstrations"
+    },
+    {
+      "word": "announcement",
+      "hint": "used to make public statements"
+    },
+    {
+      "word": "megaphone",
+      "hint": "another common name for the device"
+    },
+    {
+      "word": "police",
+      "hint": "frequently used by law enforcement"
+    },
+    {
+      "word": "coach",
+      "hint": "used to direct athletes during practice"
+    },
+    {
+      "word": "siren",
+      "hint": "can produce a loud warning sound"
+    },
+    {
+      "word": "cone",
+      "hint": "describes the shape of many bullhorns"
+    }
+  ],
+  "photograph": [
+    "camera",
+    "memory",
+    "album",
+    "frame",
+    "snapshot",
+    "portrait",
+    "filter",
+    "selfie"
+  ],
+  "photograph_detailed": [
+    {
+      "word": "camera",
+      "hint": "device used to take photographs"
+    },
+    {
+      "word": "memory",
+      "hint": "photographs capture moments to remember"
+    },
+    {
+      "word": "album",
+      "hint": "collection of photographs"
+    },
+    {
+      "word": "frame",
+      "hint": "border or container for displaying photographs"
+    },
+    {
+      "word": "snapshot",
+      "hint": "quick, informal photograph"
+    },
+    {
+      "word": "portrait",
+      "hint": "photograph of a person, typically face or upper body"
+    },
+    {
+      "word": "filter",
+      "hint": "effect applied to enhance or alter photographs"
+    },
+    {
+      "word": "selfie",
+      "hint": "self-taken photograph, usually with a smartphone"
+    }
+  ],
+  "lens": [
+    "camera",
+    "glasses",
+    "magnify",
+    "focus",
+    "eye",
+    "microscope",
+    "telescope",
+    "contact"
+  ],
+  "lens_detailed": [
+    {
+      "word": "camera",
+      "hint": "optical device for capturing images"
+    },
+    {
+      "word": "glasses",
+      "hint": "eyewear to correct vision"
+    },
+    {
+      "word": "magnify",
+      "hint": "to make something appear larger"
+    },
+    {
+      "word": "focus",
+      "hint": "to adjust clarity of an image"
+    },
+    {
+      "word": "eye",
+      "hint": "organ of sight with natural lens"
+    },
+    {
+      "word": "microscope",
+      "hint": "instrument for viewing small objects"
+    },
+    {
+      "word": "telescope",
+      "hint": "device for observing distant objects"
+    },
+    {
+      "word": "contact",
+      "hint": "thin lens worn directly on eye"
+    }
   ]
 }
