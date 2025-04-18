@@ -929,9 +929,8 @@ function App() {
                         >
                           {word}
                         </button>
-                        {showHints && details && (
+                        {showHints && details && details.hint && (
                           <div className="word-details">
-                            <span className="connection-type">{details.type}</span>
                             <p className="connection-hint">{details.hint}</p>
                           </div>
                         )}

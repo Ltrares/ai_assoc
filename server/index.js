@@ -408,6 +408,7 @@ app.get('/api/associations/:word', async (req, res) => {
     }
     
     const { word } = req.params;
+    const wantDetailed = req.query.detailed === 'true';
     
     // Validate input
     if (!word || typeof word !== 'string' || word.length < 1) {
@@ -417,10 +418,21 @@ app.get('/api/associations/:word', async (req, res) => {
     // Get associations 
     const associations = await getAssociations(word);
     
+    // Check if we should include detailed information
+    let detailed = null;
+    if (wantDetailed) {
+      // Check if detailed info exists in cache
+      const detailedKey = `${word.toLowerCase().trim()}_detailed`;
+      if (associationCache[detailedKey]) {
+        detailed = associationCache[detailedKey];
+      }
+    }
+    
     // Return the associations
     res.json({
       word,
-      associations
+      associations,
+      detailed: detailed
     });
   } catch (error) {
     console.error('Error getting associations:', error);
