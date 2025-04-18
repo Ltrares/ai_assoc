@@ -448,6 +448,88 @@ button:disabled, button.used {
   font-style: italic;
 }
 
+.solution-display {
+  background-color: rgba(65, 105, 225, 0.08);
+  padding: 1rem 1.75rem;
+  border-radius: 0.75rem;
+  margin: 0.75rem 0 1.75rem;
+  border-left: 3px solid #4169e1; /* Royal blue */
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.solution-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(65, 105, 225, 0.05), transparent);
+  pointer-events: none;
+  border-radius: 0.75rem;
+}
+
+.solution-display h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #4169e1; /* Royal blue */
+  display: flex;
+  align-items: center;
+}
+
+.solution-display h3::before {
+  content: '🔍';
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.solution-display p {
+  margin: 0;
+  font-style: italic;
+}
+
+.solution-path {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0 1rem 0 !important;
+  font-style: normal !important;
+  letter-spacing: 0.02rem;
+}
+
+.solution-note {
+  font-size: 0.8rem;
+  margin-top: 0.5rem !important;
+  opacity: 0.8;
+}
+
+.reveal-button {
+  background-color: #4169e1; /* Royal blue */
+  color: white;
+  border: none;
+  transition: all 0.2s;
+  margin-bottom: 1rem;
+}
+
+.reveal-button:hover {
+  background-color: #3a5fc7;
+}
+
+.reveal-button.active {
+  background-color: #ff6347; /* Tomato red */
+}
+
+.reveal-button.active:hover {
+  background-color: #e0533c;
+}
+
 .word-buttons.with-details {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

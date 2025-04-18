@@ -94,6 +94,8 @@ function App() {
   const [isRestoringProgress, setIsRestoringProgress] = useState(false); // Flag for restoring progress
   const [notification, setNotification] = useState(null); // For showing temporary notifications
   const [musicEnabled, setMusicEnabled] = useState(false); // Always start muted, regardless of localStorage
+  const [showAnswer, setShowAnswer] = useState(false); // State to control showing the answer
+  const [solution, setSolution] = useState(null); // Store the solution path when requested
   const synthRef = useRef(null); // Reference to synth object
   const sequenceRef = useRef(null); // Reference to sequence
 
@@ -122,9 +124,12 @@ function App() {
   const saveProgress = (gameData, currentPath, currBackSteps, currTotalSteps) => {
     if (!gameData || currentPath.length <= 1) return; // Don't save if we're just at the start
 
+    // Ensure the path is stored with consistent sanitized format
+    const sanitizedPath = currentPath.map(word => word.trim().toLowerCase());
+
     const progressData = {
       gameDate: gameData.gameDate,
-      path: currentPath,
+      path: sanitizedPath,
       backSteps: currBackSteps,
       totalSteps: currTotalSteps,
       timestamp: new Date().toISOString()
@@ -571,13 +576,16 @@ function App() {
               // Show notification that progress was restored
               showNotification('Progress restored', 3000);
               setIsRestoringProgress(true);
-              setPath(progressData.path);
-              setCurrentWord(progressData.path[progressData.path.length - 1]);
+              
+              // Ensure path is properly sanitized
+              const sanitizedPath = progressData.path.map(word => typeof word === 'string' ? word.trim().toLowerCase() : word);
+              setPath(sanitizedPath);
+              setCurrentWord(sanitizedPath[sanitizedPath.length - 1]);
               setBackSteps(progressData.backSteps || 0);
               setTotalSteps(progressData.totalSteps || 0);
               
               // Fetch associations for the last word in the restored path
-              const lastWord = progressData.path[progressData.path.length - 1];
+              const lastWord = sanitizedPath[sanitizedPath.length - 1];
               setLoading(false);
               
               // Get associations for the current word
@@ -761,6 +769,40 @@ function App() {
   // Toggle showing detailed hints for associations
   const toggleHints = () => {
     setShowHints(!showHints);
+  };
+  
+  // Toggle showing the solution/answer
+  const toggleShowAnswer = () => {
+    // If already showing, just hide it
+    if (showAnswer) {
+      setShowAnswer(false);
+      return;
+    }
+    
+    // Otherwise, request the solution if we don't have it yet
+    if (!solution) {
+      setLoadingAssociations(true);
+      fetch(`${getApiUrl()}/solution?moves=${totalSteps}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch solution');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setSolution(data.solution);
+          setShowAnswer(true);
+          setLoadingAssociations(false);
+        })
+        .catch(err => {
+          console.error('Error fetching solution:', err);
+          setError('Failed to get solution. Please try again.');
+          setLoadingAssociations(false);
+        });
+    } else {
+      // If we already have the solution, just show it
+      setShowAnswer(true);
+    }
   };
   
   // Removed regenerateGame function since puzzles are generated hourly on the server
@@ -1028,12 +1070,32 @@ function App() {
               >
                 {musicEnabled ? '🔊' : '🔇'}
               </button>
+              
+              {/* Reveal answer button - only shows when player has made 20+ moves */}
+              {totalSteps >= 20 && (
+                <button
+                  onClick={toggleShowAnswer}
+                  className={`reveal-button ${showAnswer ? 'active' : ''}`}
+                  title="Reveal the solution path"
+                >
+                  {showAnswer ? "Hide Solution" : "Reveal Solution"}
+                </button>
+              )}
             </div>
             
             {hint && (
               <div className="hint-display">
                 <h3>Hint:</h3>
                 <p>{hint}</p>
+              </div>
+            )}
+            
+            {/* Display solution when revealed */}
+            {showAnswer && solution && (
+              <div className="solution-display">
+                <h3>Solution Path:</h3>
+                <p className="solution-path">{solution.join(' → ')}</p>
+                <p className="solution-note">Try clicking words in the solution to continue your game!</p>
               </div>
             )}
             

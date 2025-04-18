@@ -602,6 +602,37 @@ app.post('/api/verify', (req, res) => {
   }
 });
 
+// Get the solution path (only when requested after 20+ moves)
+app.get('/api/solution', (req, res) => {
+  try {
+    // If no game generated yet, return error
+    if (!currentGame || !currentGame.startWord) {
+      return res.status(503).json({ 
+        error: 'Game not ready', 
+        message: 'The game is being initialized. Please try again in a few moments.'
+      });
+    }
+    
+    // Verify that the request includes a valid move count parameter
+    const moveCount = parseInt(req.query.moves);
+    if (isNaN(moveCount) || moveCount < 20) {
+      return res.status(403).json({ 
+        error: 'Access denied', 
+        message: 'Solution is only available after 20 or more moves'
+      });
+    }
+    
+    // Return the solution path if conditions are met
+    res.json({
+      solution: currentGame.hiddenSolution
+    });
+    
+  } catch (error) {
+    console.error('Error getting solution:', error);
+    res.status(500).json({ error: 'Failed to get solution' });
+  }
+});
+
 // Get a hint
 app.get('/api/hint/:currentWord', async (req, res) => {
   try {
