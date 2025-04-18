@@ -1,17 +1,17 @@
 {
-  "startWord": "food",
-  "targetWord": "hero",
-  "theme": "Culinary Champions",
-  "description": "Exploring the journey of chefs who become celebrated figures in gastronomy",
-  "difficulty": "medium",
+  "startWord": "scandal",
+  "targetWord": "swan",
+  "theme": "Political Transformation",
+  "description": "A journey from controversy to graceful change in public leadership",
+  "difficulty": "hard",
   "hiddenSolution": [
-    "food",
-    "meal",
-    "family",
-    "parent",
-    "guardian",
-    "protector",
-    "hero"
+    "scandal",
+    "celebrity",
+    "autograph",
+    "pen",
+    "paper",
+    "origami",
+    "swan"
   ],
   "minExpectedSteps": 6,
   "gameDate": "2025-04-18"

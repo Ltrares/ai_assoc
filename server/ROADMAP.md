@@ -36,6 +36,7 @@ This document outlines the planned features and improvements for the AI Associat
 - [ ] **User Behavior Analytics**: Track common paths and challenging connections to improve game design
 - [ ] **Performance Monitoring**: Better logging and monitoring of server performance
 - [ ] **A/B Testing Framework**: Test different game mechanics to optimize engagement
+- [ ] **User Feedback System**: Add reporting mechanism for biased, inappropriate, or confusing word associations
 
 ### Technical Improvements
 - [ ] **API Rate Limiting Improvement**: More granular rate limiting based on user authentication

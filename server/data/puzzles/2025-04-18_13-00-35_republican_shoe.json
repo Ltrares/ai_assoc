@@ -1,0 +1,20 @@
+{
+  "startWord": "republican",
+  "targetWord": "shoe",
+  "theme": "Political Footwear Fiasco",
+  "description": "A comical mishap involving a politician's shoe during a crucial campaign event",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "republican",
+    "elephant",
+    "tusk",
+    "horn",
+    "antler",
+    "rack",
+    "shoe"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T13:00:35.223Z",
+  "timestamp": 1744981235223
+}

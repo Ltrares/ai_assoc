@@ -11475,5 +11475,1860 @@
       "word": "parent",
       "hint": "caregiver who protects their children"
     }
+  ],
+  "blind": [
+    "sight",
+    "cane",
+    "braille",
+    "dog",
+    "darkness",
+    "eye",
+    "disability"
+  ],
+  "blind_detailed": [
+    {
+      "word": "sight",
+      "hint": "lack of visual perception"
+    },
+    {
+      "word": "cane",
+      "hint": "mobility aid used by blind people"
+    },
+    {
+      "word": "braille",
+      "hint": "tactile writing system for the visually impaired"
+    },
+    {
+      "word": "dog",
+      "hint": "guide animal trained to assist blind individuals"
+    },
+    {
+      "word": "darkness",
+      "hint": "absence of light or visual perception"
+    },
+    {
+      "word": "eye",
+      "hint": "organ affected in blindness"
+    },
+    {
+      "word": "disability",
+      "hint": "condition of being unable to see"
+    }
+  ],
+  "sight": [
+    "vision",
+    "eye",
+    "glasses",
+    "view",
+    "scene",
+    "blind",
+    "look",
+    "observation"
+  ],
+  "sight_detailed": [
+    {
+      "word": "vision",
+      "hint": "ability to see"
+    },
+    {
+      "word": "eye",
+      "hint": "organ used for seeing"
+    },
+    {
+      "word": "glasses",
+      "hint": "corrective lenses for vision"
+    },
+    {
+      "word": "view",
+      "hint": "what can be seen from a particular point"
+    },
+    {
+      "word": "scene",
+      "hint": "visual setting or picture"
+    },
+    {
+      "word": "blind",
+      "hint": "unable to see"
+    },
+    {
+      "word": "look",
+      "hint": "act of seeing or viewing"
+    },
+    {
+      "word": "observation",
+      "hint": "act of watching or noticing"
+    }
+  ],
+  "look": [
+    "see",
+    "appearance",
+    "gaze",
+    "glance",
+    "search",
+    "observe",
+    "eye"
+  ],
+  "look_detailed": [
+    {
+      "word": "see",
+      "hint": "to perceive with the eyes"
+    },
+    {
+      "word": "appearance",
+      "hint": "how something or someone looks"
+    },
+    {
+      "word": "gaze",
+      "hint": "to stare intently"
+    },
+    {
+      "word": "glance",
+      "hint": "a quick, brief look"
+    },
+    {
+      "word": "search",
+      "hint": "to seek or find something"
+    },
+    {
+      "word": "observe",
+      "hint": "to watch carefully"
+    },
+    {
+      "word": "eye",
+      "hint": "organ used for seeing"
+    }
+  ],
+  "glance": [
+    "quick",
+    "look",
+    "peek",
+    "eye",
+    "glimpse",
+    "fleeting",
+    "scan"
+  ],
+  "glance_detailed": [
+    {
+      "word": "quick",
+      "hint": "a glance is typically brief"
+    },
+    {
+      "word": "look",
+      "hint": "similar action to glancing"
+    },
+    {
+      "word": "peek",
+      "hint": "a short, furtive glance"
+    },
+    {
+      "word": "eye",
+      "hint": "organ used for glancing"
+    },
+    {
+      "word": "glimpse",
+      "hint": "synonym for a brief look"
+    },
+    {
+      "word": "fleeting",
+      "hint": "describes the short duration of a glance"
+    },
+    {
+      "word": "scan",
+      "hint": "rapid visual examination"
+    }
+  ],
+  "pen": [
+    "ink",
+    "paper",
+    "write",
+    "pencil",
+    "signature",
+    "letter",
+    "cap"
+  ],
+  "pen_detailed": [
+    {
+      "word": "ink",
+      "hint": "fluid used in pens for writing"
+    },
+    {
+      "word": "paper",
+      "hint": "surface commonly written on with pens"
+    },
+    {
+      "word": "write",
+      "hint": "act of using a pen"
+    },
+    {
+      "word": "pencil",
+      "hint": "another writing instrument often paired with pens"
+    },
+    {
+      "word": "signature",
+      "hint": "personal mark often made with a pen"
+    },
+    {
+      "word": "letter",
+      "hint": "handwritten correspondence using a pen"
+    },
+    {
+      "word": "cap",
+      "hint": "cover for the tip of a pen"
+    }
+  ],
+  "origami": [
+    "paper",
+    "crane",
+    "fold",
+    "Japan",
+    "art",
+    "butterfly",
+    "swan"
+  ],
+  "origami_detailed": [
+    {
+      "word": "paper",
+      "hint": "primary material used"
+    },
+    {
+      "word": "crane",
+      "hint": "popular origami figure"
+    },
+    {
+      "word": "fold",
+      "hint": "key action in creating origami"
+    },
+    {
+      "word": "Japan",
+      "hint": "country of origin"
+    },
+    {
+      "word": "art",
+      "hint": "creative form of expression"
+    },
+    {
+      "word": "butterfly",
+      "hint": "common origami design"
+    },
+    {
+      "word": "swan",
+      "hint": "classic origami shape"
+    }
+  ],
+  "conservative": [
+    "traditional",
+    "Republican",
+    "right-wing",
+    "fiscal",
+    "religious",
+    "patriotic",
+    "capitalist"
+  ],
+  "conservative_detailed": [
+    {
+      "word": "traditional",
+      "hint": "favoring established customs and values"
+    },
+    {
+      "word": "Republican",
+      "hint": "major US political party associated with conservatism"
+    },
+    {
+      "word": "right-wing",
+      "hint": "political ideology on the conservative spectrum"
+    },
+    {
+      "word": "fiscal",
+      "hint": "relating to financial matters and economic policies"
+    },
+    {
+      "word": "religious",
+      "hint": "often associated with conservative social values"
+    },
+    {
+      "word": "patriotic",
+      "hint": "strong support for one's country"
+    },
+    {
+      "word": "capitalist",
+      "hint": "favoring free market economic systems"
+    }
+  ],
+  "republican": [
+    "conservative",
+    "elephant",
+    "Trump",
+    "Reagan",
+    "tax cut",
+    "gun right",
+    "red"
+  ],
+  "republican_detailed": [
+    {
+      "word": "conservative",
+      "hint": "political ideology favoring traditional values"
+    },
+    {
+      "word": "elephant",
+      "hint": "symbol of the Republican Party"
+    },
+    {
+      "word": "Trump",
+      "hint": "former Republican president"
+    },
+    {
+      "word": "Reagan",
+      "hint": "iconic Republican president from the 1980s"
+    },
+    {
+      "word": "tax cut",
+      "hint": "common Republican economic policy"
+    },
+    {
+      "word": "gun right",
+      "hint": "issue often supported by Republicans"
+    },
+    {
+      "word": "red",
+      "hint": "color associated with the Republican Party"
+    }
+  ],
+  "red": [
+    "apple",
+    "fire",
+    "blood",
+    "rose",
+    "stop",
+    "heart",
+    "tomato"
+  ],
+  "red_detailed": [
+    {
+      "word": "apple",
+      "hint": "common red fruit"
+    },
+    {
+      "word": "fire",
+      "hint": "flames are often red"
+    },
+    {
+      "word": "blood",
+      "hint": "human blood is red"
+    },
+    {
+      "word": "rose",
+      "hint": "classic red flower"
+    },
+    {
+      "word": "stop",
+      "hint": "stop signs and traffic lights"
+    },
+    {
+      "word": "heart",
+      "hint": "symbol of love often in red"
+    },
+    {
+      "word": "tomato",
+      "hint": "red vegetable/fruit"
+    }
+  ],
+  "blood": [
+    "red",
+    "heart",
+    "vein",
+    "donation",
+    "wound",
+    "vampire",
+    "test",
+    "type"
+  ],
+  "blood_detailed": [
+    {
+      "word": "red",
+      "hint": "color of blood"
+    },
+    {
+      "word": "heart",
+      "hint": "organ that pumps blood"
+    },
+    {
+      "word": "vein",
+      "hint": "blood vessel"
+    },
+    {
+      "word": "donation",
+      "hint": "giving blood to help others"
+    },
+    {
+      "word": "wound",
+      "hint": "injury that causes bleeding"
+    },
+    {
+      "word": "vampire",
+      "hint": "mythical creature that drinks blood"
+    },
+    {
+      "word": "test",
+      "hint": "medical examination of blood"
+    },
+    {
+      "word": "type",
+      "hint": "classification of blood groups"
+    }
+  ],
+  "donation": [
+    "charity",
+    "money",
+    "blood",
+    "volunteer",
+    "tax",
+    "fundraiser",
+    "generosity"
+  ],
+  "donation_detailed": [
+    {
+      "word": "charity",
+      "hint": "organization that receives donations"
+    },
+    {
+      "word": "money",
+      "hint": "common form of donation"
+    },
+    {
+      "word": "blood",
+      "hint": "medical donation to help others"
+    },
+    {
+      "word": "volunteer",
+      "hint": "donating time and effort"
+    },
+    {
+      "word": "tax",
+      "hint": "deduction often associated with donations"
+    },
+    {
+      "word": "fundraiser",
+      "hint": "event to collect donations"
+    },
+    {
+      "word": "generosity",
+      "hint": "quality associated with donating"
+    }
+  ],
+  "classroom": [
+    "teacher",
+    "student",
+    "desk",
+    "chalkboard",
+    "book",
+    "pencil",
+    "lesson"
+  ],
+  "classroom_detailed": [
+    {
+      "word": "teacher",
+      "hint": "instructor who leads the class"
+    },
+    {
+      "word": "student",
+      "hint": "learner who attends the class"
+    },
+    {
+      "word": "desk",
+      "hint": "furniture for writing and studying"
+    },
+    {
+      "word": "chalkboard",
+      "hint": "surface for writing and displaying information"
+    },
+    {
+      "word": "book",
+      "hint": "learning material used in class"
+    },
+    {
+      "word": "pencil",
+      "hint": "writing tool for taking notes"
+    },
+    {
+      "word": "lesson",
+      "hint": "educational content taught in class"
+    }
+  ],
+  "teacher": [
+    "classroom",
+    "student",
+    "chalkboard",
+    "textbook",
+    "homework",
+    "lesson",
+    "school",
+    "apple"
+  ],
+  "teacher_detailed": [
+    {
+      "word": "classroom",
+      "hint": "where teaching often takes place"
+    },
+    {
+      "word": "student",
+      "hint": "person who learns from a teacher"
+    },
+    {
+      "word": "chalkboard",
+      "hint": "writing surface used by teachers"
+    },
+    {
+      "word": "textbook",
+      "hint": "educational material used in teaching"
+    },
+    {
+      "word": "homework",
+      "hint": "assignments given by teachers"
+    },
+    {
+      "word": "lesson",
+      "hint": "unit of instruction delivered by a teacher"
+    },
+    {
+      "word": "school",
+      "hint": "institution where teachers work"
+    },
+    {
+      "word": "apple",
+      "hint": "stereotypical gift for teachers"
+    }
+  ],
+  "homework": [
+    "assignment",
+    "study",
+    "school",
+    "deadline",
+    "stress",
+    "textbook",
+    "pencil",
+    "procrastination"
+  ],
+  "homework_detailed": [
+    {
+      "word": "assignment",
+      "hint": "task given to students"
+    },
+    {
+      "word": "study",
+      "hint": "process of learning"
+    },
+    {
+      "word": "school",
+      "hint": "educational institution"
+    },
+    {
+      "word": "deadline",
+      "hint": "due date for completion"
+    },
+    {
+      "word": "stress",
+      "hint": "pressure associated with homework"
+    },
+    {
+      "word": "textbook",
+      "hint": "resource for assignments"
+    },
+    {
+      "word": "pencil",
+      "hint": "writing tool for homework"
+    },
+    {
+      "word": "procrastination",
+      "hint": "delaying homework completion"
+    }
+  ],
+  "study": [
+    "book",
+    "exam",
+    "library",
+    "note",
+    "homework",
+    "desk",
+    "student",
+    "research"
+  ],
+  "study_detailed": [
+    {
+      "word": "book",
+      "hint": "reading material for learning"
+    },
+    {
+      "word": "exam",
+      "hint": "test of knowledge"
+    },
+    {
+      "word": "library",
+      "hint": "place for research and learning"
+    },
+    {
+      "word": "note",
+      "hint": "written information for review"
+    },
+    {
+      "word": "homework",
+      "hint": "assignments to reinforce learning"
+    },
+    {
+      "word": "desk",
+      "hint": "furniture for studying"
+    },
+    {
+      "word": "student",
+      "hint": "person engaged in learning"
+    },
+    {
+      "word": "research",
+      "hint": "investigation to gain knowledge"
+    }
+  ],
+  "research": [
+    "study",
+    "experiment",
+    "data",
+    "library",
+    "scientist",
+    "paper",
+    "hypothesis",
+    "analysis"
+  ],
+  "research_detailed": [
+    {
+      "word": "study",
+      "hint": "careful examination of a subject"
+    },
+    {
+      "word": "experiment",
+      "hint": "scientific procedure to test a hypothesis"
+    },
+    {
+      "word": "data",
+      "hint": "information collected for analysis"
+    },
+    {
+      "word": "library",
+      "hint": "place to find books and resources"
+    },
+    {
+      "word": "scientist",
+      "hint": "person who conducts research"
+    },
+    {
+      "word": "paper",
+      "hint": "document presenting research findings"
+    },
+    {
+      "word": "hypothesis",
+      "hint": "proposed explanation for a phenomenon"
+    },
+    {
+      "word": "analysis",
+      "hint": "detailed examination of data or information"
+    }
+  ],
+  "desk": [
+    "chair",
+    "computer",
+    "paper",
+    "pen",
+    "lamp",
+    "drawer",
+    "work"
+  ],
+  "desk_detailed": [
+    {
+      "word": "chair",
+      "hint": "seat used with a desk"
+    },
+    {
+      "word": "computer",
+      "hint": "device commonly used on desks"
+    },
+    {
+      "word": "paper",
+      "hint": "writing material used at desks"
+    },
+    {
+      "word": "pen",
+      "hint": "writing tool kept on desks"
+    },
+    {
+      "word": "lamp",
+      "hint": "lighting often found on desks"
+    },
+    {
+      "word": "drawer",
+      "hint": "storage compartment in desks"
+    },
+    {
+      "word": "work",
+      "hint": "activity associated with desks"
+    }
+  ],
+  "goal": [
+    "soccer",
+    "achievement",
+    "target",
+    "ambition",
+    "finish",
+    "objective",
+    "dream"
+  ],
+  "goal_detailed": [
+    {
+      "word": "soccer",
+      "hint": "scoring in this sport"
+    },
+    {
+      "word": "achievement",
+      "hint": "accomplishing something"
+    },
+    {
+      "word": "target",
+      "hint": "aiming for something"
+    },
+    {
+      "word": "ambition",
+      "hint": "desire to achieve something"
+    },
+    {
+      "word": "finish",
+      "hint": "reaching the end or completing something"
+    },
+    {
+      "word": "objective",
+      "hint": "something aimed at or sought"
+    },
+    {
+      "word": "dream",
+      "hint": "aspiration or desired outcome"
+    }
+  ],
+  "finish": [
+    "end",
+    "complete",
+    "line",
+    "deadline",
+    "product",
+    "polish",
+    "accomplish"
+  ],
+  "finish_detailed": [
+    {
+      "word": "end",
+      "hint": "reaching the conclusion"
+    },
+    {
+      "word": "complete",
+      "hint": "to make whole or perfect"
+    },
+    {
+      "word": "line",
+      "hint": "crossing the final point in a race"
+    },
+    {
+      "word": "deadline",
+      "hint": "time by which something must be completed"
+    },
+    {
+      "word": "product",
+      "hint": "final result of a process"
+    },
+    {
+      "word": "polish",
+      "hint": "to refine or perfect"
+    },
+    {
+      "word": "accomplish",
+      "hint": "to successfully complete a task"
+    }
+  ],
+  "product": [
+    "quality",
+    "price",
+    "brand",
+    "packaging",
+    "feature",
+    "warranty",
+    "review",
+    "sale"
+  ],
+  "product_detailed": [
+    {
+      "word": "quality",
+      "hint": "level of excellence"
+    },
+    {
+      "word": "price",
+      "hint": "cost of an item"
+    },
+    {
+      "word": "brand",
+      "hint": "company or trademark"
+    },
+    {
+      "word": "packaging",
+      "hint": "container or wrapping"
+    },
+    {
+      "word": "feature",
+      "hint": "characteristic or function"
+    },
+    {
+      "word": "warranty",
+      "hint": "guarantee against defects"
+    },
+    {
+      "word": "review",
+      "hint": "customer feedback"
+    },
+    {
+      "word": "sale",
+      "hint": "discount or promotion"
+    }
+  ],
+  "feature": [
+    "film",
+    "product",
+    "face",
+    "article",
+    "software",
+    "highlight",
+    "landscape"
+  ],
+  "feature_detailed": [
+    {
+      "word": "film",
+      "hint": "movie or TV show feature"
+    },
+    {
+      "word": "product",
+      "hint": "special characteristic of an item"
+    },
+    {
+      "word": "face",
+      "hint": "distinctive part of appearance"
+    },
+    {
+      "word": "article",
+      "hint": "main story in a newspaper or magazine"
+    },
+    {
+      "word": "software",
+      "hint": "specific function in a program"
+    },
+    {
+      "word": "highlight",
+      "hint": "standout aspect or quality"
+    },
+    {
+      "word": "landscape",
+      "hint": "notable element in scenery"
+    }
+  ],
+  "article": [
+    "newspaper",
+    "magazine",
+    "writer",
+    "headline",
+    "research",
+    "publication",
+    "journal",
+    "blog"
+  ],
+  "article_detailed": [
+    {
+      "word": "newspaper",
+      "hint": "printed publication containing articles"
+    },
+    {
+      "word": "magazine",
+      "hint": "periodical with articles on various topics"
+    },
+    {
+      "word": "writer",
+      "hint": "person who authors articles"
+    },
+    {
+      "word": "headline",
+      "hint": "title of an article"
+    },
+    {
+      "word": "research",
+      "hint": "investigation done to write an article"
+    },
+    {
+      "word": "publication",
+      "hint": "act of making an article public"
+    },
+    {
+      "word": "journal",
+      "hint": "scholarly publication containing articles"
+    },
+    {
+      "word": "blog",
+      "hint": "online platform for publishing articles"
+    }
+  ],
+  "growth": [
+    "plant",
+    "child",
+    "economy",
+    "development",
+    "expansion",
+    "progress",
+    "evolution"
+  ],
+  "growth_detailed": [
+    {
+      "word": "plant",
+      "hint": "biological organism that grows"
+    },
+    {
+      "word": "child",
+      "hint": "young person developing physically and mentally"
+    },
+    {
+      "word": "economy",
+      "hint": "expansion of financial systems"
+    },
+    {
+      "word": "development",
+      "hint": "process of progressing or advancing"
+    },
+    {
+      "word": "expansion",
+      "hint": "increase in size or scope"
+    },
+    {
+      "word": "progress",
+      "hint": "forward movement or improvement"
+    },
+    {
+      "word": "evolution",
+      "hint": "gradual change and adaptation over time"
+    }
+  ],
+  "economy": [
+    "money",
+    "market",
+    "job",
+    "business",
+    "stock",
+    "recession",
+    "growth",
+    "inflation"
+  ],
+  "economy_detailed": [
+    {
+      "word": "money",
+      "hint": "currency and financial transactions"
+    },
+    {
+      "word": "market",
+      "hint": "system of buying and selling goods"
+    },
+    {
+      "word": "job",
+      "hint": "employment and labor force"
+    },
+    {
+      "word": "business",
+      "hint": "commercial activity and enterprises"
+    },
+    {
+      "word": "stock",
+      "hint": "shares in companies and financial markets"
+    },
+    {
+      "word": "recession",
+      "hint": "period of economic decline"
+    },
+    {
+      "word": "growth",
+      "hint": "expansion of economic activity"
+    },
+    {
+      "word": "inflation",
+      "hint": "rise in prices over time"
+    }
+  ],
+  "reagan": [
+    "president",
+    "republican",
+    "actor",
+    "reaganomics",
+    "cold war",
+    "jelly bean",
+    "berlin wall",
+    "nancy"
+  ],
+  "reagan_detailed": [
+    {
+      "word": "president",
+      "hint": "40th President of the United States"
+    },
+    {
+      "word": "republican",
+      "hint": "political party affiliation"
+    },
+    {
+      "word": "actor",
+      "hint": "career before entering politics"
+    },
+    {
+      "word": "reaganomics",
+      "hint": "economic policies during presidency"
+    },
+    {
+      "word": "cold war",
+      "hint": "major foreign policy focus"
+    },
+    {
+      "word": "jelly bean",
+      "hint": "favorite candy"
+    },
+    {
+      "word": "berlin wall",
+      "hint": "famous speech about tearing it down"
+    },
+    {
+      "word": "nancy",
+      "hint": "name of his wife and First Lady"
+    }
+  ],
+  "berlin wall": [
+    "germany",
+    "communism",
+    "cold war",
+    "graffiti",
+    "checkpoint",
+    "reunion",
+    "demolition"
+  ],
+  "berlin wall_detailed": [
+    {
+      "word": "germany",
+      "hint": "country where the wall was located"
+    },
+    {
+      "word": "communism",
+      "hint": "political ideology associated with East Germany"
+    },
+    {
+      "word": "cold war",
+      "hint": "period of tension between Eastern and Western blocs"
+    },
+    {
+      "word": "graffiti",
+      "hint": "artwork painted on the Western side of the wall"
+    },
+    {
+      "word": "checkpoint",
+      "hint": "border crossing points along the wall"
+    },
+    {
+      "word": "reunion",
+      "hint": "families reuniting after the wall fell"
+    },
+    {
+      "word": "demolition",
+      "hint": "tearing down of the wall in 1989"
+    }
+  ],
+  "cold war": [
+    "nuclear",
+    "Soviet",
+    "spy",
+    "Berlin",
+    "space race",
+    "communism",
+    "Cuba",
+    "iron curtain"
+  ],
+  "cold war_detailed": [
+    {
+      "word": "nuclear",
+      "hint": "weapons and threats central to Cold War tensions"
+    },
+    {
+      "word": "Soviet",
+      "hint": "the USSR was a major player in the Cold War"
+    },
+    {
+      "word": "spy",
+      "hint": "espionage was common during this period"
+    },
+    {
+      "word": "Berlin",
+      "hint": "divided city symbolizing Cold War conflict"
+    },
+    {
+      "word": "space race",
+      "hint": "competition in space exploration between superpowers"
+    },
+    {
+      "word": "communism",
+      "hint": "ideology opposed by Western powers"
+    },
+    {
+      "word": "Cuba",
+      "hint": "site of missile crisis and Cold War flashpoint"
+    },
+    {
+      "word": "iron curtain",
+      "hint": "term for divide between Eastern and Western Europe"
+    }
+  ],
+  "cuba": [
+    "cigar",
+    "Castro",
+    "communism",
+    "beach",
+    "rum",
+    "revolution",
+    "Havana",
+    "embargo"
+  ],
+  "cuba_detailed": [
+    {
+      "word": "cigar",
+      "hint": "Famous Cuban tobacco product"
+    },
+    {
+      "word": "Castro",
+      "hint": "Former Cuban leader Fidel Castro"
+    },
+    {
+      "word": "communism",
+      "hint": "Political system associated with Cuba"
+    },
+    {
+      "word": "beach",
+      "hint": "Cuba is known for its beautiful beaches"
+    },
+    {
+      "word": "rum",
+      "hint": "Popular alcoholic beverage produced in Cuba"
+    },
+    {
+      "word": "revolution",
+      "hint": "Cuban Revolution of the 1950s"
+    },
+    {
+      "word": "Havana",
+      "hint": "Capital city of Cuba"
+    },
+    {
+      "word": "embargo",
+      "hint": "Long-standing U.S. trade restrictions on Cuba"
+    }
+  ],
+  "beach": [
+    "sand",
+    "ocean",
+    "wave",
+    "sun",
+    "seashell",
+    "umbrella",
+    "towel"
+  ],
+  "beach_detailed": [
+    {
+      "word": "sand",
+      "hint": "tiny particles covering the shore"
+    },
+    {
+      "word": "ocean",
+      "hint": "large body of water next to the beach"
+    },
+    {
+      "word": "wave",
+      "hint": "movement of water toward the shore"
+    },
+    {
+      "word": "sun",
+      "hint": "bright star in the sky providing warmth"
+    },
+    {
+      "word": "seashell",
+      "hint": "hard protective outer layer of marine animals"
+    },
+    {
+      "word": "umbrella",
+      "hint": "device used for shade on the beach"
+    },
+    {
+      "word": "towel",
+      "hint": "cloth used for drying off after swimming"
+    }
+  ],
+  "umbrella": [
+    "rain",
+    "shelter",
+    "parasol",
+    "handle",
+    "canopy",
+    "storm",
+    "folding"
+  ],
+  "umbrella_detailed": [
+    {
+      "word": "rain",
+      "hint": "protection from precipitation"
+    },
+    {
+      "word": "shelter",
+      "hint": "provides cover"
+    },
+    {
+      "word": "parasol",
+      "hint": "sun protection variant"
+    },
+    {
+      "word": "handle",
+      "hint": "part used to hold it"
+    },
+    {
+      "word": "canopy",
+      "hint": "the fabric top part"
+    },
+    {
+      "word": "storm",
+      "hint": "weather condition requiring use"
+    },
+    {
+      "word": "folding",
+      "hint": "compact storage feature"
+    }
+  ],
+  "rain": [
+    "umbrella",
+    "puddle",
+    "cloud",
+    "wet",
+    "storm",
+    "rainbow",
+    "drizzle"
+  ],
+  "rain_detailed": [
+    {
+      "word": "umbrella",
+      "hint": "used for protection from rain"
+    },
+    {
+      "word": "puddle",
+      "hint": "forms on the ground after rain"
+    },
+    {
+      "word": "cloud",
+      "hint": "source of rain in the sky"
+    },
+    {
+      "word": "wet",
+      "hint": "condition caused by rain"
+    },
+    {
+      "word": "storm",
+      "hint": "heavy rain often accompanied by wind and thunder"
+    },
+    {
+      "word": "rainbow",
+      "hint": "colorful arc sometimes seen after rain"
+    },
+    {
+      "word": "drizzle",
+      "hint": "light rain falling in fine drops"
+    }
+  ],
+  "cloud": [
+    "rain",
+    "sky",
+    "fluffy",
+    "white",
+    "storm",
+    "computing",
+    "shape",
+    "cotton"
+  ],
+  "cloud_detailed": [
+    {
+      "word": "rain",
+      "hint": "precipitation from clouds"
+    },
+    {
+      "word": "sky",
+      "hint": "where clouds are located"
+    },
+    {
+      "word": "fluffy",
+      "hint": "describes cloud appearance"
+    },
+    {
+      "word": "white",
+      "hint": "common cloud color"
+    },
+    {
+      "word": "storm",
+      "hint": "associated with dark clouds"
+    },
+    {
+      "word": "computing",
+      "hint": "cloud-based technology"
+    },
+    {
+      "word": "shape",
+      "hint": "clouds often resemble objects"
+    },
+    {
+      "word": "cotton",
+      "hint": "clouds compared to cotton balls"
+    }
+  ],
+  "storm": [
+    "rain",
+    "thunder",
+    "lightning",
+    "wind",
+    "cloud",
+    "umbrella",
+    "flood"
+  ],
+  "storm_detailed": [
+    {
+      "word": "rain",
+      "hint": "precipitation that often accompanies storms"
+    },
+    {
+      "word": "thunder",
+      "hint": "loud sound caused by lightning"
+    },
+    {
+      "word": "lightning",
+      "hint": "electrical discharge in the sky"
+    },
+    {
+      "word": "wind",
+      "hint": "strong air movement during storms"
+    },
+    {
+      "word": "cloud",
+      "hint": "dark formations in the sky before and during storms"
+    },
+    {
+      "word": "umbrella",
+      "hint": "item used for protection from rain"
+    },
+    {
+      "word": "flood",
+      "hint": "overflow of water often caused by heavy storms"
+    }
+  ],
+  "thunder": [
+    "lightning",
+    "storm",
+    "loud",
+    "rain",
+    "cloud",
+    "boom",
+    "clap",
+    "rumble"
+  ],
+  "thunder_detailed": [
+    {
+      "word": "lightning",
+      "hint": "bright flash that often accompanies thunder"
+    },
+    {
+      "word": "storm",
+      "hint": "weather event that typically includes thunder"
+    },
+    {
+      "word": "loud",
+      "hint": "characteristic sound of thunder"
+    },
+    {
+      "word": "rain",
+      "hint": "precipitation often associated with thunderstorms"
+    },
+    {
+      "word": "cloud",
+      "hint": "where thunder originates in the sky"
+    },
+    {
+      "word": "boom",
+      "hint": "onomatopoeia for the sound of thunder"
+    },
+    {
+      "word": "clap",
+      "hint": "sudden burst of thunder"
+    },
+    {
+      "word": "rumble",
+      "hint": "low, continuous sound of distant thunder"
+    }
+  ],
+  "clap": [
+    "hands",
+    "applause",
+    "thunder",
+    "audience",
+    "rhythm",
+    "appreciation",
+    "performance"
+  ],
+  "clap_detailed": [
+    {
+      "word": "hands",
+      "hint": "clapping is done with hands"
+    },
+    {
+      "word": "applause",
+      "hint": "clapping as a form of approval"
+    },
+    {
+      "word": "thunder",
+      "hint": "sound of thunder likened to clapping"
+    },
+    {
+      "word": "audience",
+      "hint": "group of people who often clap"
+    },
+    {
+      "word": "rhythm",
+      "hint": "clapping can create rhythmic patterns"
+    },
+    {
+      "word": "appreciation",
+      "hint": "clapping as a sign of appreciation"
+    },
+    {
+      "word": "performance",
+      "hint": "clapping often follows a performance"
+    }
+  ],
+  "hands": [
+    "finger",
+    "glove",
+    "palm",
+    "grip",
+    "clap",
+    "wave",
+    "shake"
+  ],
+  "hands_detailed": [
+    {
+      "word": "finger",
+      "hint": "digit on the hand"
+    },
+    {
+      "word": "glove",
+      "hint": "covering worn on hands"
+    },
+    {
+      "word": "palm",
+      "hint": "inner surface of the hand"
+    },
+    {
+      "word": "grip",
+      "hint": "firm hold with the hand"
+    },
+    {
+      "word": "clap",
+      "hint": "striking hands together to make noise"
+    },
+    {
+      "word": "wave",
+      "hint": "gesture of greeting or farewell"
+    },
+    {
+      "word": "shake",
+      "hint": "greeting by grasping and moving hands"
+    }
+  ],
+  "glove": [
+    "hand",
+    "winter",
+    "leather",
+    "boxing",
+    "baseball",
+    "rubber",
+    "mitten",
+    "surgeon"
+  ],
+  "glove_detailed": [
+    {
+      "word": "hand",
+      "hint": "gloves are worn on hands"
+    },
+    {
+      "word": "winter",
+      "hint": "gloves are commonly worn in cold weather"
+    },
+    {
+      "word": "leather",
+      "hint": "a common material for gloves"
+    },
+    {
+      "word": "boxing",
+      "hint": "special gloves used in this sport"
+    },
+    {
+      "word": "baseball",
+      "hint": "fielders wear gloves in this sport"
+    },
+    {
+      "word": "rubber",
+      "hint": "material used for protective gloves"
+    },
+    {
+      "word": "mitten",
+      "hint": "similar hand covering with a single compartment"
+    },
+    {
+      "word": "surgeon",
+      "hint": "wears sterile gloves during operations"
+    }
+  ],
+  "mitten": [
+    "winter",
+    "snow",
+    "hand",
+    "warm",
+    "wool",
+    "glove",
+    "child",
+    "knit"
+  ],
+  "mitten_detailed": [
+    {
+      "word": "winter",
+      "hint": "season when mittens are commonly worn"
+    },
+    {
+      "word": "snow",
+      "hint": "precipitation associated with cold weather and mitten use"
+    },
+    {
+      "word": "hand",
+      "hint": "body part covered by a mitten"
+    },
+    {
+      "word": "warm",
+      "hint": "feeling provided by wearing mittens"
+    },
+    {
+      "word": "wool",
+      "hint": "common material used to make mittens"
+    },
+    {
+      "word": "glove",
+      "hint": "similar hand covering with separate finger sections"
+    },
+    {
+      "word": "child",
+      "hint": "age group often associated with wearing mittens"
+    },
+    {
+      "word": "knit",
+      "hint": "method of creating mittens by hand"
+    }
+  ],
+  "winter": [
+    "snow",
+    "cold",
+    "ice",
+    "coat",
+    "fireplace",
+    "holiday",
+    "ski",
+    "hot chocolate"
+  ],
+  "winter_detailed": [
+    {
+      "word": "snow",
+      "hint": "frozen precipitation common in winter"
+    },
+    {
+      "word": "cold",
+      "hint": "low temperatures associated with the season"
+    },
+    {
+      "word": "ice",
+      "hint": "frozen water on surfaces"
+    },
+    {
+      "word": "coat",
+      "hint": "heavy outerwear for warmth"
+    },
+    {
+      "word": "fireplace",
+      "hint": "source of heat and comfort"
+    },
+    {
+      "word": "holiday",
+      "hint": "many celebrations occur during winter"
+    },
+    {
+      "word": "ski",
+      "hint": "popular winter sport"
+    },
+    {
+      "word": "hot chocolate",
+      "hint": "warm beverage enjoyed in cold weather"
+    }
+  ],
+  "coat": [
+    "winter",
+    "warm",
+    "button",
+    "pocket",
+    "fur",
+    "leather",
+    "zipper",
+    "collar"
+  ],
+  "coat_detailed": [
+    {
+      "word": "winter",
+      "hint": "season when coats are commonly worn"
+    },
+    {
+      "word": "warm",
+      "hint": "primary function of a coat"
+    },
+    {
+      "word": "button",
+      "hint": "fastener often found on coats"
+    },
+    {
+      "word": "pocket",
+      "hint": "common feature in coats for storage"
+    },
+    {
+      "word": "fur",
+      "hint": "material used in some coats"
+    },
+    {
+      "word": "leather",
+      "hint": "material used for certain types of coats"
+    },
+    {
+      "word": "zipper",
+      "hint": "alternative fastener for coats"
+    },
+    {
+      "word": "collar",
+      "hint": "part of a coat around the neck"
+    }
+  ],
+  "leather": [
+    "shoe",
+    "jacket",
+    "belt",
+    "cow",
+    "wallet",
+    "saddle",
+    "couch"
+  ],
+  "leather_detailed": [
+    {
+      "word": "shoe",
+      "hint": "footwear often made of leather"
+    },
+    {
+      "word": "jacket",
+      "hint": "outerwear commonly crafted from leather"
+    },
+    {
+      "word": "belt",
+      "hint": "accessory typically made of leather"
+    },
+    {
+      "word": "cow",
+      "hint": "animal whose hide is used to make leather"
+    },
+    {
+      "word": "wallet",
+      "hint": "accessory often made of leather to hold money"
+    },
+    {
+      "word": "saddle",
+      "hint": "horse riding equipment made of leather"
+    },
+    {
+      "word": "couch",
+      "hint": "furniture sometimes upholstered in leather"
+    }
+  ],
+  "elephant": [
+    "trunk",
+    "tusk",
+    "gray",
+    "big",
+    "circus",
+    "memory",
+    "Africa"
+  ],
+  "elephant_detailed": [
+    {
+      "word": "trunk",
+      "hint": "long nose-like appendage"
+    },
+    {
+      "word": "tusk",
+      "hint": "long, curved ivory teeth"
+    },
+    {
+      "word": "gray",
+      "hint": "common color of elephants"
+    },
+    {
+      "word": "big",
+      "hint": "large size of the animal"
+    },
+    {
+      "word": "circus",
+      "hint": "traditional entertainment featuring elephants"
+    },
+    {
+      "word": "memory",
+      "hint": "elephants are known for good memory"
+    },
+    {
+      "word": "Africa",
+      "hint": "continent where many elephants live"
+    }
+  ],
+  "trunk": [
+    "elephant",
+    "tree",
+    "car",
+    "luggage",
+    "storage",
+    "body",
+    "nose",
+    "suitcase"
+  ],
+  "trunk_detailed": [
+    {
+      "word": "elephant",
+      "hint": "long nose of the animal"
+    },
+    {
+      "word": "tree",
+      "hint": "main stem or body of a tree"
+    },
+    {
+      "word": "car",
+      "hint": "storage compartment in a vehicle"
+    },
+    {
+      "word": "luggage",
+      "hint": "large traveling bag or suitcase"
+    },
+    {
+      "word": "storage",
+      "hint": "container for keeping items"
+    },
+    {
+      "word": "body",
+      "hint": "torso of a person or animal"
+    },
+    {
+      "word": "nose",
+      "hint": "elephant's elongated snout"
+    },
+    {
+      "word": "suitcase",
+      "hint": "container for packing clothes"
+    }
+  ],
+  "suitcase": [
+    "travel",
+    "clothes",
+    "airport",
+    "vacation",
+    "wheel",
+    "handle",
+    "luggage"
+  ],
+  "suitcase_detailed": [
+    {
+      "word": "travel",
+      "hint": "suitcases are used when going on trips"
+    },
+    {
+      "word": "clothes",
+      "hint": "primary contents packed in suitcases"
+    },
+    {
+      "word": "airport",
+      "hint": "common place to see suitcases"
+    },
+    {
+      "word": "vacation",
+      "hint": "often requires packing a suitcase"
+    },
+    {
+      "word": "wheel",
+      "hint": "many modern suitcases have wheels for easy transport"
+    },
+    {
+      "word": "handle",
+      "hint": "used to carry or pull a suitcase"
+    },
+    {
+      "word": "luggage",
+      "hint": "synonym for suitcase and other travel bags"
+    }
+  ],
+  "clothes": [
+    "shirt",
+    "pants",
+    "dress",
+    "shoe",
+    "coat",
+    "sock",
+    "hat",
+    "jacket"
+  ],
+  "clothes_detailed": [
+    {
+      "word": "shirt",
+      "hint": "common upper body garment"
+    },
+    {
+      "word": "pants",
+      "hint": "lower body clothing covering legs"
+    },
+    {
+      "word": "dress",
+      "hint": "one-piece garment typically worn by women"
+    },
+    {
+      "word": "shoe",
+      "hint": "footwear to protect feet"
+    },
+    {
+      "word": "coat",
+      "hint": "outer garment for warmth"
+    },
+    {
+      "word": "sock",
+      "hint": "foot covering worn inside shoes"
+    },
+    {
+      "word": "hat",
+      "hint": "head covering"
+    },
+    {
+      "word": "jacket",
+      "hint": "outerwear for upper body"
+    }
   ]
 }

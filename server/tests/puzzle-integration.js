@@ -12,8 +12,8 @@ const Anthropic = require('@anthropic-ai/sdk');
 // Mock global state
 global.previousStartWords = [];
 
-// Mock daily game object
-const dailyGame = {
+// Mock current game object
+const currentGame = {
   startWord: null,
   targetWord: null,
   gameDate: null,
@@ -158,8 +158,8 @@ async function generatePuzzle() {
   console.log("Association cache cleared for fresh puzzle generation");
   
   // Mock current game words
-  const currentStartWord = dailyGame.startWord;
-  const currentTargetWord = dailyGame.targetWord;
+  const currentStartWord = currentGame.startWord;
+  const currentTargetWord = currentGame.targetWord;
 
   try {
     console.log("Generating new puzzle using linear path approach...");

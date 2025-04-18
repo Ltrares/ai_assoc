@@ -5,7 +5,7 @@
 const path = require('path');
 
 // Mock data for testing
-const dailyGame = { startWord: null, targetWord: null };
+const currentGame = { startWord: null, targetWord: null };
 const cacheStats = { hits: 0, misses: 0 };
 
 // Start with an empty association cache

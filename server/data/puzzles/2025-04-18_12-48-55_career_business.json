@@ -1,0 +1,20 @@
+{
+  "startWord": "career",
+  "targetWord": "business",
+  "theme": "Professional Growth Journey",
+  "description": "Tracing the path from entry-level career to owning a successful business",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "career",
+    "salary",
+    "money",
+    "cash",
+    "atm",
+    "transaction",
+    "business"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T12:48:55.578Z",
+  "timestamp": 1744980535578
+}

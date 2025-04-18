@@ -25,10 +25,12 @@ const anthropic = new Anthropic({
 
 // Initialize Express
 const app = express();
-const PORT = process.env.PORT || 3001;
+// Use port 5050 as the local default (to match client proxy),
+// but allow overriding with environment variable for Heroku compatibility
+const PORT = process.env.PORT || 5050;
 
 // Game state
-let dailyGame = {
+let currentGame = {
   startWord: null,
   targetWord: null,
   associationGraph: {},
@@ -114,7 +116,7 @@ async function generatePuzzle(useRepository = false) {
   // If already generating a game, don't start another one
   if (isGeneratingGame) {
     console.log("Game generation already in progress, skipping new request");
-    return dailyGame;
+    return currentGame;
   }
   
   try {
@@ -129,7 +131,7 @@ async function generatePuzzle(useRepository = false) {
         console.log(`Using saved puzzle: ${savedPuzzle.startWord} → ${savedPuzzle.targetWord}`);
         
         // Check if we already have a game - if not, create stats object
-        const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
+        const existingStats = (currentGame && currentGame.stats) ? { ...currentGame.stats } : {
           totalPlays: 0,
           completions: [],
           averageSteps: 0,
@@ -143,7 +145,7 @@ async function generatePuzzle(useRepository = false) {
         const today = new Date().toISOString().split('T')[0];
         
         // Update the daily game state, preserving stats if they exist
-        dailyGame = {
+        currentGame = {
           ...savedPuzzle,
           gameDate: today,
           stats: existingStats
@@ -154,11 +156,11 @@ async function generatePuzzle(useRepository = false) {
         nextGameTime.setHours(nextGameTime.getHours() + 1);
         nextGameTime.setMinutes(0);
         
-        console.log(`Loaded saved puzzle: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
-        console.log(`Theme: ${dailyGame.theme} (${dailyGame.difficulty})`);
-        console.log(`Hidden path: ${dailyGame.hiddenSolution.join(' → ')}`);
+        console.log(`Loaded saved puzzle: ${currentGame.startWord} → ${currentGame.targetWord}`);
+        console.log(`Theme: ${currentGame.theme} (${currentGame.difficulty})`);
+        console.log(`Hidden path: ${currentGame.hiddenSolution.join(' → ')}`);
         
-        return dailyGame;
+        return currentGame;
       }
       
       // If no saved puzzle is available, continue with generation
@@ -171,7 +173,7 @@ async function generatePuzzle(useRepository = false) {
     const puzzle = await puzzleGenerator.generatePuzzle(associationCache, anthropic, onApiCallMade);
     
     // Check if we already have a game - if not, create stats object
-    const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
+    const existingStats = (currentGame && currentGame.stats) ? { ...currentGame.stats } : {
       totalPlays: 0,
       completions: [],
       averageSteps: 0,
@@ -182,7 +184,7 @@ async function generatePuzzle(useRepository = false) {
     };
     
     // Update the daily game state, preserving stats if they exist
-    dailyGame = {
+    currentGame = {
       startWord: puzzle.startWord,
       targetWord: puzzle.targetWord,
       theme: puzzle.theme,
@@ -198,9 +200,9 @@ async function generatePuzzle(useRepository = false) {
     nextGameTime.setHours(nextGameTime.getHours() + 1);
     nextGameTime.setMinutes(0);
     
-    console.log(`New game generated: ${dailyGame.startWord} → ${dailyGame.targetWord}`);
-    console.log(`Theme: ${dailyGame.theme} (${dailyGame.difficulty})`);
-    console.log(`Hidden path: ${dailyGame.hiddenSolution.join(' → ')}`);
+    console.log(`New game generated: ${currentGame.startWord} → ${currentGame.targetWord}`);
+    console.log(`Theme: ${currentGame.theme} (${currentGame.difficulty})`);
+    console.log(`Hidden path: ${currentGame.hiddenSolution.join(' → ')}`);
     
     // Save the newly generated puzzle to the repository for future use
     const saveResult = await puzzleRepository.savePuzzle(puzzle);
@@ -208,51 +210,13 @@ async function generatePuzzle(useRepository = false) {
       console.log(`Puzzle saved to repository for future use: ${saveResult.filename}`);
     }
     
-    return dailyGame;
+    return currentGame;
   } catch (error) {
     console.error('Error generating puzzle:', error);
     
-    // Try to get a fallback puzzle from repository
-    try {
-      console.log("Attempting to load fallback puzzle from repository...");
-      const fallbackPuzzle = await puzzleRepository.getFallbackPuzzle();
-      
-      if (fallbackPuzzle) {
-        console.log(`Using fallback puzzle: ${fallbackPuzzle.startWord} → ${fallbackPuzzle.targetWord}`);
-        
-        // Check if we already have a game - if not, create stats object
-        const existingStats = (dailyGame && dailyGame.stats) ? { ...dailyGame.stats } : {
-          totalPlays: 0,
-          completions: [],
-          averageSteps: 0,
-          backSteps: [],
-          averageBackSteps: 0,
-          totalSteps: [],
-          averageTotalSteps: 0
-        };
-        
-        // Update game date to today
-        const today = new Date().toISOString().split('T')[0];
-        
-        // Update the daily game state, preserving stats if they exist
-        dailyGame = {
-          ...fallbackPuzzle,
-          gameDate: today,
-          stats: existingStats
-        };
-        
-        // Update next game time
-        nextGameTime = new Date();
-        nextGameTime.setHours(nextGameTime.getHours() + 1);
-        nextGameTime.setMinutes(0);
-        
-        return dailyGame;
-      }
-    } catch (fallbackError) {
-      console.error('Error getting fallback puzzle:', fallbackError);
-    }
-    
-    // If fallback also fails, rethrow the original error
+    // No fallbacks - just propagate the error
+    // This will cause the game to be unavailable until generation succeeds
+    console.log('Puzzle generation failed. Game will be unavailable until generation succeeds.');
     throw error;
   } finally {
     // Always reset the generation flag when done, even if there was an error
@@ -413,10 +377,10 @@ app.get('/api/admin/cache-stats', (req, res) => {
       cacheFile: cacheFileInfo,
       lastSaved: cacheStats.lastSaved,
       currentGame: {
-        startWord: dailyGame.startWord,
-        targetWord: dailyGame.targetWord,
-        theme: dailyGame.theme,
-        gameDate: dailyGame.gameDate,
+        startWord: currentGame.startWord,
+        targetWord: currentGame.targetWord,
+        theme: currentGame.theme,
+        gameDate: currentGame.gameDate,
         nextGameTime: nextGameTime,
         gamesGenerated: apiLimits.gamesGenerated
       }
@@ -431,7 +395,7 @@ app.get('/api/admin/cache-stats', (req, res) => {
 app.get('/api/game', (req, res) => {
   try {
     // Check if game is initialized
-    if (!dailyGame || !dailyGame.startWord || !dailyGame.targetWord) {
+    if (!currentGame || !currentGame.startWord || !currentGame.targetWord) {
       // Status code 503 - Service Unavailable
       return res.status(503).json({ 
         error: 'Game not ready', 
@@ -473,16 +437,26 @@ app.get('/api/game', (req, res) => {
       });
     }
     
+    // Log the game data we're about to send (debug only)
+    console.log("Game data being sent to client:", {
+      startWord: currentGame.startWord,
+      targetWord: currentGame.targetWord,
+      minExpectedSteps: currentGame.minExpectedSteps,
+      // Log hidden solution length if available
+      hiddenSolutionLength: currentGame.hiddenSolution ? currentGame.hiddenSolution.length : 'N/A'
+    });
+    
     // Return only the necessary game data to the client
     // NOT including the solution!
     res.json({
-      startWord: dailyGame.startWord,
-      targetWord: dailyGame.targetWord,
-      theme: dailyGame.theme,
-      description: dailyGame.description,
-      difficulty: dailyGame.difficulty,
-      gameDate: dailyGame.gameDate,
+      startWord: currentGame.startWord,
+      targetWord: currentGame.targetWord,
+      theme: currentGame.theme,
+      description: currentGame.description,
+      difficulty: currentGame.difficulty,
+      gameDate: currentGame.gameDate,
       nextGameTime: nextGameTime,
+      minExpectedSteps: currentGame.minExpectedSteps,
       // NO SOLUTION SENT TO CLIENT
     });
   } catch (error) {
@@ -495,7 +469,7 @@ app.get('/api/game', (req, res) => {
 app.get('/api/associations/:word', async (req, res) => {
   try {
     // If no game generated yet, return error
-    if (!dailyGame || !dailyGame.startWord) {
+    if (!currentGame || !currentGame.startWord) {
       // Status code 503 - Service Unavailable
       return res.status(503).json({ 
         error: 'Game not ready', 
@@ -514,20 +488,41 @@ app.get('/api/associations/:word', async (req, res) => {
     // Get associations 
     const associations = await getAssociations(word);
     
+    // Randomize the order of associations to encourage exploration of different paths
+    const randomizedAssociations = [...associations].sort(() => Math.random() - 0.5);
+    
     // Check if we should include detailed information
     let detailed = null;
     if (wantDetailed) {
       // Check if detailed info exists in cache
       const detailedKey = `${word.toLowerCase().trim()}_detailed`;
       if (associationCache[detailedKey]) {
-        detailed = associationCache[detailedKey];
+        // If we have detailed info, we need to randomize it in the same order as the words
+        const originalDetailed = associationCache[detailedKey];
+        if (Array.isArray(originalDetailed)) {
+          // Create a map from word to detailed info for consistent randomization
+          const detailMap = {};
+          originalDetailed.forEach(item => {
+            if (item && item.word) {
+              detailMap[item.word.toLowerCase().trim()] = item;
+            }
+          });
+          
+          // Reorder detailed info to match randomized associations
+          detailed = randomizedAssociations.map(word => {
+            const normalizedWord = word.toLowerCase().trim();
+            return detailMap[normalizedWord] || { word, hint: "" };
+          });
+        } else {
+          detailed = originalDetailed;
+        }
       }
     }
     
-    // Return the associations
+    // Return the randomized associations
     res.json({
       word,
-      associations,
+      associations: randomizedAssociations,
       detailed: detailed
     });
   } catch (error) {
@@ -547,11 +542,11 @@ app.post('/api/verify', (req, res) => {
     }
     
     // Verify path starts with the correct start word and ends with the target
-    if (path[0].toLowerCase() !== dailyGame.startWord.toLowerCase()) {
+    if (path[0].toLowerCase() !== currentGame.startWord.toLowerCase()) {
       return res.status(400).json({ error: 'Path must start with the start word' });
     }
     
-    if (path[path.length - 1].toLowerCase() !== dailyGame.targetWord.toLowerCase()) {
+    if (path[path.length - 1].toLowerCase() !== currentGame.targetWord.toLowerCase()) {
       return res.status(400).json({ error: 'Path must end with the target word' });
     }
     
@@ -559,21 +554,41 @@ app.post('/api/verify', (req, res) => {
     // For now we just look at the start and end
     
     // Update stats
-    dailyGame.stats.totalPlays++;
-    dailyGame.stats.completions.push(path.length - 1); // Number of steps (not including start)
+    // Track plays
+    currentGame.stats.totalPlays++;
     
-    // Calculate average
-    const sum = dailyGame.stats.completions.reduce((a, b) => a + b, 0);
-    dailyGame.stats.averageSteps = (sum / dailyGame.stats.completions.length).toFixed(1);
+    // Track path lengths (completions)
+    currentGame.stats.completions.push(path.length - 1); // Number of steps (not including start)
+    const completionsSum = currentGame.stats.completions.reduce((a, b) => a + b, 0);
+    currentGame.stats.averageSteps = (completionsSum / currentGame.stats.completions.length).toFixed(1);
     
-    // Success response with any badges/achievements
+    // Get back steps and total steps from request body if available
+    if (req.body.backSteps !== undefined) {
+      currentGame.stats.backSteps.push(req.body.backSteps);
+      const backStepsSum = currentGame.stats.backSteps.reduce((a, b) => a + b, 0);
+      currentGame.stats.averageBackSteps = (backStepsSum / currentGame.stats.backSteps.length).toFixed(1);
+    }
+    
+    if (req.body.totalSteps !== undefined) {
+      currentGame.stats.totalSteps.push(req.body.totalSteps);
+      const totalStepsSum = currentGame.stats.totalSteps.reduce((a, b) => a + b, 0);
+      currentGame.stats.averageTotalSteps = (totalStepsSum / currentGame.stats.totalSteps.length).toFixed(1);
+    }
+    
+    // Success response with complete stats
     res.json({
       success: true,
       path,
       stats: {
         stepsUsed: path.length - 1,
-        averageSteps: dailyGame.stats.averageSteps,
-        optimalPath: dailyGame.hiddenSolution
+        totalPlays: currentGame.stats.totalPlays,
+        completions: currentGame.stats.completions,
+        averageSteps: currentGame.stats.averageSteps,
+        backSteps: currentGame.stats.backSteps,
+        averageBackSteps: currentGame.stats.averageBackSteps,
+        totalSteps: currentGame.stats.totalSteps,
+        averageTotalSteps: currentGame.stats.averageTotalSteps,
+        optimalPath: currentGame.hiddenSolution
       }
     });
   } catch (error) {
@@ -586,7 +601,7 @@ app.post('/api/verify', (req, res) => {
 app.get('/api/hint/:currentWord', async (req, res) => {
   try {
     // If no game generated yet, return error
-    if (!dailyGame || !dailyGame.startWord) {
+    if (!currentGame || !currentGame.startWord) {
       return res.status(503).json({ 
         error: 'Game not ready', 
         message: 'The game is being initialized. Please try again in a few moments.'
@@ -601,7 +616,7 @@ app.get('/api/hint/:currentWord', async (req, res) => {
     }
     
     // Get hint
-    const hint = await getHintFromAI(dailyGame.startWord, dailyGame.targetWord, currentWord);
+    const hint = await getHintFromAI(currentGame.startWord, currentGame.targetWord, currentWord);
     
     // Return the hint
     res.json({
@@ -631,10 +646,10 @@ app.post('/api/admin/new-game', async (req, res) => {
     res.json({
       success: true,
       game: {
-        startWord: dailyGame.startWord,
-        targetWord: dailyGame.targetWord,
-        theme: dailyGame.theme,
-        gameDate: dailyGame.gameDate,
+        startWord: currentGame.startWord,
+        targetWord: currentGame.targetWord,
+        theme: currentGame.theme,
+        gameDate: currentGame.gameDate,
         nextGameTime: nextGameTime
       }
     });
@@ -703,7 +718,7 @@ app.post('/api/admin/save-cache', async (req, res) => {
   }
 });
 
-// List saved puzzles (admin only)
+// List all saved puzzles (admin only)
 app.get('/api/admin/puzzles', async (req, res) => {
   try {
     // Check for admin auth in production
@@ -728,6 +743,41 @@ app.get('/api/admin/puzzles', async (req, res) => {
   }
 });
 
+// Get recent puzzles with details (admin only)
+app.get('/api/admin/recent-puzzles', async (req, res) => {
+  try {
+    // Check for admin auth in production
+    if (process.env.NODE_ENV === 'production') {
+      const authHeader = req.headers.authorization;
+      if (!authHeader || authHeader !== `Bearer ${process.env.ADMIN_SECRET}`) {
+        return res.status(401).json({ error: 'Unauthorized' });
+      }
+    }
+    
+    // Default limit to 5 puzzles
+    const limit = req.query.limit ? parseInt(req.query.limit) : 5;
+    
+    // Get recent puzzles
+    const recentPuzzles = await puzzleRepository.getRecentPuzzles(limit);
+    
+    // Return the list with summarized details
+    res.json({
+      count: recentPuzzles.length,
+      puzzles: recentPuzzles.map(item => ({
+        filename: item.filename,
+        startWord: item.puzzle.startWord,
+        targetWord: item.puzzle.targetWord,
+        theme: item.puzzle.theme,
+        pathLength: item.puzzle.hiddenSolution?.length,
+        generatedAt: item.puzzle.generatedAt || 'unknown'
+      }))
+    });
+  } catch (error) {
+    console.error('Error listing recent puzzles:', error);
+    res.status(500).json({ error: 'Failed to list recent puzzles' });
+  }
+});
+
 // Force use of a saved puzzle (admin only)
 app.post('/api/admin/use-saved-puzzle', async (req, res) => {
   try {
@@ -747,10 +797,10 @@ app.post('/api/admin/use-saved-puzzle', async (req, res) => {
       success: true,
       message: 'Loaded puzzle from repository',
       game: {
-        startWord: dailyGame.startWord,
-        targetWord: dailyGame.targetWord,
-        theme: dailyGame.theme,
-        gameDate: dailyGame.gameDate,
+        startWord: currentGame.startWord,
+        targetWord: currentGame.targetWord,
+        theme: currentGame.theme,
+        gameDate: currentGame.gameDate,
         nextGameTime: nextGameTime
       }
     });
@@ -774,46 +824,93 @@ if (process.env.NODE_ENV !== 'test') {
       associationCache = loadedCache;
       console.log(`Cache loaded with ${Object.keys(associationCache).length} entries`);
       
-      // Then generate the initial game
-      return generatePuzzle();
+      // Check for a puzzle from the current hour
+      return puzzleRepository.getPuzzleFromCurrentHour();
     })
-    .then(() => console.log('Initial game generated on server start'))
-    .catch(err => {
-      console.error('Failed to generate initial game:', err);
-      
-      // Try to use a saved puzzle as fallback
-      console.log('Attempting to use saved puzzle as fallback...');
-      return puzzleRepository.getFallbackPuzzle()
-        .then(fallbackPuzzle => {
-          if (fallbackPuzzle) {
-            console.log(`Using fallback puzzle: ${fallbackPuzzle.startWord} → ${fallbackPuzzle.targetWord}`);
-            
-            // Update game date to today
-            const today = new Date().toISOString().split('T')[0];
-            
-            // Update the daily game state with default stats
-            dailyGame = {
-              ...fallbackPuzzle,
-              gameDate: today,
-              stats: {
-                totalPlays: 0,
-                completions: [],
-                averageSteps: 0,
-                backSteps: [],
-                averageBackSteps: 0,
-                totalSteps: [],
-                averageTotalSteps: 0
-              }
-            };
-            
-            console.log('Fallback puzzle loaded successfully');
-          } else {
-            console.error('No fallback puzzles available. Game will be unavailable until generation succeeds.');
-          }
-        })
-        .catch(fallbackErr => {
-          console.error('Error loading fallback puzzle:', fallbackErr);
+    .then(hourlyPuzzle => {
+      if (hourlyPuzzle) {
+        // Use the puzzle from the current hour
+        console.log(`Using existing puzzle from current hour: ${hourlyPuzzle.startWord} → ${hourlyPuzzle.targetWord}`);
+        
+        // Log the puzzle data for debugging
+        console.log("Loaded hourly puzzle at startup:", {
+          startWord: hourlyPuzzle.startWord,
+          targetWord: hourlyPuzzle.targetWord,
+          minExpectedSteps: hourlyPuzzle.minExpectedSteps,
+          hiddenSolutionLength: hourlyPuzzle.hiddenSolution ? hourlyPuzzle.hiddenSolution.length : 'N/A'
         });
+        
+        const today = new Date().toISOString().split('T')[0];
+        
+        // Calculate minExpectedSteps if needed
+        let calculatedMinSteps = hourlyPuzzle.minExpectedSteps;
+        if (calculatedMinSteps === undefined && hourlyPuzzle.hiddenSolution) {
+          calculatedMinSteps = hourlyPuzzle.hiddenSolution.length - 1;
+          console.log(`Calculated minExpectedSteps: ${calculatedMinSteps} from hiddenSolution length: ${hourlyPuzzle.hiddenSolution.length}`);
+        }
+        
+        // Update the current game state with the found puzzle
+        currentGame = {
+          ...hourlyPuzzle,
+          gameDate: today,
+          minExpectedSteps: calculatedMinSteps,
+          stats: {
+            totalPlays: 0, 
+            completions: [], 
+            averageSteps: 0,
+            backSteps: [],
+            averageBackSteps: 0, 
+            totalSteps: [],
+            averageTotalSteps: 0
+          }
+        };
+        
+        // Log the current game data after update
+        console.log("Updated current game at startup:", {
+          startWord: currentGame.startWord,
+          targetWord: currentGame.targetWord,
+          minExpectedSteps: currentGame.minExpectedSteps
+        });
+        
+        // Update next game time to the next hour
+        nextGameTime = new Date();
+        nextGameTime.setHours(nextGameTime.getHours() + 1);
+        nextGameTime.setMinutes(0);
+        nextGameTime.setSeconds(0);
+        
+        console.log(`Game loaded from existing hourly puzzle. Next game at ${nextGameTime.toISOString()}`);
+        return currentGame;
+      } else {
+        // No puzzle found for current hour, generate a new one
+        console.log('No puzzle found for current hour, generating a new one...');
+        return generatePuzzle();
+      }
+    })
+    .then(game => {
+      console.log(`Game ready: ${game.startWord} → ${game.targetWord}`);
+    })
+    .catch(err => {
+      console.error('Failed to initialize game:', err);
+      
+      // Do not use fallback - just report unavailability
+      console.log('No puzzle available. Game will be unavailable until generation succeeds.');
+      
+      // Reset game state to null to ensure client receives proper unavailability message
+      currentGame = {
+        startWord: null,
+        targetWord: null,
+        associationGraph: {},
+        gameDate: null,
+        stats: { 
+          totalPlays: 0, 
+          completions: [], 
+          averageSteps: 0,
+          backSteps: [],
+          averageBackSteps: 0, 
+          totalSteps: [],
+          averageTotalSteps: 0
+        }
+      };
     });
   
   // Set up periodic cache saving (every 5 minutes)
@@ -832,31 +929,81 @@ if (process.env.NODE_ENV !== 'test') {
   // Schedule game generation (with limits)
   setInterval(async () => {
     try {
-      // Get current date to check if we need to reset counters
+      // Get current date and hour
       const now = new Date();
       const currentDate = now.toISOString().split('T')[0]; // Get YYYY-MM-DD format
+      const currentHour = now.getHours();
       
       // Reset game generation counter if it's a new day
-      if (dailyGame.gameDate !== currentDate) {
+      if (currentGame.gameDate !== currentDate) {
         console.log(`New day detected, resetting game generation counter`);
         apiLimits.gamesGenerated = 0;
-        dailyGame.gameDate = currentDate;
+        currentGame.gameDate = currentDate;
       }
+      
+      console.log(`Hourly scheduler running at hour ${currentHour}...`);
+      
+      // First check if we already have a puzzle from the current hour
+      const hourlyPuzzle = await puzzleRepository.getPuzzleFromCurrentHour();
+      
+      if (hourlyPuzzle) {
+        console.log(`Using existing puzzle for hour ${currentHour}: ${hourlyPuzzle.startWord} → ${hourlyPuzzle.targetWord}`);
+        
+        // Log the data from the hourly puzzle
+        console.log("Hourly puzzle data:", {
+          startWord: hourlyPuzzle.startWord,
+          targetWord: hourlyPuzzle.targetWord,
+          minExpectedSteps: hourlyPuzzle.minExpectedSteps,
+          hiddenSolutionLength: hourlyPuzzle.hiddenSolution ? hourlyPuzzle.hiddenSolution.length : 'N/A'
+        });
+        
+        // Calculate minExpectedSteps if needed
+        let calculatedMinSteps = hourlyPuzzle.minExpectedSteps;
+        if (calculatedMinSteps === undefined && hourlyPuzzle.hiddenSolution) {
+          calculatedMinSteps = hourlyPuzzle.hiddenSolution.length - 1;
+          console.log(`Calculated minExpectedSteps: ${calculatedMinSteps} from hiddenSolution length: ${hourlyPuzzle.hiddenSolution.length}`);
+        }
+        
+        // Update the current game state with the found puzzle
+        currentGame = {
+          ...hourlyPuzzle,
+          gameDate: currentDate,
+          minExpectedSteps: calculatedMinSteps,
+          stats: currentGame.stats // Preserve existing stats
+        };
+        
+        // Log the updated current game
+        console.log("Updated current game:", {
+          startWord: currentGame.startWord,
+          targetWord: currentGame.targetWord,
+          minExpectedSteps: currentGame.minExpectedSteps
+        });
+        
+        // Update next game time
+        nextGameTime = new Date();
+        nextGameTime.setHours(nextGameTime.getHours() + 1);
+        nextGameTime.setMinutes(0);
+        nextGameTime.setSeconds(0);
+        
+        console.log(`Game updated from existing hourly puzzle. Next game at ${nextGameTime.toISOString()}`);
+        return;
+      }
+      
+      // No existing puzzle for this hour, decide whether to generate a new one
       
       // Override the game limit check to ensure we get at least a few new games per day
       // to fix the issue of having the same words repeatedly
-      const hourOfDay = now.getHours();
       
       // Always generate a new game at specific hours regardless of counter
       const forceRefreshHours = [0, 6, 12, 18]; // Midnight, 6am, noon, 6pm
-      const shouldForceRefresh = forceRefreshHours.includes(hourOfDay);
+      const shouldForceRefresh = forceRefreshHours.includes(currentHour);
       
       // Use repository hours - hours when we prefer to use saved puzzles to save API calls
       const useRepositoryHours = [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23];
-      const shouldUseRepository = useRepositoryHours.includes(hourOfDay);
+      const shouldUseRepository = useRepositoryHours.includes(currentHour);
       
       if (shouldForceRefresh || apiLimits.gamesGenerated < apiLimits.gameGenerationPerDay) {
-        console.log("Generating new game...");
+        console.log("Creating new game for current hour...");
         
         // If it's a force refresh hour, always generate a new puzzle
         // Otherwise use repository on repository hours (to save API calls), and generate new puzzles on other hours

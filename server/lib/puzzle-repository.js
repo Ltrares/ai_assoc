@@ -37,13 +37,26 @@ async function savePuzzle(puzzle) {
     // Make sure the directory exists
     await ensurePuzzlesDir();
     
-    // Generate a filename based on date, start word, and target word
-    const dateStr = puzzle.gameDate || new Date().toISOString().split('T')[0];
-    const filename = `${dateStr}_${puzzle.startWord}_${puzzle.targetWord}.json`;
+    // Get current date and time for timestamping
+    const now = new Date();
+    const dateStr = puzzle.gameDate || now.toISOString().split('T')[0];
+    
+    // Format time as HH-MM-SS
+    const timeStr = now.toISOString().split('T')[1].substring(0, 8).replace(/:/g, '-');
+    
+    // Generate a filename based on date, time, start word, and target word
+    const filename = `${dateStr}_${timeStr}_${puzzle.startWord}_${puzzle.targetWord}.json`;
     const filePath = path.join(PUZZLES_DIR, filename);
     
-    // Save the puzzle
-    await writeFileAsync(filePath, JSON.stringify(puzzle, null, 2), 'utf8');
+    // Add timestamp to puzzle data
+    const puzzleWithTimestamp = {
+      ...puzzle,
+      generatedAt: now.toISOString(),
+      timestamp: now.getTime()
+    };
+    
+    // Save the puzzle with timestamp
+    await writeFileAsync(filePath, JSON.stringify(puzzleWithTimestamp, null, 2), 'utf8');
     console.log(`Puzzle saved to repository: ${filename}`);
     
     return { success: true, filename };
@@ -82,7 +95,16 @@ async function getRandomPuzzle() {
     
     // Select a random puzzle
     const randomFile = puzzleFiles[Math.floor(Math.random() * puzzleFiles.length)];
-    return await loadPuzzleByFilename(randomFile);
+    console.log(`Using random puzzle file: ${randomFile}`);
+    
+    const puzzle = await loadPuzzleByFilename(randomFile);
+    
+    // Log timestamp information if available
+    if (puzzle && puzzle.generatedAt) {
+      console.log(`Puzzle was generated at: ${puzzle.generatedAt}`);
+    }
+    
+    return puzzle;
   } catch (error) {
     console.error('Error getting random puzzle:', error);
     return null;
@@ -121,8 +143,14 @@ async function getFallbackPuzzle() {
       return null;
     }
     
-    // Sort by date (assuming filename starts with date)
-    puzzleFiles.sort().reverse(); // Newest first
+    // Sort by timestamp in filename - our new format is YYYY-MM-DD_HH-MM-SS_*
+    // This will order newest first, even with the updated filename format
+    puzzleFiles.sort().reverse();
+    
+    // Optionally log the newest file
+    if (puzzleFiles.length > 0) {
+      console.log(`Using newest puzzle file: ${puzzleFiles[0]}`);
+    }
     
     // Get the newest puzzle
     return await loadPuzzleByFilename(puzzleFiles[0]);
@@ -132,11 +160,91 @@ async function getFallbackPuzzle() {
   }
 }
 
+// Get a puzzle from the current hour, or null if none exists
+async function getPuzzleFromCurrentHour() {
+  try {
+    // Make sure the directory exists
+    await ensurePuzzlesDir();
+    
+    // Get current date and hour
+    const now = new Date();
+    const currentDate = now.toISOString().split('T')[0]; // YYYY-MM-DD
+    const currentHour = now.getHours();
+    
+    // Get all puzzle files
+    const files = await readdirAsync(PUZZLES_DIR);
+    const puzzleFiles = files.filter(file => file.endsWith('.json'));
+    
+    // Sort newest first
+    puzzleFiles.sort().reverse();
+    
+    // Look through files to find one from the current hour
+    for (const file of puzzleFiles) {
+      const puzzle = await loadPuzzleByFilename(file);
+      
+      if (puzzle && puzzle.generatedAt) {
+        const puzzleTime = new Date(puzzle.generatedAt);
+        const puzzleDate = puzzleTime.toISOString().split('T')[0];
+        const puzzleHour = puzzleTime.getHours();
+        
+        // Check if puzzle is from the current date and hour
+        if (puzzleDate === currentDate && puzzleHour === currentHour) {
+          console.log(`Found puzzle from current hour (${currentHour}:00): ${file}`);
+          return puzzle;
+        }
+      }
+    }
+    
+    console.log(`No puzzle found from current hour (${currentHour}:00)`);
+    return null;
+  } catch (error) {
+    console.error('Error finding puzzle from current hour:', error);
+    return null;
+  }
+}
+
+// Get recent puzzles, sorted by generation time
+async function getRecentPuzzles(limit = 5) {
+  try {
+    // Make sure the directory exists
+    await ensurePuzzlesDir();
+    
+    // Get all puzzle files
+    const files = await readdirAsync(PUZZLES_DIR);
+    const puzzleFiles = files.filter(file => file.endsWith('.json'));
+    
+    // Sort newest first
+    puzzleFiles.sort().reverse();
+    
+    // Limit the number of files
+    const recentFiles = puzzleFiles.slice(0, limit);
+    
+    // Load each puzzle
+    const puzzles = [];
+    for (const file of recentFiles) {
+      const puzzle = await loadPuzzleByFilename(file);
+      if (puzzle) {
+        puzzles.push({
+          filename: file,
+          puzzle: puzzle
+        });
+      }
+    }
+    
+    return puzzles;
+  } catch (error) {
+    console.error('Error getting recent puzzles:', error);
+    return [];
+  }
+}
+
 module.exports = {
   savePuzzle,
   loadPuzzleByFilename,
   getRandomPuzzle,
   listPuzzles,
   getFallbackPuzzle,
+  getRecentPuzzles,
+  getPuzzleFromCurrentHour,
   PUZZLES_DIR
 };

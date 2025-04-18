@@ -12,7 +12,7 @@ const Anthropic = require('@anthropic-ai/sdk');
 global.previousStartWords = [];
 
 // Mock daily game object
-const dailyGame = {
+const currentGame = {
   startWord: null,
   targetWord: null,
   gameDate: null,
