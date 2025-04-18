@@ -963,19 +963,13 @@ if (process.env.NODE_ENV !== 'test') {
         if (hourlyPuzzle) {
           console.log(`Using existing puzzle for hour ${currentHour}: ${hourlyPuzzle.startWord} → ${hourlyPuzzle.targetWord}`);
           
-          // Log the data from the hourly puzzle
-          console.log("Hourly puzzle data:", {
-            startWord: hourlyPuzzle.startWord,
-            targetWord: hourlyPuzzle.targetWord,
-            minExpectedSteps: hourlyPuzzle.minExpectedSteps,
-            hiddenSolutionLength: hourlyPuzzle.hiddenSolution ? hourlyPuzzle.hiddenSolution.length : 'N/A'
-          });
+          // Puzzle data loaded successfully
           
           // Calculate minExpectedSteps if needed
           let calculatedMinSteps = hourlyPuzzle.minExpectedSteps;
           if (calculatedMinSteps === undefined && hourlyPuzzle.hiddenSolution) {
             calculatedMinSteps = hourlyPuzzle.hiddenSolution.length - 1;
-            console.log(`Calculated minExpectedSteps: ${calculatedMinSteps} from hiddenSolution length: ${hourlyPuzzle.hiddenSolution.length}`);
+            // Calculate minExpectedSteps based on solution path length
           }
           
           // Update the current game state with the found puzzle
@@ -986,12 +980,7 @@ if (process.env.NODE_ENV !== 'test') {
             stats: currentGame.stats // Preserve existing stats
           };
           
-          // Log the updated current game
-          console.log("Updated current game:", {
-            startWord: currentGame.startWord,
-            targetWord: currentGame.targetWord,
-            minExpectedSteps: currentGame.minExpectedSteps
-          });
+          // Game state updated with hourly puzzle
         } else {
           // No existing puzzle for this hour, generate a new one
           console.log("No puzzle found for current hour, generating a new one...");

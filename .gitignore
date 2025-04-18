@@ -16,3 +16,8 @@ npm-debug.log*
 .DS_Store
 .DS_Store?
 ._*
+
+# Backup files
+heroku_backups/
+/heroku_backups/
+**/heroku_backups/

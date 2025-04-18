@@ -1,0 +1,18 @@
+{
+  "startWord": "scandal",
+  "targetWord": "swan",
+  "theme": "Political Transformation",
+  "description": "A journey from controversy to graceful change in public leadership",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "scandal",
+    "celebrity",
+    "autograph",
+    "pen",
+    "paper",
+    "origami",
+    "swan"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18"
+}

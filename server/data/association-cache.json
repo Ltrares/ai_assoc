@@ -13672,5 +13672,557 @@
       "word": "chlorine",
       "hint": "chemical used to clean swimming pools"
     }
+  ],
+  "lesson": [
+    "school",
+    "teacher",
+    "learning",
+    "classroom",
+    "homework",
+    "textbook",
+    "subject",
+    "education"
+  ],
+  "lesson_detailed": [
+    {
+      "word": "school",
+      "hint": "place where lessons are taught"
+    },
+    {
+      "word": "teacher",
+      "hint": "person who gives lessons"
+    },
+    {
+      "word": "learning",
+      "hint": "process of acquiring knowledge from lessons"
+    },
+    {
+      "word": "classroom",
+      "hint": "typical setting for lessons"
+    },
+    {
+      "word": "homework",
+      "hint": "assignments given to reinforce lessons"
+    },
+    {
+      "word": "textbook",
+      "hint": "book used for lessons"
+    },
+    {
+      "word": "subject",
+      "hint": "topic of a lesson"
+    },
+    {
+      "word": "education",
+      "hint": "broader context for lessons"
+    }
+  ],
+  "education": [
+    "school",
+    "teacher",
+    "book",
+    "student",
+    "classroom",
+    "degree",
+    "learning",
+    "exam"
+  ],
+  "education_detailed": [
+    {
+      "word": "school",
+      "hint": "place where formal education occurs"
+    },
+    {
+      "word": "teacher",
+      "hint": "person who instructs students"
+    },
+    {
+      "word": "book",
+      "hint": "common learning resource"
+    },
+    {
+      "word": "student",
+      "hint": "person receiving education"
+    },
+    {
+      "word": "classroom",
+      "hint": "typical learning environment"
+    },
+    {
+      "word": "degree",
+      "hint": "academic qualification earned"
+    },
+    {
+      "word": "learning",
+      "hint": "process of acquiring knowledge"
+    },
+    {
+      "word": "exam",
+      "hint": "test of knowledge or skill"
+    }
+  ],
+  "exam": [
+    "test",
+    "study",
+    "stress",
+    "grade",
+    "pencil",
+    "classroom",
+    "time",
+    "question"
+  ],
+  "exam_detailed": [
+    {
+      "word": "test",
+      "hint": "synonym for exam"
+    },
+    {
+      "word": "study",
+      "hint": "preparation for an exam"
+    },
+    {
+      "word": "stress",
+      "hint": "common feeling associated with exams"
+    },
+    {
+      "word": "grade",
+      "hint": "result of an exam"
+    },
+    {
+      "word": "pencil",
+      "hint": "writing tool often used in exams"
+    },
+    {
+      "word": "classroom",
+      "hint": "typical setting for an exam"
+    },
+    {
+      "word": "time",
+      "hint": "exams are often timed"
+    },
+    {
+      "word": "question",
+      "hint": "exams consist of questions to answer"
+    }
+  ],
+  "notebook": [
+    "paper",
+    "pen",
+    "school",
+    "writing",
+    "spiral",
+    "diary",
+    "note",
+    "line"
+  ],
+  "notebook_detailed": [
+    {
+      "word": "paper",
+      "hint": "material notebooks are made from"
+    },
+    {
+      "word": "pen",
+      "hint": "writing tool used with notebooks"
+    },
+    {
+      "word": "school",
+      "hint": "place where notebooks are commonly used"
+    },
+    {
+      "word": "writing",
+      "hint": "primary activity done in notebooks"
+    },
+    {
+      "word": "spiral",
+      "hint": "common binding type for notebooks"
+    },
+    {
+      "word": "diary",
+      "hint": "personal journal often kept in a notebook"
+    },
+    {
+      "word": "note",
+      "hint": "short piece of information written in notebooks"
+    },
+    {
+      "word": "line",
+      "hint": "ruled markings on notebook pages"
+    }
+  ],
+  "note": [
+    "paper",
+    "pen",
+    "music",
+    "reminder",
+    "sticky",
+    "message",
+    "notebook",
+    "memo"
+  ],
+  "note_detailed": [
+    {
+      "word": "paper",
+      "hint": "medium for writing notes"
+    },
+    {
+      "word": "pen",
+      "hint": "tool for writing notes"
+    },
+    {
+      "word": "music",
+      "hint": "musical notation"
+    },
+    {
+      "word": "reminder",
+      "hint": "purpose of many notes"
+    },
+    {
+      "word": "sticky",
+      "hint": "adhesive note for quick messages"
+    },
+    {
+      "word": "message",
+      "hint": "content of a note"
+    },
+    {
+      "word": "notebook",
+      "hint": "collection of pages for notes"
+    },
+    {
+      "word": "memo",
+      "hint": "brief written communication"
+    }
+  ],
+  "message": [
+    "text",
+    "email",
+    "letter",
+    "phone",
+    "communication",
+    "envelope",
+    "inbox",
+    "send"
+  ],
+  "message_detailed": [
+    {
+      "word": "text",
+      "hint": "a common form of digital messaging"
+    },
+    {
+      "word": "email",
+      "hint": "electronic communication method"
+    },
+    {
+      "word": "letter",
+      "hint": "traditional written communication"
+    },
+    {
+      "word": "phone",
+      "hint": "device used for messaging"
+    },
+    {
+      "word": "communication",
+      "hint": "the act of conveying information"
+    },
+    {
+      "word": "envelope",
+      "hint": "container for physical messages"
+    },
+    {
+      "word": "inbox",
+      "hint": "storage for received messages"
+    },
+    {
+      "word": "send",
+      "hint": "action of transmitting a message"
+    }
+  ],
+  "communication": [
+    "speech",
+    "phone",
+    "email",
+    "letter",
+    "conversation",
+    "language",
+    "message"
+  ],
+  "communication_detailed": [
+    {
+      "word": "speech",
+      "hint": "verbal communication"
+    },
+    {
+      "word": "phone",
+      "hint": "device for remote communication"
+    },
+    {
+      "word": "email",
+      "hint": "digital written communication"
+    },
+    {
+      "word": "letter",
+      "hint": "traditional written communication"
+    },
+    {
+      "word": "conversation",
+      "hint": "exchange of ideas between people"
+    },
+    {
+      "word": "language",
+      "hint": "system of communication"
+    },
+    {
+      "word": "message",
+      "hint": "information conveyed in communication"
+    }
+  ],
+  "conversation": [
+    "talk",
+    "communication",
+    "discussion",
+    "dialogue",
+    "chat",
+    "topic",
+    "language",
+    "listening"
+  ],
+  "conversation_detailed": [
+    {
+      "word": "talk",
+      "hint": "verbal exchange of ideas"
+    },
+    {
+      "word": "communication",
+      "hint": "process of exchanging information"
+    },
+    {
+      "word": "discussion",
+      "hint": "in-depth examination of a topic"
+    },
+    {
+      "word": "dialogue",
+      "hint": "exchange between two or more people"
+    },
+    {
+      "word": "chat",
+      "hint": "informal, friendly conversation"
+    },
+    {
+      "word": "topic",
+      "hint": "subject of conversation"
+    },
+    {
+      "word": "language",
+      "hint": "system of communication used"
+    },
+    {
+      "word": "listening",
+      "hint": "paying attention to what is being said"
+    }
+  ],
+  "cheese": [
+    "mouse",
+    "cracker",
+    "milk",
+    "pizza",
+    "swiss",
+    "cheddar",
+    "grater"
+  ],
+  "cheese_detailed": [
+    {
+      "word": "mouse",
+      "hint": "popular cartoon trope of mice eating cheese"
+    },
+    {
+      "word": "cracker",
+      "hint": "common pairing for cheese as a snack"
+    },
+    {
+      "word": "milk",
+      "hint": "primary ingredient in cheese production"
+    },
+    {
+      "word": "pizza",
+      "hint": "popular food that often features cheese"
+    },
+    {
+      "word": "swiss",
+      "hint": "well-known type of cheese with holes"
+    },
+    {
+      "word": "cheddar",
+      "hint": "common yellow cheese variety"
+    },
+    {
+      "word": "grater",
+      "hint": "kitchen tool used to shred cheese"
+    }
+  ],
+  "cheddar": [
+    "cheese",
+    "sharp",
+    "yellow",
+    "mouse",
+    "cracker",
+    "Wisconsin",
+    "block",
+    "grater"
+  ],
+  "cheddar_detailed": [
+    {
+      "word": "cheese",
+      "hint": "type of dairy product"
+    },
+    {
+      "word": "sharp",
+      "hint": "describes strong flavor"
+    },
+    {
+      "word": "yellow",
+      "hint": "common color of cheddar"
+    },
+    {
+      "word": "mouse",
+      "hint": "animal associated with cheese"
+    },
+    {
+      "word": "cracker",
+      "hint": "often paired with cheese"
+    },
+    {
+      "word": "Wisconsin",
+      "hint": "US state known for cheese"
+    },
+    {
+      "word": "block",
+      "hint": "shape cheddar is often sold in"
+    },
+    {
+      "word": "grater",
+      "hint": "tool used to shred cheese"
+    }
+  ],
+  "sharp": [
+    "knife",
+    "pain",
+    "needle",
+    "thorn",
+    "clever",
+    "edge",
+    "razor"
+  ],
+  "sharp_detailed": [
+    {
+      "word": "knife",
+      "hint": "A cutting tool with a sharp blade"
+    },
+    {
+      "word": "pain",
+      "hint": "A sharp sensation often associated with injury"
+    },
+    {
+      "word": "needle",
+      "hint": "A thin, pointed object used for sewing or injections"
+    },
+    {
+      "word": "thorn",
+      "hint": "A pointed protrusion on a plant stem"
+    },
+    {
+      "word": "clever",
+      "hint": "Describes someone with quick, intelligent thinking"
+    },
+    {
+      "word": "edge",
+      "hint": "The pointed or narrow side of an object"
+    },
+    {
+      "word": "razor",
+      "hint": "A tool used for shaving with a very sharp blade"
+    }
+  ],
+  "edge": [
+    "cliff",
+    "blade",
+    "border",
+    "sharp",
+    "brink",
+    "rim",
+    "verge"
+  ],
+  "edge_detailed": [
+    {
+      "word": "cliff",
+      "hint": "precipitous drop-off"
+    },
+    {
+      "word": "blade",
+      "hint": "sharp cutting surface"
+    },
+    {
+      "word": "border",
+      "hint": "outer limit or boundary"
+    },
+    {
+      "word": "sharp",
+      "hint": "keen or acute quality"
+    },
+    {
+      "word": "brink",
+      "hint": "point of transition"
+    },
+    {
+      "word": "rim",
+      "hint": "outer edge of a circular object"
+    },
+    {
+      "word": "verge",
+      "hint": "extreme limit or point"
+    }
+  ],
+  "border": [
+    "country",
+    "wall",
+    "patrol",
+    "crossing",
+    "immigration",
+    "passport",
+    "customs",
+    "fence"
+  ],
+  "border_detailed": [
+    {
+      "word": "country",
+      "hint": "national boundaries between states"
+    },
+    {
+      "word": "wall",
+      "hint": "physical barrier along a border"
+    },
+    {
+      "word": "patrol",
+      "hint": "security forces monitoring borders"
+    },
+    {
+      "word": "crossing",
+      "hint": "point where people pass through borders"
+    },
+    {
+      "word": "immigration",
+      "hint": "movement of people across borders"
+    },
+    {
+      "word": "passport",
+      "hint": "document for international border crossing"
+    },
+    {
+      "word": "customs",
+      "hint": "official checkpoint at borders"
+    },
+    {
+      "word": "fence",
+      "hint": "barrier marking a border or boundary"
+    }
   ]
 }

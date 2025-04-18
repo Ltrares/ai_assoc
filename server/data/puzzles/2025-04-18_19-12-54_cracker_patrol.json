@@ -1,0 +1,20 @@
+{
+  "startWord": "cracker",
+  "targetWord": "patrol",
+  "theme": "Nautical Security",
+  "description": "Safeguarding ships and shores from threats, both edible and dangerous.",
+  "difficulty": "medium",
+  "hiddenSolution": [
+    "cracker",
+    "cheese",
+    "cheddar",
+    "sharp",
+    "edge",
+    "border",
+    "patrol"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T19:12:54.867Z",
+  "timestamp": 1745003574867
+}

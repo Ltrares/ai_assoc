@@ -1,0 +1,20 @@
+{
+  "startWord": "handwriting",
+  "targetWord": "listening",
+  "theme": "Communication Evolution",
+  "description": "Tracing the progression of human communication methods from written to oral forms",
+  "difficulty": "hard",
+  "hiddenSolution": [
+    "handwriting",
+    "notebook",
+    "note",
+    "message",
+    "communication",
+    "conversation",
+    "listening"
+  ],
+  "minExpectedSteps": 6,
+  "gameDate": "2025-04-18",
+  "generatedAt": "2025-04-18T18:00:12.373Z",
+  "timestamp": 1744999212373
+}
